@@ -1,0 +1,4 @@
+{
+  "import": ["illusory0x0/vscode/types", "illusory0x0/vscode/interop"],
+  "warn-list": "-A"
+}

@@ -1,0 +1,4 @@
+{
+  "warn-list": "-A",
+  "import": ["illusory0x0/vscode/interop"]
+}

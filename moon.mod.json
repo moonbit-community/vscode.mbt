@@ -1,9 +1,10 @@
 {
-  "name": "username/hello",
+  "name": "illusory0x0/vscode",
   "version": "0.1.0",
   "readme": "README.md",
-  "repository": "",
+  "repository": "https://github.com/moonbit-community/vscode.mbt",
   "license": "Apache-2.0",
-  "keywords": [],
-  "description": ""
+  "keywords": ["vscode", "bindings", "javascript-backend"],
+  "description": "MoonBit language bindings for the Visual Studio Code Extension API",
+  "preferred-target": "js"
 }

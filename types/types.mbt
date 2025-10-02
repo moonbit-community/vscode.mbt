@@ -1,0 +1,39 @@
+///|
+pub fnalias @interop.coerce
+
+///|
+pub typealias @interop.(
+  Any,
+  Union2,
+  Union3,
+  Union4,
+  Union5,
+  Union6,
+  Union7,
+  Union8,
+  Union9,
+  Union10,
+  Union11,
+  Union12,
+  Union13,
+  Union14,
+  Union15,
+  Union16,
+  Func0Rest,
+  Func1Rest,
+  Func2Rest,
+  Func3Rest,
+  Func4Rest,
+  Func5Rest,
+  Func6Rest,
+  Func7Rest,
+  Func8Rest,
+  Func9Rest,
+  Func10Rest,
+  Func11Rest,
+  Func12Rest,
+  Func13Rest,
+  Func14Rest,
+  Func15Rest,
+  Func16Rest
+)

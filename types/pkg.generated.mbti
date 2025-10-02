@@ -1,0 +1,5575 @@
+// Generated using `moon info`, DON'T EDIT IT
+package "illusory0x0/vscode/types"
+
+import(
+  "illusory0x0/vscode/interop"
+)
+
+// Values
+fn[A, B] coerce(A) -> B
+
+fn[A] require(String) -> A
+
+let vscode : Vscode
+
+// Errors
+
+// Types and methods
+pub(all) struct AccessibilityInformation {
+  label : String
+  role : String?
+}
+impl Eq for AccessibilityInformation
+impl Show for AccessibilityInformation
+impl ToJson for AccessibilityInformation
+
+pub(all) struct Authentication {
+  onDidChangeSessions : Event[AuthenticationSessionsChangeEvent]
+  getSession : (String, Array[String], AuthenticationGetSessionOptions?) -> Thenable[AuthenticationSession?]
+  getAccounts : (String) -> Thenable[Array[AuthenticationSessionAccountInformation]]
+  registerAuthenticationProvider : (String, String, AuthenticationProvider, AuthenticationProviderOptions?) -> Disposable
+}
+
+pub(all) struct AuthenticationGetSessionOptions {
+  clearSessionPreference : Bool?
+  createIfNone : @interop.Union2[Bool, AuthenticationGetSessionPresentationOptions]?
+  forceNewSession : @interop.Union3[Bool, AuthenticationGetSessionPresentationOptions, AuthenticationGetSessionPresentationOptions]?
+  silent : Bool?
+  account : AuthenticationSessionAccountInformation?
+}
+impl Eq for AuthenticationGetSessionOptions
+impl Show for AuthenticationGetSessionOptions
+impl ToJson for AuthenticationGetSessionOptions
+
+pub(all) struct AuthenticationGetSessionPresentationOptions {
+  detail : String?
+}
+impl Eq for AuthenticationGetSessionPresentationOptions
+impl Show for AuthenticationGetSessionPresentationOptions
+impl ToJson for AuthenticationGetSessionPresentationOptions
+
+pub(all) struct AuthenticationProvider {
+  onDidChangeSessions : Event[AuthenticationProviderAuthenticationSessionsChangeEvent]
+  getSessions : (Array[String]?, AuthenticationProviderSessionOptions) -> Thenable[Array[AuthenticationSession]]
+  createSession : (Array[String], AuthenticationProviderSessionOptions) -> Thenable[AuthenticationSession]
+  removeSession : (String) -> Thenable[Unit]
+}
+fn AuthenticationProvider::createSession(Self, Array[String]) -> @interop.Any
+fn AuthenticationProvider::getSessions(Self, Array[String]?) -> @interop.Any
+fn AuthenticationProvider::removeSession(Self, String) -> @interop.Any
+impl Eq for AuthenticationProvider
+impl Show for AuthenticationProvider
+impl ToJson for AuthenticationProvider
+
+pub(all) struct AuthenticationProviderAuthenticationSessionsChangeEvent {
+  added : Array[AuthenticationSession]?
+  removed : Array[AuthenticationSession]?
+  changed : Array[AuthenticationSession]?
+}
+impl Eq for AuthenticationProviderAuthenticationSessionsChangeEvent
+impl Show for AuthenticationProviderAuthenticationSessionsChangeEvent
+impl ToJson for AuthenticationProviderAuthenticationSessionsChangeEvent
+
+pub(all) struct AuthenticationProviderInformation {
+  id : String
+  label : String
+}
+impl Eq for AuthenticationProviderInformation
+impl Show for AuthenticationProviderInformation
+impl ToJson for AuthenticationProviderInformation
+
+pub(all) struct AuthenticationProviderOptions {
+  supportsMultipleAccounts : Bool?
+}
+impl Eq for AuthenticationProviderOptions
+impl Show for AuthenticationProviderOptions
+impl ToJson for AuthenticationProviderOptions
+
+pub(all) struct AuthenticationProviderSessionOptions {
+  account : AuthenticationSessionAccountInformation?
+}
+impl Eq for AuthenticationProviderSessionOptions
+impl Show for AuthenticationProviderSessionOptions
+impl ToJson for AuthenticationProviderSessionOptions
+
+pub(all) struct AuthenticationSession {
+  id : String
+  accessToken : String
+  account : AuthenticationSessionAccountInformation
+  scopes : Array[String]
+}
+impl Eq for AuthenticationSession
+impl Show for AuthenticationSession
+impl ToJson for AuthenticationSession
+
+pub(all) struct AuthenticationSessionAccountInformation {
+  id : String
+  label : String
+}
+impl Eq for AuthenticationSessionAccountInformation
+impl Show for AuthenticationSessionAccountInformation
+impl ToJson for AuthenticationSessionAccountInformation
+
+pub(all) struct AuthenticationSessionsChangeEvent {
+  provider : AuthenticationProviderInformation
+}
+impl Eq for AuthenticationSessionsChangeEvent
+impl Show for AuthenticationSessionsChangeEvent
+impl ToJson for AuthenticationSessionsChangeEvent
+
+pub(all) struct AutoClosingPair {
+  mut open : String
+  mut close : String
+  mut notIn : Array[SyntaxTokenType]?
+}
+impl Eq for AutoClosingPair
+impl Show for AutoClosingPair
+impl ToJson for AutoClosingPair
+
+pub(all) struct BranchCoverage {
+  executionCount : Int
+  location : Location?
+}
+fn BranchCoverage::new(@interop.Any, @interop.Any?, String?) -> @interop.Any
+impl Eq for BranchCoverage
+impl Show for BranchCoverage
+impl ToJson for BranchCoverage
+
+pub(all) struct Breakpoint {
+  id : String
+  enabled : Bool
+  condition : String?
+  hitCondition : String?
+  logMessage : String?
+}
+fn Breakpoint::new(Bool?, String?, String?, String?) -> @interop.Any
+impl Eq for Breakpoint
+impl Show for Breakpoint
+impl ToJson for Breakpoint
+
+pub(all) struct BreakpointsChangeEvent {
+  added : Array[Breakpoint]
+  removed : Array[Breakpoint]
+  changed : Array[Breakpoint]
+}
+impl Eq for BreakpointsChangeEvent
+impl Show for BreakpointsChangeEvent
+impl ToJson for BreakpointsChangeEvent
+
+pub(all) struct CallHierarchyIncomingCall {
+  from : CallHierarchyItem
+  fromRanges : Array[Range]
+}
+fn CallHierarchyIncomingCall::new(CallHierarchyItem, Array[Range]) -> Self
+impl Eq for CallHierarchyIncomingCall
+impl Show for CallHierarchyIncomingCall
+impl ToJson for CallHierarchyIncomingCall
+
+pub(all) struct CallHierarchyItem {
+  name : String
+  kind : SymbolKind
+  tags : Array[SymbolTag]?
+  detail : String?
+  uri : Uri
+  range : Range
+  selectionRange : Range
+  data : @interop.Any?
+}
+fn CallHierarchyItem::new(SymbolKind, String, String, Uri, Range, Range) -> Self
+impl Eq for CallHierarchyItem
+impl Show for CallHierarchyItem
+impl ToJson for CallHierarchyItem
+
+pub(all) struct CallHierarchyOutgoingCall {
+  to : CallHierarchyItem
+  fromRanges : Array[Range]
+}
+fn CallHierarchyOutgoingCall::new(CallHierarchyItem, Array[Range]) -> Self
+impl Eq for CallHierarchyOutgoingCall
+impl Show for CallHierarchyOutgoingCall
+impl ToJson for CallHierarchyOutgoingCall
+
+pub(all) struct CallHierarchyProvider {
+  prepareCallHierarchy : (TextDocument, Position, CancellationToken) -> @interop.Union2[@interop.Union2[CallHierarchyItem, Array[CallHierarchyItem]], Thenable[@interop.Union2[CallHierarchyItem, Array[CallHierarchyItem]]]]
+  provideCallHierarchyIncomingCalls : (CallHierarchyItem, CancellationToken) -> @interop.Union2[Array[CallHierarchyIncomingCall], Thenable[Array[CallHierarchyIncomingCall]]]
+  provideCallHierarchyOutgoingCalls : (CallHierarchyItem, CancellationToken) -> @interop.Union2[Array[CallHierarchyOutgoingCall], Thenable[Array[CallHierarchyOutgoingCall]]]
+}
+fn CallHierarchyProvider::prepareCallHierarchy(Self, TextDocument, Position, CancellationToken) -> @interop.Any
+fn CallHierarchyProvider::provideCallHierarchyIncomingCalls(Self, @interop.Any, CancellationToken) -> @interop.Any
+fn CallHierarchyProvider::provideCallHierarchyOutgoingCalls(Self, @interop.Any, CancellationToken) -> @interop.Any
+impl Eq for CallHierarchyProvider
+impl Show for CallHierarchyProvider
+impl ToJson for CallHierarchyProvider
+
+pub(all) struct CancellationError {
+  name : String
+  message : String
+}
+fn CancellationError::new() -> Self
+impl Eq for CancellationError
+impl Show for CancellationError
+impl ToJson for CancellationError
+
+pub(all) struct CancellationToken {
+  isCancellationRequested : Bool
+}
+impl Eq for CancellationToken
+impl Show for CancellationToken
+impl ToJson for CancellationToken
+
+pub(all) struct CancellationTokenSource {
+  token : CancellationToken
+}
+fn CancellationTokenSource::cancel(Self) -> Unit
+fn CancellationTokenSource::dispose(Self) -> Unit
+fn CancellationTokenSource::new() -> Self
+impl Eq for CancellationTokenSource
+impl Show for CancellationTokenSource
+impl ToJson for CancellationTokenSource
+
+pub(all) struct Chat {
+  createChatParticipant : (String, (ChatRequest, ChatContext, ChatResponseStream, CancellationToken) -> @interop.Union2[@interop.Union2[ChatResult, Unit], Thenable[@interop.Union2[ChatResult, Unit]]]) -> ChatParticipant
+}
+
+pub(all) struct ChatContext {
+  history : Array[ChatRequestTurn]
+}
+impl Eq for ChatContext
+impl Show for ChatContext
+impl ToJson for ChatContext
+
+pub(all) struct ChatErrorDetails {
+  message : String
+  responseIsFiltered : Bool?
+  responseIsIncomplete : Bool?
+}
+impl Eq for ChatErrorDetails
+impl Show for ChatErrorDetails
+impl ToJson for ChatErrorDetails
+
+pub(all) struct ChatFollowup {
+  prompt : String
+  label : String?
+  tooltip : String?
+  command : String?
+}
+impl Eq for ChatFollowup
+impl Show for ChatFollowup
+impl ToJson for ChatFollowup
+
+pub(all) struct ChatFollowupProvider {
+  provideFollowups : (ChatResult, ChatContext, CancellationToken) -> @interop.Union2[Array[ChatFollowup], Thenable[Array[ChatFollowup]]]
+}
+fn ChatFollowupProvider::provideFollowups(@interop.Any, @interop.Any, @interop.Any, CancellationToken) -> @interop.Any
+impl Eq for ChatFollowupProvider
+impl Show for ChatFollowupProvider
+impl ToJson for ChatFollowupProvider
+
+pub(all) struct ChatLanguageModelToolReference {
+  name : String
+  range : Array[Int]?
+}
+impl Eq for ChatLanguageModelToolReference
+impl Show for ChatLanguageModelToolReference
+impl ToJson for ChatLanguageModelToolReference
+
+pub(all) struct ChatParticipant {
+  id : String
+  iconPath : String?
+  requestHandler : String?
+  followupProvider : ChatFollowupProvider?
+  description : String?
+  fullName : String?
+  isSticky : Bool?
+  sampleRequest : String?
+}
+fn ChatParticipant::dispose(Self) -> Unit
+fn ChatParticipant::getFollowupProvider(Self) -> @interop.Any?
+fn ChatParticipant::getIconPath(Self) -> @interop.Any?
+fn ChatParticipant::getRequestHandler(Self) -> @interop.Any
+fn ChatParticipant::setFollowupProvider(Self, @interop.Any?) -> Unit
+fn ChatParticipant::setIconPath(Self, @interop.Any?) -> Unit
+fn ChatParticipant::setRequestHandler(Self, @interop.Any) -> Unit
+impl Eq for ChatParticipant
+impl Show for ChatParticipant
+impl ToJson for ChatParticipant
+
+pub(all) enum ChatParticipantToolToken {
+}
+impl Eq for ChatParticipantToolToken
+impl Show for ChatParticipantToolToken
+impl ToJson for ChatParticipantToolToken
+
+pub(all) struct ChatPromptReference {
+  id : String
+  range : Array[Int]?
+  modelDescription : String?
+  value : @interop.Any
+}
+impl Eq for ChatPromptReference
+impl Show for ChatPromptReference
+impl ToJson for ChatPromptReference
+
+pub(all) struct ChatRequest {
+  prompt : String
+  command : String?
+  references : Array[ChatPromptReference]
+  location : Location?
+  attempt : Int
+  enableCommandDetection : Bool
+  model : LanguageModelChat
+}
+impl Eq for ChatRequest
+impl Show for ChatRequest
+impl ToJson for ChatRequest
+
+pub(all) struct ChatRequestTurn {
+  prompt : String
+  participant : String
+  references : Array[ChatPromptReference]
+  location : Location?
+  attempt : Int
+  enableCommandDetection : Bool
+}
+impl Eq for ChatRequestTurn
+impl Show for ChatRequestTurn
+impl ToJson for ChatRequestTurn
+
+pub(all) struct ChatResponseAnchorPart {
+  value : Uri
+  title : String?
+}
+fn ChatResponseAnchorPart::new(@interop.Any, String?) -> @interop.Any
+impl Eq for ChatResponseAnchorPart
+impl Show for ChatResponseAnchorPart
+impl ToJson for ChatResponseAnchorPart
+
+pub(all) struct ChatResponseCommandButtonPart {
+  value : Command
+}
+fn ChatResponseCommandButtonPart::new(Command) -> @interop.Any
+impl Eq for ChatResponseCommandButtonPart
+impl Show for ChatResponseCommandButtonPart
+impl ToJson for ChatResponseCommandButtonPart
+
+pub(all) struct ChatResponseFileTree {
+  name : String
+  children : Array[ChatResponseFileTree]?
+}
+impl Eq for ChatResponseFileTree
+impl Show for ChatResponseFileTree
+impl ToJson for ChatResponseFileTree
+
+pub(all) struct ChatResponseFileTreePart {
+  value : Array[ChatResponseFileTree]
+  baseUri : Uri
+}
+fn ChatResponseFileTreePart::new(@interop.Any, Uri) -> @interop.Any
+impl Eq for ChatResponseFileTreePart
+impl Show for ChatResponseFileTreePart
+impl ToJson for ChatResponseFileTreePart
+
+pub(all) struct ChatResponseMarkdownPart {
+  value : MarkdownString
+}
+fn ChatResponseMarkdownPart::new(@interop.Any) -> @interop.Any
+impl Eq for ChatResponseMarkdownPart
+impl Show for ChatResponseMarkdownPart
+impl ToJson for ChatResponseMarkdownPart
+
+pub(all) struct ChatResponsePart {
+  partType : String
+  content : String
+}
+impl Eq for ChatResponsePart
+impl Show for ChatResponsePart
+impl ToJson for ChatResponsePart
+
+pub(all) struct ChatResponseProgressPart {
+  value : String
+}
+fn ChatResponseProgressPart::new(String) -> @interop.Any
+impl Eq for ChatResponseProgressPart
+impl Show for ChatResponseProgressPart
+impl ToJson for ChatResponseProgressPart
+
+pub(all) struct ChatResponseReferencePart {
+  value : Uri
+  iconPath : String?
+}
+fn ChatResponseReferencePart::new(@interop.Any, @interop.Any?) -> @interop.Any
+impl Eq for ChatResponseReferencePart
+impl Show for ChatResponseReferencePart
+impl ToJson for ChatResponseReferencePart
+
+#external
+pub(all) type ChatResponseStream
+fn ChatResponseStream::anchor_with_options(Self, @interop.Any, String?) -> Unit
+fn ChatResponseStream::button(Self, Command) -> Unit
+fn ChatResponseStream::filetree(Self, Array[ChatResponseFileTree], Uri) -> Unit
+fn ChatResponseStream::markdown(Self, @interop.Any) -> Unit
+fn ChatResponseStream::progress(Self, String) -> Unit
+fn ChatResponseStream::push(Self, ChatResponsePart) -> Unit
+fn ChatResponseStream::reference_with_options(Self, @interop.Any, @interop.Union3[Uri, LightDarkIconPath, ThemeIcon]?) -> Unit
+impl Eq for ChatResponseStream
+impl Show for ChatResponseStream
+impl ToJson for ChatResponseStream
+
+pub(all) struct ChatResponseTurn {
+  response : Array[ChatResponsePart]
+  result : ChatResult?
+  participant : String
+  command : String?
+}
+impl Eq for ChatResponseTurn
+impl Show for ChatResponseTurn
+impl ToJson for ChatResponseTurn
+
+pub(all) struct ChatResult {
+  errorDetails : ChatErrorDetails?
+  metadata : @interop.Any?
+}
+impl Eq for ChatResult
+impl Show for ChatResult
+impl ToJson for ChatResult
+
+pub(all) struct ChatResultFeedback {
+  result : ChatResult
+  kind : ChatResultFeedbackKind
+}
+impl Eq for ChatResultFeedback
+impl Show for ChatResultFeedback
+impl ToJson for ChatResultFeedback
+
+pub(all) enum ChatResultFeedbackKind {
+  Unhelpful
+  Helpful
+}
+impl Eq for ChatResultFeedbackKind
+impl Show for ChatResultFeedbackKind
+impl ToJson for ChatResultFeedbackKind
+
+pub(all) struct Clipboard {
+}
+fn Clipboard::readText(Self) -> @interop.Any
+fn Clipboard::writeText(Self, String) -> @interop.Any
+impl Eq for Clipboard
+impl Show for Clipboard
+impl ToJson for Clipboard
+
+pub(all) struct CodeAction {
+  mut title : String
+  mut kind : CodeActionKind?
+  mut diagnostics : Array[Diagnostic]?
+  mut isPreferred : Bool?
+  mut disabled : Bool?
+  mut edit : WorkspaceEdit?
+  mut command : Command?
+}
+fn CodeAction::new(String, CodeActionKind?) -> Self
+impl Eq for CodeAction
+impl Show for CodeAction
+impl ToJson for CodeAction
+
+pub(all) struct CodeActionContext {
+  triggerKind : CodeActionTriggerKind
+  diagnostics : Array[Diagnostic]
+  only : CodeActionKind?
+}
+impl Eq for CodeActionContext
+impl Show for CodeActionContext
+impl ToJson for CodeActionContext
+
+pub(all) struct CodeActionKind {
+  value : String
+}
+fn CodeActionKind::append(Self, String) -> Self
+fn CodeActionKind::contains(Self, Self) -> Bool
+fn CodeActionKind::empty() -> Self
+fn CodeActionKind::intersects(Self, Self) -> Bool
+fn CodeActionKind::notebook() -> Self
+fn CodeActionKind::quick_fix() -> Self
+fn CodeActionKind::refactor() -> Self
+fn CodeActionKind::refactor_extract() -> Self
+fn CodeActionKind::refactor_inline() -> Self
+fn CodeActionKind::refactor_move() -> Self
+fn CodeActionKind::refactor_rewrite() -> Self
+fn CodeActionKind::source() -> Self
+fn CodeActionKind::source_fix_all() -> Self
+fn CodeActionKind::source_organize_imports() -> Self
+impl Eq for CodeActionKind
+impl Show for CodeActionKind
+impl ToJson for CodeActionKind
+
+pub(all) struct CodeActionProvider {
+  provideCodeActions : (TextDocument, @interop.Union2[Range, Selection], CodeActionContext, CancellationToken) -> @interop.Union2[Array[@interop.Union2[Command, CodeAction]], Thenable[Array[@interop.Union2[Command, CodeAction]]]]
+  resolveCodeAction : ((CodeAction, CancellationToken) -> @interop.Union2[CodeAction, Thenable[CodeAction]])?
+}
+fn CodeActionProvider::provideCodeActions(Self, TextDocument, @interop.Any, CodeActionContext, CancellationToken) -> @interop.Any
+fn CodeActionProvider::provideCodeActions_with_range(Self, TextDocument, Range, CodeActionContext, CancellationToken) -> @interop.Any
+fn CodeActionProvider::provideCodeActions_with_selection(Self, TextDocument, @interop.Any, CodeActionContext, CancellationToken) -> @interop.Any
+fn CodeActionProvider::resolveCodeAction(Self, @interop.Any, CancellationToken) -> @interop.Any
+impl Eq for CodeActionProvider
+impl Show for CodeActionProvider
+impl ToJson for CodeActionProvider
+
+pub(all) struct CodeActionProviderMetadata {
+  providedCodeActionKinds : Array[CodeActionKind]?
+}
+impl Eq for CodeActionProviderMetadata
+impl Show for CodeActionProviderMetadata
+impl ToJson for CodeActionProviderMetadata
+
+pub(all) enum CodeActionTriggerKind {
+  Invoke
+  Automatic
+}
+impl Eq for CodeActionTriggerKind
+impl Show for CodeActionTriggerKind
+impl ToJson for CodeActionTriggerKind
+
+pub(all) struct CodeLens {
+  range : Range
+  command : Command?
+  isResolved : Bool
+}
+fn CodeLens::new(Range, Command?) -> Self
+impl Eq for CodeLens
+impl Show for CodeLens
+impl ToJson for CodeLens
+
+pub(all) struct CodeLensProvider {
+  onDidChangeCodeLenses : Event[Unit]?
+  provide_code_lenses : (TextDocument, CancellationToken) -> @interop.Union2[Array[CodeLens], Thenable[Array[CodeLens]]]
+  resolve_code_lens : (CodeLens, CancellationToken) -> @interop.Union2[CodeLens, Thenable[CodeLens]]
+}
+fn CodeLensProvider::provideCodeLenses(Self, TextDocument, CancellationToken) -> @interop.Any
+fn CodeLensProvider::resolveCodeLens(Self, @interop.Any, CancellationToken) -> @interop.Any
+
+pub(all) struct Color {
+  red : Double
+  green : Double
+  blue : Double
+  alpha : Double
+}
+fn Color::new(Double, Double, Double, Double) -> Self
+impl Eq for Color
+impl Show for Color
+impl ToJson for Color
+
+pub(all) struct ColorInformation {
+  range : Range
+  color : Color
+}
+fn ColorInformation::new(Range, @interop.Any) -> @interop.Any
+impl Eq for ColorInformation
+impl Show for ColorInformation
+impl ToJson for ColorInformation
+
+pub(all) struct ColorPresentation {
+  label : String
+  textEdit : TextEdit?
+  additionalTextEdits : Array[TextEdit]?
+}
+fn ColorPresentation::new(String) -> Self
+impl Eq for ColorPresentation
+impl Show for ColorPresentation
+impl ToJson for ColorPresentation
+
+pub(all) struct ColorTheme {
+  kind : ColorThemeKind
+}
+impl Eq for ColorTheme
+impl Show for ColorTheme
+impl ToJson for ColorTheme
+
+pub(all) enum ColorThemeKind {
+  Light
+  Dark
+  HighContrast
+  HighContrastLight
+}
+impl Eq for ColorThemeKind
+impl Show for ColorThemeKind
+impl ToJson for ColorThemeKind
+
+pub(all) struct Command {
+  mut title : String
+  mut command : String
+  mut tooltip : String?
+  mut arguments : Array[@interop.Any]?
+}
+impl Eq for Command
+impl Show for Command
+impl ToJson for Command
+
+pub(all) struct Commands {
+  registerCommand : (String, @interop.Func0Rest[@interop.Any, @interop.Any]) -> Disposable
+  registerTextEditorCommand : (String, @interop.Func2Rest[Unit, @interop.Any, TextEditor, TextEditorEdit]) -> Disposable
+  executeCommand : @interop.Func1Rest[Thenable[@interop.Any], @interop.Any, String]
+  getCommands : (Bool?) -> Thenable[Array[String]]
+}
+
+pub(all) struct Comment {
+  mut body : String
+  mut mode : CommentMode
+  mut author : CommentAuthorInformation
+  mut parent : CommentThread?
+  mut contextValue : String?
+  mut reactions : Array[CommentReaction]?
+  mut label : String?
+  mut timestamp : @interop.Any?
+}
+impl Eq for Comment
+impl Show for Comment
+impl ToJson for Comment
+
+pub(all) struct CommentAuthorInformation {
+  mut name : String
+  mut iconPath : Uri?
+}
+impl Eq for CommentAuthorInformation
+impl Show for CommentAuthorInformation
+impl ToJson for CommentAuthorInformation
+
+pub(all) struct CommentController {
+  id : String
+  label : String
+  options : CommentOptions?
+  commentingRangeProvider : CommentingRangeProvider?
+}
+fn CommentController::dispose(Self) -> Unit
+fn CommentController::getCommentingRangeProvider(Self) -> @interop.Any?
+fn CommentController::getOptions(Self) -> @interop.Any?
+fn CommentController::setCommentingRangeProvider(Self, @interop.Any?) -> Unit
+fn CommentController::setOptions(Self, @interop.Any?) -> Unit
+impl Eq for CommentController
+impl Show for CommentController
+impl ToJson for CommentController
+
+pub(all) enum CommentMode {
+  Editing
+  Preview
+}
+impl Eq for CommentMode
+impl Show for CommentMode
+impl ToJson for CommentMode
+
+pub(all) struct CommentOptions {
+  prompt : String?
+  placeHolder : String?
+}
+impl Eq for CommentOptions
+impl Show for CommentOptions
+impl ToJson for CommentOptions
+
+pub(all) struct CommentReaction {
+  label : String
+  iconPath : @interop.Union3[Uri, LightDarkIconPath, ThemeIcon]
+  count : Int
+  authorHasReacted : Bool
+}
+impl Eq for CommentReaction
+impl Show for CommentReaction
+impl ToJson for CommentReaction
+
+pub(all) struct CommentReply {
+  thread : CommentThread
+  text : String
+}
+impl Eq for CommentReply
+impl Show for CommentReply
+impl ToJson for CommentReply
+
+pub(all) struct CommentRule {
+  mut lineComment : String?
+  mut blockComment : (String, String)?
+}
+impl Eq for CommentRule
+impl Show for CommentRule
+impl ToJson for CommentRule
+
+pub(all) struct CommentThread {
+  uri : Uri
+  mut range : Range
+  mut comments : Array[Comment]
+  mut collapsibleState : CommentThreadCollapsibleState
+  mut canReply : Bool
+  mut contextValue : String?
+  mut label : String?
+  mut state : CommentThreadState?
+}
+fn CommentThread::dispose(Self) -> Unit
+fn CommentThread::getCanReply(Self) -> Bool
+fn CommentThread::getCollapsibleState(Self) -> @interop.Any
+fn CommentThread::getComments(Self) -> @interop.Any
+fn CommentThread::getContextValue(Self) -> String?
+fn CommentThread::getLabel(Self) -> String?
+fn CommentThread::setCanReply(Self, Bool) -> Unit
+fn CommentThread::setCollapsibleState(Self, @interop.Any) -> Unit
+fn CommentThread::setComments(Self, @interop.Any) -> Unit
+fn CommentThread::setContextValue(Self, String?) -> Unit
+fn CommentThread::setLabel(Self, String?) -> Unit
+impl Eq for CommentThread
+impl Show for CommentThread
+impl ToJson for CommentThread
+
+pub(all) enum CommentThreadCollapsibleState {
+  Collapsed
+  Expanded
+}
+impl Eq for CommentThreadCollapsibleState
+impl Show for CommentThreadCollapsibleState
+impl ToJson for CommentThreadCollapsibleState
+
+pub(all) enum CommentThreadState {
+  Unresolved
+  Resolved
+}
+impl Eq for CommentThreadState
+impl Show for CommentThreadState
+impl ToJson for CommentThreadState
+
+pub(all) struct CommentingRangeProvider {
+  provideCommentingRanges : (TextDocument, CancellationToken) -> @interop.Union2[@interop.Union2[Array[Range], CommentingRanges], Thenable[@interop.Union2[Array[Range], CommentingRanges]]]
+}
+fn CommentingRangeProvider::provideCommentingRanges(Self, TextDocument, CancellationToken) -> @interop.Any
+impl Eq for CommentingRangeProvider
+impl Show for CommentingRangeProvider
+impl ToJson for CommentingRangeProvider
+
+pub(all) struct CommentingRanges {
+  ranges : Array[Range]?
+}
+impl Eq for CommentingRanges
+impl Show for CommentingRanges
+impl ToJson for CommentingRanges
+
+pub(all) struct CompletionContext {
+  triggerKind : CompletionTriggerKind
+  triggerCharacter : String?
+}
+impl Eq for CompletionContext
+impl Show for CompletionContext
+impl ToJson for CompletionContext
+
+pub(all) struct CompletionItem {
+  mut label : @interop.Union2[String, CompletionItemLabel]
+  mut kind : CompletionItemKind?
+  mut tags : Array[CompletionItemTag]?
+  mut detail : String?
+  mut documentation : @interop.Union2[String, MarkdownString]?
+  mut sortText : String?
+  mut filterText : String?
+  mut preselect : Bool?
+  mut insertText : @interop.Union2[String, SnippetString]?
+  mut range : @interop.Union2[Range, CompletionItemRange]?
+  mut commitCharacters : Array[String]?
+  mut keepWhitespace : Bool?
+  mut textEdit : TextEdit?
+  mut additionalTextEdits : Array[TextEdit]?
+  mut command : Command?
+}
+fn CompletionItem::new(@interop.Union2[String, CompletionItemLabel], CompletionItemKind?) -> Self
+impl Eq for CompletionItem
+impl Show for CompletionItem
+impl ToJson for CompletionItem
+
+pub(all) enum CompletionItemKind {
+  Text
+  Method
+  Function
+  Constructor
+  Field
+  Variable
+  Class
+  Interface
+  Module
+  Property
+  Unit
+  Value
+  Enum
+  Keyword
+  Snippet
+  Color
+  File
+  Reference
+  Folder
+  EnumMember
+  Constant
+  Struct
+  Event
+  Operator
+  TypeParameter
+  User
+  Issue
+}
+impl Eq for CompletionItemKind
+impl Show for CompletionItemKind
+impl ToJson for CompletionItemKind
+
+pub(all) struct CompletionItemLabel {
+  label : String
+  detail : String?
+  description : String?
+}
+impl Eq for CompletionItemLabel
+impl Show for CompletionItemLabel
+impl ToJson for CompletionItemLabel
+
+pub(all) struct CompletionItemProvider {
+  provideCompletionItems : (TextDocument, Position, CancellationToken, CompletionContext) -> @interop.Union2[@interop.Union2[Array[CompletionItem], CompletionList], Thenable[@interop.Union2[Array[CompletionItem], CompletionList]]]
+  resolveCompletionItem : ((CompletionItem, CancellationToken) -> @interop.Union2[CompletionItem, Thenable[CompletionItem]])?
+}
+fn CompletionItemProvider::provideCompletionItems(Self, TextDocument, Position, CancellationToken, CompletionContext) -> @interop.Any
+fn CompletionItemProvider::resolveCompletionItem(Self, @interop.Any, CancellationToken) -> @interop.Any
+impl Eq for CompletionItemProvider
+impl Show for CompletionItemProvider
+impl ToJson for CompletionItemProvider
+
+pub(all) struct CompletionItemRange {
+  inserting : Range
+  replacing : Range
+}
+impl Eq for CompletionItemRange
+impl Show for CompletionItemRange
+impl ToJson for CompletionItemRange
+
+pub(all) enum CompletionItemTag {
+  Deprecated
+}
+impl Eq for CompletionItemTag
+impl Show for CompletionItemTag
+impl ToJson for CompletionItemTag
+
+pub(all) struct CompletionList {
+  isIncomplete : Bool?
+  items : Array[CompletionItem]
+}
+fn CompletionList::new(Array[CompletionItem]?, Bool?) -> Self
+impl Eq for CompletionList
+impl Show for CompletionList
+impl ToJson for CompletionList
+
+pub(all) enum CompletionTriggerKind {
+  Invoke
+  TriggerCharacter
+  TriggerForIncompleteCompletions
+}
+impl Eq for CompletionTriggerKind
+impl Show for CompletionTriggerKind
+impl ToJson for CompletionTriggerKind
+
+#external
+pub(all) type ConfigurationChangeEvent
+fn ConfigurationChangeEvent::affectsConfiguration_with_options(Self, String, @interop.Union4[Uri, TextDocument, WorkspaceFolder, ConfigurationScopeObj]?) -> Bool
+impl Eq for ConfigurationChangeEvent
+impl Show for ConfigurationChangeEvent
+impl ToJson for ConfigurationChangeEvent
+
+pub(all) struct ConfigurationScopeObj {
+  uri : Uri?
+  languageId : String
+}
+impl Eq for ConfigurationScopeObj
+impl Show for ConfigurationScopeObj
+impl ToJson for ConfigurationScopeObj
+
+pub(all) enum ConfigurationTarget {
+  Global
+  Workspace
+  WorkspaceFolder
+}
+
+pub(all) struct CustomDocument {
+  uri : Uri
+}
+fn CustomDocument::dispose(Self) -> Unit
+impl Eq for CustomDocument
+impl Show for CustomDocument
+impl ToJson for CustomDocument
+
+pub(all) struct CustomDocumentBackup {
+  id : String
+}
+fn CustomDocumentBackup::delete(Self) -> Unit
+impl Eq for CustomDocumentBackup
+impl Show for CustomDocumentBackup
+impl ToJson for CustomDocumentBackup
+
+pub(all) struct CustomDocumentBackupContext {
+  destination : Uri
+}
+impl Eq for CustomDocumentBackupContext
+impl Show for CustomDocumentBackupContext
+impl ToJson for CustomDocumentBackupContext
+
+pub(all) struct CustomDocumentContentChangeEvent {
+  document : CustomDocument
+}
+impl Eq for CustomDocumentContentChangeEvent
+impl Show for CustomDocumentContentChangeEvent
+impl ToJson for CustomDocumentContentChangeEvent
+
+pub(all) struct CustomDocumentEditEvent {
+  document : CustomDocument
+  label : String?
+}
+fn CustomDocumentEditEvent::redo(Self) -> @interop.Any
+fn CustomDocumentEditEvent::undo(Self) -> @interop.Any
+impl Eq for CustomDocumentEditEvent
+impl Show for CustomDocumentEditEvent
+impl ToJson for CustomDocumentEditEvent
+
+pub(all) struct CustomDocumentOpenContext {
+  backupId : String?
+  untitledDocumentData : FixedArray[Byte]?
+}
+impl Eq for CustomDocumentOpenContext
+impl Show for CustomDocumentOpenContext
+impl ToJson for CustomDocumentOpenContext
+
+pub(all) struct CustomEditorProvider {
+  onDidChangeCustomDocument : Event[CustomDocumentEditEvent]?
+  openCustomDocument : (Uri, CustomDocumentOpenContext, CancellationToken) -> Thenable[CustomDocument]
+  resolveCustomEditor : (CustomDocument, WebviewPanel, CancellationToken) -> Thenable[Unit]
+  saveCustomDocument : (CustomDocument, CancellationToken) -> Thenable[Unit]
+  saveCustomDocumentAs : (CustomDocument, Uri, CancellationToken) -> Thenable[Unit]
+  revertCustomDocument : (CustomDocument, CancellationToken) -> Thenable[Unit]
+  backupCustomDocument : (CustomDocument, CustomDocumentBackupContext, CancellationToken) -> Thenable[CustomDocumentBackup]
+}
+fn CustomEditorProvider::backupCustomDocument(Self, @interop.Any, @interop.Any, CancellationToken) -> @interop.Any
+fn CustomEditorProvider::revertCustomDocument(Self, @interop.Any, CancellationToken) -> @interop.Any
+fn CustomEditorProvider::saveCustomDocument(Self, @interop.Any, CancellationToken) -> @interop.Any
+fn CustomEditorProvider::saveCustomDocumentAs(Self, @interop.Any, Uri, CancellationToken) -> @interop.Any
+impl Eq for CustomEditorProvider
+impl Show for CustomEditorProvider
+impl ToJson for CustomEditorProvider
+
+#external
+pub(all) type CustomExecution
+fn CustomExecution::new(@interop.Any) -> @interop.Any
+impl Eq for CustomExecution
+impl Show for CustomExecution
+impl ToJson for CustomExecution
+
+pub(all) struct CustomReadonlyEditorProvider {
+  openCustomDocument : (Uri, CustomDocumentOpenContext, CancellationToken) -> Thenable[CustomDocument]
+  resolveCustomEditor : (CustomDocument, WebviewPanel, CancellationToken) -> Thenable[Unit]
+}
+fn CustomReadonlyEditorProvider::openCustomDocument(Self, Uri, @interop.Any, CancellationToken) -> @interop.Any
+fn CustomReadonlyEditorProvider::resolveCustomEditor(Self, @interop.Any, WebviewPanel, CancellationToken) -> @interop.Any
+impl Eq for CustomReadonlyEditorProvider
+impl Show for CustomReadonlyEditorProvider
+impl ToJson for CustomReadonlyEditorProvider
+
+pub(all) struct CustomTextEditorProvider {
+  resolveCustomTextEditor : (TextDocument, WebviewPanel, CancellationToken) -> Thenable[Unit]
+}
+fn CustomTextEditorProvider::resolveCustomTextEditor(Self, @interop.Any, WebviewPanel, CancellationToken) -> @interop.Any
+impl Eq for CustomTextEditorProvider
+impl Show for CustomTextEditorProvider
+impl ToJson for CustomTextEditorProvider
+
+pub(all) struct DataTransfer {
+  items : Array[DataTransferItem]
+}
+fn DataTransfer::forEach(Self, @interop.Any) -> Unit
+fn DataTransfer::get(Self, String) -> DataTransferItem?
+fn DataTransfer::set(Self, String, DataTransferItem) -> Unit
+impl Eq for DataTransfer
+impl Show for DataTransfer
+impl ToJson for DataTransfer
+
+pub(all) struct DataTransferFile {
+  name : String
+  uri : Uri?
+}
+fn DataTransferFile::data(Self) -> @interop.Any
+impl Eq for DataTransferFile
+impl Show for DataTransferFile
+impl ToJson for DataTransferFile
+
+pub(all) struct DataTransferItem {
+  value : @interop.Any
+}
+fn DataTransferItem::asFile(Self) -> DataTransferFile?
+fn DataTransferItem::asString(Self) -> @interop.Any
+fn DataTransferItem::new(@interop.Any) -> @interop.Any
+impl Eq for DataTransferItem
+impl Show for DataTransferItem
+impl ToJson for DataTransferItem
+
+pub(all) struct Debug {
+  activeDebugSession : DebugSession?
+  activeDebugConsole : DebugConsole
+  breakpoints : Array[Breakpoint]
+  activeStackItem : @interop.Union2[DebugThread, DebugStackFrame]?
+  onDidChangeActiveDebugSession : Event[DebugSession?]
+  onDidStartDebugSession : Event[DebugSession]
+  onDidReceiveDebugSessionCustomEvent : Event[DebugSessionCustomEvent]
+  onDidTerminateDebugSession : Event[DebugSession]
+  onDidChangeBreakpoints : Event[BreakpointsChangeEvent]
+  onDidChangeActiveStackItem : Event[@interop.Union2[DebugThread, DebugStackFrame]?]
+  registerDebugConfigurationProvider : (String, DebugConfigurationProvider, DebugConfigurationProviderTriggerKind?) -> Disposable
+  registerDebugAdapterDescriptorFactory : (String, DebugAdapterDescriptorFactory) -> Disposable
+  registerDebugAdapterTrackerFactory : (String, DebugAdapterTrackerFactory) -> Disposable
+  startDebugging : (WorkspaceFolder?, DebugConfiguration, DebugSessionOptions?) -> Thenable[Bool]
+  stopDebugging : (DebugSession?) -> Thenable[Unit]
+  addBreakpoints : (Array[Breakpoint]) -> Unit
+  removeBreakpoints : (Array[Breakpoint]) -> Unit
+  asDebugSourceUri : (DebugProtocolSource, DebugSession?) -> Uri
+}
+
+pub(all) struct DebugAdapter {
+}
+fn DebugAdapter::handleMessage(Self, DebugProtocolMessage) -> Unit
+impl Eq for DebugAdapter
+impl Show for DebugAdapter
+impl ToJson for DebugAdapter
+
+pub(all) struct DebugAdapterDescriptorFactory {
+}
+fn DebugAdapterDescriptorFactory::createDebugAdapterDescriptor(Self, DebugSession, @interop.Any?) -> @interop.Any
+impl Eq for DebugAdapterDescriptorFactory
+impl Show for DebugAdapterDescriptorFactory
+impl ToJson for DebugAdapterDescriptorFactory
+
+pub(all) struct DebugAdapterExecutable {
+  command : String
+  args : Array[String]
+  options : DebugAdapterExecutableOptions?
+}
+fn DebugAdapterExecutable::new(String, Array[String]?, @interop.Any?) -> @interop.Any
+impl Eq for DebugAdapterExecutable
+impl Show for DebugAdapterExecutable
+impl ToJson for DebugAdapterExecutable
+
+pub(all) struct DebugAdapterExecutableOptions {
+  env : Map[String, String]?
+  cwd : String?
+}
+impl Eq for DebugAdapterExecutableOptions
+impl Show for DebugAdapterExecutableOptions
+impl ToJson for DebugAdapterExecutableOptions
+
+pub(all) struct DebugAdapterInlineImplementation {
+  implementation : DebugAdapter
+}
+fn DebugAdapterInlineImplementation::new(@interop.Any) -> @interop.Any
+impl Eq for DebugAdapterInlineImplementation
+impl Show for DebugAdapterInlineImplementation
+impl ToJson for DebugAdapterInlineImplementation
+
+pub(all) struct DebugAdapterNamedPipeServer {
+  path : String
+}
+fn DebugAdapterNamedPipeServer::new(String) -> @interop.Any
+impl Eq for DebugAdapterNamedPipeServer
+impl Show for DebugAdapterNamedPipeServer
+impl ToJson for DebugAdapterNamedPipeServer
+
+pub(all) struct DebugAdapterServer {
+  port : Int
+  host : String?
+}
+fn DebugAdapterServer::new(Int, String?) -> @interop.Any
+impl Eq for DebugAdapterServer
+impl Show for DebugAdapterServer
+impl ToJson for DebugAdapterServer
+
+pub(all) struct DebugAdapterTracker {
+}
+fn DebugAdapterTracker::onDidSendMessage(Self, @interop.Any) -> Unit
+fn DebugAdapterTracker::onError(Self, Error) -> Unit
+fn DebugAdapterTracker::onExit(Self, Int?, String?) -> Unit
+fn DebugAdapterTracker::onWillReceiveMessage(Self, @interop.Any) -> Unit
+fn DebugAdapterTracker::onWillStartSession(Self) -> Unit
+fn DebugAdapterTracker::onWillStopSession(Self) -> Unit
+impl Eq for DebugAdapterTracker
+impl Show for DebugAdapterTracker
+impl ToJson for DebugAdapterTracker
+
+pub(all) struct DebugAdapterTrackerFactory {
+}
+fn DebugAdapterTrackerFactory::createDebugAdapterTracker(Self, DebugSession) -> @interop.Any
+impl Eq for DebugAdapterTrackerFactory
+impl Show for DebugAdapterTrackerFactory
+impl ToJson for DebugAdapterTrackerFactory
+
+pub(all) struct DebugConfiguration {
+  sessionType : String
+  name : String
+  request : String
+}
+impl Eq for DebugConfiguration
+impl Show for DebugConfiguration
+impl ToJson for DebugConfiguration
+
+pub(all) struct DebugConfigurationProvider {
+  provideDebugConfigurations : (WorkspaceFolder?, CancellationToken?) -> @interop.Union2[Array[DebugConfiguration], Thenable[Array[DebugConfiguration]]]
+  resolveDebugConfiguration : (WorkspaceFolder?, DebugConfiguration, CancellationToken?) -> @interop.Union2[DebugConfiguration, Thenable[DebugConfiguration]]
+  resolveDebugConfigurationWithSubstitutedVariables : (WorkspaceFolder?, DebugConfiguration, CancellationToken?) -> @interop.Union2[DebugConfiguration, Thenable[DebugConfiguration]]
+}
+fn DebugConfigurationProvider::provideDebugConfigurations(Self, @interop.Any?, CancellationToken?) -> @interop.Any
+fn DebugConfigurationProvider::resolveDebugConfiguration(Self, @interop.Any?, @interop.Any, CancellationToken?) -> @interop.Any
+fn DebugConfigurationProvider::resolveDebugConfigurationWithSubstitutedVariables(Self, @interop.Any?, @interop.Any, CancellationToken?) -> @interop.Any
+impl Eq for DebugConfigurationProvider
+impl Show for DebugConfigurationProvider
+impl ToJson for DebugConfigurationProvider
+
+pub(all) enum DebugConfigurationProviderTriggerKind {
+  Initial
+  Dynamic
+}
+
+pub(all) struct DebugConsole {
+}
+fn DebugConsole::append(Self, String) -> Unit
+fn DebugConsole::appendLine(Self, String) -> Unit
+impl Eq for DebugConsole
+impl Show for DebugConsole
+impl ToJson for DebugConsole
+
+pub(all) enum DebugConsoleMode {
+  Separate
+  MergeWithParent
+}
+impl Eq for DebugConsoleMode
+impl Show for DebugConsoleMode
+impl ToJson for DebugConsoleMode
+
+pub(all) struct DebugProtocolBreakpoint {
+  id : Int?
+  verified : Bool
+  message : String?
+  source : DebugProtocolSource?
+  line : Int?
+  column : Int?
+  endLine : Int?
+  endColumn : Int?
+}
+impl Eq for DebugProtocolBreakpoint
+impl Show for DebugProtocolBreakpoint
+impl ToJson for DebugProtocolBreakpoint
+
+pub(all) struct DebugProtocolMessage {
+  id : Int
+  format : String
+  variables : Map[String, String]?
+  sendTelemetry : Bool?
+  showUser : Bool?
+  url : String?
+  urlLabel : String?
+}
+impl Eq for DebugProtocolMessage
+impl Show for DebugProtocolMessage
+impl ToJson for DebugProtocolMessage
+
+pub(all) struct DebugProtocolSource {
+  name : String?
+  path : String?
+  sourceReference : Int?
+}
+impl Eq for DebugProtocolSource
+impl Show for DebugProtocolSource
+impl ToJson for DebugProtocolSource
+
+pub(all) struct DebugSession {
+  id : String
+  sessionType : String
+  parentSession : DebugSession?
+  mut name : String
+  workspaceFolder : WorkspaceFolder?
+  configuration : DebugConfiguration
+}
+fn DebugSession::customRequest_with_options(Self, String, @interop.Any?) -> @interop.Any
+impl Eq for DebugSession
+impl Show for DebugSession
+impl ToJson for DebugSession
+
+pub(all) struct DebugSessionCustomEvent {
+  session : DebugSession
+  event : String
+  body : @interop.Any
+}
+impl Eq for DebugSessionCustomEvent
+impl Show for DebugSessionCustomEvent
+impl ToJson for DebugSessionCustomEvent
+
+pub(all) struct DebugSessionOptions {
+  parentSession : DebugSession?
+  lifecycleManagedByParent : Bool?
+  consoleMode : DebugConsoleMode?
+  noDebug : Bool?
+  compact : Bool?
+  suppressSaveBeforeStart : Bool?
+  suppressDebugToolbar : Bool?
+  suppressDebugStatusbar : Bool?
+  suppressDebugView : Bool?
+  testRun : TestRun?
+}
+impl Eq for DebugSessionOptions
+impl Show for DebugSessionOptions
+impl ToJson for DebugSessionOptions
+
+pub(all) struct DebugStackFrame {
+  id : String
+  label : String
+  thread : DebugThread
+  source : DebugProtocolSource?
+  range : Range
+}
+impl Eq for DebugStackFrame
+impl Show for DebugStackFrame
+impl ToJson for DebugStackFrame
+
+pub(all) struct DebugThread {
+  id : String
+  name : String
+}
+impl Eq for DebugThread
+impl Show for DebugThread
+impl ToJson for DebugThread
+
+pub(all) struct DeclarationCoverage {
+  executed : Int
+  location : Location
+}
+fn DeclarationCoverage::new(String, @interop.Any, @interop.Any) -> @interop.Any
+impl Eq for DeclarationCoverage
+impl Show for DeclarationCoverage
+impl ToJson for DeclarationCoverage
+
+pub(all) struct DeclarationProvider {
+  provideDeclaration : (TextDocument, Position, CancellationToken) -> @interop.Union2[@interop.Union2[@interop.Union2[Location, Array[Location]], Array[LocationLink]], Thenable[@interop.Union2[@interop.Union2[Location, Array[Location]], Array[LocationLink]]]]
+}
+fn DeclarationProvider::provideDeclaration(Self, TextDocument, Position, CancellationToken) -> @interop.Any
+impl Eq for DeclarationProvider
+impl Show for DeclarationProvider
+impl ToJson for DeclarationProvider
+
+pub(all) struct DecorationInstanceRenderOptions {
+  before : ThemableDecorationAttachmentRenderOptions?
+  after : ThemableDecorationAttachmentRenderOptions?
+}
+impl Eq for DecorationInstanceRenderOptions
+impl Show for DecorationInstanceRenderOptions
+impl ToJson for DecorationInstanceRenderOptions
+
+pub(all) struct DecorationOptions {
+  mut range : Range
+  mut hoverMessage : @interop.Union3[MarkdownString, @interop.Union2[String, MarkedStringObject], Array[@interop.Union2[MarkdownString, @interop.Union2[String, MarkedStringObject]]]]?
+  mut renderOptions : DecorationInstanceRenderOptions?
+}
+impl Eq for DecorationOptions
+impl Show for DecorationOptions
+impl ToJson for DecorationOptions
+
+pub(all) enum DecorationRangeBehavior {
+  OpenOpen
+  ClosedClosed
+  OpenClosed
+  ClosedOpen
+}
+impl Eq for DecorationRangeBehavior
+impl Show for DecorationRangeBehavior
+impl ToJson for DecorationRangeBehavior
+
+pub(all) struct DecorationRenderOptions {
+  mut isWholeLine : Bool?
+  mut rangeBehavior : DecorationRangeBehavior?
+  mut overviewRulerLane : OverviewRulerLane?
+  mut light : ThemableDecorationRenderOptions?
+  mut dark : ThemableDecorationRenderOptions?
+  mut backgroundColor : String?
+  mut outline : String?
+  mut outlineColor : String?
+  mut outlineStyle : String?
+  mut outlineWidth : String?
+  mut border : String?
+  mut borderColor : String?
+  mut borderRadius : String?
+  mut borderSpacing : String?
+  mut borderStyle : String?
+  mut borderWidth : String?
+  mut fontStyle : String?
+  mut fontWeight : String?
+  mut textDecoration : String?
+  mut color : String?
+  mut opacity : String?
+  mut letterSpacing : String?
+  mut gutterIconPath : String?
+  mut gutterIconSize : String?
+  mut cursor : String?
+  mut before : ThemableDecorationAttachmentRenderOptions?
+  mut after : ThemableDecorationAttachmentRenderOptions?
+}
+impl Eq for DecorationRenderOptions
+impl Show for DecorationRenderOptions
+impl ToJson for DecorationRenderOptions
+
+pub(all) struct DefinitionProvider {
+  provideDefinition : (TextDocument, Position, CancellationToken) -> @interop.Union2[@interop.Union2[@interop.Union2[Location, Array[Location]], Array[LocationLink]], Thenable[@interop.Union2[@interop.Union2[Location, Array[Location]], Array[LocationLink]]]]
+}
+fn DefinitionProvider::provideDefinition(Self, TextDocument, Position, CancellationToken) -> @interop.Any
+impl Eq for DefinitionProvider
+impl Show for DefinitionProvider
+impl ToJson for DefinitionProvider
+
+pub(all) struct Diagnostic {
+  range : Range
+  message : String
+  severity : DiagnosticSeverity
+  source : String?
+  code : @interop.Union3[String, Int, DiagnosticCode]?
+  tags : Array[DiagnosticTag]?
+  relatedInformation : Array[DiagnosticRelatedInformation]?
+}
+fn Diagnostic::new(Range, String, DiagnosticSeverity?) -> Self
+impl Eq for Diagnostic
+impl Show for Diagnostic
+impl ToJson for Diagnostic
+
+pub(all) struct DiagnosticChangeEvent {
+  uris : Array[Uri]
+}
+impl Eq for DiagnosticChangeEvent
+impl Show for DiagnosticChangeEvent
+impl ToJson for DiagnosticChangeEvent
+
+pub(all) struct DiagnosticCode {
+  value : @interop.Union2[String, Int]
+  target : Uri
+}
+impl Eq for DiagnosticCode
+impl Show for DiagnosticCode
+impl ToJson for DiagnosticCode
+
+pub(all) struct DiagnosticCollection {
+  name : String
+}
+fn DiagnosticCollection::clear(Self) -> Unit
+fn DiagnosticCollection::delete(Self, Uri) -> Unit
+fn DiagnosticCollection::dispose(Self) -> Unit
+fn DiagnosticCollection::forEach(Self, @interop.Any) -> Unit
+fn DiagnosticCollection::get(Self, Uri) -> Array[Diagnostic]?
+fn DiagnosticCollection::has(Self, Uri) -> Bool
+fn DiagnosticCollection::set(Self, Uri, @interop.Any) -> Unit
+fn DiagnosticCollection::set_entries(Self, @interop.Any?) -> Unit
+impl Eq for DiagnosticCollection
+impl Show for DiagnosticCollection
+impl ToJson for DiagnosticCollection
+
+pub(all) struct DiagnosticRelatedInformation {
+  location : Location
+  message : String
+}
+fn DiagnosticRelatedInformation::new(Location, String) -> Self
+impl Eq for DiagnosticRelatedInformation
+impl Show for DiagnosticRelatedInformation
+impl ToJson for DiagnosticRelatedInformation
+
+pub(all) enum DiagnosticSeverity {
+  Error
+  Warning
+  Information
+  Hint
+}
+impl Eq for DiagnosticSeverity
+impl Show for DiagnosticSeverity
+impl ToJson for DiagnosticSeverity
+
+pub(all) enum DiagnosticTag {
+  Unnecessary
+  Deprecated
+}
+impl Eq for DiagnosticTag
+impl Show for DiagnosticTag
+impl ToJson for DiagnosticTag
+
+#external
+pub(all) type Disposable
+fn Disposable::dispose(Self) -> @interop.Any
+fn Disposable::from(@interop.Any) -> Self
+fn Disposable::new(@interop.Any) -> Self
+impl Eq for Disposable
+impl Show for Disposable
+impl ToJson for Disposable
+
+pub(all) struct DocumentColorContext {
+  document : TextDocument
+  range : Range
+}
+impl Eq for DocumentColorContext
+impl Show for DocumentColorContext
+impl ToJson for DocumentColorContext
+
+pub(all) struct DocumentColorProvider {
+  provideDocumentColors : (TextDocument, CancellationToken) -> @interop.Union2[Array[ColorInformation], Thenable[Array[ColorInformation]]]
+  provideColorPresentations : (Color, DocumentColorContext, CancellationToken) -> @interop.Union2[Array[ColorPresentation], Thenable[Array[ColorPresentation]]]
+}
+fn DocumentColorProvider::provideColorPresentations(Self, @interop.Any, @interop.Any, CancellationToken) -> @interop.Any
+fn DocumentColorProvider::provideDocumentColors(Self, TextDocument, CancellationToken) -> @interop.Any
+impl Eq for DocumentColorProvider
+impl Show for DocumentColorProvider
+impl ToJson for DocumentColorProvider
+
+pub(all) struct DocumentDropEdit {
+  title : String?
+  kind : DocumentDropOrPasteEditKind?
+  insertText : String
+  additionalEdit : WorkspaceEdit?
+}
+fn DocumentDropEdit::new(@interop.Any, String?, @interop.Any?) -> @interop.Any
+impl Eq for DocumentDropEdit
+impl Show for DocumentDropEdit
+impl ToJson for DocumentDropEdit
+
+pub(all) struct DocumentDropEditProvider {
+  provideDocumentDropEdits : (TextDocument, Position, DataTransfer, CancellationToken) -> @interop.Union2[DocumentDropEdit, Thenable[DocumentDropEdit]]
+}
+fn DocumentDropEditProvider::provideDocumentDropEdits(Self, TextDocument, Position, @interop.Any, CancellationToken) -> @interop.Any
+impl Eq for DocumentDropEditProvider
+impl Show for DocumentDropEditProvider
+impl ToJson for DocumentDropEditProvider
+
+pub(all) struct DocumentDropEditProviderMetadata {
+  providedDropEditKinds : Array[DocumentDropOrPasteEditKind]?
+}
+impl Eq for DocumentDropEditProviderMetadata
+impl Show for DocumentDropEditProviderMetadata
+impl ToJson for DocumentDropEditProviderMetadata
+
+pub(all) struct DocumentDropOrPasteEditKind {
+  value : String
+}
+fn DocumentDropOrPasteEditKind::append(Self, Array[String]) -> Self
+fn DocumentDropOrPasteEditKind::contains(Self, Self) -> Bool
+fn DocumentDropOrPasteEditKind::intersects(Self, Self) -> Bool
+impl Eq for DocumentDropOrPasteEditKind
+impl Show for DocumentDropOrPasteEditKind
+impl ToJson for DocumentDropOrPasteEditKind
+
+pub(all) struct DocumentFilter {
+  language : String?
+  notebookType : String?
+  scheme : String?
+  pattern : @interop.Union2[String, RelativePattern]?
+}
+impl Eq for DocumentFilter
+impl Show for DocumentFilter
+impl ToJson for DocumentFilter
+
+pub(all) struct DocumentFormattingEditProvider {
+  provideDocumentFormattingEdits : (TextDocument, FormattingOptions, CancellationToken) -> @interop.Union2[Array[TextEdit], Thenable[Array[TextEdit]]]
+}
+fn DocumentFormattingEditProvider::provideDocumentFormattingEdits(Self, TextDocument, @interop.Any, CancellationToken) -> @interop.Any
+impl Eq for DocumentFormattingEditProvider
+impl Show for DocumentFormattingEditProvider
+impl ToJson for DocumentFormattingEditProvider
+
+pub(all) struct DocumentHighlight {
+  range : Range
+  kind : DocumentHighlightKind?
+}
+fn DocumentHighlight::new(Range, DocumentHighlightKind?) -> Self
+impl Eq for DocumentHighlight
+impl Show for DocumentHighlight
+impl ToJson for DocumentHighlight
+
+pub(all) enum DocumentHighlightKind {
+  Text
+  Read
+  Write
+}
+impl Eq for DocumentHighlightKind
+impl Show for DocumentHighlightKind
+impl ToJson for DocumentHighlightKind
+
+pub(all) struct DocumentHighlightProvider {
+  provideDocumentHighlights : (TextDocument, Position, CancellationToken) -> @interop.Union2[Array[DocumentHighlight], Thenable[Array[DocumentHighlight]]]
+}
+fn DocumentHighlightProvider::provideDocumentHighlights(Self, TextDocument, Position, CancellationToken) -> @interop.Any
+impl Eq for DocumentHighlightProvider
+impl Show for DocumentHighlightProvider
+impl ToJson for DocumentHighlightProvider
+
+pub(all) struct DocumentLink {
+  range : Range
+  target : Uri?
+  tooltip : String?
+}
+fn DocumentLink::new(Range, Uri?) -> Self
+impl Eq for DocumentLink
+impl Show for DocumentLink
+impl ToJson for DocumentLink
+
+pub(all) struct DocumentLinkProvider {
+  provideDocumentLinks : (TextDocument, CancellationToken) -> @interop.Union2[Array[DocumentLink], Thenable[Array[DocumentLink]]]
+  resolveDocumentLink : (DocumentLink, CancellationToken) -> @interop.Union2[DocumentLink, Thenable[DocumentLink]]
+}
+fn DocumentLinkProvider::provideDocumentLinks(Self, TextDocument, CancellationToken) -> @interop.Any
+fn DocumentLinkProvider::resolveDocumentLink(Self, @interop.Any, CancellationToken) -> @interop.Any
+impl Eq for DocumentLinkProvider
+impl Show for DocumentLinkProvider
+impl ToJson for DocumentLinkProvider
+
+pub(all) struct DocumentPasteEdit {
+  title : String
+  kind : DocumentDropOrPasteEditKind?
+  insertText : String
+  additionalEdit : WorkspaceEdit?
+}
+fn DocumentPasteEdit::new(@interop.Any, String, @interop.Any) -> @interop.Any
+impl Eq for DocumentPasteEdit
+impl Show for DocumentPasteEdit
+impl ToJson for DocumentPasteEdit
+
+pub(all) struct DocumentPasteEditContext {
+  only : DocumentDropOrPasteEditKind?
+  triggerKind : DocumentPasteTriggerKind
+}
+impl Eq for DocumentPasteEditContext
+impl Show for DocumentPasteEditContext
+impl ToJson for DocumentPasteEditContext
+
+pub(all) struct DocumentPasteEditProvider {
+  prepareDocumentPaste : (TextDocument, Array[Range], DataTransfer, CancellationToken) -> @interop.Union2[Unit, Thenable[Unit]]
+  provideDocumentPasteEdits : (TextDocument, Array[Range], DataTransfer, PasteContext, CancellationToken) -> @interop.Union2[DocumentPasteEdit, Thenable[DocumentPasteEdit]]
+}
+fn DocumentPasteEditProvider::prepareDocumentPaste(Self, TextDocument, @interop.Any, @interop.Any, CancellationToken) -> @interop.Any
+fn DocumentPasteEditProvider::provideDocumentPasteEdits(Self, TextDocument, @interop.Any, @interop.Any, @interop.Any, CancellationToken) -> @interop.Any
+impl Eq for DocumentPasteEditProvider
+impl Show for DocumentPasteEditProvider
+impl ToJson for DocumentPasteEditProvider
+
+pub(all) struct DocumentPasteProviderMetadata {
+  providedPasteEditKinds : Array[DocumentDropOrPasteEditKind]
+}
+impl Eq for DocumentPasteProviderMetadata
+impl Show for DocumentPasteProviderMetadata
+impl ToJson for DocumentPasteProviderMetadata
+
+pub(all) enum DocumentPasteTriggerKind {
+  Automatic
+  PasteAs
+}
+impl Eq for DocumentPasteTriggerKind
+impl Show for DocumentPasteTriggerKind
+impl ToJson for DocumentPasteTriggerKind
+
+pub(all) struct DocumentRangeFormattingEditProvider {
+  provideDocumentRangeFormattingEdits : (TextDocument, Range, FormattingOptions, CancellationToken) -> @interop.Union2[Array[TextEdit], Thenable[Array[TextEdit]]]
+}
+fn DocumentRangeFormattingEditProvider::provideDocumentRangeFormattingEdits(Self, TextDocument, Range, @interop.Any, CancellationToken) -> @interop.Any
+impl Eq for DocumentRangeFormattingEditProvider
+impl Show for DocumentRangeFormattingEditProvider
+impl ToJson for DocumentRangeFormattingEditProvider
+
+pub(all) struct DocumentRangeSemanticTokensProvider {
+  provideDocumentRangeSemanticTokens : (TextDocument, Range, CancellationToken) -> @interop.Union2[SemanticTokens, Thenable[SemanticTokens]]
+}
+fn DocumentRangeSemanticTokensProvider::provideDocumentRangeSemanticTokens(Self, TextDocument, Range, CancellationToken) -> @interop.Any
+impl Eq for DocumentRangeSemanticTokensProvider
+impl Show for DocumentRangeSemanticTokensProvider
+impl ToJson for DocumentRangeSemanticTokensProvider
+
+pub(all) struct DocumentSemanticTokensProvider {
+  onDidChangeSemanticTokens : Event[Unit]?
+  provideDocumentSemanticTokens : (TextDocument, CancellationToken) -> @interop.Union2[SemanticTokens, Thenable[SemanticTokens]]
+  provideDocumentSemanticTokensEdits : (TextDocument, String, CancellationToken) -> @interop.Union2[@interop.Union2[SemanticTokens, SemanticTokensEdits], Thenable[@interop.Union2[SemanticTokens, SemanticTokensEdits]]]
+}
+fn DocumentSemanticTokensProvider::provideDocumentSemanticTokens(Self, TextDocument, CancellationToken) -> @interop.Any
+fn DocumentSemanticTokensProvider::provideDocumentSemanticTokensEdits(Self, TextDocument, String, CancellationToken) -> @interop.Any
+impl Eq for DocumentSemanticTokensProvider
+impl Show for DocumentSemanticTokensProvider
+impl ToJson for DocumentSemanticTokensProvider
+
+pub(all) struct DocumentSymbol {
+  name : String
+  detail : String
+  kind : SymbolKind
+  tags : Array[SymbolTag]?
+  range : Range
+  selectionRange : Range
+  children : Array[DocumentSymbol]
+}
+fn DocumentSymbol::new(String, String, SymbolKind, Range, Range) -> Self
+impl Eq for DocumentSymbol
+impl Show for DocumentSymbol
+impl ToJson for DocumentSymbol
+
+pub(all) struct DocumentSymbolProvider {
+  provideDocumentSymbols : (TextDocument, CancellationToken) -> @interop.Union2[@interop.Union2[Array[SymbolInformation], Array[DocumentSymbol]], Thenable[@interop.Union2[Array[SymbolInformation], Array[DocumentSymbol]]]]
+}
+fn DocumentSymbolProvider::provideDocumentSymbols(Self, TextDocument, CancellationToken) -> @interop.Any
+impl Eq for DocumentSymbolProvider
+impl Show for DocumentSymbolProvider
+impl ToJson for DocumentSymbolProvider
+
+pub(all) struct DocumentSymbolProviderMetadata {
+  label : String?
+}
+impl Eq for DocumentSymbolProviderMetadata
+impl Show for DocumentSymbolProviderMetadata
+impl ToJson for DocumentSymbolProviderMetadata
+
+pub(all) enum EndOfLine {
+  LF
+  CRLF
+}
+impl Eq for EndOfLine
+impl Show for EndOfLine
+impl ToJson for EndOfLine
+
+pub(all) struct EnterAction {
+  mut indentAction : IndentAction
+  mut appendText : String?
+  mut removeText : Int?
+}
+impl Eq for EnterAction
+impl Show for EnterAction
+impl ToJson for EnterAction
+
+pub(all) struct Env {
+  appName : String
+  appRoot : String
+  appHost : String
+  uriScheme : String
+  language : String
+  clipboard : Clipboard
+  machineId : String
+  sessionId : String
+  isNewAppInstall : Bool
+  isTelemetryEnabled : Bool
+  remoteName : String?
+  shell : String
+  uiKind : UIKind
+  logLevel : LogLevel
+  onDidChangeTelemetryEnabled : Event[Bool]
+  onDidChangeShell : Event[String]
+  onDidChangeLogLevel : Event[LogLevel]
+  createTelemetryLogger : (TelemetrySender, TelemetryLoggerOptions?) -> TelemetryLogger
+  openExternal : (Uri) -> Thenable[Bool]
+  asExternalUri : (Uri) -> Thenable[Uri]
+}
+
+pub(all) struct EnvironmentVariableCollection {
+  mut persistent : Bool
+  mut description : @interop.Union2[String, MarkdownString]?
+}
+fn EnvironmentVariableCollection::append(Self, String, String) -> Unit
+fn EnvironmentVariableCollection::clear(Self) -> Unit
+fn EnvironmentVariableCollection::delete(Self, String) -> Unit
+fn EnvironmentVariableCollection::forEach(Self, @interop.Any) -> Unit
+fn EnvironmentVariableCollection::get(Self, String) -> EnvironmentVariableMutator?
+fn EnvironmentVariableCollection::getKeys(Self) -> Array[String]
+fn EnvironmentVariableCollection::prepend(Self, String, String) -> Unit
+fn EnvironmentVariableCollection::replace(Self, String, String) -> Unit
+impl Eq for EnvironmentVariableCollection
+impl Show for EnvironmentVariableCollection
+impl ToJson for EnvironmentVariableCollection
+
+pub(all) struct EnvironmentVariableMutator {
+  mutatorType : EnvironmentVariableMutatorType
+  value : String
+  options : EnvironmentVariableMutatorOptions?
+}
+impl Eq for EnvironmentVariableMutator
+impl Show for EnvironmentVariableMutator
+impl ToJson for EnvironmentVariableMutator
+
+pub(all) struct EnvironmentVariableMutatorOptions {
+  applyAtProcessCreation : Bool?
+  applyAtShellIntegration : Bool?
+}
+impl Eq for EnvironmentVariableMutatorOptions
+impl Show for EnvironmentVariableMutatorOptions
+impl ToJson for EnvironmentVariableMutatorOptions
+
+pub(all) enum EnvironmentVariableMutatorType {
+  Replace
+  Append
+  Prepend
+}
+impl Eq for EnvironmentVariableMutatorType
+impl Show for EnvironmentVariableMutatorType
+impl ToJson for EnvironmentVariableMutatorType
+
+pub(all) struct EnvironmentVariableScope {
+}
+impl Eq for EnvironmentVariableScope
+impl Show for EnvironmentVariableScope
+impl ToJson for EnvironmentVariableScope
+
+pub(all) struct EvaluatableExpression {
+  range : Range
+  expression : String?
+}
+fn EvaluatableExpression::new(Range, String?) -> @interop.Any
+impl Eq for EvaluatableExpression
+impl Show for EvaluatableExpression
+impl ToJson for EvaluatableExpression
+
+pub(all) struct EvaluatableExpressionProvider {
+  provideEvaluatableExpression : (TextDocument, Position, CancellationToken) -> @interop.Union2[EvaluatableExpression, Thenable[EvaluatableExpression]]
+}
+fn EvaluatableExpressionProvider::provideEvaluatableExpression(Self, TextDocument, Position, CancellationToken) -> @interop.Any
+impl Eq for EvaluatableExpressionProvider
+impl Show for EvaluatableExpressionProvider
+impl ToJson for EvaluatableExpressionProvider
+
+#external
+pub(all) type Event[T]
+impl[T] Eq for Event[T]
+impl[T] Show for Event[T]
+impl[T] ToJson for Event[T]
+
+pub(all) struct EventEmitter[T] {
+  event : Event[T]
+}
+fn EventEmitter::dispose(Self[@interop.Any]) -> Unit
+fn EventEmitter::fire(Self[@interop.Any], @interop.Any) -> Unit
+fn EventEmitter::new() -> Self[@interop.Any]
+impl[T : Eq] Eq for EventEmitter[T]
+impl[T : Show] Show for EventEmitter[T]
+impl[T : ToJson] ToJson for EventEmitter[T]
+
+pub(all) struct Extension {
+  id : String
+  extensionUri : Uri
+  extensionPath : String
+  isActive : Bool
+  packageJSON : @interop.Any
+  mut extensionKind : ExtensionKind
+  exports : @interop.Any?
+}
+fn Extension::activate(Self) -> @interop.Any
+fn Extension::getExports(Self) -> @interop.Any
+fn Extension::getExtensionKind(Self) -> @interop.Any
+fn Extension::getExtensionPath(Self) -> String
+fn Extension::getIsActive(Self) -> Bool
+fn Extension::getPackageJSON(Self) -> @interop.Any
+impl Eq for Extension
+impl Show for Extension
+impl ToJson for Extension
+
+pub(all) struct ExtensionContext {
+  subscriptions : Array[Disposable]
+  workspaceState : Memento
+  globalState : Memento
+  secrets : SecretStorage
+  extensionUri : Uri
+  extensionPath : String
+  environmentVariableCollection : EnvironmentVariableCollection
+  asAbsolutePath : String
+  storageUri : Uri?
+  storagePath : String?
+  globalStorageUri : Uri
+  globalStoragePath : String
+  logUri : Uri
+  logPath : String
+  extensionMode : ExtensionMode
+  extension : Extension
+}
+fn ExtensionContext::asAbsolutePath(Self, String) -> String
+fn ExtensionContext::dispose(Self) -> @interop.Any
+fn ExtensionContext::setKeysForSync(Self, @interop.Any) -> Unit
+impl Eq for ExtensionContext
+impl Show for ExtensionContext
+impl ToJson for ExtensionContext
+
+pub(all) struct ExtensionHost {
+  kind : ExtensionKind
+}
+impl Eq for ExtensionHost
+impl Show for ExtensionHost
+impl ToJson for ExtensionHost
+
+pub(all) enum ExtensionKind {
+  UI
+  Workspace
+}
+impl Eq for ExtensionKind
+impl Show for ExtensionKind
+impl ToJson for ExtensionKind
+
+pub(all) enum ExtensionMode {
+  Production
+  Development
+  Test
+}
+impl Eq for ExtensionMode
+impl Show for ExtensionMode
+impl ToJson for ExtensionMode
+
+pub(all) struct ExtensionTerminalOptions {
+  name : String
+  pty : Pseudoterminal
+  location : TerminalLocation?
+  iconPath : @interop.Union3[Uri, LightDarkIconPath, ThemeIcon]?
+  color : ThemeColor?
+}
+impl Eq for ExtensionTerminalOptions
+impl Show for ExtensionTerminalOptions
+impl ToJson for ExtensionTerminalOptions
+
+pub(all) struct Extensions {
+  all : Array[Extension]
+  onDidChange : Event[Unit]
+  getExtension : (String) -> Extension?
+}
+
+pub(all) struct FileChangeEvent {
+  changeType : FileChangeType
+  uri : Uri
+}
+impl Eq for FileChangeEvent
+impl Show for FileChangeEvent
+impl ToJson for FileChangeEvent
+
+pub(all) enum FileChangeType {
+  Changed
+  Created
+  Deleted
+}
+impl Eq for FileChangeType
+impl Show for FileChangeType
+impl ToJson for FileChangeType
+
+pub(all) struct FileCoverage {
+  uri : Uri
+  mut statementCoverage : TestCoverageCount
+  mut branchCoverage : TestCoverageCount?
+  mut declarationCoverage : TestCoverageCount?
+  mut includesTests : Array[TestItem]?
+}
+fn FileCoverage::fromDetails(Uri, @interop.Any) -> @interop.Any
+fn FileCoverage::new(Uri, @interop.Any, @interop.Any?, @interop.Any?) -> @interop.Any
+impl Eq for FileCoverage
+impl Show for FileCoverage
+impl ToJson for FileCoverage
+
+pub(all) struct FileCreateEvent {
+  files : Array[Uri]
+}
+impl Eq for FileCreateEvent
+impl Show for FileCreateEvent
+impl ToJson for FileCreateEvent
+
+pub(all) struct FileDecoration {
+  badge : String?
+  tooltip : String?
+  color : ThemeColor?
+  propagate : Bool?
+}
+fn FileDecoration::new(String?, String?, @interop.Any?) -> @interop.Any
+impl Eq for FileDecoration
+impl Show for FileDecoration
+impl ToJson for FileDecoration
+
+pub(all) struct FileDecorationProvider {
+  onDidChangeFileDecorations : Event[@interop.Union3[Unit, Uri, Array[Uri]]]?
+  provideFileDecoration : (Uri, CancellationToken) -> @interop.Union2[FileDecoration, Thenable[FileDecoration]]
+}
+fn FileDecorationProvider::provideFileDecoration(Self, Uri, CancellationToken) -> @interop.Any
+impl Eq for FileDecorationProvider
+impl Show for FileDecorationProvider
+impl ToJson for FileDecorationProvider
+
+pub(all) struct FileDeleteEvent {
+  files : Array[Uri]
+}
+impl Eq for FileDeleteEvent
+impl Show for FileDeleteEvent
+impl ToJson for FileDeleteEvent
+
+pub(all) enum FilePermission {
+  Readonly
+}
+impl Eq for FilePermission
+impl Show for FilePermission
+impl ToJson for FilePermission
+
+pub(all) struct FileRenameEntry {
+  oldUri : Uri
+  newUri : Uri
+}
+impl Eq for FileRenameEntry
+impl Show for FileRenameEntry
+impl ToJson for FileRenameEntry
+
+pub(all) struct FileRenameEvent {
+  files : Array[FileRenameEntry]
+}
+impl Eq for FileRenameEvent
+impl Show for FileRenameEvent
+impl ToJson for FileRenameEvent
+
+pub(all) struct FileStat {
+  fileType : FileType
+  ctime : Int
+  mtime : Int
+  size : Int
+  permissions : FilePermission?
+}
+impl Eq for FileStat
+impl Show for FileStat
+impl ToJson for FileStat
+
+#external
+pub(all) type FileSystem
+fn FileSystem::copy(Self, Uri, Uri, options? : @interop.Any) -> @interop.Any
+fn FileSystem::createDirectory(Self, Uri) -> @interop.Any
+fn FileSystem::delete(Self, Uri, options? : @interop.Any) -> @interop.Any
+fn FileSystem::isWritableFileSystem(Self, String) -> Bool?
+fn FileSystem::readDirectory(Self, Uri) -> @interop.Any
+fn FileSystem::readFile(Self, Uri) -> @interop.Any
+fn FileSystem::rename(Self, Uri, Uri, options? : @interop.Any) -> @interop.Any
+fn FileSystem::stat(Self, Uri) -> @interop.Any
+fn FileSystem::writeFile(Self, Uri, FixedArray[Byte]) -> @interop.Any
+impl Eq for FileSystem
+impl Show for FileSystem
+impl ToJson for FileSystem
+
+pub(all) struct FileSystemError {
+  name : String
+  message : String
+  code : String
+}
+fn FileSystemError::file_exists(@interop.Union2[String, Uri]) -> Self
+fn FileSystemError::file_is_a_directory(@interop.Union2[String, Uri]?) -> Self
+fn FileSystemError::file_not_a_directory(@interop.Union2[String, Uri]?) -> Self
+fn FileSystemError::file_not_found(@interop.Union2[String, Uri]) -> Self
+fn FileSystemError::new(@interop.Any?) -> @interop.Any
+fn FileSystemError::no_permissions(@interop.Union2[String, Uri]?) -> Self
+fn FileSystemError::unavailable(@interop.Union2[String, Uri]?) -> Self
+impl Eq for FileSystemError
+impl Show for FileSystemError
+impl ToJson for FileSystemError
+
+pub(all) struct FileSystemProvider {
+  onDidChangeFile : Event[Array[FileChangeEvent]]
+}
+fn FileSystemProvider::copy(Self, Uri, Uri, @interop.Any) -> @interop.Any
+fn FileSystemProvider::createDirectory(Self, Uri) -> @interop.Any
+fn FileSystemProvider::delete(Self, Uri, @interop.Any) -> @interop.Any
+fn FileSystemProvider::readFile(Self, Uri) -> @interop.Any
+fn FileSystemProvider::rename(Self, Uri, Uri, @interop.Any) -> @interop.Any
+fn FileSystemProvider::stat(Self, Uri) -> @interop.Any
+fn FileSystemProvider::writeFile(Self, Uri, @interop.Any, @interop.Any) -> @interop.Any
+impl Eq for FileSystemProvider
+impl Show for FileSystemProvider
+impl ToJson for FileSystemProvider
+
+pub(all) struct FileSystemProviderOptions {
+  isCaseSensitive : Bool?
+  isReadonly : Bool?
+}
+impl Eq for FileSystemProviderOptions
+impl Show for FileSystemProviderOptions
+impl ToJson for FileSystemProviderOptions
+
+pub(all) struct FileSystemWatcher {
+  ignoreCreateEvents : Bool
+  ignoreChangeEvents : Bool
+  ignoreDeleteEvents : Bool
+  onDidCreate : Event[Uri]
+  onDidChange : Event[Uri]
+  onDidDelete : Event[Uri]
+}
+impl Eq for FileSystemWatcher
+impl Show for FileSystemWatcher
+impl ToJson for FileSystemWatcher
+
+pub(all) enum FileType {
+  Unknown
+  File
+  Directory
+  SymbolicLink
+}
+impl Eq for FileType
+impl Show for FileType
+impl ToJson for FileType
+
+pub(all) struct FileWillCreateEvent {
+  token : CancellationToken
+  files : Array[Uri]
+}
+fn FileWillCreateEvent::waitUntil_for_Any(Self, Thenable[@interop.Any]) -> Unit
+fn FileWillCreateEvent::waitUntil_for_WorkspaceEdit(Self, Thenable[WorkspaceEdit]) -> Unit
+impl Eq for FileWillCreateEvent
+impl Show for FileWillCreateEvent
+impl ToJson for FileWillCreateEvent
+
+pub(all) struct FileWillDeleteEvent {
+  token : CancellationToken
+  files : Array[Uri]
+}
+fn FileWillDeleteEvent::waitUntil_for_Any(Self, Thenable[@interop.Any]) -> Unit
+fn FileWillDeleteEvent::waitUntil_for_WorkspaceEdit(Self, Thenable[WorkspaceEdit]) -> Unit
+impl Eq for FileWillDeleteEvent
+impl Show for FileWillDeleteEvent
+impl ToJson for FileWillDeleteEvent
+
+pub(all) struct FileWillRenameEvent {
+  token : CancellationToken
+  files : Array[FileRenameEntry]
+}
+fn FileWillRenameEvent::waitUntil_for_Any(Self, Thenable[@interop.Any]) -> Unit
+fn FileWillRenameEvent::waitUntil_for_WorkspaceEdit(Self, Thenable[WorkspaceEdit]) -> Unit
+impl Eq for FileWillRenameEvent
+impl Show for FileWillRenameEvent
+impl ToJson for FileWillRenameEvent
+
+pub(all) struct FoldingContext {
+  maxRanges : Int
+}
+impl Eq for FoldingContext
+impl Show for FoldingContext
+impl ToJson for FoldingContext
+
+pub(all) struct FoldingRange {
+  start : Int
+  end : Int
+  kind : FoldingRangeKind?
+  collapsedText : String?
+}
+fn FoldingRange::new(Int, Int, FoldingRangeKind?) -> Self
+impl Eq for FoldingRange
+impl Show for FoldingRange
+impl ToJson for FoldingRange
+
+pub(all) enum FoldingRangeKind {
+  Comment
+  Imports
+  Region
+}
+impl Eq for FoldingRangeKind
+impl Show for FoldingRangeKind
+impl ToJson for FoldingRangeKind
+
+pub(all) struct FoldingRangeProvider {
+  onDidChangeFoldingRanges : Event[Unit]?
+  provide_folding_ranges : (TextDocument, FoldingContext, CancellationToken) -> @interop.Union2[Array[FoldingRange], Thenable[Array[FoldingRange]]]
+}
+fn FoldingRangeProvider::provideFoldingRanges(Self, TextDocument, @interop.Any, CancellationToken) -> @interop.Any
+
+pub(all) struct FormattingOptions {
+  tabSize : Int
+  insertSpaces : Bool
+}
+impl Eq for FormattingOptions
+impl Show for FormattingOptions
+impl ToJson for FormattingOptions
+
+pub(all) struct FunctionBreakpoint {
+  id : String
+  enabled : Bool
+  condition : String?
+  hitCondition : String?
+  logMessage : String?
+  functionName : String
+}
+fn FunctionBreakpoint::new(String, Bool?, String?, String?, String?) -> @interop.Any
+impl Eq for FunctionBreakpoint
+impl Show for FunctionBreakpoint
+impl ToJson for FunctionBreakpoint
+
+pub(all) struct GlobalEnvironmentVariableCollection {
+  persistent : Bool
+  description : String?
+}
+fn GlobalEnvironmentVariableCollection::getScoped(Self, EnvironmentVariableScope) -> EnvironmentVariableCollection
+impl Eq for GlobalEnvironmentVariableCollection
+impl Show for GlobalEnvironmentVariableCollection
+impl ToJson for GlobalEnvironmentVariableCollection
+
+pub(all) struct Hover {
+  contents : Array[@interop.Union2[MarkdownString, @interop.Union2[String, MarkedStringObject]]]
+  range : Range?
+}
+fn Hover::new(@interop.Union3[MarkdownString, @interop.Union2[String, MarkedStringObject], Array[@interop.Union2[MarkdownString, @interop.Union2[String, MarkedStringObject]]]], Range?) -> Self
+impl Eq for Hover
+impl Show for Hover
+impl ToJson for Hover
+
+pub(all) struct HoverProvider {
+  provideHover : (TextDocument, Position, CancellationToken) -> @interop.Union2[Hover, Thenable[Hover]]
+}
+fn HoverProvider::provideHover(Self, TextDocument, Position, CancellationToken) -> @interop.Any
+impl Eq for HoverProvider
+impl Show for HoverProvider
+impl ToJson for HoverProvider
+
+pub(all) struct ImplementationProvider {
+  provideImplementation : (TextDocument, Position, CancellationToken) -> @interop.Union2[@interop.Union2[@interop.Union2[Location, Array[Location]], Array[LocationLink]], Thenable[@interop.Union2[@interop.Union2[Location, Array[Location]], Array[LocationLink]]]]
+}
+fn ImplementationProvider::provideImplementation(Self, TextDocument, Position, CancellationToken) -> @interop.Any
+impl Eq for ImplementationProvider
+impl Show for ImplementationProvider
+impl ToJson for ImplementationProvider
+
+pub(all) enum IndentAction {
+  None
+  Indent
+  IndentOutdent
+  Outdent
+}
+impl Eq for IndentAction
+impl Show for IndentAction
+impl ToJson for IndentAction
+
+pub(all) struct IndentationRule {
+  decreaseIndentPattern : RegExp
+  increaseIndentPattern : RegExp
+  indentNextLinePattern : RegExp?
+  unIndentedLinePattern : RegExp?
+}
+impl Eq for IndentationRule
+impl Show for IndentationRule
+impl ToJson for IndentationRule
+
+pub(all) struct InlayHint {
+  position : Position
+  label : @interop.Union2[String, Array[InlayHintLabelPart]]
+  tooltip : @interop.Union2[String, MarkdownString]?
+  kind : InlayHintKind?
+  textEdits : Array[TextEdit]?
+  paddingLeft : Bool?
+  paddingRight : Bool?
+}
+fn InlayHint::new(Position, @interop.Union2[String, Array[InlayHintLabelPart]], InlayHintKind?) -> Self
+impl Eq for InlayHint
+impl Show for InlayHint
+impl ToJson for InlayHint
+
+pub(all) enum InlayHintKind {
+  Type
+  Parameter
+}
+impl Eq for InlayHintKind
+impl Show for InlayHintKind
+impl ToJson for InlayHintKind
+
+pub(all) struct InlayHintLabelPart {
+  value : String
+  tooltip : String?
+  location : Location?
+  command : Command?
+}
+fn InlayHintLabelPart::new(String) -> Self
+impl Eq for InlayHintLabelPart
+impl Show for InlayHintLabelPart
+impl ToJson for InlayHintLabelPart
+
+pub(all) struct InlayHintsProvider {
+  onDidChangeInlayHints : Event[Unit]?
+  provideInlayHints : (TextDocument, Range, CancellationToken) -> @interop.Union2[Array[InlayHint], Thenable[Array[InlayHint]]]
+  resolveInlayHint : (InlayHint, CancellationToken) -> @interop.Union2[InlayHint, Thenable[InlayHint]]
+}
+fn InlayHintsProvider::provideInlayHints(Self, TextDocument, Range, CancellationToken) -> @interop.Any
+fn InlayHintsProvider::resolveInlayHint(Self, @interop.Any, CancellationToken) -> @interop.Any
+impl Eq for InlayHintsProvider
+impl Show for InlayHintsProvider
+impl ToJson for InlayHintsProvider
+
+pub(all) struct InlineCompletionContext {
+  triggerKind : InlineCompletionTriggerKind
+  selectedCompletionInfo : SelectedCompletionInfo?
+}
+impl Eq for InlineCompletionContext
+impl Show for InlineCompletionContext
+impl ToJson for InlineCompletionContext
+
+pub(all) struct InlineCompletionItem {
+  insertText : String
+  filterText : String?
+  range : Range?
+  command : Command?
+}
+fn InlineCompletionItem::new(@interop.Union2[String, SnippetString], Range?, Command?) -> Self
+impl Eq for InlineCompletionItem
+impl Show for InlineCompletionItem
+impl ToJson for InlineCompletionItem
+
+pub(all) struct InlineCompletionItemProvider {
+  provideInlineCompletionItems : (TextDocument, Position, InlineCompletionContext, CancellationToken) -> @interop.Union2[@interop.Union2[Array[InlineCompletionItem], InlineCompletionList], Thenable[@interop.Union2[Array[InlineCompletionItem], InlineCompletionList]]]
+}
+fn InlineCompletionItemProvider::provideInlineCompletionItems(Self, TextDocument, Position, @interop.Any, CancellationToken) -> @interop.Any
+impl Eq for InlineCompletionItemProvider
+impl Show for InlineCompletionItemProvider
+impl ToJson for InlineCompletionItemProvider
+
+pub(all) struct InlineCompletionList {
+  items : Array[InlineCompletionItem]
+}
+fn InlineCompletionList::new(Array[InlineCompletionItem]) -> Self
+impl Eq for InlineCompletionList
+impl Show for InlineCompletionList
+impl ToJson for InlineCompletionList
+
+pub(all) enum InlineCompletionTriggerKind {
+  Invoke
+  Automatic
+}
+impl Eq for InlineCompletionTriggerKind
+impl Show for InlineCompletionTriggerKind
+impl ToJson for InlineCompletionTriggerKind
+
+pub(all) struct InlineValueContext {
+  frameId : Int
+  stoppedLocation : Range
+}
+impl Eq for InlineValueContext
+impl Show for InlineValueContext
+impl ToJson for InlineValueContext
+
+pub(all) struct InlineValueEvaluatableExpression {
+  range : Range
+  expression : String?
+}
+fn InlineValueEvaluatableExpression::new(Range, String?) -> @interop.Any
+impl Eq for InlineValueEvaluatableExpression
+impl Show for InlineValueEvaluatableExpression
+impl ToJson for InlineValueEvaluatableExpression
+
+pub(all) struct InlineValueText {
+  range : Range
+  text : String
+}
+fn InlineValueText::new(Range, String) -> @interop.Any
+impl Eq for InlineValueText
+impl Show for InlineValueText
+impl ToJson for InlineValueText
+
+pub(all) struct InlineValueVariableLookup {
+  range : Range
+  variableName : String?
+  caseSensitiveLookup : Bool
+}
+fn InlineValueVariableLookup::new(Range, String?, Bool?) -> @interop.Any
+impl Eq for InlineValueVariableLookup
+impl Show for InlineValueVariableLookup
+impl ToJson for InlineValueVariableLookup
+
+pub(all) struct InlineValuesProvider {
+  onDidChangeInlineValues : Event[Unit]?
+  provideInlineValues : (TextDocument, Range, InlineValueContext, CancellationToken) -> @interop.Union2[Array[@interop.Union3[InlineValueText, InlineValueVariableLookup, InlineValueEvaluatableExpression]], Thenable[Array[@interop.Union3[InlineValueText, InlineValueVariableLookup, InlineValueEvaluatableExpression]]]]
+}
+fn InlineValuesProvider::provideInlineValues(Self, TextDocument, Range, @interop.Any, CancellationToken) -> @interop.Any
+impl Eq for InlineValuesProvider
+impl Show for InlineValuesProvider
+impl ToJson for InlineValuesProvider
+
+pub(all) struct InputBox {
+  mut title : String?
+  mut step : Int?
+  mut totalSteps : Int?
+  mut enabled : Bool
+  mut busy : Bool
+  mut ignoreFocusOut : Bool
+  mut value : String
+  valueSelection : Array[Int]?
+  mut placeholder : String?
+  mut password : Bool
+  mut prompt : String?
+  mut validationMessage : String?
+}
+fn InputBox::getValue(Self) -> String
+fn InputBox::onDidAccept(Self) -> @interop.Any
+fn InputBox::onDidChangeValue(Self, String) -> @interop.Any
+fn InputBox::setPassword(Self, Bool) -> Unit
+fn InputBox::setPlaceholder(Self, String) -> Unit
+fn InputBox::setPrompt(Self, String) -> Unit
+fn InputBox::setValidationMessage(Self, @interop.Any) -> Unit
+fn InputBox::setValue(Self, String) -> Unit
+impl Eq for InputBox
+impl Show for InputBox
+impl ToJson for InputBox
+
+pub(all) struct InputBoxOptions {
+  title : String?
+  value : String?
+  valueSelection : (Int, Int)?
+  prompt : String?
+  placeHolder : String?
+  password : Bool?
+  ignoreFocusOut : Bool?
+}
+impl Eq for InputBoxOptions
+impl Show for InputBoxOptions
+impl ToJson for InputBoxOptions
+
+pub(all) struct InputBoxValidationMessage {
+  message : String
+  severity : InputBoxValidationSeverity
+}
+
+pub(all) enum InputBoxValidationSeverity {
+  Info
+  Warning
+  Error
+}
+
+pub(all) struct L10N {
+  bundle : Map[String, String]?
+  uri : Uri?
+  t : @interop.Func1Rest[String, @interop.Any, String]
+}
+
+pub(all) struct LanguageConfiguration {
+  mut comments : CommentRule?
+  mut brackets : Array[(String, String)]?
+  mut wordPattern : RegExp?
+  mut indentationRules : IndentationRule?
+  mut onEnterRules : Array[OnEnterRule]?
+  mut autoClosingPairs : Array[AutoClosingPair]?
+}
+impl Eq for LanguageConfiguration
+impl Show for LanguageConfiguration
+impl ToJson for LanguageConfiguration
+
+pub(all) struct LanguageModelAccessInformation {
+  onDidChange : Event[Unit]
+}
+fn LanguageModelAccessInformation::canSendRequest(Self, LanguageModelChat) -> Bool?
+impl Eq for LanguageModelAccessInformation
+impl Show for LanguageModelAccessInformation
+impl ToJson for LanguageModelAccessInformation
+
+pub(all) struct LanguageModelChat {
+  name : String
+  id : String
+  vendor : String
+  family : String
+  version : String
+  maxInputTokens : Int?
+}
+impl Eq for LanguageModelChat
+impl Show for LanguageModelChat
+impl ToJson for LanguageModelChat
+
+pub(all) struct LanguageModelChatInformation {
+  id : String
+  name : String
+  vendor : String
+  family : String
+  version : String
+  maxInputTokens : Int?
+  targetModels : Array[LanguageModelChatSelector]?
+}
+impl Eq for LanguageModelChatInformation
+impl Show for LanguageModelChatInformation
+impl ToJson for LanguageModelChatInformation
+
+pub(all) struct LanguageModelChatMessage {
+  role : LanguageModelChatMessageRole
+  content : Array[String]
+}
+fn LanguageModelChatMessage::assistant(@interop.Union2[String, Array[@interop.Union2[LanguageModelTextPart, LanguageModelToolResultPart]]], String?) -> Self
+fn LanguageModelChatMessage::new(@interop.Any, @interop.Any, String?) -> @interop.Any
+fn LanguageModelChatMessage::user(@interop.Union2[String, Array[@interop.Union2[LanguageModelTextPart, LanguageModelToolResultPart]]], String?) -> Self
+impl Eq for LanguageModelChatMessage
+impl Show for LanguageModelChatMessage
+impl ToJson for LanguageModelChatMessage
+
+pub(all) enum LanguageModelChatMessageRole {
+  User
+  Assistant
+}
+impl Eq for LanguageModelChatMessageRole
+impl Show for LanguageModelChatMessageRole
+impl ToJson for LanguageModelChatMessageRole
+
+pub(all) struct LanguageModelChatProvider {
+  onDidChangeLanguageModelChatInformation : Event[Unit]?
+  provide_language_model_chat_information : (PrepareLanguageModelChatModelOptions, CancellationToken) -> @interop.Union2[Array[LanguageModelChatInformation], Thenable[Array[LanguageModelChatInformation]]]
+  provide_language_model_chat_response : (LanguageModelChatInformation, Array[LanguageModelChatRequestMessage], ProvideLanguageModelChatResponseOptions, Progress[@interop.Union3[LanguageModelTextPart, LanguageModelToolResultPart, LanguageModelToolCallPart]], CancellationToken) -> Thenable[Unit]
+  provide_token_count : (LanguageModelChatInformation, @interop.Union2[String, LanguageModelChatRequestMessage], CancellationToken) -> Thenable[Int]
+}
+fn LanguageModelChatProvider::provideChatResponse(Self, @interop.Any, @interop.Any, @interop.Any, CancellationToken) -> @interop.Any
+fn LanguageModelChatProvider::provideTokenCount(Self, @interop.Any, @interop.Any, CancellationToken) -> @interop.Any
+
+pub(all) struct LanguageModelChatRequestMessage {
+  role : LanguageModelChatMessageRole
+  content : Array[String]
+}
+impl Eq for LanguageModelChatRequestMessage
+impl Show for LanguageModelChatRequestMessage
+impl ToJson for LanguageModelChatRequestMessage
+
+pub(all) struct LanguageModelChatRequestOptions {
+  justification : String?
+  modelOptions : @interop.Any?
+}
+impl Eq for LanguageModelChatRequestOptions
+impl Show for LanguageModelChatRequestOptions
+impl ToJson for LanguageModelChatRequestOptions
+
+pub(all) struct LanguageModelChatResponse {
+  stream : Array[String]
+  text : Array[String]
+}
+impl Eq for LanguageModelChatResponse
+impl Show for LanguageModelChatResponse
+impl ToJson for LanguageModelChatResponse
+
+pub(all) struct LanguageModelChatSelector {
+  vendor : String?
+  family : String?
+  version : String?
+  id : String?
+}
+impl Eq for LanguageModelChatSelector
+impl Show for LanguageModelChatSelector
+impl ToJson for LanguageModelChatSelector
+
+pub(all) struct LanguageModelChatTool {
+  name : String
+  description : String
+  parametersSchema : @interop.Any?
+}
+impl Eq for LanguageModelChatTool
+impl Show for LanguageModelChatTool
+impl ToJson for LanguageModelChatTool
+
+pub(all) enum LanguageModelChatToolMode {
+  Auto
+  Required
+}
+impl Eq for LanguageModelChatToolMode
+impl Show for LanguageModelChatToolMode
+impl ToJson for LanguageModelChatToolMode
+
+pub(all) struct LanguageModelError {
+  message : String
+  code : String
+}
+fn LanguageModelError::blocked(String?) -> Self
+fn LanguageModelError::no_permissions(String?) -> Self
+fn LanguageModelError::not_found(String?) -> Self
+impl Eq for LanguageModelError
+impl Show for LanguageModelError
+impl ToJson for LanguageModelError
+
+pub(all) struct LanguageModelPromptTsxPart {
+  value : @interop.Any
+}
+fn LanguageModelPromptTsxPart::new(@interop.Any) -> @interop.Any
+impl Eq for LanguageModelPromptTsxPart
+impl Show for LanguageModelPromptTsxPart
+impl ToJson for LanguageModelPromptTsxPart
+
+pub(all) struct LanguageModelTextPart {
+  value : String
+}
+fn LanguageModelTextPart::new(String) -> Self
+impl Eq for LanguageModelTextPart
+impl Show for LanguageModelTextPart
+impl ToJson for LanguageModelTextPart
+
+pub(all) struct LanguageModelTool {
+  name : String
+  description : String
+}
+fn LanguageModelTool::getInvoke(Self) -> @interop.Any
+fn LanguageModelTool::getPrepareInvocation(Self) -> @interop.Any?
+fn LanguageModelTool::setInvoke(Self, @interop.Any) -> Unit
+fn LanguageModelTool::setPrepareInvocation(Self, @interop.Any?) -> Unit
+impl Eq for LanguageModelTool
+impl Show for LanguageModelTool
+impl ToJson for LanguageModelTool
+
+pub(all) struct LanguageModelToolCallPart {
+  callId : String
+  name : String
+  input : @interop.Any
+}
+fn LanguageModelToolCallPart::new(String, String, @interop.Any) -> @interop.Any
+impl Eq for LanguageModelToolCallPart
+impl Show for LanguageModelToolCallPart
+impl ToJson for LanguageModelToolCallPart
+
+pub(all) struct LanguageModelToolConfirmationMessages {
+  title : String
+  message : String
+}
+impl Eq for LanguageModelToolConfirmationMessages
+impl Show for LanguageModelToolConfirmationMessages
+impl ToJson for LanguageModelToolConfirmationMessages
+
+pub(all) struct LanguageModelToolInformation {
+  name : String
+  description : String
+  parametersSchema : @interop.Any?
+  tags : Array[String]
+}
+impl Eq for LanguageModelToolInformation
+impl Show for LanguageModelToolInformation
+impl ToJson for LanguageModelToolInformation
+
+pub(all) struct LanguageModelToolInvocationOptions {
+  toolInvocationToken : String?
+  input : @interop.Any
+  tokenizationOptions : LanguageModelToolTokenizationOptions?
+}
+impl Eq for LanguageModelToolInvocationOptions
+impl Show for LanguageModelToolInvocationOptions
+impl ToJson for LanguageModelToolInvocationOptions
+
+pub(all) struct LanguageModelToolInvocationPrepareOptions {
+  input : @interop.Any
+}
+impl Eq for LanguageModelToolInvocationPrepareOptions
+impl Show for LanguageModelToolInvocationPrepareOptions
+impl ToJson for LanguageModelToolInvocationPrepareOptions
+
+pub(all) struct LanguageModelToolResult {
+  content : Array[LanguageModelTextPart]
+}
+fn LanguageModelToolResult::new(@interop.Any) -> @interop.Any
+impl Eq for LanguageModelToolResult
+impl Show for LanguageModelToolResult
+impl ToJson for LanguageModelToolResult
+
+pub(all) struct LanguageModelToolResultPart {
+  callId : String
+  content : Array[LanguageModelTextPart]
+}
+fn LanguageModelToolResultPart::new(String, @interop.Any) -> @interop.Any
+impl Eq for LanguageModelToolResultPart
+impl Show for LanguageModelToolResultPart
+impl ToJson for LanguageModelToolResultPart
+
+pub(all) struct LanguageModelToolTokenizationOptions {
+  tokenBudget : Int
+}
+fn LanguageModelToolTokenizationOptions::countTokens_with_options(Self, String, CancellationToken?) -> @interop.Any
+impl Eq for LanguageModelToolTokenizationOptions
+impl Show for LanguageModelToolTokenizationOptions
+impl ToJson for LanguageModelToolTokenizationOptions
+
+pub(all) struct LanguageStatusItem {
+  id : String
+  name : String
+  selector : Array[DocumentFilter]
+  severity : LanguageStatusSeverity
+  text : String
+  detail : String?
+  busy : Bool
+  command : Command?
+  accessibilityInformation : AccessibilityInformation?
+}
+fn LanguageStatusItem::dispose(Self) -> Unit
+fn LanguageStatusItem::getAccessibilityInformation(Self) -> @interop.Any?
+fn LanguageStatusItem::getBusy(Self) -> Bool
+fn LanguageStatusItem::getCommand(Self) -> Command?
+fn LanguageStatusItem::getDetail(Self) -> String?
+fn LanguageStatusItem::getName(Self) -> String?
+fn LanguageStatusItem::getSeverity(Self) -> @interop.Any
+fn LanguageStatusItem::getText(Self) -> String
+fn LanguageStatusItem::setAccessibilityInformation(Self, @interop.Any?) -> Unit
+fn LanguageStatusItem::setBusy(Self, Bool) -> Unit
+fn LanguageStatusItem::setCommand(Self, Command?) -> Unit
+fn LanguageStatusItem::setDetail(Self, String?) -> Unit
+fn LanguageStatusItem::setName(Self, String?) -> Unit
+fn LanguageStatusItem::setSeverity(Self, @interop.Any) -> Unit
+fn LanguageStatusItem::setText(Self, String) -> Unit
+impl Eq for LanguageStatusItem
+impl Show for LanguageStatusItem
+impl ToJson for LanguageStatusItem
+
+pub(all) enum LanguageStatusSeverity {
+  Information
+  Warning
+  Error
+}
+impl Eq for LanguageStatusSeverity
+impl Show for LanguageStatusSeverity
+impl ToJson for LanguageStatusSeverity
+
+pub(all) struct Languages {
+  getLanguages : () -> Thenable[Array[String]]
+  setTextDocumentLanguage : (TextDocument, String) -> Thenable[TextDocument]
+  match_document : (@interop.Union3[DocumentFilter, String, Array[@interop.Union2[DocumentFilter, String]]], TextDocument) -> Int
+  getDiagnostics : (Uri?) -> Array[Diagnostic]
+  createDiagnosticCollection : (String?) -> DiagnosticCollection
+  createLanguageStatusItem : (String, @interop.Union3[DocumentFilter, String, Array[@interop.Union2[DocumentFilter, String]]]) -> LanguageStatusItem
+  registerCompletionItemProvider : @interop.Func2Rest[Disposable, String, @interop.Union3[DocumentFilter, String, Array[@interop.Union2[DocumentFilter, String]]], CompletionItemProvider]
+  registerInlineCompletionItemProvider : (@interop.Union3[DocumentFilter, String, Array[@interop.Union2[DocumentFilter, String]]], InlineCompletionItemProvider) -> Disposable
+  registerCodeActionsProvider : (@interop.Union3[DocumentFilter, String, Array[@interop.Union2[DocumentFilter, String]]], CodeActionProvider, CodeActionProviderMetadata?) -> Disposable
+  registerCodeLensProvider : (@interop.Union3[DocumentFilter, String, Array[@interop.Union2[DocumentFilter, String]]], CodeLensProvider) -> Disposable
+  registerDefinitionProvider : (@interop.Union3[DocumentFilter, String, Array[@interop.Union2[DocumentFilter, String]]], DefinitionProvider) -> Disposable
+  registerImplementationProvider : (@interop.Union3[DocumentFilter, String, Array[@interop.Union2[DocumentFilter, String]]], ImplementationProvider) -> Disposable
+  registerTypeDefinitionProvider : (@interop.Union3[DocumentFilter, String, Array[@interop.Union2[DocumentFilter, String]]], TypeDefinitionProvider) -> Disposable
+  registerDeclarationProvider : (@interop.Union3[DocumentFilter, String, Array[@interop.Union2[DocumentFilter, String]]], DeclarationProvider) -> Disposable
+  registerHoverProvider : (@interop.Union3[DocumentFilter, String, Array[@interop.Union2[DocumentFilter, String]]], HoverProvider) -> Disposable
+  registerEvaluatableExpressionProvider : (@interop.Union3[DocumentFilter, String, Array[@interop.Union2[DocumentFilter, String]]], EvaluatableExpressionProvider) -> Disposable
+  registerInlineValuesProvider : (@interop.Union3[DocumentFilter, String, Array[@interop.Union2[DocumentFilter, String]]], InlineValuesProvider) -> Disposable
+  registerDocumentHighlightProvider : (@interop.Union3[DocumentFilter, String, Array[@interop.Union2[DocumentFilter, String]]], DocumentHighlightProvider) -> Disposable
+  registerDocumentSymbolProvider : (@interop.Union3[DocumentFilter, String, Array[@interop.Union2[DocumentFilter, String]]], DocumentSymbolProvider, DocumentSymbolProviderMetadata?) -> Disposable
+  registerWorkspaceSymbolProvider : (WorkspaceSymbolProvider) -> Disposable
+  registerReferenceProvider : (@interop.Union3[DocumentFilter, String, Array[@interop.Union2[DocumentFilter, String]]], ReferenceProvider) -> Disposable
+  registerRenameProvider : (@interop.Union3[DocumentFilter, String, Array[@interop.Union2[DocumentFilter, String]]], RenameProvider) -> Disposable
+  registerDocumentSemanticTokensProvider : (@interop.Union3[DocumentFilter, String, Array[@interop.Union2[DocumentFilter, String]]], DocumentSemanticTokensProvider, SemanticTokensLegend) -> Disposable
+  registerDocumentRangeSemanticTokensProvider : (@interop.Union3[DocumentFilter, String, Array[@interop.Union2[DocumentFilter, String]]], DocumentRangeSemanticTokensProvider, SemanticTokensLegend) -> Disposable
+  registerDocumentFormattingEditProvider : (@interop.Union3[DocumentFilter, String, Array[@interop.Union2[DocumentFilter, String]]], DocumentFormattingEditProvider) -> Disposable
+  registerDocumentRangeFormattingEditProvider : (@interop.Union3[DocumentFilter, String, Array[@interop.Union2[DocumentFilter, String]]], DocumentRangeFormattingEditProvider) -> Disposable
+  registerOnTypeFormattingEditProvider : @interop.Func3Rest[Disposable, String, @interop.Union3[DocumentFilter, String, Array[@interop.Union2[DocumentFilter, String]]], OnTypeFormattingEditProvider, String]
+  registerSignatureHelpProvider : @interop.Func2Rest[Disposable, String, @interop.Union3[DocumentFilter, String, Array[@interop.Union2[DocumentFilter, String]]], SignatureHelpProvider]
+  registerDocumentLinkProvider : (@interop.Union3[DocumentFilter, String, Array[@interop.Union2[DocumentFilter, String]]], DocumentLinkProvider) -> Disposable
+  registerColorProvider : (@interop.Union3[DocumentFilter, String, Array[@interop.Union2[DocumentFilter, String]]], DocumentColorProvider) -> Disposable
+  registerInlayHintsProvider : (@interop.Union3[DocumentFilter, String, Array[@interop.Union2[DocumentFilter, String]]], InlayHintsProvider) -> Disposable
+  registerFoldingRangeProvider : (@interop.Union3[DocumentFilter, String, Array[@interop.Union2[DocumentFilter, String]]], FoldingRangeProvider) -> Disposable
+  registerSelectionRangeProvider : (@interop.Union3[DocumentFilter, String, Array[@interop.Union2[DocumentFilter, String]]], SelectionRangeProvider) -> Disposable
+  registerCallHierarchyProvider : (@interop.Union3[DocumentFilter, String, Array[@interop.Union2[DocumentFilter, String]]], CallHierarchyProvider) -> Disposable
+  registerTypeHierarchyProvider : (@interop.Union3[DocumentFilter, String, Array[@interop.Union2[DocumentFilter, String]]], TypeHierarchyProvider) -> Disposable
+  onDidChangeDiagnostics : Event[DiagnosticChangeEvent]
+}
+
+pub(all) struct LightDarkIconPath {
+  light : Uri
+  dark : Uri
+}
+impl Eq for LightDarkIconPath
+impl Show for LightDarkIconPath
+impl ToJson for LightDarkIconPath
+
+pub(all) struct LinkedEditingRangeProvider {
+  provideLinkedEditingRanges : (TextDocument, Position, CancellationToken) -> @interop.Union2[LinkedEditingRanges, Thenable[LinkedEditingRanges]]
+}
+fn LinkedEditingRangeProvider::provideLinkedEditingRanges(Self, TextDocument, Position, CancellationToken) -> @interop.Any
+impl Eq for LinkedEditingRangeProvider
+impl Show for LinkedEditingRangeProvider
+impl ToJson for LinkedEditingRangeProvider
+
+pub(all) struct LinkedEditingRanges {
+  ranges : Array[Range]
+  wordPattern : String?
+}
+fn LinkedEditingRanges::new(@interop.Any, @interop.Any?) -> @interop.Any
+impl Eq for LinkedEditingRanges
+impl Show for LinkedEditingRanges
+impl ToJson for LinkedEditingRanges
+
+pub(all) struct Lm {
+  tools : Array[LanguageModelToolInformation]
+  onDidChangeChatModels : Event[Unit]
+  selectChatModels : (LanguageModelChatSelector?) -> Thenable[Array[LanguageModelChat]]
+  registerTool : (String, LanguageModelTool) -> Disposable
+  invokeTool : (String, LanguageModelToolInvocationOptions, CancellationToken?) -> Thenable[LanguageModelToolResult]
+  registerMcpServerDefinitionProvider : (String, McpServerDefinitionProvider) -> Disposable
+  registerLanguageModelChatProvider : (String, LanguageModelChatProvider) -> Disposable
+}
+
+pub(all) struct Location {
+  uri : Uri
+  range : Range
+}
+fn Location::new(Uri, @interop.Any) -> Self
+impl Eq for Location
+impl Show for Location
+impl ToJson for Location
+
+pub(all) struct LocationLink {
+  mut originSelectionRange : Range?
+  mut targetUri : Uri
+  mut targetRange : Range
+  mut targetSelectionRange : Range?
+}
+impl Eq for LocationLink
+impl Show for LocationLink
+impl ToJson for LocationLink
+
+pub(all) enum LogLevel {
+  Off
+  Trace
+  Debug
+  Info
+  Warning
+  Error
+}
+impl Eq for LogLevel
+impl Show for LogLevel
+impl ToJson for LogLevel
+
+pub(all) struct LogOutputChannel {
+  name : String
+  logLevel : LogLevel
+}
+fn LogOutputChannel::debug(Self, String, Array[String]) -> Unit
+fn LogOutputChannel::error(Self, @interop.Any, Array[String]) -> Unit
+fn LogOutputChannel::info(Self, String, Array[String]) -> Unit
+fn LogOutputChannel::trace(Self, String, Array[String]) -> Unit
+fn LogOutputChannel::warn(Self, String, Array[String]) -> Unit
+impl Eq for LogOutputChannel
+impl Show for LogOutputChannel
+impl ToJson for LogOutputChannel
+
+pub(all) struct MarkdownString {
+  value : String
+  isTrusted : Bool?
+  supportThemeIcons : Bool?
+  supportHtml : Bool?
+  baseUri : Uri?
+}
+fn MarkdownString::appendCodeblock_with_options(Self, String, String?) -> Self
+fn MarkdownString::appendMarkdown(Self, String) -> Self
+fn MarkdownString::appendText(Self, String) -> Self
+fn MarkdownString::new(String?, Bool?) -> Self
+impl Eq for MarkdownString
+impl Show for MarkdownString
+impl ToJson for MarkdownString
+
+pub(all) struct MarkedStringObject {
+  language : String
+  value : String
+}
+impl Eq for MarkedStringObject
+impl Show for MarkedStringObject
+impl ToJson for MarkedStringObject
+
+pub(all) struct McpHttpServerDefinition {
+  command : String
+  args : Array[String]?
+  env : Map[String, String]?
+}
+fn McpHttpServerDefinition::new(String, Uri, @interop.Any?, String?) -> @interop.Any
+impl Eq for McpHttpServerDefinition
+impl Show for McpHttpServerDefinition
+impl ToJson for McpHttpServerDefinition
+
+pub(all) struct McpServerDefinitionProvider {
+  onDidChangeServerDefinitions : Event[Unit]?
+  provideServerDefinitions : (CancellationToken) -> @interop.Union2[Array[@interop.Union2[McpStdioServerDefinition, McpHttpServerDefinition]], Thenable[Array[@interop.Union2[McpStdioServerDefinition, McpHttpServerDefinition]]]]
+}
+fn McpServerDefinitionProvider::provideMcpServerDefinitions(Self, CancellationToken) -> @interop.Any
+fn McpServerDefinitionProvider::resolveMcpServerDefinition(Self, @interop.Any, CancellationToken) -> @interop.Any
+impl Eq for McpServerDefinitionProvider
+impl Show for McpServerDefinitionProvider
+impl ToJson for McpServerDefinitionProvider
+
+pub(all) struct McpStdioServerDefinition {
+  command : String
+  args : Array[String]?
+  env : Map[String, String]?
+}
+fn McpStdioServerDefinition::new(String, String, Array[String]?, @interop.Any?, String?) -> @interop.Any
+impl Eq for McpStdioServerDefinition
+impl Show for McpStdioServerDefinition
+impl ToJson for McpStdioServerDefinition
+
+#external
+pub(all) type Memento
+fn Memento::keys(Self) -> Array[String]
+fn Memento::update(Self, String, @interop.Any) -> @interop.Any
+impl Eq for Memento
+impl Show for Memento
+impl ToJson for Memento
+
+pub(all) struct MessageItem {
+  title : String
+  isCloseAffordance : Bool?
+}
+
+pub(all) struct MessageOptions {
+  mut modal : Bool?
+  mut detail : String?
+}
+impl Eq for MessageOptions
+impl Show for MessageOptions
+impl ToJson for MessageOptions
+
+pub(all) struct NotebookCell {
+  index : Int
+  kind : NotebookCellKind
+  document : TextDocument
+  outputs : Array[NotebookCellOutput]
+  metadata : @interop.Any
+  executionSummary : NotebookCellExecutionSummary?
+}
+fn NotebookCell::getExecutionSummary(@interop.Any) -> @interop.Any?
+fn NotebookCell::getMetadata(@interop.Any) -> @interop.Any
+fn NotebookCell::getOutputs(@interop.Any) -> @interop.Any
+fn NotebookCell::setExecutionSummary(@interop.Any, @interop.Any?) -> Unit
+fn NotebookCell::setMetadata(@interop.Any, @interop.Any) -> Unit
+fn NotebookCell::setOutputs(@interop.Any, @interop.Any) -> Unit
+impl Eq for NotebookCell
+impl Show for NotebookCell
+impl ToJson for NotebookCell
+
+pub(all) struct NotebookCellData {
+  kind : NotebookCellKind
+  value : String
+  languageId : String
+  outputs : Array[NotebookCellOutput]?
+  metadata : @interop.Any?
+  executionSummary : NotebookCellExecutionSummary?
+}
+fn NotebookCellData::new(@interop.Any, String, String) -> @interop.Any
+impl Eq for NotebookCellData
+impl Show for NotebookCellData
+impl ToJson for NotebookCellData
+
+pub(all) struct NotebookCellExecution {
+  cell : NotebookCell
+  token : CancellationToken
+  mut executionOrder : Int?
+}
+fn NotebookCellExecution::clearOutput_with_options(Self, NotebookCell?) -> @interop.Any
+fn NotebookCellExecution::end_with_options(Self, Bool?, Int?) -> Unit
+fn NotebookCellExecution::start_with_options(Self, Int?) -> Unit
+impl Eq for NotebookCellExecution
+impl Show for NotebookCellExecution
+impl ToJson for NotebookCellExecution
+
+pub(all) struct NotebookCellExecutionSummary {
+  executionOrder : Int?
+  success : Bool?
+  timing : NotebookCellExecutionTiming?
+}
+impl Eq for NotebookCellExecutionSummary
+impl Show for NotebookCellExecutionSummary
+impl ToJson for NotebookCellExecutionSummary
+
+pub(all) struct NotebookCellExecutionTiming {
+  startTime : Int
+  endTime : Int
+}
+impl Eq for NotebookCellExecutionTiming
+impl Show for NotebookCellExecutionTiming
+impl ToJson for NotebookCellExecutionTiming
+
+pub(all) enum NotebookCellKind {
+  Markup
+  Code
+}
+impl Eq for NotebookCellKind
+impl Show for NotebookCellKind
+impl ToJson for NotebookCellKind
+
+pub(all) struct NotebookCellOutput {
+  items : Array[NotebookCellOutputItem]
+  metadata : @interop.Any?
+}
+fn NotebookCellOutput::new(@interop.Any, @interop.Any?) -> @interop.Any
+impl Eq for NotebookCellOutput
+impl Show for NotebookCellOutput
+impl ToJson for NotebookCellOutput
+
+pub(all) struct NotebookCellOutputItem {
+  mime : String
+  data : Array[Int]
+}
+fn NotebookCellOutputItem::error(@interop.Any) -> @interop.Any
+fn NotebookCellOutputItem::json(@interop.Any, String?) -> @interop.Any
+fn NotebookCellOutputItem::new(@interop.Any, String) -> @interop.Any
+fn NotebookCellOutputItem::stderr(String) -> @interop.Any
+fn NotebookCellOutputItem::stdout(String) -> @interop.Any
+fn NotebookCellOutputItem::text(String, String?) -> @interop.Any
+impl Eq for NotebookCellOutputItem
+impl Show for NotebookCellOutputItem
+impl ToJson for NotebookCellOutputItem
+
+pub(all) enum NotebookCellStatusBarAlignment {
+  Left
+  Right
+}
+impl Eq for NotebookCellStatusBarAlignment
+impl Show for NotebookCellStatusBarAlignment
+impl ToJson for NotebookCellStatusBarAlignment
+
+pub(all) struct NotebookCellStatusBarItem {
+  text : String
+  alignment : NotebookCellStatusBarAlignment
+  priority : Int?
+  command : String?
+  tooltip : String?
+  accessibilityInformation : AccessibilityInformation?
+}
+fn NotebookCellStatusBarItem::new(String, @interop.Any) -> @interop.Any
+impl Eq for NotebookCellStatusBarItem
+impl Show for NotebookCellStatusBarItem
+impl ToJson for NotebookCellStatusBarItem
+
+pub(all) struct NotebookCellStatusBarItemProvider {
+  onDidChangeCellStatusBarItems : Event[Unit]?
+  provideCellStatusBarItems : (NotebookCell, CancellationToken) -> @interop.Union2[Array[NotebookCellStatusBarItem], Thenable[Array[NotebookCellStatusBarItem]]]
+}
+fn NotebookCellStatusBarItemProvider::provideCellStatusBarItems(Self, @interop.Any, CancellationToken) -> @interop.Any
+impl Eq for NotebookCellStatusBarItemProvider
+impl Show for NotebookCellStatusBarItemProvider
+impl ToJson for NotebookCellStatusBarItemProvider
+
+pub(all) struct NotebookController {
+  id : String
+  notebookType : String
+  supportedLanguages : Array[String]?
+  label : String
+  description : String?
+  detail : String?
+  supportsExecutionOrder : Bool?
+}
+fn NotebookController::createNotebookCellExecution(Self, NotebookCell) -> NotebookCellExecution
+fn NotebookController::dispose(Self) -> Unit
+fn NotebookController::getDescription(Self) -> String?
+fn NotebookController::getDetail(Self) -> String?
+fn NotebookController::getSupportedLanguages(Self) -> Array[String]?
+fn NotebookController::getSupportsExecutionOrder(Self) -> Bool?
+fn NotebookController::setDescription(Self, String?) -> Unit
+fn NotebookController::setDetail(Self, String?) -> Unit
+fn NotebookController::setSupportedLanguages(Self, Array[String]?) -> Unit
+fn NotebookController::setSupportsExecutionOrder(Self, Bool?) -> Unit
+impl Eq for NotebookController
+impl Show for NotebookController
+impl ToJson for NotebookController
+
+pub(all) enum NotebookControllerAffinity {
+  Default
+  Preferred
+}
+
+pub(all) struct NotebookData {
+  cells : Array[NotebookCellData]
+  metadata : Map[String, @interop.Any]?
+}
+fn NotebookData::new(@interop.Any) -> @interop.Any
+impl Eq for NotebookData
+impl Show for NotebookData
+impl ToJson for NotebookData
+
+pub(all) struct NotebookDocument {
+  uri : Uri
+  notebookType : String
+  version : Int
+  isDirty : Bool
+  isUntitled : Bool
+  isClosed : Bool
+  metadata : @interop.Any
+  cellCount : Int
+}
+fn NotebookDocument::cellAt(Self, Int) -> NotebookCell
+fn NotebookDocument::getCells_with_options(Self, NotebookRange?) -> Array[NotebookCell]
+fn NotebookDocument::save(Self) -> @interop.Any
+impl Eq for NotebookDocument
+impl Show for NotebookDocument
+impl ToJson for NotebookDocument
+
+pub(all) struct NotebookDocumentCellChange {
+  document : TextDocument?
+  metadata : @interop.Any?
+  outputs : Array[NotebookCellOutput]?
+  executionSummary : NotebookCellExecutionSummary?
+}
+impl Eq for NotebookDocumentCellChange
+impl Show for NotebookDocumentCellChange
+impl ToJson for NotebookDocumentCellChange
+
+pub(all) struct NotebookDocumentChangeEvent {
+  notebook : NotebookDocument
+  metadata : Map[String, @interop.Any]?
+  cellChanges : Array[NotebookDocumentCellChange]
+  contentChanges : Array[NotebookDocumentContentChange]
+}
+impl Eq for NotebookDocumentChangeEvent
+impl Show for NotebookDocumentChangeEvent
+impl ToJson for NotebookDocumentChangeEvent
+
+pub(all) struct NotebookDocumentContentChange {
+  range : NotebookRange
+  addedCells : Array[NotebookCell]
+  removedCells : Array[NotebookCell]
+}
+impl Eq for NotebookDocumentContentChange
+impl Show for NotebookDocumentContentChange
+impl ToJson for NotebookDocumentContentChange
+
+pub(all) struct NotebookDocumentContentOptions {
+  transientOutputs : Bool?
+  transientCellMetadata : Map[String, Bool]?
+  transientDocumentMetadata : Map[String, Bool]?
+}
+impl Eq for NotebookDocumentContentOptions
+impl Show for NotebookDocumentContentOptions
+impl ToJson for NotebookDocumentContentOptions
+
+pub(all) struct NotebookDocumentShowOptions {
+  viewColumn : ViewColumn?
+  preserveFocus : Bool?
+  preview : Bool?
+  selections : Array[NotebookRange]?
+}
+impl Eq for NotebookDocumentShowOptions
+impl Show for NotebookDocumentShowOptions
+impl ToJson for NotebookDocumentShowOptions
+
+pub(all) struct NotebookDocumentWillSaveEvent {
+  notebook : NotebookDocument
+  reason : TextDocumentSaveReason
+}
+fn NotebookDocumentWillSaveEvent::waitUntil_for_Any(Self, Thenable[@interop.Any]) -> Unit
+fn NotebookDocumentWillSaveEvent::waitUntil_for_WorkspaceEdit(Self, Thenable[WorkspaceEdit]) -> Unit
+impl Eq for NotebookDocumentWillSaveEvent
+impl Show for NotebookDocumentWillSaveEvent
+impl ToJson for NotebookDocumentWillSaveEvent
+
+pub(all) struct NotebookEdit {
+}
+fn NotebookEdit::deleteCells(@interop.Any) -> @interop.Any
+fn NotebookEdit::insertCells(Int, @interop.Any) -> @interop.Any
+fn NotebookEdit::new(@interop.Any, @interop.Any) -> @interop.Any
+fn NotebookEdit::replaceCells(@interop.Any, @interop.Any) -> @interop.Any
+fn NotebookEdit::updateCellMetadata(Int, @interop.Any) -> @interop.Any
+fn NotebookEdit::updateNotebookMetadata(@interop.Any) -> @interop.Any
+impl Eq for NotebookEdit
+impl Show for NotebookEdit
+impl ToJson for NotebookEdit
+
+pub(all) struct NotebookEditor {
+  notebook : NotebookDocument
+  selection : NotebookRange
+  selections : Array[NotebookRange]
+  visibleRanges : Array[NotebookRange]
+  viewColumn : ViewColumn?
+}
+impl Eq for NotebookEditor
+impl Show for NotebookEditor
+impl ToJson for NotebookEditor
+
+pub(all) enum NotebookEditorRevealType {
+  Default
+  InCenter
+  InCenterIfOutsideViewport
+  AtTop
+}
+
+pub(all) struct NotebookEditorSelectionChangeEvent {
+  notebookEditor : NotebookEditor
+  selections : Array[NotebookRange]
+}
+impl Eq for NotebookEditorSelectionChangeEvent
+impl Show for NotebookEditorSelectionChangeEvent
+impl ToJson for NotebookEditorSelectionChangeEvent
+
+pub(all) struct NotebookEditorVisibleRangesChangeEvent {
+  notebookEditor : NotebookEditor
+  visibleRanges : Array[NotebookRange]
+}
+impl Eq for NotebookEditorVisibleRangesChangeEvent
+impl Show for NotebookEditorVisibleRangesChangeEvent
+impl ToJson for NotebookEditorVisibleRangesChangeEvent
+
+pub(all) struct NotebookRange {
+  start : Int
+  end : Int
+}
+fn NotebookRange::new(Int, Int) -> Self
+fn NotebookRange::withChange(@interop.Any, @interop.Any) -> @interop.Any
+impl Eq for NotebookRange
+impl Show for NotebookRange
+impl ToJson for NotebookRange
+
+pub(all) struct NotebookRendererMessaging {
+}
+fn NotebookRendererMessaging::postMessage_with_options(Self, @interop.Any, NotebookEditor?) -> @interop.Any
+impl Eq for NotebookRendererMessaging
+impl Show for NotebookRendererMessaging
+impl ToJson for NotebookRendererMessaging
+
+pub(all) struct NotebookSerializer {
+}
+fn NotebookSerializer::deserializeNotebook(Self, @interop.Any, CancellationToken) -> @interop.Any
+fn NotebookSerializer::serializeNotebook(Self, @interop.Any, CancellationToken) -> @interop.Any
+impl Eq for NotebookSerializer
+impl Show for NotebookSerializer
+impl ToJson for NotebookSerializer
+
+pub(all) struct Notebooks {
+  createNotebookController : (String, String, String, ((Array[NotebookCell], NotebookDocument, NotebookController) -> Thenable[Unit])?) -> NotebookController
+  registerNotebookCellStatusBarItemProvider : (String, NotebookCellStatusBarItemProvider) -> Disposable
+  createRendererMessaging : (String) -> NotebookRendererMessaging
+}
+
+pub(all) struct OnEnterRule {
+  mut beforeText : RegExp
+  mut afterText : RegExp?
+  mut previousLineText : RegExp?
+  mut action : EnterAction
+}
+impl Eq for OnEnterRule
+impl Show for OnEnterRule
+impl ToJson for OnEnterRule
+
+pub(all) struct OnTypeFormattingEditProvider {
+  provideOnTypeFormattingEdits : (TextDocument, Position, String, FormattingOptions, CancellationToken) -> @interop.Union2[Array[TextEdit], Thenable[Array[TextEdit]]]
+}
+fn OnTypeFormattingEditProvider::provideOnTypeFormattingEdits(Self, TextDocument, Position, String, @interop.Any, CancellationToken) -> @interop.Any
+impl Eq for OnTypeFormattingEditProvider
+impl Show for OnTypeFormattingEditProvider
+impl ToJson for OnTypeFormattingEditProvider
+
+pub(all) struct OpenDialogOptions {
+  mut defaultUri : Uri?
+  openLabel : String?
+  canSelectFiles : Bool?
+  canSelectFolders : Bool?
+  canSelectMany : Bool?
+  filters : Map[String, Array[String]]?
+  title : String?
+}
+impl Eq for OpenDialogOptions
+impl Show for OpenDialogOptions
+impl ToJson for OpenDialogOptions
+
+pub(all) struct OutputChannel {
+  name : String
+}
+fn OutputChannel::append(Self, String) -> Unit
+fn OutputChannel::appendLine(Self, String) -> Unit
+fn OutputChannel::clear(Self) -> Unit
+fn OutputChannel::dispose(Self) -> Unit
+fn OutputChannel::hide(Self) -> Unit
+fn OutputChannel::replace(Self, String) -> Unit
+fn OutputChannel::show_with_column(Self, ViewColumn?, Bool?) -> Unit
+fn OutputChannel::show_with_options(Self, Bool?) -> Unit
+impl Eq for OutputChannel
+impl Show for OutputChannel
+impl ToJson for OutputChannel
+
+pub(all) enum OverviewRulerLane {
+  Left
+  Center
+  Right
+  Full
+}
+impl Eq for OverviewRulerLane
+impl Show for OverviewRulerLane
+impl ToJson for OverviewRulerLane
+
+pub(all) struct ParameterInformation {
+  label : String
+  documentation : String?
+}
+fn ParameterInformation::new(@interop.Union2[String, (Int, Int)], @interop.Union2[String, MarkdownString]?) -> Self
+impl Eq for ParameterInformation
+impl Show for ParameterInformation
+impl ToJson for ParameterInformation
+
+pub(all) struct PasteContext {
+  triggerKind : DocumentPasteTriggerKind
+}
+impl Eq for PasteContext
+impl Show for PasteContext
+impl ToJson for PasteContext
+
+pub(all) struct Position {
+  line : Int
+  character : Int
+}
+fn Position::compareTo(Self, Self) -> Int
+fn Position::isAfter(Self, Self) -> Bool
+fn Position::isAfterOrEqual(Self, Self) -> Bool
+fn Position::isBefore(Self, Self) -> Bool
+fn Position::isBeforeOrEqual(Self, Self) -> Bool
+fn Position::isEqual(Self, Self) -> Bool
+fn Position::new(Int, Int) -> Self
+fn Position::translate_with_change(Self, @interop.Any) -> Self
+fn Position::translate_with_options(Self, Int?, Int?) -> Self
+fn Position::with_change(Self, @interop.Any) -> Self
+fn Position::with_with_options(Self, Int?, Int?) -> Self
+impl Eq for Position
+impl Show for Position
+impl ToJson for Position
+
+pub(all) struct PrepareLanguageModelChatModelOptions {
+  justification : String?
+}
+impl Eq for PrepareLanguageModelChatModelOptions
+impl Show for PrepareLanguageModelChatModelOptions
+impl ToJson for PrepareLanguageModelChatModelOptions
+
+pub(all) struct PreparedToolInvocation {
+  invocationMessage : @interop.Union2[String, MarkdownString]?
+  confirmationMessages : LanguageModelToolConfirmationMessages?
+}
+impl Eq for PreparedToolInvocation
+impl Show for PreparedToolInvocation
+impl ToJson for PreparedToolInvocation
+
+pub(all) struct ProcessExecution {
+  process : String
+  args : Array[String]?
+  options : ProcessExecutionOptions?
+}
+fn ProcessExecution::new(String, @interop.Any?) -> @interop.Any
+fn ProcessExecution::new_with_args(String, Array[String], @interop.Any?) -> @interop.Any
+impl Eq for ProcessExecution
+impl Show for ProcessExecution
+impl ToJson for ProcessExecution
+
+pub(all) struct ProcessExecutionOptions {
+  cwd : String?
+  env : Array[String]?
+}
+impl Eq for ProcessExecutionOptions
+impl Show for ProcessExecutionOptions
+impl ToJson for ProcessExecutionOptions
+
+#external
+pub(all) type Progress[T]
+fn Progress::report(Self[@interop.Any], @interop.Any) -> Unit
+fn Progress::reportWithIncrement(Self[@interop.Any], @interop.Any, Int) -> Unit
+impl[T] Eq for Progress[T]
+impl[T] Show for Progress[T]
+impl[T] ToJson for Progress[T]
+
+pub(all) enum ProgressLocation {
+  SourceControl
+  Window
+  Notification
+}
+impl Eq for ProgressLocation
+impl Show for ProgressLocation
+impl ToJson for ProgressLocation
+
+pub(all) struct ProgressOptions {
+  location : ProgressLocation
+  title : String?
+  cancellable : Bool?
+}
+impl Eq for ProgressOptions
+impl Show for ProgressOptions
+impl ToJson for ProgressOptions
+
+pub(all) struct ProvideLanguageModelChatResponseOptions {
+  modelOptions : Map[String, @interop.Any]?
+  tools : Array[LanguageModelChatTool]?
+  toolMode : LanguageModelChatToolMode
+}
+impl Eq for ProvideLanguageModelChatResponseOptions
+impl Show for ProvideLanguageModelChatResponseOptions
+impl ToJson for ProvideLanguageModelChatResponseOptions
+
+pub(all) struct Pseudoterminal {
+  onDidWrite : Event[String]
+  onDidOverrideDimensions : Event[TerminalDimensions?]?
+  onDidClose : Event[@interop.Union2[Unit, Int]?]?
+  onDidChangeName : Event[String]?
+}
+fn Pseudoterminal::close(Self) -> Unit
+fn Pseudoterminal::getName(Self) -> String?
+fn Pseudoterminal::handleInput(Self, String) -> Unit
+fn Pseudoterminal::open(Self, TerminalDimensions?) -> Unit
+fn Pseudoterminal::setDimensions(Self, TerminalDimensions) -> Unit
+fn Pseudoterminal::setName(Self, String?) -> Unit
+impl Eq for Pseudoterminal
+impl Show for Pseudoterminal
+impl ToJson for Pseudoterminal
+
+pub(all) struct QuickDiffProvider {
+  provideOriginalResource : (Uri, CancellationToken) -> @interop.Union2[Uri, Thenable[Uri]]
+}
+fn QuickDiffProvider::provideOriginalResource(Self, Uri, CancellationToken) -> @interop.Any
+impl Eq for QuickDiffProvider
+impl Show for QuickDiffProvider
+impl ToJson for QuickDiffProvider
+
+pub(all) struct QuickInput {
+  mut title : String?
+  mut step : Int?
+  mut totalSteps : Int?
+  mut enabled : Bool
+  mut busy : Bool
+  mut ignoreFocusOut : Bool
+}
+fn QuickInput::dispose(Self) -> Unit
+fn QuickInput::hide(Self) -> Unit
+fn QuickInput::show(Self) -> Unit
+impl Eq for QuickInput
+impl Show for QuickInput
+impl ToJson for QuickInput
+
+pub(all) struct QuickInputButton {
+  iconPath : @interop.Union3[Uri, LightDarkIconPath, ThemeIcon]
+  tooltip : String?
+}
+impl Eq for QuickInputButton
+impl Show for QuickInputButton
+impl ToJson for QuickInputButton
+
+#external
+pub(all) type QuickInputButtons
+impl Eq for QuickInputButtons
+impl Show for QuickInputButtons
+impl ToJson for QuickInputButtons
+
+pub(all) struct QuickPick {
+  mut title : String?
+  mut step : Int?
+  mut totalSteps : Int?
+  mut enabled : Bool
+  mut busy : Bool
+  mut ignoreFocusOut : Bool
+  mut value : String
+  mut placeholder : String?
+  mut items : Array[QuickPickItem]
+  mut canSelectMany : Bool
+  mut matchOnDescription : Bool
+  mut matchOnDetail : Bool
+  mut activeItems : Array[QuickPickItem]
+  mut selectedItems : Array[QuickPickItem]
+}
+fn QuickPick::getActiveItems(Self) -> @interop.Any
+fn QuickPick::getCanSelectMany(Self) -> Bool
+fn QuickPick::getItems(Self) -> @interop.Any
+fn QuickPick::getSelectedItems(Self) -> @interop.Any
+fn QuickPick::onDidSelectItem(Self, @interop.Any) -> @interop.Any
+fn QuickPick::setActiveItems(Self, @interop.Any) -> Unit
+fn QuickPick::setCanSelectMany(Self, Bool) -> Unit
+fn QuickPick::setItems(Self, @interop.Any) -> Unit
+fn QuickPick::setMatchOnDescription(Self, Bool) -> Unit
+fn QuickPick::setMatchOnDetail(Self, Bool) -> Unit
+fn QuickPick::setSelectedItems(Self, @interop.Any) -> Unit
+impl Eq for QuickPick
+impl Show for QuickPick
+impl ToJson for QuickPick
+
+pub(all) struct QuickPickItem {
+  mut label : String
+  mut kind : QuickPickItemKind?
+  mut iconPath : @interop.Union3[Uri, LightDarkIconPath, ThemeIcon]?
+  mut description : String?
+  mut detail : String?
+  mut picked : Bool?
+  mut alwaysShow : Bool?
+  mut buttons : Array[QuickInputButton]?
+}
+impl Eq for QuickPickItem
+impl Show for QuickPickItem
+impl ToJson for QuickPickItem
+
+pub(all) struct QuickPickItemButtonEvent {
+  button : QuickInputButton
+  item : QuickPickItem
+}
+impl Eq for QuickPickItemButtonEvent
+impl Show for QuickPickItemButtonEvent
+impl ToJson for QuickPickItemButtonEvent
+
+pub(all) enum QuickPickItemKind {
+  Separator
+  Default
+}
+impl Eq for QuickPickItemKind
+impl Show for QuickPickItemKind
+impl ToJson for QuickPickItemKind
+
+pub(all) struct QuickPickOptions {
+  title : String?
+  matchOnDescription : Bool?
+  matchOnDetail : Bool?
+  placeHolder : String?
+  ignoreFocusOut : Bool?
+  canPickMany : Bool?
+}
+fn QuickPickOptions::onDidSelectItem(Self, @interop.Any) -> @interop.Any
+impl Eq for QuickPickOptions
+impl Show for QuickPickOptions
+impl ToJson for QuickPickOptions
+
+pub(all) struct Range {
+  start : Position
+  end : Position
+  mut isEmpty : Bool
+  mut isSingleLine : Bool
+}
+fn Range::contains(Self, @interop.Any) -> Bool
+fn Range::intersection(Self, Self) -> Self?
+fn Range::isEqual(Self, Self) -> Bool
+fn Range::new(Position, Position) -> Self
+fn Range::new_with_lines(Int, Int, Int, Int) -> Self
+fn Range::union(Self, Self) -> Self
+fn Range::with_change(Self, @interop.Any) -> Self
+fn Range::with_with_options(Self, Position?, Position?) -> Self
+impl Eq for Range
+impl Show for Range
+impl ToJson for Range
+
+pub(all) struct ReferenceContext {
+  includeDeclaration : Bool
+}
+impl Eq for ReferenceContext
+impl Show for ReferenceContext
+impl ToJson for ReferenceContext
+
+pub(all) struct ReferenceProvider {
+  provideReferences : (TextDocument, Position, ReferenceContext, CancellationToken) -> @interop.Union2[Array[Location], Thenable[Array[Location]]]
+}
+fn ReferenceProvider::provideReferences(Self, TextDocument, Position, @interop.Any, CancellationToken) -> @interop.Any
+impl Eq for ReferenceProvider
+impl Show for ReferenceProvider
+impl ToJson for ReferenceProvider
+
+#external
+pub(all) type RegExp
+impl Eq for RegExp
+impl Show for RegExp
+impl ToJson for RegExp
+
+pub(all) struct RelativePattern {
+  baseUri : Uri
+  base : String
+  pattern : String
+}
+fn RelativePattern::new(@interop.Union3[WorkspaceFolder, Uri, String], String) -> Self
+impl Eq for RelativePattern
+impl Show for RelativePattern
+impl ToJson for RelativePattern
+
+pub(all) struct RenameProvider {
+  provideRenameEdits : (TextDocument, Position, String, CancellationToken) -> @interop.Union2[WorkspaceEdit, Thenable[WorkspaceEdit]]
+  prepareRename : (TextDocument, Position, CancellationToken) -> @interop.Union2[Range, Thenable[Range]]
+}
+fn RenameProvider::prepareRename(Self, TextDocument, Position, CancellationToken) -> @interop.Any
+fn RenameProvider::provideRenameEdits(Self, TextDocument, Position, String, CancellationToken) -> @interop.Any
+impl Eq for RenameProvider
+impl Show for RenameProvider
+impl ToJson for RenameProvider
+
+pub(all) struct RenameProviderPrepareResult {
+  range : Range
+  placeholder : String
+}
+impl Eq for RenameProviderPrepareResult
+impl Show for RenameProviderPrepareResult
+impl ToJson for RenameProviderPrepareResult
+
+pub(all) struct RunOptions {
+  reevaluateOnRerun : Bool?
+}
+impl Eq for RunOptions
+impl Show for RunOptions
+impl ToJson for RunOptions
+
+pub(all) struct SaveDialogOptions {
+  mut defaultUri : Uri?
+  mut saveLabel : String?
+  mut filters : Map[String, Array[String]]?
+  mut title : String?
+}
+impl Eq for SaveDialogOptions
+impl Show for SaveDialogOptions
+impl ToJson for SaveDialogOptions
+
+pub(all) struct Scm {
+  inputBox : SourceControlInputBox
+  createSourceControl : (String, String, Uri?) -> SourceControl
+}
+
+pub(all) struct SecretStorage {
+  onDidChange : Event[SecretStorageChangeEvent]
+}
+fn SecretStorage::delete(Self, String) -> @interop.Any
+fn SecretStorage::get(Self, String) -> @interop.Any?
+fn SecretStorage::store(Self, String, String) -> @interop.Any
+impl Eq for SecretStorage
+impl Show for SecretStorage
+impl ToJson for SecretStorage
+
+pub(all) struct SecretStorageChangeEvent {
+  key : String
+}
+impl Eq for SecretStorageChangeEvent
+impl Show for SecretStorageChangeEvent
+impl ToJson for SecretStorageChangeEvent
+
+pub(all) struct SelectedCompletionInfo {
+  range : Range
+  text : String
+}
+impl Eq for SelectedCompletionInfo
+impl Show for SelectedCompletionInfo
+impl ToJson for SelectedCompletionInfo
+
+pub(all) struct Selection {
+  anchor : Position
+  active : Position
+  start : Position
+  end : Position
+  isReversed : Bool
+  mut isEmpty : Bool
+  mut isSingleLine : Bool
+}
+fn Selection::new(Position, Position) -> Self
+fn Selection::new_with_lines(Int, Int, Int, Int) -> Self
+impl Eq for Selection
+impl Show for Selection
+impl ToJson for Selection
+
+pub(all) struct SelectionRange {
+  range : Range
+  parent : SelectionRange?
+}
+fn SelectionRange::new(Range, Self?) -> Self
+impl Eq for SelectionRange
+impl Show for SelectionRange
+impl ToJson for SelectionRange
+
+pub(all) struct SelectionRangeProvider {
+  provideSelectionRanges : (TextDocument, Array[Position], CancellationToken) -> @interop.Union2[Array[SelectionRange], Thenable[Array[SelectionRange]]]
+}
+fn SelectionRangeProvider::provideSelectionRanges(Self, TextDocument, @interop.Any, CancellationToken) -> @interop.Any
+impl Eq for SelectionRangeProvider
+impl Show for SelectionRangeProvider
+impl ToJson for SelectionRangeProvider
+
+pub(all) struct SemanticTokens {
+  resultId : String?
+  data : Array[Int]
+}
+fn SemanticTokens::new(Array[Int], String?) -> Self
+impl Eq for SemanticTokens
+impl Show for SemanticTokens
+impl ToJson for SemanticTokens
+
+#external
+pub(all) type SemanticTokensBuilder
+fn SemanticTokensBuilder::build_with_options(Self, String?) -> SemanticTokens
+fn SemanticTokensBuilder::new(SemanticTokensLegend?) -> Self
+fn SemanticTokensBuilder::push_numbers(Self, Int, Int, Int, Int, Int?) -> Unit
+fn SemanticTokensBuilder::push_range(Self, Range, String, Array[String]?) -> Unit
+impl Eq for SemanticTokensBuilder
+impl Show for SemanticTokensBuilder
+impl ToJson for SemanticTokensBuilder
+
+pub(all) struct SemanticTokensEdit {
+  start : Int
+  deleteCount : Int
+  data : Array[Int]?
+}
+fn SemanticTokensEdit::new(Int, Int, Array[Int]?) -> Self
+impl Eq for SemanticTokensEdit
+impl Show for SemanticTokensEdit
+impl ToJson for SemanticTokensEdit
+
+pub(all) struct SemanticTokensEdits {
+  resultId : String?
+  edits : Array[SemanticTokensEdit]
+}
+fn SemanticTokensEdits::new(Array[SemanticTokensEdit], String?) -> Self
+impl Eq for SemanticTokensEdits
+impl Show for SemanticTokensEdits
+impl ToJson for SemanticTokensEdits
+
+pub(all) struct SemanticTokensLegend {
+  tokenTypes : Array[String]
+  tokenModifiers : Array[String]
+}
+fn SemanticTokensLegend::new(Array[String], Array[String]?) -> Self
+impl Eq for SemanticTokensLegend
+impl Show for SemanticTokensLegend
+impl ToJson for SemanticTokensLegend
+
+pub(all) struct ShellExecution {
+  commandLine : String
+  options : ShellExecutionOptions?
+}
+fn ShellExecution::new(String, @interop.Any?) -> @interop.Any
+fn ShellExecution::new_with_args(@interop.Any, @interop.Any, @interop.Any?) -> @interop.Any
+impl Eq for ShellExecution
+impl Show for ShellExecution
+impl ToJson for ShellExecution
+
+pub(all) struct ShellExecutionOptions {
+  executable : String?
+  shellArgs : Array[String]?
+  shellQuoting : ShellQuoting?
+  cwd : String?
+  env : Array[String]?
+}
+impl Eq for ShellExecutionOptions
+impl Show for ShellExecutionOptions
+impl ToJson for ShellExecutionOptions
+
+pub(all) struct ShellIntegration {
+  cwd : Uri?
+}
+impl Eq for ShellIntegration
+impl Show for ShellIntegration
+impl ToJson for ShellIntegration
+
+pub(all) struct ShellQuotedString {
+  value : String
+  quoting : ShellQuoting
+}
+impl Eq for ShellQuotedString
+impl Show for ShellQuotedString
+impl ToJson for ShellQuotedString
+
+pub(all) enum ShellQuoting {
+  Escape
+  Strong
+  Weak
+}
+impl Eq for ShellQuoting
+impl Show for ShellQuoting
+impl ToJson for ShellQuoting
+
+pub(all) struct ShellQuotingOptions {
+  escape : String?
+  strong : String?
+  weak : String?
+}
+impl Eq for ShellQuotingOptions
+impl Show for ShellQuotingOptions
+impl ToJson for ShellQuotingOptions
+
+pub(all) struct SignatureHelp {
+  signatures : Array[SignatureInformation]
+  activeSignature : Int
+  activeParameter : Int
+}
+fn SignatureHelp::new() -> Self
+impl Eq for SignatureHelp
+impl Show for SignatureHelp
+impl ToJson for SignatureHelp
+
+pub(all) struct SignatureHelpContext {
+  triggerKind : SignatureHelpTriggerKind
+  triggerCharacter : String?
+  isRetrigger : Bool
+  activeSignatureHelp : SignatureHelp?
+}
+impl Eq for SignatureHelpContext
+impl Show for SignatureHelpContext
+impl ToJson for SignatureHelpContext
+
+pub(all) struct SignatureHelpProvider {
+  provideSignatureHelp : (TextDocument, Position, CancellationToken, SignatureHelpContext) -> @interop.Union2[SignatureHelp, Thenable[SignatureHelp]]
+}
+fn SignatureHelpProvider::provideSignatureHelp(Self, TextDocument, Position, CancellationToken, @interop.Any) -> @interop.Any
+impl Eq for SignatureHelpProvider
+impl Show for SignatureHelpProvider
+impl ToJson for SignatureHelpProvider
+
+pub(all) struct SignatureHelpProviderMetadata {
+  triggerCharacters : Array[String]
+  retriggerCharacters : Array[String]?
+}
+impl Eq for SignatureHelpProviderMetadata
+impl Show for SignatureHelpProviderMetadata
+impl ToJson for SignatureHelpProviderMetadata
+
+pub(all) enum SignatureHelpTriggerKind {
+  Invoke
+  TriggerCharacter
+  ContentChange
+}
+impl Eq for SignatureHelpTriggerKind
+impl Show for SignatureHelpTriggerKind
+impl ToJson for SignatureHelpTriggerKind
+
+pub(all) struct SignatureInformation {
+  label : String
+  documentation : String?
+  parameters : Array[ParameterInformation]
+  activeParameter : Int?
+}
+fn SignatureInformation::new(String, @interop.Union2[String, MarkdownString]?) -> Self
+impl Eq for SignatureInformation
+impl Show for SignatureInformation
+impl ToJson for SignatureInformation
+
+pub(all) struct SnippetString {
+  value : String
+}
+fn SnippetString::appendChoice_with_options(Self, @interop.Any, Int?) -> Self
+fn SnippetString::appendPlaceholder(Self, @interop.Any, Int?) -> Self
+fn SnippetString::appendTabstop_with_options(Self, Int?) -> Self
+fn SnippetString::appendText(Self, String) -> Self
+fn SnippetString::appendVariable(Self, String, @interop.Any) -> Self
+fn SnippetString::new(String?) -> Self
+impl Eq for SnippetString
+impl Show for SnippetString
+impl ToJson for SnippetString
+
+pub(all) struct SnippetTextEdit {
+  range : Range
+  snippet : SnippetString
+}
+fn SnippetTextEdit::insert(Position, @interop.Any) -> @interop.Any
+fn SnippetTextEdit::new(Range, @interop.Any) -> @interop.Any
+fn SnippetTextEdit::replace(Range, @interop.Any) -> @interop.Any
+impl Eq for SnippetTextEdit
+impl Show for SnippetTextEdit
+impl ToJson for SnippetTextEdit
+
+pub(all) struct SourceBreakpoint {
+  id : String
+  enabled : Bool
+  condition : String?
+  hitCondition : String?
+  logMessage : String?
+  location : Location
+}
+fn SourceBreakpoint::new(Location, Bool?, String?, String?, String?) -> @interop.Any
+impl Eq for SourceBreakpoint
+impl Show for SourceBreakpoint
+impl ToJson for SourceBreakpoint
+
+pub(all) struct SourceControl {
+  id : String
+  label : String
+  rootUri : Uri?
+  inputBox : SourceControlInputBox
+  count : Int?
+  quickDiffProvider : QuickDiffProvider?
+  commitTemplate : String?
+  acceptInputCommand : Command?
+  statusBarCommands : Array[Command]?
+}
+fn SourceControl::createResourceGroup(Self, String, String) -> SourceControlResourceGroup
+fn SourceControl::dispose(Self) -> Unit
+fn SourceControl::getAcceptInputCommand(Self) -> Command?
+fn SourceControl::getInputBox(Self) -> @interop.Any
+fn SourceControl::getQuickDiffProvider(Self) -> @interop.Any?
+fn SourceControl::getStatusBarCommands(Self) -> Array[Command]?
+fn SourceControl::setAcceptInputCommand(Self, Command?) -> Unit
+fn SourceControl::setInputBox(Self, @interop.Any) -> Unit
+fn SourceControl::setQuickDiffProvider(Self, @interop.Any?) -> Unit
+fn SourceControl::setStatusBarCommands(Self, Array[Command]?) -> Unit
+impl Eq for SourceControl
+impl Show for SourceControl
+impl ToJson for SourceControl
+
+pub(all) struct SourceControlInputBox {
+  value : String
+  placeholder : String
+  visible : Bool
+  enabled : Bool
+}
+fn SourceControlInputBox::getEnabled(@interop.Any) -> Bool
+fn SourceControlInputBox::getPlaceholder(@interop.Any) -> String
+fn SourceControlInputBox::getValue(@interop.Any) -> String
+fn SourceControlInputBox::getVisible(@interop.Any) -> Bool
+fn SourceControlInputBox::setEnabled(@interop.Any, Bool) -> Unit
+fn SourceControlInputBox::setPlaceholder(@interop.Any, String) -> Unit
+fn SourceControlInputBox::setValue(@interop.Any, String) -> Unit
+fn SourceControlInputBox::setVisible(@interop.Any, Bool) -> Unit
+impl Eq for SourceControlInputBox
+impl Show for SourceControlInputBox
+impl ToJson for SourceControlInputBox
+
+pub(all) struct SourceControlResourceDecorations {
+  strikeThrough : Bool?
+  faded : Bool?
+  tooltip : String?
+  light : SourceControlResourceThemableDecorations?
+  dark : SourceControlResourceThemableDecorations?
+}
+impl Eq for SourceControlResourceDecorations
+impl Show for SourceControlResourceDecorations
+impl ToJson for SourceControlResourceDecorations
+
+pub(all) struct SourceControlResourceGroup {
+  id : String
+  label : String
+  hideWhenEmpty : Bool?
+  resourceStates : Array[SourceControlResourceState]
+}
+fn SourceControlResourceGroup::dispose(Self) -> Unit
+fn SourceControlResourceGroup::getHideWhenEmpty(Self) -> Bool?
+fn SourceControlResourceGroup::getResourceStates(Self) -> @interop.Any
+fn SourceControlResourceGroup::setHideWhenEmpty(Self, Bool?) -> Unit
+fn SourceControlResourceGroup::setResourceStates(Self, @interop.Any) -> Unit
+impl Eq for SourceControlResourceGroup
+impl Show for SourceControlResourceGroup
+impl ToJson for SourceControlResourceGroup
+
+pub(all) struct SourceControlResourceState {
+  resourceUri : Uri
+  command : Command?
+  decorations : SourceControlResourceDecorations?
+  contextValue : String?
+}
+impl Eq for SourceControlResourceState
+impl Show for SourceControlResourceState
+impl ToJson for SourceControlResourceState
+
+pub(all) struct SourceControlResourceThemableDecorations {
+  iconPath : String?
+}
+impl Eq for SourceControlResourceThemableDecorations
+impl Show for SourceControlResourceThemableDecorations
+impl ToJson for SourceControlResourceThemableDecorations
+
+pub(all) struct StatementCoverage {
+  executionCount : Int
+  location : Location
+}
+fn StatementCoverage::new(@interop.Any, @interop.Any, @interop.Any?) -> @interop.Any
+impl Eq for StatementCoverage
+impl Show for StatementCoverage
+impl ToJson for StatementCoverage
+
+pub(all) enum StatusBarAlignment {
+  Left
+  Right
+}
+impl Eq for StatusBarAlignment
+impl Show for StatusBarAlignment
+impl ToJson for StatusBarAlignment
+
+pub(all) struct StatusBarItem {
+  id : String
+  alignment : StatusBarAlignment
+  priority : Int?
+  mut text : String
+  mut tooltip : String?
+  mut color : String?
+  mut backgroundColor : ThemeColor?
+  mut command : String?
+  mut accessibilityInformation : AccessibilityInformation?
+}
+fn StatusBarItem::dispose(Self) -> Unit
+fn StatusBarItem::hide(Self) -> Unit
+fn StatusBarItem::setBackgroundColor(Self, @interop.Any) -> Unit
+fn StatusBarItem::setColor(Self, String) -> Unit
+fn StatusBarItem::setCommand(Self, @interop.Any) -> Unit
+fn StatusBarItem::setPriority(Self, Int) -> Unit
+fn StatusBarItem::setText(Self, String) -> Unit
+fn StatusBarItem::setTooltip(Self, String) -> Unit
+fn StatusBarItem::show(Self) -> Unit
+impl Eq for StatusBarItem
+impl Show for StatusBarItem
+impl ToJson for StatusBarItem
+
+pub(all) struct SymbolInformation {
+  name : String
+  kind : SymbolKind
+  tags : Array[SymbolTag]?
+  location : Location
+  containerName : String?
+}
+fn SymbolInformation::new(String, SymbolKind, String, Location) -> Self
+fn SymbolInformation::new_with_range(String, SymbolKind, Range, Uri, String?) -> Self
+impl Eq for SymbolInformation
+impl Show for SymbolInformation
+impl ToJson for SymbolInformation
+
+pub(all) enum SymbolKind {
+  File
+  Module
+  Namespace
+  Package
+  Class
+  Method
+  Property
+  Field
+  Constructor
+  Enum
+  Interface
+  Function
+  Variable
+  Constant
+  String
+  Number
+  Boolean
+  Array
+  Object
+  Key
+  Null
+  EnumMember
+  Struct
+  Event
+  Operator
+  TypeParameter
+}
+impl Eq for SymbolKind
+impl Show for SymbolKind
+impl ToJson for SymbolKind
+
+pub(all) enum SymbolTag {
+  Deprecated
+}
+impl Eq for SymbolTag
+impl Show for SymbolTag
+impl ToJson for SymbolTag
+
+pub(all) enum SyntaxTokenType {
+  Other
+  Comment
+  String
+  RegEx
+}
+impl Eq for SyntaxTokenType
+impl Show for SyntaxTokenType
+impl ToJson for SyntaxTokenType
+
+pub(all) struct Tab {
+  label : String
+  group : TabGroup
+  input : @interop.Union8[TabInputText, TabInputTextDiff, TabInputCustom, TabInputWebview, TabInputNotebook, TabInputNotebookDiff, TabInputTerminal, @interop.Any]
+  isDirty : Bool
+  isPinned : Bool
+  isPreview : Bool
+}
+fn Tab::getGroup(@interop.Any) -> @interop.Any
+fn Tab::getInput(@interop.Any) -> @interop.Any
+fn Tab::getIsActive(@interop.Any) -> Bool
+fn Tab::getIsDirty(@interop.Any) -> Bool
+fn Tab::getIsPinned(@interop.Any) -> Bool
+fn Tab::getIsPreview(@interop.Any) -> Bool
+fn Tab::getLabel(@interop.Any) -> String
+impl Eq for Tab
+impl Show for Tab
+impl ToJson for Tab
+
+pub(all) struct TabChangeEvent {
+  opened : Array[Tab]
+  closed : Array[Tab]
+  changed : Array[Tab]
+}
+impl Eq for TabChangeEvent
+impl Show for TabChangeEvent
+impl ToJson for TabChangeEvent
+
+pub(all) struct TabGroup {
+  isActive : Bool
+  viewColumn : ViewColumn
+  activeTab : Tab?
+  tabs : Array[Tab]
+}
+fn TabGroup::getActiveTab(@interop.Any) -> @interop.Any?
+fn TabGroup::getIsActive(@interop.Any) -> Bool
+fn TabGroup::getTabs(@interop.Any) -> @interop.Any
+fn TabGroup::getViewColumn(@interop.Any) -> @interop.Any
+impl Eq for TabGroup
+impl Show for TabGroup
+impl ToJson for TabGroup
+
+pub(all) struct TabGroupChangeEvent {
+  opened : Array[TabGroup]
+  closed : Array[TabGroup]
+  changed : Array[TabGroup]
+}
+impl Eq for TabGroupChangeEvent
+impl Show for TabGroupChangeEvent
+impl ToJson for TabGroupChangeEvent
+
+pub(all) struct TabGroups {
+  all : Array[TabGroup]
+  activeTabGroup : TabGroup
+}
+impl Eq for TabGroups
+impl Show for TabGroups
+impl ToJson for TabGroups
+
+pub(all) struct TabInputCustom {
+  uri : Uri
+  viewType : String
+}
+fn TabInputCustom::new(Uri, String) -> Self
+impl Eq for TabInputCustom
+impl Show for TabInputCustom
+impl ToJson for TabInputCustom
+
+pub(all) struct TabInputNotebook {
+  uri : Uri
+  notebookType : String
+}
+fn TabInputNotebook::new(Uri, String) -> @interop.Any
+impl Eq for TabInputNotebook
+impl Show for TabInputNotebook
+impl ToJson for TabInputNotebook
+
+pub(all) struct TabInputNotebookDiff {
+  original : Uri
+  modified : Uri
+  notebookType : String
+}
+fn TabInputNotebookDiff::new(Uri, Uri, String) -> @interop.Any
+impl Eq for TabInputNotebookDiff
+impl Show for TabInputNotebookDiff
+impl ToJson for TabInputNotebookDiff
+
+#external
+pub(all) type TabInputTerminal
+fn TabInputTerminal::new() -> Self
+impl Eq for TabInputTerminal
+impl Show for TabInputTerminal
+impl ToJson for TabInputTerminal
+
+pub(all) struct TabInputText {
+  uri : Uri
+}
+fn TabInputText::new(Uri) -> Self
+impl Eq for TabInputText
+impl Show for TabInputText
+impl ToJson for TabInputText
+
+pub(all) struct TabInputTextDiff {
+  original : Uri
+  modified : Uri
+}
+fn TabInputTextDiff::new(Uri, Uri) -> Self
+impl Eq for TabInputTextDiff
+impl Show for TabInputTextDiff
+impl ToJson for TabInputTextDiff
+
+pub(all) struct TabInputWebview {
+  viewType : String
+}
+fn TabInputWebview::new(String) -> Self
+impl Eq for TabInputWebview
+impl Show for TabInputWebview
+impl ToJson for TabInputWebview
+
+pub(all) struct Task {
+  definition : TaskDefinition
+  scope : TaskScope?
+  name : String
+  detail : String?
+  execution : ShellExecution?
+  isBackground : Bool
+  source : String
+  group : TaskGroup?
+  presentationOptions : TaskPresentationOptions?
+  runOptions : RunOptions?
+  problemMatchers : Array[String]?
+}
+fn Task::new(@interop.Any, @interop.Any, String, String, @interop.Any?, @interop.Any?) -> @interop.Any
+fn Task::new_simple(@interop.Any, String, String, @interop.Any?, @interop.Any?) -> @interop.Any
+impl Eq for Task
+impl Show for Task
+impl ToJson for Task
+
+pub(all) struct TaskDefinition {
+  taskType : String
+}
+impl Eq for TaskDefinition
+impl Show for TaskDefinition
+impl ToJson for TaskDefinition
+
+pub(all) struct TaskEndEvent {
+  execution : TaskExecution
+}
+impl Eq for TaskEndEvent
+impl Show for TaskEndEvent
+impl ToJson for TaskEndEvent
+
+pub(all) struct TaskExecution {
+  task : Task
+}
+fn TaskExecution::getTask(Self) -> @interop.Any
+fn TaskExecution::terminate(Self) -> Unit
+impl Eq for TaskExecution
+impl Show for TaskExecution
+impl ToJson for TaskExecution
+
+pub(all) struct TaskFilter {
+  version : String?
+  taskType : String?
+}
+impl Eq for TaskFilter
+impl Show for TaskFilter
+impl ToJson for TaskFilter
+
+pub(all) struct TaskGroup {
+  id : String
+  label : String
+}
+impl Eq for TaskGroup
+impl Show for TaskGroup
+impl ToJson for TaskGroup
+
+pub(all) enum TaskPanelKind {
+  Shared
+  Dedicated
+  New
+}
+impl Eq for TaskPanelKind
+impl Show for TaskPanelKind
+impl ToJson for TaskPanelKind
+
+pub(all) struct TaskPresentationOptions {
+  reveal : TaskRevealKind?
+  echo : Bool?
+  focus : Bool?
+  panel : TaskPanelKind?
+  showReuseMessage : Bool?
+  clear : Bool?
+  group : String?
+  close : Bool?
+}
+impl Eq for TaskPresentationOptions
+impl Show for TaskPresentationOptions
+impl ToJson for TaskPresentationOptions
+
+pub(all) struct TaskProcessEndEvent {
+  execution : TaskExecution
+  exitCode : Int?
+}
+impl Eq for TaskProcessEndEvent
+impl Show for TaskProcessEndEvent
+impl ToJson for TaskProcessEndEvent
+
+pub(all) struct TaskProcessStartEvent {
+  execution : TaskExecution
+  processId : Int
+}
+impl Eq for TaskProcessStartEvent
+impl Show for TaskProcessStartEvent
+impl ToJson for TaskProcessStartEvent
+
+pub(all) struct TaskProvider {
+  provideTasks : (CancellationToken) -> @interop.Union2[Array[Task], Thenable[Array[Task]]]
+  resolveTask : (Task, CancellationToken) -> @interop.Union2[Task, Thenable[Task]]
+}
+fn TaskProvider::provideTasks(Self, CancellationToken) -> @interop.Any
+fn TaskProvider::resolveTask(Self, @interop.Any, CancellationToken) -> @interop.Any
+impl Eq for TaskProvider
+impl Show for TaskProvider
+impl ToJson for TaskProvider
+
+pub(all) enum TaskRevealKind {
+  Always
+  Silent
+  Never
+}
+impl Eq for TaskRevealKind
+impl Show for TaskRevealKind
+impl ToJson for TaskRevealKind
+
+pub(all) enum TaskScope {
+  Global
+  Workspace
+}
+impl Eq for TaskScope
+impl Show for TaskScope
+impl ToJson for TaskScope
+
+pub(all) struct TaskStartEvent {
+  execution : TaskExecution
+}
+impl Eq for TaskStartEvent
+impl Show for TaskStartEvent
+impl ToJson for TaskStartEvent
+
+pub(all) struct Tasks {
+  registerTaskProvider : (String, TaskProvider) -> Disposable
+  fetchTasks : (TaskFilter?) -> Thenable[Array[Task]]
+  executeTask : (Task) -> Thenable[TaskExecution]
+  taskExecutions : Array[TaskExecution]
+  onDidStartTask : Event[TaskStartEvent]
+  onDidEndTask : Event[TaskEndEvent]
+  onDidStartTaskProcess : Event[TaskProcessStartEvent]
+  onDidEndTaskProcess : Event[TaskProcessEndEvent]
+}
+
+pub(all) struct TelemetryLogger {
+  logLevel : LogLevel
+}
+fn TelemetryLogger::dispose(Self) -> Unit
+impl Eq for TelemetryLogger
+impl Show for TelemetryLogger
+impl ToJson for TelemetryLogger
+
+pub(all) struct TelemetryLoggerOptions {
+  ignoreBuiltInCommonProperties : Bool?
+  ignoreUnhandledErrors : Bool?
+  additionalCommonProperties : Map[String, @interop.Any]?
+}
+impl Eq for TelemetryLoggerOptions
+impl Show for TelemetryLoggerOptions
+impl ToJson for TelemetryLoggerOptions
+
+pub(all) struct TelemetrySender {
+}
+fn TelemetrySender::flush(Self) -> @interop.Any
+fn TelemetrySender::sendErrorData(Self, @interop.Any, @interop.Any?) -> Unit
+fn TelemetrySender::sendErrorData_with_options(Self, Error, @interop.Any?) -> Unit
+fn TelemetrySender::sendEventData(Self, String, @interop.Any?) -> Unit
+fn TelemetrySender::sendEventData_with_options(Self, String, @interop.Any?) -> Unit
+impl Eq for TelemetrySender
+impl Show for TelemetrySender
+impl ToJson for TelemetrySender
+
+pub(all) struct TelemetryTrustedValue {
+  value : String
+}
+fn TelemetryTrustedValue::new(@interop.Any) -> @interop.Any
+impl Eq for TelemetryTrustedValue
+impl Show for TelemetryTrustedValue
+impl ToJson for TelemetryTrustedValue
+
+pub(all) struct Terminal {
+  name : String
+  processId : Int?
+  creationOptions : TerminalOptions?
+  exitStatus : TerminalExitStatus?
+  state : TerminalState?
+  shellIntegration : TerminalShellIntegration?
+}
+fn Terminal::dispose(Self) -> Unit
+fn Terminal::getExitStatus(Self) -> @interop.Any
+fn Terminal::getProcessId(Self) -> @interop.Any
+fn Terminal::getState(Self) -> @interop.Any
+fn Terminal::hide(Self) -> Unit
+fn Terminal::sendText_with_options(Self, String, Bool?) -> Unit
+fn Terminal::show_with_options(Self, Bool?) -> Unit
+impl Eq for Terminal
+impl Show for Terminal
+impl ToJson for Terminal
+
+pub(all) struct TerminalDimensions {
+  columns : Int
+  rows : Int
+}
+impl Eq for TerminalDimensions
+impl Show for TerminalDimensions
+impl ToJson for TerminalDimensions
+
+pub(all) struct TerminalEditorLocationOptions {
+  viewColumn : ViewColumn
+  preserveFocus : Bool?
+}
+impl Eq for TerminalEditorLocationOptions
+impl Show for TerminalEditorLocationOptions
+impl ToJson for TerminalEditorLocationOptions
+
+pub(all) enum TerminalExitReason {
+  Unknown
+  Shutdown
+  Process
+  User
+  Extension
+}
+impl Eq for TerminalExitReason
+impl Show for TerminalExitReason
+impl ToJson for TerminalExitReason
+
+pub(all) struct TerminalExitStatus {
+  code : Int?
+  reason : TerminalExitReason
+}
+impl Eq for TerminalExitStatus
+impl Show for TerminalExitStatus
+impl ToJson for TerminalExitStatus
+
+pub(all) struct TerminalLink {
+  mut startIndex : Int
+  mut length : Int
+  mut tooltip : String?
+}
+fn TerminalLink::new(Int, Int, String?) -> Self
+impl Eq for TerminalLink
+impl Show for TerminalLink
+impl ToJson for TerminalLink
+
+pub(all) struct TerminalLinkContext {
+  mut line : String
+  mut terminal : Terminal
+}
+impl Eq for TerminalLinkContext
+impl Show for TerminalLinkContext
+impl ToJson for TerminalLinkContext
+
+pub(all) struct TerminalLinkProvider {
+  provideTerminalLinks : (TerminalLinkContext, CancellationToken) -> @interop.Union2[Array[TerminalLink], Thenable[Array[TerminalLink]]]
+  handleTerminalLink : (TerminalLink) -> @interop.Union2[Unit, Thenable[Unit]]
+}
+fn TerminalLinkProvider::handleTerminalLink(Self, @interop.Any) -> @interop.Any
+fn TerminalLinkProvider::provideTerminalLinks(Self, @interop.Any, CancellationToken) -> @interop.Any
+impl Eq for TerminalLinkProvider
+impl Show for TerminalLinkProvider
+impl ToJson for TerminalLinkProvider
+
+pub(all) enum TerminalLocation {
+  Panel
+  Editor
+}
+impl Eq for TerminalLocation
+impl Show for TerminalLocation
+impl ToJson for TerminalLocation
+
+pub(all) struct TerminalOptions {
+  mut name : String?
+  mut shellPath : String?
+  mut shellArgs : Array[String]?
+  mut cwd : String?
+  mut env : Array[String]?
+  mut strictEnv : Bool?
+  mut hideFromUser : Bool?
+  mut isTransient : Bool?
+  mut location : TerminalLocation?
+  mut iconPath : @interop.Union3[Uri, LightDarkIconPath, ThemeIcon]?
+  mut color : ThemeColor?
+  mut message : String?
+  mut shellIntegrationNonce : String?
+}
+impl Eq for TerminalOptions
+impl Show for TerminalOptions
+impl ToJson for TerminalOptions
+
+pub(all) struct TerminalProfile {
+  options : TerminalOptions
+}
+fn TerminalProfile::new(@interop.Any) -> @interop.Any
+impl Eq for TerminalProfile
+impl Show for TerminalProfile
+impl ToJson for TerminalProfile
+
+pub(all) struct TerminalProfileProvider {
+  provideTerminalProfile : (CancellationToken) -> @interop.Union2[TerminalProfile, Thenable[TerminalProfile]]
+}
+fn TerminalProfileProvider::provideTerminalProfile(Self, CancellationToken) -> @interop.Any
+impl Eq for TerminalProfileProvider
+impl Show for TerminalProfileProvider
+impl ToJson for TerminalProfileProvider
+
+pub(all) struct TerminalShellExecution {
+  commandLine : TerminalShellExecutionCommandLine
+  cwd : Uri?
+}
+fn TerminalShellExecution::read(Self) -> @interop.Any
+impl Eq for TerminalShellExecution
+impl Show for TerminalShellExecution
+impl ToJson for TerminalShellExecution
+
+pub(all) struct TerminalShellExecutionCommandLine {
+  value : String
+  isTrusted : Bool
+  confidence : TerminalShellExecutionCommandLineConfidence
+}
+impl Eq for TerminalShellExecutionCommandLine
+impl Show for TerminalShellExecutionCommandLine
+impl ToJson for TerminalShellExecutionCommandLine
+
+pub(all) enum TerminalShellExecutionCommandLineConfidence {
+  Low
+  Medium
+  High
+}
+impl Eq for TerminalShellExecutionCommandLineConfidence
+impl Show for TerminalShellExecutionCommandLineConfidence
+impl ToJson for TerminalShellExecutionCommandLineConfidence
+
+pub(all) struct TerminalShellExecutionEndEvent {
+  terminal : Terminal
+  shellIntegration : TerminalShellIntegration
+  execution : TerminalShellExecution
+  exitCode : Int?
+}
+impl Eq for TerminalShellExecutionEndEvent
+impl Show for TerminalShellExecutionEndEvent
+impl ToJson for TerminalShellExecutionEndEvent
+
+pub(all) struct TerminalShellExecutionStartEvent {
+  terminal : Terminal
+  shellIntegration : TerminalShellIntegration
+  execution : TerminalShellExecution
+}
+impl Eq for TerminalShellExecutionStartEvent
+impl Show for TerminalShellExecutionStartEvent
+impl ToJson for TerminalShellExecutionStartEvent
+
+pub(all) struct TerminalShellIntegration {
+  cwd : Uri?
+}
+fn TerminalShellIntegration::executeCommand(Self, String) -> TerminalShellExecution
+fn TerminalShellIntegration::executeCommand_with_args(Self, String, Array[String]) -> TerminalShellExecution
+impl Eq for TerminalShellIntegration
+impl Show for TerminalShellIntegration
+impl ToJson for TerminalShellIntegration
+
+pub(all) struct TerminalShellIntegrationChangeEvent {
+  terminal : Terminal
+  shellIntegration : TerminalShellIntegration?
+}
+impl Eq for TerminalShellIntegrationChangeEvent
+impl Show for TerminalShellIntegrationChangeEvent
+impl ToJson for TerminalShellIntegrationChangeEvent
+
+pub(all) struct TerminalSplitLocationOptions {
+  parentTerminal : Terminal
+}
+impl Eq for TerminalSplitLocationOptions
+impl Show for TerminalSplitLocationOptions
+impl ToJson for TerminalSplitLocationOptions
+
+pub(all) struct TerminalState {
+  isInteractedWith : Bool
+  shell : String?
+}
+impl Eq for TerminalState
+impl Show for TerminalState
+impl ToJson for TerminalState
+
+pub(all) struct TestController {
+  id : String
+  mut label : String
+  items : TestItemCollection
+}
+fn TestController::createTestItem_with_options(Self, String, String, Uri?) -> TestItem
+fn TestController::dispose(Self) -> Unit
+fn TestController::getLabel(Self) -> String
+fn TestController::getRefreshHandler(Self) -> @interop.Any?
+fn TestController::getResolveHandler(Self) -> @interop.Any?
+fn TestController::invalidateTestResults_with_options(Self, Array[TestItem]?) -> Unit
+fn TestController::setLabel(Self, String) -> Unit
+fn TestController::setRefreshHandler(Self, @interop.Any?) -> Unit
+fn TestController::setResolveHandler(Self, @interop.Any?) -> Unit
+impl Eq for TestController
+impl Show for TestController
+impl ToJson for TestController
+
+pub(all) struct TestCoverageCount {
+  mut covered : Int
+  mut total : Int
+}
+fn TestCoverageCount::new(Int, Int) -> Self
+impl Eq for TestCoverageCount
+impl Show for TestCoverageCount
+impl ToJson for TestCoverageCount
+
+pub(all) struct TestItem {
+  id : String
+  uri : Uri?
+  children : TestItemCollection
+  parent : TestItem?
+  mut tags : Array[TestTag]
+  mut canResolveChildren : Bool
+  mut busy : Bool
+  mut label : String
+  mut description : String?
+  mut sortText : String?
+  mut range : Range?
+  mut error : @interop.Union2[String, MarkdownString]?
+}
+fn TestItem::getBusy(@interop.Any) -> Bool
+fn TestItem::getCanResolveChildren(@interop.Any) -> Bool
+fn TestItem::getDescription(@interop.Any) -> String?
+fn TestItem::getError(@interop.Any) -> @interop.Any?
+fn TestItem::getLabel(@interop.Any) -> String
+fn TestItem::getRange(@interop.Any) -> Range?
+fn TestItem::getSortText(@interop.Any) -> String?
+fn TestItem::getTags(@interop.Any) -> @interop.Any
+fn TestItem::setBusy(@interop.Any, Bool) -> Unit
+fn TestItem::setCanResolveChildren(@interop.Any, Bool) -> Unit
+fn TestItem::setDescription(@interop.Any, String?) -> Unit
+fn TestItem::setError(@interop.Any, @interop.Any?) -> Unit
+fn TestItem::setLabel(@interop.Any, String) -> Unit
+fn TestItem::setRange(@interop.Any, Range?) -> Unit
+fn TestItem::setSortText(@interop.Any, String?) -> Unit
+fn TestItem::setTags(@interop.Any, @interop.Any) -> Unit
+impl Eq for TestItem
+impl Show for TestItem
+impl ToJson for TestItem
+
+pub(all) struct TestItemCollection {
+  size : Int
+}
+fn TestItemCollection::add(Self, TestItem) -> Unit
+fn TestItemCollection::delete(Self, String) -> Unit
+fn TestItemCollection::get(Self, String) -> TestItem?
+fn TestItemCollection::replace(Self, @interop.Any) -> Unit
+impl Eq for TestItemCollection
+impl Show for TestItemCollection
+impl ToJson for TestItemCollection
+
+pub(all) struct TestMessage {
+  mut message : @interop.Union2[String, MarkdownString]
+  mut expectedOutput : String?
+  mut actualOutput : String?
+  mut location : Location?
+  mut contextValue : String?
+  mut stackTrace : Array[TestMessageStackFrame]?
+}
+fn TestMessage::diff(@interop.Any, String, String) -> @interop.Any
+fn TestMessage::new(@interop.Any) -> @interop.Any
+impl Eq for TestMessage
+impl Show for TestMessage
+impl ToJson for TestMessage
+
+pub(all) struct TestMessageStackFrame {
+  mut uri : Uri?
+  mut position : Position?
+  mut label : String
+}
+fn TestMessageStackFrame::new(String, Uri?, Position?) -> @interop.Any
+impl Eq for TestMessageStackFrame
+impl Show for TestMessageStackFrame
+impl ToJson for TestMessageStackFrame
+
+pub(all) struct TestRun {
+  name : String?
+  token : CancellationToken
+  isPersisted : Bool
+  onDidDispose : Event[Unit]
+}
+fn TestRun::addCoverage(Self, FileCoverage) -> Unit
+fn TestRun::appendOutput_with_options(Self, String, Location?, TestItem?) -> Unit
+fn TestRun::end(Self) -> Unit
+fn TestRun::enqueued(Self, TestItem) -> Unit
+fn TestRun::passed_with_options(Self, TestItem, Int?) -> Unit
+fn TestRun::skipped(Self, TestItem) -> Unit
+fn TestRun::started(Self, TestItem) -> Unit
+impl Eq for TestRun
+impl Show for TestRun
+impl ToJson for TestRun
+
+pub(all) struct TestRunProfile {
+  mut label : String
+  kind : TestRunProfileKind
+  mut isDefault : Bool
+  onDidChangeDefault : Event[Bool]
+  mut supportsContinuousRun : Bool
+}
+fn TestRunProfile::dispose(Self) -> Unit
+fn TestRunProfile::getIsDefault(Self) -> Bool
+fn TestRunProfile::getLabel(Self) -> String
+fn TestRunProfile::getSupportsContinuousRun(Self) -> Bool
+fn TestRunProfile::getTag(Self) -> @interop.Any?
+fn TestRunProfile::setIsDefault(Self, Bool) -> Unit
+fn TestRunProfile::setLabel(Self, String) -> Unit
+fn TestRunProfile::setSupportsContinuousRun(Self, Bool) -> Unit
+fn TestRunProfile::setTag(Self, @interop.Any?) -> Unit
+impl Eq for TestRunProfile
+impl Show for TestRunProfile
+impl ToJson for TestRunProfile
+
+pub(all) enum TestRunProfileKind {
+  Run
+  Debug
+  Coverage
+}
+impl Eq for TestRunProfileKind
+impl Show for TestRunProfileKind
+impl ToJson for TestRunProfileKind
+
+pub(all) struct TestRunRequest {
+  include : Array[TestItem]?
+  exclude : Array[TestItem]?
+  profile : TestRunProfile?
+  continuous : Bool?
+  preserveFocus : Bool
+}
+fn TestRunRequest::new(@interop.Any?, @interop.Any?, @interop.Any?, Bool?, Bool?) -> @interop.Any
+impl Eq for TestRunRequest
+impl Show for TestRunRequest
+impl ToJson for TestRunRequest
+
+pub(all) struct TestTag {
+  id : String
+}
+fn TestTag::new(String) -> Self
+impl Eq for TestTag
+impl Show for TestTag
+impl ToJson for TestTag
+
+pub(all) struct Tests {
+  createTestController : (String, String) -> TestController
+}
+
+pub(all) struct TextDocument {
+  uri : Uri
+  fileName : String
+  isUntitled : Bool
+  languageId : String
+  encoding : String
+  version : Int
+  isDirty : Bool
+  isClosed : Bool
+  eol : EndOfLine
+  lineCount : Int
+}
+fn TextDocument::getText_with_options(Self, Range?) -> String
+fn TextDocument::getWordRangeAtPosition(Self, Position, @interop.Any?) -> Range?
+fn TextDocument::lineAt(Self, Int) -> TextLine
+fn TextDocument::lineAt_at_position(Self, Position) -> TextLine
+fn TextDocument::offsetAt(Self, Position) -> Int
+fn TextDocument::positionAt(Self, Int) -> Position
+fn TextDocument::save(Self) -> @interop.Any
+fn TextDocument::validatePosition(Self, Position) -> Position
+fn TextDocument::validateRange(Self, Range) -> Range
+impl Eq for TextDocument
+impl Show for TextDocument
+impl ToJson for TextDocument
+
+pub(all) struct TextDocumentChangeEvent {
+  document : TextDocument
+  contentChanges : Array[TextDocumentContentChangeEvent]
+  reason : TextDocumentChangeReason?
+}
+impl Eq for TextDocumentChangeEvent
+impl Show for TextDocumentChangeEvent
+impl ToJson for TextDocumentChangeEvent
+
+pub(all) enum TextDocumentChangeReason {
+  Undo
+  Redo
+}
+impl Eq for TextDocumentChangeReason
+impl Show for TextDocumentChangeReason
+impl ToJson for TextDocumentChangeReason
+
+pub(all) struct TextDocumentContentChangeEvent {
+  range : Range
+  rangeOffset : Int
+  rangeLength : Int
+  text : String
+}
+impl Eq for TextDocumentContentChangeEvent
+impl Show for TextDocumentContentChangeEvent
+impl ToJson for TextDocumentContentChangeEvent
+
+pub(all) struct TextDocumentContentProvider {
+  onDidChange : Event[Uri]?
+}
+fn TextDocumentContentProvider::provideTextDocumentContent(Self, Uri, CancellationToken) -> @interop.Any
+impl Eq for TextDocumentContentProvider
+impl Show for TextDocumentContentProvider
+impl ToJson for TextDocumentContentProvider
+
+pub(all) enum TextDocumentSaveReason {
+  Manual
+  AfterDelay
+  FocusOut
+}
+impl Eq for TextDocumentSaveReason
+impl Show for TextDocumentSaveReason
+impl ToJson for TextDocumentSaveReason
+
+pub(all) struct TextDocumentShowOptions {
+  mut viewColumn : ViewColumn?
+  mut preserveFocus : Bool?
+  mut preview : Bool?
+  mut selection : Range?
+}
+impl Eq for TextDocumentShowOptions
+impl Show for TextDocumentShowOptions
+impl ToJson for TextDocumentShowOptions
+
+pub(all) struct TextDocumentWillSaveEvent {
+  document : TextDocument
+  reason : TextDocumentSaveReason
+}
+fn TextDocumentWillSaveEvent::waitUntil_for_Any(Self, Thenable[@interop.Any]) -> Unit
+fn TextDocumentWillSaveEvent::waitUntil_for_TextEdit(Self, Thenable[Array[TextEdit]]) -> Unit
+impl Eq for TextDocumentWillSaveEvent
+impl Show for TextDocumentWillSaveEvent
+impl ToJson for TextDocumentWillSaveEvent
+
+pub(all) struct TextEdit {
+  range : Range
+  newText : String
+}
+fn TextEdit::delete(Range) -> @interop.Any
+fn TextEdit::insert(Position, String) -> @interop.Any
+fn TextEdit::new(Range, String) -> Self
+fn TextEdit::replace(Range, String) -> @interop.Any
+fn TextEdit::setEndOfLine(@interop.Any) -> @interop.Any
+impl Eq for TextEdit
+impl Show for TextEdit
+impl ToJson for TextEdit
+
+pub(all) struct TextEditor {
+  document : TextDocument
+  mut selection : Selection
+  mut selections : Array[Selection]
+  visibleRanges : Array[Range]
+  mut options : TextEditorOptions
+  viewColumn : ViewColumn?
+}
+fn TextEditor::edit(Self, @interop.Any, @interop.Any?) -> @interop.Any
+fn TextEditor::hide(Self) -> Unit
+fn TextEditor::insertSnippet(Self, @interop.Any, @interop.Any?, @interop.Any?) -> @interop.Any
+fn TextEditor::revealRange_with_options(Self, Range, TextEditorRevealType?) -> Unit
+fn TextEditor::setDecorations(Self, @interop.Any, @interop.Any) -> Unit
+fn TextEditor::show_with_options(Self, ViewColumn?) -> Unit
+impl Eq for TextEditor
+impl Show for TextEditor
+impl ToJson for TextEditor
+
+pub(all) enum TextEditorCursorStyle {
+  Line
+  Block
+  Underline
+  LineThin
+  BlockOutline
+  UnderlineThin
+}
+impl Eq for TextEditorCursorStyle
+impl Show for TextEditorCursorStyle
+impl ToJson for TextEditorCursorStyle
+
+pub(all) struct TextEditorDecorationType {
+  key : String
+}
+fn TextEditorDecorationType::dispose(Self) -> Unit
+impl Eq for TextEditorDecorationType
+impl Show for TextEditorDecorationType
+impl ToJson for TextEditorDecorationType
+
+#external
+pub(all) type TextEditorEdit
+fn TextEditorEdit::delete(Self, @interop.Any) -> Unit
+fn TextEditorEdit::insert(Self, Position, String) -> Unit
+fn TextEditorEdit::replace(Self, @interop.Any, String) -> Unit
+fn TextEditorEdit::replaceRange(Self, Range, String) -> Unit
+fn TextEditorEdit::replaceSelection(Self, @interop.Any, String) -> Unit
+fn TextEditorEdit::setEndOfLine(Self, EndOfLine) -> Unit
+impl Eq for TextEditorEdit
+impl Show for TextEditorEdit
+impl ToJson for TextEditorEdit
+
+pub(all) enum TextEditorLineNumbersStyle {
+  Off
+  On
+  Relative
+}
+impl Eq for TextEditorLineNumbersStyle
+impl Show for TextEditorLineNumbersStyle
+impl ToJson for TextEditorLineNumbersStyle
+
+pub(all) struct TextEditorOptions {
+  mut tabSize : @interop.Union2[Int, String]?
+  mut indentSize : @interop.Union2[Int, String]?
+  mut insertSpaces : @interop.Union2[Bool, String]?
+  mut cursorStyle : TextEditorCursorStyle?
+  mut lineNumbers : TextEditorLineNumbersStyle?
+}
+impl Eq for TextEditorOptions
+impl Show for TextEditorOptions
+impl ToJson for TextEditorOptions
+
+pub(all) struct TextEditorOptionsChangeEvent {
+  textEditor : TextEditor
+  options : TextEditorOptions
+}
+impl Eq for TextEditorOptionsChangeEvent
+impl Show for TextEditorOptionsChangeEvent
+impl ToJson for TextEditorOptionsChangeEvent
+
+pub(all) enum TextEditorRevealType {
+  Default
+  InCenter
+  InCenterIfOutsideViewport
+  AtTop
+}
+
+pub(all) struct TextEditorSelectionChangeEvent {
+  textEditor : TextEditor
+  selections : Array[Selection]
+  kind : TextEditorSelectionChangeKind?
+}
+impl Eq for TextEditorSelectionChangeEvent
+impl Show for TextEditorSelectionChangeEvent
+impl ToJson for TextEditorSelectionChangeEvent
+
+pub(all) enum TextEditorSelectionChangeKind {
+  Keyboard
+  Mouse
+  Command
+}
+impl Eq for TextEditorSelectionChangeKind
+impl Show for TextEditorSelectionChangeKind
+impl ToJson for TextEditorSelectionChangeKind
+
+pub(all) struct TextEditorViewColumnChangeEvent {
+  textEditor : TextEditor
+  viewColumn : ViewColumn
+}
+impl Eq for TextEditorViewColumnChangeEvent
+impl Show for TextEditorViewColumnChangeEvent
+impl ToJson for TextEditorViewColumnChangeEvent
+
+pub(all) struct TextEditorVisibleRangesChangeEvent {
+  textEditor : TextEditor
+  visibleRanges : Array[Range]
+}
+impl Eq for TextEditorVisibleRangesChangeEvent
+impl Show for TextEditorVisibleRangesChangeEvent
+impl ToJson for TextEditorVisibleRangesChangeEvent
+
+pub(all) struct TextLine {
+  lineNumber : Int
+  text : String
+  range : Range
+  rangeIncludingLineBreak : Range
+  firstNonWhitespaceCharacterIndex : Int
+  isEmptyOrWhitespace : Bool
+}
+
+pub(all) struct ThemableDecorationAttachmentRenderOptions {
+  mut contentText : String?
+  mut contentIconPath : String?
+  mut border : String?
+  mut borderColor : String?
+  mut fontStyle : String?
+  mut fontWeight : String?
+  mut textDecoration : String?
+  mut color : String?
+  mut backgroundColor : String?
+  mut margin : String?
+  mut width : String?
+  mut height : String?
+}
+impl Eq for ThemableDecorationAttachmentRenderOptions
+impl Show for ThemableDecorationAttachmentRenderOptions
+impl ToJson for ThemableDecorationAttachmentRenderOptions
+
+pub(all) struct ThemableDecorationInstanceRenderOptions {
+  before : ThemableDecorationAttachmentRenderOptions?
+  after : ThemableDecorationAttachmentRenderOptions?
+}
+impl Eq for ThemableDecorationInstanceRenderOptions
+impl Show for ThemableDecorationInstanceRenderOptions
+impl ToJson for ThemableDecorationInstanceRenderOptions
+
+pub(all) struct ThemableDecorationRenderOptions {
+  mut backgroundColor : String?
+  mut outline : String?
+  mut outlineColor : String?
+  mut outlineStyle : String?
+  mut outlineWidth : String?
+  mut border : String?
+  mut borderColor : String?
+  mut borderRadius : String?
+  mut borderSpacing : String?
+  mut borderStyle : String?
+  mut borderWidth : String?
+  mut fontStyle : String?
+  mut fontWeight : String?
+  mut textDecoration : String?
+  mut color : String?
+  mut opacity : String?
+  mut letterSpacing : String?
+  mut gutterIconPath : String?
+  mut gutterIconSize : String?
+  mut overviewRulerColor : String?
+  mut before : ThemableDecorationAttachmentRenderOptions?
+  mut after : ThemableDecorationAttachmentRenderOptions?
+}
+impl Eq for ThemableDecorationRenderOptions
+impl Show for ThemableDecorationRenderOptions
+impl ToJson for ThemableDecorationRenderOptions
+
+pub(all) struct ThemeColor {
+  id : String
+}
+fn ThemeColor::new(String) -> Self
+impl Eq for ThemeColor
+impl Show for ThemeColor
+impl ToJson for ThemeColor
+
+pub(all) struct ThemeIcon {
+  id : String
+  color : ThemeColor?
+}
+fn ThemeIcon::new(String, ThemeColor?) -> Self
+impl Eq for ThemeIcon
+impl Show for ThemeIcon
+impl ToJson for ThemeIcon
+
+#external
+pub(all) type Thenable[T]
+impl[T] Eq for Thenable[T]
+impl[T] Show for Thenable[T]
+impl[T] ToJson for Thenable[T]
+
+pub(all) struct TreeCheckboxChangeEvent {
+  items : Array[TreeItem]
+}
+impl Eq for TreeCheckboxChangeEvent
+impl Show for TreeCheckboxChangeEvent
+impl ToJson for TreeCheckboxChangeEvent
+
+pub(all) struct TreeDataProvider[T] {
+  onDidChangeTreeData : Event[@interop.Union2[T, Array[T]]?]
+  getTreeItem : (T) -> @interop.Union2[TreeItem, Thenable[TreeItem]]
+  getChildren : (T) -> @interop.Union2[Array[T], Thenable[Array[T]]]
+  getParent : (T) -> @interop.Union2[T, Thenable[T]]
+  resolveTreeItem : (TreeItem, T, CancellationToken) -> @interop.Union2[TreeItem, Thenable[TreeItem]]
+}
+fn TreeDataProvider::getChildren_with_options(Self[@interop.Any], @interop.Any?) -> @interop.Any
+fn TreeDataProvider::getParent(Self[@interop.Any], @interop.Any) -> @interop.Any
+fn TreeDataProvider::getTreeItem(Self[@interop.Any], @interop.Any) -> @interop.Any
+fn TreeDataProvider::resolveTreeItem(Self[@interop.Any], @interop.Any, @interop.Any, CancellationToken) -> @interop.Any
+impl[T] Eq for TreeDataProvider[T]
+impl[T] Show for TreeDataProvider[T]
+impl[T] ToJson for TreeDataProvider[T]
+
+pub(all) struct TreeDragAndDropController {
+  dropMimeTypes : Array[String]
+  dragMimeTypes : Array[String]
+}
+impl Eq for TreeDragAndDropController
+impl Show for TreeDragAndDropController
+impl ToJson for TreeDragAndDropController
+
+pub(all) struct TreeItem {
+  label : String
+  id : String?
+  iconPath : @interop.Union3[Uri, LightDarkIconPath, ThemeIcon]?
+  description : String?
+  tooltip : String?
+  command : Command?
+  collapsibleState : TreeItemCollapsibleState?
+  contextValue : String?
+  accessibilityInformation : AccessibilityInformation?
+  checkboxState : TreeItemCheckboxState?
+  resourceUri : Uri?
+}
+fn TreeItem::new(String, @interop.Any?) -> @interop.Any
+fn TreeItem::new_with_uri(Uri, @interop.Any?) -> @interop.Any
+fn TreeItem::setCollapsibleState(@interop.Any, @interop.Any) -> Unit
+fn TreeItem::setCommand(@interop.Any, @interop.Any) -> Unit
+fn TreeItem::setContextValue(@interop.Any, String) -> Unit
+fn TreeItem::setDescription(@interop.Any, @interop.Any) -> Unit
+fn TreeItem::setIconPath(@interop.Any, @interop.Any) -> Unit
+fn TreeItem::setResourceUri(@interop.Any, Uri) -> Unit
+fn TreeItem::setTooltip(@interop.Any, String) -> Unit
+impl Eq for TreeItem
+impl Show for TreeItem
+impl ToJson for TreeItem
+
+pub(all) enum TreeItemCheckboxState {
+  Unchecked
+  Checked
+}
+impl Eq for TreeItemCheckboxState
+impl Show for TreeItemCheckboxState
+impl ToJson for TreeItemCheckboxState
+
+pub(all) enum TreeItemCollapsibleState {
+  None
+  Collapsed
+  Expanded
+}
+impl Eq for TreeItemCollapsibleState
+impl Show for TreeItemCollapsibleState
+impl ToJson for TreeItemCollapsibleState
+
+pub(all) struct TreeItemLabel {
+  label : String
+  highlights : Array[Array[Int]]?
+}
+impl Eq for TreeItemLabel
+impl Show for TreeItemLabel
+impl ToJson for TreeItemLabel
+
+pub(all) struct TreeView {
+  mut title : String?
+  mut description : String?
+  mut badge : ViewBadge?
+  mut message : String?
+  visible : Bool
+  selection : Array[@interop.Any]
+}
+fn TreeView::getDescription(@interop.Any) -> String?
+fn TreeView::getMessage(@interop.Any) -> String?
+fn TreeView::getTitle(@interop.Any) -> String?
+fn TreeView::setDescription(@interop.Any, String?) -> Unit
+fn TreeView::setMessage(@interop.Any, String?) -> Unit
+fn TreeView::setTitle(@interop.Any, String?) -> Unit
+impl Eq for TreeView
+impl Show for TreeView
+impl ToJson for TreeView
+
+pub(all) struct TreeViewExpansionEvent {
+  element : TreeItem
+}
+impl Eq for TreeViewExpansionEvent
+impl Show for TreeViewExpansionEvent
+impl ToJson for TreeViewExpansionEvent
+
+pub(all) struct TreeViewOptions {
+  treeDataProvider : TreeDataProvider[@interop.Any]?
+  showCollapseAll : Bool?
+  canSelectMany : Bool?
+  dragAndDropController : TreeDragAndDropController?
+  manageCheckboxStateManually : Bool?
+}
+impl Eq for TreeViewOptions
+impl Show for TreeViewOptions
+impl ToJson for TreeViewOptions
+
+pub(all) struct TreeViewSelectionChangeEvent {
+  selection : Array[TreeItem]
+}
+impl Eq for TreeViewSelectionChangeEvent
+impl Show for TreeViewSelectionChangeEvent
+impl ToJson for TreeViewSelectionChangeEvent
+
+pub(all) struct TreeViewVisibilityChangeEvent {
+  visible : Bool
+}
+impl Eq for TreeViewVisibilityChangeEvent
+impl Show for TreeViewVisibilityChangeEvent
+impl ToJson for TreeViewVisibilityChangeEvent
+
+pub(all) struct TypeDefinitionProvider {
+  provideTypeDefinition : (TextDocument, Position, CancellationToken) -> @interop.Union2[@interop.Union2[@interop.Union2[Location, Array[Location]], Array[LocationLink]], Thenable[@interop.Union2[@interop.Union2[Location, Array[Location]], Array[LocationLink]]]]
+}
+fn TypeDefinitionProvider::provideTypeDefinition(Self, TextDocument, Position, CancellationToken) -> @interop.Any
+impl Eq for TypeDefinitionProvider
+impl Show for TypeDefinitionProvider
+impl ToJson for TypeDefinitionProvider
+
+pub(all) struct TypeHierarchyItem {
+  name : String
+  kind : SymbolKind
+  tags : Array[SymbolTag]?
+  detail : String?
+  uri : Uri
+  range : Range
+  selectionRange : Range
+  data : @interop.Any?
+}
+fn TypeHierarchyItem::new(SymbolKind, String, String, Uri, Range, Range) -> Self
+impl Eq for TypeHierarchyItem
+impl Show for TypeHierarchyItem
+impl ToJson for TypeHierarchyItem
+
+pub(all) struct TypeHierarchyProvider {
+  prepareTypeHierarchy : (TextDocument, Position, CancellationToken) -> @interop.Union2[@interop.Union2[TypeHierarchyItem, Array[TypeHierarchyItem]], Thenable[@interop.Union2[TypeHierarchyItem, Array[TypeHierarchyItem]]]]
+  provideTypeHierarchySupertypes : (TypeHierarchyItem, CancellationToken) -> @interop.Union2[Array[TypeHierarchyItem], Thenable[Array[TypeHierarchyItem]]]
+  provideTypeHierarchySubtypes : (TypeHierarchyItem, CancellationToken) -> @interop.Union2[Array[TypeHierarchyItem], Thenable[Array[TypeHierarchyItem]]]
+}
+fn TypeHierarchyProvider::prepareTypeHierarchy(Self, TextDocument, Position, CancellationToken) -> @interop.Any
+fn TypeHierarchyProvider::provideTypeHierarchySubtypes(Self, @interop.Any, CancellationToken) -> @interop.Any
+fn TypeHierarchyProvider::provideTypeHierarchySupertypes(Self, @interop.Any, CancellationToken) -> @interop.Any
+impl Eq for TypeHierarchyProvider
+impl Show for TypeHierarchyProvider
+impl ToJson for TypeHierarchyProvider
+
+pub(all) enum UIKind {
+  Desktop
+  Web
+}
+
+pub(all) struct Uri {
+  scheme : String
+  authority : String
+  path : String
+  query : String
+  fragment : String
+  fsPath : String
+}
+fn Uri::file(String) -> Self
+fn Uri::from(UriComponents) -> Self
+fn Uri::joinPath(Self, Array[String]) -> Self
+fn Uri::parse(String, Bool?) -> Self
+fn Uri::toJSON(Self) -> @interop.Any
+fn Uri::toString_with_options(Self, Bool?) -> String
+fn Uri::with_(Self, @interop.Any) -> Self
+impl Eq for Uri
+impl Show for Uri
+impl ToJson for Uri
+
+pub struct UriComponents {
+  scheme : String
+  authority : String?
+  path : String?
+  query : String?
+  fragment : String?
+}
+impl Eq for UriComponents
+impl Show for UriComponents
+impl ToJson for UriComponents
+
+pub(all) struct UriHandler {
+  handleUri : (Uri) -> @interop.Union2[Unit, Thenable[Unit]]
+}
+fn UriHandler::handleUri(Self, Uri) -> @interop.Any
+
+pub(all) struct ViewBadge {
+  tooltip : String
+  value : Int
+}
+impl Eq for ViewBadge
+impl Show for ViewBadge
+impl ToJson for ViewBadge
+
+pub(all) enum ViewColumn {
+  Active
+  Beside
+  One
+  Two
+  Three
+  Four
+  Five
+  Six
+  Seven
+  Eight
+  Nine
+}
+impl Eq for ViewColumn
+impl Show for ViewColumn
+impl ToJson for ViewColumn
+
+pub(all) struct Vscode {
+  version : String
+  tasks : Tasks
+  env : Env
+  commands : Commands
+  window : Window
+  workspace : Workspace
+  languages : Languages
+  notebooks : Notebooks
+  scm : Scm
+  debug : Debug
+  extensions : Extensions
+  authentication : Authentication
+  l10n : L10N
+  tests : Tests
+  chat : Chat
+  lm : Lm
+}
+
+pub(all) struct Webview {
+  mut options : WebviewOptions
+  mut html : String
+  cspSource : String
+}
+fn Webview::asWebviewUri(Self, Uri) -> Uri
+fn Webview::getCspSource(Self) -> String
+fn Webview::getHtml(Self) -> String
+fn Webview::getOptions(Self) -> @interop.Any
+fn Webview::postMessage(Self, @interop.Any) -> @interop.Any
+fn Webview::setHtml(Self, String) -> Unit
+fn Webview::setOptions(Self, @interop.Any) -> Unit
+impl Eq for Webview
+impl Show for Webview
+impl ToJson for Webview
+
+pub(all) struct WebviewOptions {
+  enableScripts : Bool?
+  enableForms : Bool?
+  enableCommandUris : Bool?
+  localResourceRoots : Array[Uri]?
+  portMapping : Array[WebviewPortMapping]?
+}
+impl Eq for WebviewOptions
+impl Show for WebviewOptions
+impl ToJson for WebviewOptions
+
+pub(all) struct WebviewPanel {
+  viewType : String
+  mut title : String
+  mut iconPath : @interop.Union3[Uri, LightDarkIconPath, ThemeIcon]?
+  webview : Webview
+  options : WebviewPanelOptions
+  active : Bool
+  visible : Bool
+  viewColumn : ViewColumn?
+}
+fn WebviewPanel::dispose(Self) -> @interop.Any
+fn WebviewPanel::getActive(Self) -> Bool
+fn WebviewPanel::getTitle(Self) -> String
+fn WebviewPanel::getViewColumn(Self) -> @interop.Any?
+fn WebviewPanel::getViewType(Self) -> String
+fn WebviewPanel::getVisible(Self) -> Bool
+fn WebviewPanel::reveal_with_options(Self, ViewColumn?, Bool?) -> Unit
+fn WebviewPanel::setIconPath(Self, @interop.Any) -> Unit
+fn WebviewPanel::setTitle(Self, String) -> Unit
+impl Eq for WebviewPanel
+impl Show for WebviewPanel
+impl ToJson for WebviewPanel
+
+pub(all) struct WebviewPanelOnDidChangeViewStateEvent {
+  webviewPanel : WebviewPanel
+}
+impl Eq for WebviewPanelOnDidChangeViewStateEvent
+impl Show for WebviewPanelOnDidChangeViewStateEvent
+impl ToJson for WebviewPanelOnDidChangeViewStateEvent
+
+pub(all) struct WebviewPanelOptions {
+  enableFindWidget : Bool?
+  retainContextWhenHidden : Bool?
+}
+impl Eq for WebviewPanelOptions
+impl Show for WebviewPanelOptions
+impl ToJson for WebviewPanelOptions
+
+#external
+pub(all) type WebviewPanelSerializer
+fn WebviewPanelSerializer::deserializeWebviewPanel(Self, WebviewPanel, @interop.Any) -> @interop.Any
+impl Eq for WebviewPanelSerializer
+impl Show for WebviewPanelSerializer
+impl ToJson for WebviewPanelSerializer
+
+pub(all) struct WebviewPortMapping {
+  webviewPort : Int
+  extensionHostPort : Int
+}
+impl Eq for WebviewPortMapping
+impl Show for WebviewPortMapping
+impl ToJson for WebviewPortMapping
+
+pub(all) struct WebviewView {
+  viewType : String
+  webview : Webview
+  mut title : String?
+  mut description : String?
+  mut badge : ViewBadge?
+  visible : Bool
+}
+fn WebviewView::getDescription(Self) -> String?
+fn WebviewView::getTitle(Self) -> String?
+fn WebviewView::getViewType(Self) -> String
+fn WebviewView::getVisible(Self) -> Bool
+fn WebviewView::setDescription(Self, String?) -> Unit
+fn WebviewView::setTitle(Self, String?) -> Unit
+fn WebviewView::show_with_options(Self, Bool?) -> Unit
+impl Eq for WebviewView
+impl Show for WebviewView
+impl ToJson for WebviewView
+
+pub(all) struct WebviewViewProvider {
+  resolveWebviewView : (WebviewView, WebviewViewResolveContext, CancellationToken) -> Thenable[Unit]
+}
+fn WebviewViewProvider::resolveWebviewView(Self, WebviewView, @interop.Any, CancellationToken) -> @interop.Any
+impl Eq for WebviewViewProvider
+impl Show for WebviewViewProvider
+impl ToJson for WebviewViewProvider
+
+pub(all) struct WebviewViewResolveContext {
+  state : @interop.Any?
+}
+impl Eq for WebviewViewResolveContext
+impl Show for WebviewViewResolveContext
+impl ToJson for WebviewViewResolveContext
+
+pub(all) struct Window {
+  tabGroups : TabGroups
+  activeTextEditor : TextEditor?
+  visibleTextEditors : Array[TextEditor]
+  visibleNotebookEditors : Array[NotebookEditor]
+  activeNotebookEditor : NotebookEditor?
+  terminals : Array[Terminal]
+  activeTerminal : Terminal?
+  state : WindowState
+  activeColorTheme : ColorTheme
+  onDidChangeActiveTextEditor : Event[TextEditor?]
+  onDidChangeVisibleTextEditors : Event[Array[TextEditor]]
+  onDidChangeTextEditorSelection : Event[TextEditorSelectionChangeEvent]
+  onDidChangeTextEditorVisibleRanges : Event[TextEditorVisibleRangesChangeEvent]
+  onDidChangeTextEditorOptions : Event[TextEditorOptionsChangeEvent]
+  onDidChangeTextEditorViewColumn : Event[TextEditorViewColumnChangeEvent]
+  onDidChangeVisibleNotebookEditors : Event[Array[NotebookEditor]]
+  onDidChangeActiveNotebookEditor : Event[NotebookEditor?]
+  onDidChangeNotebookEditorSelection : Event[NotebookEditorSelectionChangeEvent]
+  onDidChangeNotebookEditorVisibleRanges : Event[NotebookEditorVisibleRangesChangeEvent]
+  onDidChangeActiveTerminal : Event[Terminal?]
+  onDidOpenTerminal : Event[Terminal]
+  onDidCloseTerminal : Event[Terminal]
+  onDidChangeTerminalState : Event[Terminal]
+  onDidChangeTerminalShellIntegration : Event[TerminalShellIntegrationChangeEvent]
+  onDidStartTerminalShellExecution : Event[TerminalShellExecutionStartEvent]
+  onDidEndTerminalShellExecution : Event[TerminalShellExecutionEndEvent]
+  onDidChangeWindowState : Event[WindowState]
+  onDidChangeActiveColorTheme : Event[ColorTheme]
+  showTextDocument : (TextDocument, TextDocumentShowOptions?) -> Thenable[TextEditor]
+  showNotebookDocument : (NotebookDocument, NotebookDocumentShowOptions?) -> Thenable[NotebookEditor]
+  createTextEditorDecorationType : (DecorationRenderOptions) -> TextEditorDecorationType
+  showInformationMessage : @interop.Func1Rest[Thenable[String?], String, String]
+  showInformationMessageItems : @interop.Func1Rest[Thenable[MessageItem?], MessageItem, String]
+  showInformationMessageWithOptions : @interop.Func2Rest[Thenable[MessageItem?], MessageItem, String, MessageOptions]
+  showWarningMessage : @interop.Func1Rest[Thenable[String?], String, String]
+  showWarningMessageItems : @interop.Func1Rest[Thenable[MessageItem?], MessageItem, String]
+  showWarningMessageWithOptions : @interop.Func2Rest[Thenable[MessageItem?], MessageItem, String, MessageOptions]
+  showErrorMessage : @interop.Func1Rest[Thenable[String?], String, String]
+  showErrorMessageItems : @interop.Func1Rest[Thenable[MessageItem?], MessageItem, String]
+  showErrorMessageWithOptions : @interop.Func2Rest[Thenable[MessageItem?], MessageItem, String, MessageOptions]
+  showQuickPick : (Array[String], QuickPickOptions?) -> Thenable[String?]
+  showWorkspaceFolderPick : (WorkspaceFolderPickOptions?) -> Thenable[WorkspaceFolder?]
+  showOpenDialog : (OpenDialogOptions?) -> Thenable[Array[Uri]?]
+  showSaveDialog : (SaveDialogOptions?) -> Thenable[Uri?]
+  showInputBox : (InputBoxOptions?) -> Thenable[String?]
+  createQuickPick : () -> QuickPick
+  createInputBox : () -> InputBox
+  createOutputChannel : (String, String?) -> OutputChannel
+  createWebviewPanel : (String, String, ViewColumn, WebviewPanelOptions?) -> WebviewPanel
+  setStatusBarMessage : (String, Int?) -> Disposable
+  withScmProgress : ((Progress[Int]) -> Thenable[@interop.Any]) -> Thenable[@interop.Any]
+  withProgress : (ProgressOptions, (Progress[@interop.Any], CancellationToken) -> Thenable[@interop.Any]) -> Thenable[@interop.Any]
+  createStatusBarItem : (String, StatusBarAlignment, Int?) -> StatusBarItem
+  createTerminal : (String?, String?, String?) -> Terminal
+  registerTreeDataProvider : (String, TreeDataProvider[@interop.Any]) -> Disposable
+  createTreeView : (String, TreeViewOptions) -> TreeView
+  registerUriHandler : (UriHandler) -> Disposable
+  registerWebviewPanelSerializer : (String, WebviewPanelSerializer) -> Disposable
+  registerWebviewViewProvider : (String, WebviewViewProvider, WebviewViewResolveContext?) -> Disposable
+  registerCustomEditorProvider : (String, CustomTextEditorProvider, WebviewPanelOptions?) -> Disposable
+  registerTerminalLinkProvider : (TerminalLinkProvider) -> Disposable
+  registerTerminalProfileProvider : (String, TerminalProfileProvider) -> Disposable
+  registerFileDecorationProvider : (FileDecorationProvider) -> Disposable
+}
+
+pub(all) struct WindowState {
+  focused : Bool
+  active : Bool
+}
+impl Eq for WindowState
+impl Show for WindowState
+impl ToJson for WindowState
+
+pub(all) struct Workspace {
+  fs : FileSystem
+  rootPath : String?
+  workspaceFolders : Array[WorkspaceFolder]?
+  name : String?
+  workspaceFile : Uri?
+  textDocuments : Array[TextDocument]
+  notebookDocuments : Array[NotebookDocument]
+  isTrusted : Bool
+  onDidChangeWorkspaceFolders : Event[WorkspaceFoldersChangeEvent]
+  onDidOpenTextDocument : Event[TextDocument]
+  onDidCloseTextDocument : Event[TextDocument]
+  onDidChangeTextDocument : Event[TextDocumentChangeEvent]
+  onWillSaveTextDocument : Event[TextDocumentWillSaveEvent]
+  onDidSaveTextDocument : Event[TextDocument]
+  onDidChangeNotebookDocument : Event[NotebookDocumentChangeEvent]
+  onWillSaveNotebookDocument : Event[NotebookDocumentWillSaveEvent]
+  onDidSaveNotebookDocument : Event[NotebookDocument]
+  onDidOpenNotebookDocument : Event[NotebookDocument]
+  onDidCloseNotebookDocument : Event[NotebookDocument]
+  onWillCreateFiles : Event[FileWillCreateEvent]
+  onDidCreateFiles : Event[FileCreateEvent]
+  onWillDeleteFiles : Event[FileWillDeleteEvent]
+  onDidDeleteFiles : Event[FileDeleteEvent]
+  onWillRenameFiles : Event[FileWillRenameEvent]
+  onDidRenameFiles : Event[FileRenameEvent]
+  onDidChangeConfiguration : Event[ConfigurationChangeEvent]
+  onDidGrantWorkspaceTrust : Event[Unit]
+  getWorkspaceFolder : (Uri) -> WorkspaceFolder?
+  asRelativePath : (String, Bool?) -> String
+  updateWorkspaceFolders : @interop.Func2Rest[Bool, WorkspaceFolder, Int, Int?]
+  createFileSystemWatcher : (@interop.Union2[String, RelativePattern], Bool?, Bool?, Bool?) -> FileSystemWatcher
+  findFiles : (@interop.Union2[String, RelativePattern], @interop.Union2[String, RelativePattern]?, Int?, CancellationToken?) -> Thenable[Array[Uri]]
+  save : (Uri) -> Thenable[Uri?]
+  saveAs : (Uri) -> Thenable[Uri?]
+  saveAll : (Bool?) -> Thenable[Bool]
+  applyEdit : (WorkspaceEdit, WorkspaceEditMetadata?) -> Thenable[Bool]
+  openTextDocument : (Uri) -> Thenable[TextDocument]
+  registerTextDocumentContentProvider : (String, TextDocumentContentProvider) -> Disposable
+  openNotebookDocument : (Uri) -> Thenable[NotebookDocument]
+  registerNotebookSerializer : (String, NotebookSerializer, NotebookDocumentContentOptions?) -> Disposable
+  getConfiguration : (String?, @interop.Union4[Uri, TextDocument, WorkspaceFolder, ConfigurationScopeObj]?) -> WorkspaceConfiguration
+  registerTaskProvider : (String, TaskProvider) -> Disposable
+  registerFileSystemProvider : (String, FileSystemProvider, FileSystemProviderOptions?) -> Disposable
+  decode : (Array[Byte], String?) -> Thenable[String]
+  encode : (String, String?) -> Thenable[Array[Byte]]
+}
+
+#external
+pub(all) type WorkspaceConfiguration
+fn WorkspaceConfiguration::get(Self, String) -> @interop.Any?
+fn WorkspaceConfiguration::get_item(Self, String) -> @interop.Any
+fn WorkspaceConfiguration::get_with_default(Self, String, @interop.Any) -> @interop.Any
+fn WorkspaceConfiguration::has(Self, String) -> Bool
+fn WorkspaceConfiguration::inspect(Self, String) -> WorkspaceConfigurationInspectResult[@interop.Any]?
+fn WorkspaceConfiguration::update(Self, String, @interop.Any, @interop.Union2[ConfigurationTarget, Bool]?, Bool?) -> Thenable[Unit]
+impl Eq for WorkspaceConfiguration
+impl Show for WorkspaceConfiguration
+impl ToJson for WorkspaceConfiguration
+
+pub(all) struct WorkspaceConfigurationInspectResult[T] {
+  key : String
+  defaultValue : T?
+  globalValue : T?
+  workspaceValue : T?
+  workspaceFolderValue : T?
+  defaultLanguageValue : T?
+  globalLanguageValue : T?
+  workspaceLanguageValue : T?
+  workspaceFolderLanguageValue : T?
+  languageIds : Array[String]?
+}
+impl[T : Eq] Eq for WorkspaceConfigurationInspectResult[T]
+impl[T : Show] Show for WorkspaceConfigurationInspectResult[T]
+impl[T : ToJson] ToJson for WorkspaceConfigurationInspectResult[T]
+
+pub(all) struct WorkspaceEdit {
+  size : Int
+}
+fn WorkspaceEdit::createFile(Self, Uri, @interop.Any?, @interop.Any?) -> Unit
+fn WorkspaceEdit::deleteFile(Self, Uri, @interop.Any?, @interop.Any?) -> Unit
+fn WorkspaceEdit::delete_with_options(Self, Uri, Range, WorkspaceEditEntryMetadata?) -> Unit
+fn WorkspaceEdit::entries(Self) -> Array[@interop.Any]
+fn WorkspaceEdit::get(Self, Uri) -> Array[TextEdit]
+fn WorkspaceEdit::has(Self, Uri) -> Bool
+fn WorkspaceEdit::insert(Self, Uri, Position, String, @interop.Any?) -> Unit
+fn WorkspaceEdit::new() -> Self
+fn WorkspaceEdit::renameFile(Self, Uri, Uri, @interop.Any?, @interop.Any?) -> Unit
+fn WorkspaceEdit::replace(Self, Uri, Range, String, @interop.Any?) -> Unit
+fn WorkspaceEdit::set(Self, Uri, @interop.Any) -> Unit
+fn WorkspaceEdit::set_with_metadata(Self, Uri, @interop.Any) -> Unit
+impl Eq for WorkspaceEdit
+impl Show for WorkspaceEdit
+impl ToJson for WorkspaceEdit
+
+pub(all) struct WorkspaceEditEntryMetadata {
+  needsConfirmation : Bool
+  label : String
+  description : String?
+  iconPath : @interop.Union3[Uri, LightDarkIconPath, ThemeIcon]?
+}
+impl Eq for WorkspaceEditEntryMetadata
+impl Show for WorkspaceEditEntryMetadata
+impl ToJson for WorkspaceEditEntryMetadata
+
+pub(all) struct WorkspaceEditMetadata {
+  isRefactoring : Bool?
+}
+impl Eq for WorkspaceEditMetadata
+impl Show for WorkspaceEditMetadata
+impl ToJson for WorkspaceEditMetadata
+
+pub(all) struct WorkspaceFolder {
+  uri : Uri
+  name : String
+  index : Int
+}
+impl Eq for WorkspaceFolder
+impl Show for WorkspaceFolder
+impl ToJson for WorkspaceFolder
+
+pub(all) struct WorkspaceFolderPickOptions {
+  placeHolder : String?
+  ignoreFocusOut : Bool?
+}
+impl Eq for WorkspaceFolderPickOptions
+impl Show for WorkspaceFolderPickOptions
+impl ToJson for WorkspaceFolderPickOptions
+
+pub(all) struct WorkspaceFoldersChangeEvent {
+  added : Array[WorkspaceFolder]
+  removed : Array[WorkspaceFolder]
+}
+impl Eq for WorkspaceFoldersChangeEvent
+impl Show for WorkspaceFoldersChangeEvent
+impl ToJson for WorkspaceFoldersChangeEvent
+
+pub(all) struct WorkspaceSymbolProvider {
+  provideWorkspaceSymbols : (String, CancellationToken) -> @interop.Union2[Array[SymbolInformation], Thenable[Array[SymbolInformation]]]
+  resolveWorkspaceSymbol : (SymbolInformation, CancellationToken) -> @interop.Union2[SymbolInformation, Thenable[SymbolInformation]]
+}
+fn WorkspaceSymbolProvider::provideWorkspaceSymbols(Self, String, CancellationToken) -> @interop.Any
+fn WorkspaceSymbolProvider::resolveWorkspaceSymbol(Self, @interop.Any, CancellationToken) -> @interop.Any
+impl Eq for WorkspaceSymbolProvider
+impl Show for WorkspaceSymbolProvider
+impl ToJson for WorkspaceSymbolProvider
+
+// Type aliases
+pub typealias @interop.Any as Any
+
+pub typealias AuthenticationGetSessionPresentationOptions as AuthenticationForceNewSessionOptions
+
+pub typealias (String, String) as CharacterPair
+
+pub typealias (ChatRequest, ChatContext, ChatResponseStream, CancellationToken) -> @interop.Union2[@interop.Union2[ChatResult, Unit], Thenable[@interop.Union2[ChatResult, Unit]]] as ChatRequestHandler
+
+pub typealias @interop.Union4[Uri, TextDocument, WorkspaceFolder, ConfigurationScopeObj] as ConfigurationScope
+
+pub typealias @interop.Union4[DebugAdapterExecutable, DebugAdapterServer, DebugAdapterNamedPipeServer, DebugAdapterInlineImplementation] as DebugAdapterDescriptor
+
+pub typealias @interop.Union3[Location, Array[Location], Array[LocationLink]] as Declaration
+
+pub typealias @interop.Union2[Location, Array[Location]] as Definition
+
+pub typealias LocationLink as DefinitionLink
+
+pub typealias @interop.Union3[DocumentFilter, String, Array[@interop.Union2[DocumentFilter, String]]] as DocumentSelector
+
+pub typealias @interop.Union2[StatementCoverage, DeclarationCoverage] as FileCoverageDetail
+
+pub typealias @interop.Func0Rest as Func0Rest
+
+pub typealias @interop.Func10Rest as Func10Rest
+
+pub typealias @interop.Func11Rest as Func11Rest
+
+pub typealias @interop.Func12Rest as Func12Rest
+
+pub typealias @interop.Func13Rest as Func13Rest
+
+pub typealias @interop.Func14Rest as Func14Rest
+
+pub typealias @interop.Func15Rest as Func15Rest
+
+pub typealias @interop.Func16Rest as Func16Rest
+
+pub typealias @interop.Func1Rest as Func1Rest
+
+pub typealias @interop.Func2Rest as Func2Rest
+
+pub typealias @interop.Func3Rest as Func3Rest
+
+pub typealias @interop.Func4Rest as Func4Rest
+
+pub typealias @interop.Func5Rest as Func5Rest
+
+pub typealias @interop.Func6Rest as Func6Rest
+
+pub typealias @interop.Func7Rest as Func7Rest
+
+pub typealias @interop.Func8Rest as Func8Rest
+
+pub typealias @interop.Func9Rest as Func9Rest
+
+pub typealias @interop.Union2[String, RelativePattern] as GlobPattern
+
+pub typealias @interop.Union3[Uri, LightDarkIconPath, ThemeIcon] as IconPath
+
+pub typealias @interop.Union3[InlineValueText, InlineValueVariableLookup, InlineValueEvaluatableExpression] as InlineValue
+
+pub typealias @interop.Union3[LanguageModelTextPart, LanguageModelToolResultPart, LanguageModelToolCallPart] as LanguageModelInputPart
+
+pub typealias @interop.Union3[LanguageModelTextPart, LanguageModelToolResultPart, LanguageModelToolCallPart] as LanguageModelResponsePart
+
+pub typealias @interop.Union2[String, MarkedStringObject] as MarkedString
+
+pub typealias @interop.Union2[McpStdioServerDefinition, McpHttpServerDefinition] as McpServerDefinition
+
+pub typealias @interop.Union2[T, Thenable[T]] as ProviderResult[T]
+
+pub typealias FixedArray[Byte] as Uint8Array
+
+pub typealias @interop.Union10 as Union10
+
+pub typealias @interop.Union11 as Union11
+
+pub typealias @interop.Union12 as Union12
+
+pub typealias @interop.Union13 as Union13
+
+pub typealias @interop.Union14 as Union14
+
+pub typealias @interop.Union15 as Union15
+
+pub typealias @interop.Union16 as Union16
+
+pub typealias @interop.Union2 as Union2
+
+pub typealias @interop.Union3 as Union3
+
+pub typealias @interop.Union4 as Union4
+
+pub typealias @interop.Union5 as Union5
+
+pub typealias @interop.Union6 as Union6
+
+pub typealias @interop.Union7 as Union7
+
+pub typealias @interop.Union8 as Union8
+
+pub typealias @interop.Union9 as Union9
+
+// Traits
+

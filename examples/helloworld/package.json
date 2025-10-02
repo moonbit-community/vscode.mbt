@@ -1,5 +1,5 @@
 {
-  "name": "illu-vscode.mbt",
+  "name": "helloworld-minimal",
   "version": "0.0.1",
   "type": "commonjs",
   "main": "./target/js/release/build/extension/extension.js",

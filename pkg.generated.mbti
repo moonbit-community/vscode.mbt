@@ -1,0 +1,1125 @@
+// Generated using `moon info`, DON'T EDIT IT
+package "illusory0x0/vscode"
+
+import(
+  "illusory0x0/vscode/types"
+)
+
+// Values
+fn[A, B] coerce(A) -> B
+
+let vscode : @types.Vscode
+
+// Errors
+
+// Types and methods
+
+// Type aliases
+pub typealias @types.AccessibilityInformation as AccessibilityInformation
+
+pub typealias @illusory0x0/vscode/interop.Any as Any
+
+pub typealias @types.Authentication as Authentication
+
+pub typealias @types.AuthenticationGetSessionPresentationOptions as AuthenticationForceNewSessionOptions
+
+pub typealias @types.AuthenticationGetSessionOptions as AuthenticationGetSessionOptions
+
+pub typealias @types.AuthenticationGetSessionPresentationOptions as AuthenticationGetSessionPresentationOptions
+
+pub typealias @types.AuthenticationProvider as AuthenticationProvider
+
+pub typealias @types.AuthenticationProviderAuthenticationSessionsChangeEvent as AuthenticationProviderAuthenticationSessionsChangeEvent
+
+pub typealias @types.AuthenticationProviderInformation as AuthenticationProviderInformation
+
+pub typealias @types.AuthenticationProviderOptions as AuthenticationProviderOptions
+
+pub typealias @types.AuthenticationProviderSessionOptions as AuthenticationProviderSessionOptions
+
+pub typealias @types.AuthenticationSession as AuthenticationSession
+
+pub typealias @types.AuthenticationSessionAccountInformation as AuthenticationSessionAccountInformation
+
+pub typealias @types.AuthenticationSessionsChangeEvent as AuthenticationSessionsChangeEvent
+
+pub typealias @types.AutoClosingPair as AutoClosingPair
+
+pub typealias @types.BranchCoverage as BranchCoverage
+
+pub typealias @types.Breakpoint as Breakpoint
+
+pub typealias @types.BreakpointsChangeEvent as BreakpointsChangeEvent
+
+pub typealias @types.CallHierarchyIncomingCall as CallHierarchyIncomingCall
+
+pub typealias @types.CallHierarchyItem as CallHierarchyItem
+
+pub typealias @types.CallHierarchyOutgoingCall as CallHierarchyOutgoingCall
+
+pub typealias @types.CallHierarchyProvider as CallHierarchyProvider
+
+pub typealias @types.CancellationError as CancellationError
+
+pub typealias @types.CancellationToken as CancellationToken
+
+pub typealias @types.CancellationTokenSource as CancellationTokenSource
+
+pub typealias (String, String) as CharacterPair
+
+pub typealias @types.Chat as Chat
+
+pub typealias @types.ChatContext as ChatContext
+
+pub typealias @types.ChatErrorDetails as ChatErrorDetails
+
+pub typealias @types.ChatFollowup as ChatFollowup
+
+pub typealias @types.ChatFollowupProvider as ChatFollowupProvider
+
+pub typealias @types.ChatLanguageModelToolReference as ChatLanguageModelToolReference
+
+pub typealias @types.ChatParticipant as ChatParticipant
+
+pub typealias @types.ChatParticipantToolToken as ChatParticipantToolToken
+
+pub typealias @types.ChatPromptReference as ChatPromptReference
+
+pub typealias @types.ChatRequest as ChatRequest
+
+pub typealias (@types.ChatRequest, @types.ChatContext, @types.ChatResponseStream, @types.CancellationToken) -> @illusory0x0/vscode/interop.Union2[@illusory0x0/vscode/interop.Union2[@types.ChatResult, Unit], @types.Thenable[@illusory0x0/vscode/interop.Union2[@types.ChatResult, Unit]]] as ChatRequestHandler
+
+pub typealias @types.ChatRequestTurn as ChatRequestTurn
+
+pub typealias @types.ChatResponseAnchorPart as ChatResponseAnchorPart
+
+pub typealias @types.ChatResponseCommandButtonPart as ChatResponseCommandButtonPart
+
+pub typealias @types.ChatResponseFileTree as ChatResponseFileTree
+
+pub typealias @types.ChatResponseFileTreePart as ChatResponseFileTreePart
+
+pub typealias @types.ChatResponseMarkdownPart as ChatResponseMarkdownPart
+
+pub typealias @types.ChatResponsePart as ChatResponsePart
+
+pub typealias @types.ChatResponseProgressPart as ChatResponseProgressPart
+
+pub typealias @types.ChatResponseReferencePart as ChatResponseReferencePart
+
+pub typealias @types.ChatResponseTurn as ChatResponseTurn
+
+pub typealias @types.ChatResult as ChatResult
+
+pub typealias @types.ChatResultFeedback as ChatResultFeedback
+
+pub typealias @types.ChatResultFeedbackKind as ChatResultFeedbackKind
+
+pub typealias @types.Clipboard as Clipboard
+
+pub typealias @types.CodeAction as CodeAction
+
+pub typealias @types.CodeActionContext as CodeActionContext
+
+pub typealias @types.CodeActionKind as CodeActionKind
+
+pub typealias @types.CodeActionProvider as CodeActionProvider
+
+pub typealias @types.CodeActionProviderMetadata as CodeActionProviderMetadata
+
+pub typealias @types.CodeActionTriggerKind as CodeActionTriggerKind
+
+pub typealias @types.CodeLens as CodeLens
+
+pub typealias @types.CodeLensProvider as CodeLensProvider
+
+pub typealias @types.Color as Color
+
+pub typealias @types.ColorInformation as ColorInformation
+
+pub typealias @types.ColorPresentation as ColorPresentation
+
+pub typealias @types.ColorTheme as ColorTheme
+
+pub typealias @types.ColorThemeKind as ColorThemeKind
+
+pub typealias @types.Command as Command
+
+pub typealias @types.Commands as Commands
+
+pub typealias @types.Comment as Comment
+
+pub typealias @types.CommentAuthorInformation as CommentAuthorInformation
+
+pub typealias @types.CommentController as CommentController
+
+pub typealias @types.CommentMode as CommentMode
+
+pub typealias @types.CommentOptions as CommentOptions
+
+pub typealias @types.CommentReaction as CommentReaction
+
+pub typealias @types.CommentReply as CommentReply
+
+pub typealias @types.CommentRule as CommentRule
+
+pub typealias @types.CommentThread as CommentThread
+
+pub typealias @types.CommentThreadCollapsibleState as CommentThreadCollapsibleState
+
+pub typealias @types.CommentThreadState as CommentThreadState
+
+pub typealias @types.CommentingRangeProvider as CommentingRangeProvider
+
+pub typealias @types.CommentingRanges as CommentingRanges
+
+pub typealias @types.CompletionContext as CompletionContext
+
+pub typealias @types.CompletionItem as CompletionItem
+
+pub typealias @types.CompletionItemKind as CompletionItemKind
+
+pub typealias @types.CompletionItemLabel as CompletionItemLabel
+
+pub typealias @types.CompletionItemProvider as CompletionItemProvider
+
+pub typealias @types.CompletionItemRange as CompletionItemRange
+
+pub typealias @types.CompletionItemTag as CompletionItemTag
+
+pub typealias @types.CompletionList as CompletionList
+
+pub typealias @types.CompletionTriggerKind as CompletionTriggerKind
+
+pub typealias @illusory0x0/vscode/interop.Union4[@types.Uri, @types.TextDocument, @types.WorkspaceFolder, @types.ConfigurationScopeObj] as ConfigurationScope
+
+pub typealias @types.ConfigurationScopeObj as ConfigurationScopeObj
+
+pub typealias @types.ConfigurationTarget as ConfigurationTarget
+
+pub typealias @types.CustomDocument as CustomDocument
+
+pub typealias @types.CustomDocumentBackup as CustomDocumentBackup
+
+pub typealias @types.CustomDocumentBackupContext as CustomDocumentBackupContext
+
+pub typealias @types.CustomDocumentContentChangeEvent as CustomDocumentContentChangeEvent
+
+pub typealias @types.CustomDocumentEditEvent as CustomDocumentEditEvent
+
+pub typealias @types.CustomDocumentOpenContext as CustomDocumentOpenContext
+
+pub typealias @types.CustomEditorProvider as CustomEditorProvider
+
+pub typealias @types.CustomReadonlyEditorProvider as CustomReadonlyEditorProvider
+
+pub typealias @types.CustomTextEditorProvider as CustomTextEditorProvider
+
+pub typealias @types.DataTransfer as DataTransfer
+
+pub typealias @types.DataTransferFile as DataTransferFile
+
+pub typealias @types.DataTransferItem as DataTransferItem
+
+pub typealias @types.Debug as Debug
+
+pub typealias @types.DebugAdapter as DebugAdapter
+
+pub typealias @illusory0x0/vscode/interop.Union4[@types.DebugAdapterExecutable, @types.DebugAdapterServer, @types.DebugAdapterNamedPipeServer, @types.DebugAdapterInlineImplementation] as DebugAdapterDescriptor
+
+pub typealias @types.DebugAdapterDescriptorFactory as DebugAdapterDescriptorFactory
+
+pub typealias @types.DebugAdapterExecutable as DebugAdapterExecutable
+
+pub typealias @types.DebugAdapterExecutableOptions as DebugAdapterExecutableOptions
+
+pub typealias @types.DebugAdapterInlineImplementation as DebugAdapterInlineImplementation
+
+pub typealias @types.DebugAdapterNamedPipeServer as DebugAdapterNamedPipeServer
+
+pub typealias @types.DebugAdapterServer as DebugAdapterServer
+
+pub typealias @types.DebugAdapterTracker as DebugAdapterTracker
+
+pub typealias @types.DebugAdapterTrackerFactory as DebugAdapterTrackerFactory
+
+pub typealias @types.DebugConfiguration as DebugConfiguration
+
+pub typealias @types.DebugConfigurationProvider as DebugConfigurationProvider
+
+pub typealias @types.DebugConfigurationProviderTriggerKind as DebugConfigurationProviderTriggerKind
+
+pub typealias @types.DebugConsole as DebugConsole
+
+pub typealias @types.DebugConsoleMode as DebugConsoleMode
+
+pub typealias @types.DebugProtocolBreakpoint as DebugProtocolBreakpoint
+
+pub typealias @types.DebugProtocolMessage as DebugProtocolMessage
+
+pub typealias @types.DebugProtocolSource as DebugProtocolSource
+
+pub typealias @types.DebugSession as DebugSession
+
+pub typealias @types.DebugSessionCustomEvent as DebugSessionCustomEvent
+
+pub typealias @types.DebugSessionOptions as DebugSessionOptions
+
+pub typealias @types.DebugStackFrame as DebugStackFrame
+
+pub typealias @types.DebugThread as DebugThread
+
+pub typealias @illusory0x0/vscode/interop.Union3[@types.Location, Array[@types.Location], Array[@types.LocationLink]] as Declaration
+
+pub typealias @types.DeclarationCoverage as DeclarationCoverage
+
+pub typealias @types.DeclarationProvider as DeclarationProvider
+
+pub typealias @types.DecorationInstanceRenderOptions as DecorationInstanceRenderOptions
+
+pub typealias @types.DecorationOptions as DecorationOptions
+
+pub typealias @types.DecorationRangeBehavior as DecorationRangeBehavior
+
+pub typealias @types.DecorationRenderOptions as DecorationRenderOptions
+
+pub typealias @illusory0x0/vscode/interop.Union2[@types.Location, Array[@types.Location]] as Definition
+
+pub typealias @types.LocationLink as DefinitionLink
+
+pub typealias @types.DefinitionProvider as DefinitionProvider
+
+pub typealias @types.Diagnostic as Diagnostic
+
+pub typealias @types.DiagnosticChangeEvent as DiagnosticChangeEvent
+
+pub typealias @types.DiagnosticCode as DiagnosticCode
+
+pub typealias @types.DiagnosticCollection as DiagnosticCollection
+
+pub typealias @types.DiagnosticRelatedInformation as DiagnosticRelatedInformation
+
+pub typealias @types.DiagnosticSeverity as DiagnosticSeverity
+
+pub typealias @types.DiagnosticTag as DiagnosticTag
+
+pub typealias @types.DocumentColorContext as DocumentColorContext
+
+pub typealias @types.DocumentColorProvider as DocumentColorProvider
+
+pub typealias @types.DocumentDropEdit as DocumentDropEdit
+
+pub typealias @types.DocumentDropEditProvider as DocumentDropEditProvider
+
+pub typealias @types.DocumentDropEditProviderMetadata as DocumentDropEditProviderMetadata
+
+pub typealias @types.DocumentDropOrPasteEditKind as DocumentDropOrPasteEditKind
+
+pub typealias @types.DocumentFilter as DocumentFilter
+
+pub typealias @types.DocumentFormattingEditProvider as DocumentFormattingEditProvider
+
+pub typealias @types.DocumentHighlight as DocumentHighlight
+
+pub typealias @types.DocumentHighlightKind as DocumentHighlightKind
+
+pub typealias @types.DocumentHighlightProvider as DocumentHighlightProvider
+
+pub typealias @types.DocumentLink as DocumentLink
+
+pub typealias @types.DocumentLinkProvider as DocumentLinkProvider
+
+pub typealias @types.DocumentPasteEdit as DocumentPasteEdit
+
+pub typealias @types.DocumentPasteEditContext as DocumentPasteEditContext
+
+pub typealias @types.DocumentPasteEditProvider as DocumentPasteEditProvider
+
+pub typealias @types.DocumentPasteProviderMetadata as DocumentPasteProviderMetadata
+
+pub typealias @types.DocumentPasteTriggerKind as DocumentPasteTriggerKind
+
+pub typealias @types.DocumentRangeFormattingEditProvider as DocumentRangeFormattingEditProvider
+
+pub typealias @types.DocumentRangeSemanticTokensProvider as DocumentRangeSemanticTokensProvider
+
+pub typealias @illusory0x0/vscode/interop.Union3[@types.DocumentFilter, String, Array[@illusory0x0/vscode/interop.Union2[@types.DocumentFilter, String]]] as DocumentSelector
+
+pub typealias @types.DocumentSemanticTokensProvider as DocumentSemanticTokensProvider
+
+pub typealias @types.DocumentSymbol as DocumentSymbol
+
+pub typealias @types.DocumentSymbolProvider as DocumentSymbolProvider
+
+pub typealias @types.DocumentSymbolProviderMetadata as DocumentSymbolProviderMetadata
+
+pub typealias @types.EndOfLine as EndOfLine
+
+pub typealias @types.EnterAction as EnterAction
+
+pub typealias @types.Env as Env
+
+pub typealias @types.EnvironmentVariableCollection as EnvironmentVariableCollection
+
+pub typealias @types.EnvironmentVariableMutator as EnvironmentVariableMutator
+
+pub typealias @types.EnvironmentVariableMutatorOptions as EnvironmentVariableMutatorOptions
+
+pub typealias @types.EnvironmentVariableMutatorType as EnvironmentVariableMutatorType
+
+pub typealias @types.EnvironmentVariableScope as EnvironmentVariableScope
+
+pub typealias @types.EvaluatableExpression as EvaluatableExpression
+
+pub typealias @types.EvaluatableExpressionProvider as EvaluatableExpressionProvider
+
+pub typealias @types.EventEmitter as EventEmitter
+
+pub typealias @types.Extension as Extension
+
+pub typealias @types.ExtensionContext as ExtensionContext
+
+pub typealias @types.ExtensionHost as ExtensionHost
+
+pub typealias @types.ExtensionKind as ExtensionKind
+
+pub typealias @types.ExtensionMode as ExtensionMode
+
+pub typealias @types.ExtensionTerminalOptions as ExtensionTerminalOptions
+
+pub typealias @types.Extensions as Extensions
+
+pub typealias @types.FileChangeEvent as FileChangeEvent
+
+pub typealias @types.FileChangeType as FileChangeType
+
+pub typealias @types.FileCoverage as FileCoverage
+
+pub typealias @illusory0x0/vscode/interop.Union2[@types.StatementCoverage, @types.DeclarationCoverage] as FileCoverageDetail
+
+pub typealias @types.FileCreateEvent as FileCreateEvent
+
+pub typealias @types.FileDecoration as FileDecoration
+
+pub typealias @types.FileDecorationProvider as FileDecorationProvider
+
+pub typealias @types.FileDeleteEvent as FileDeleteEvent
+
+pub typealias @types.FilePermission as FilePermission
+
+pub typealias @types.FileRenameEntry as FileRenameEntry
+
+pub typealias @types.FileRenameEvent as FileRenameEvent
+
+pub typealias @types.FileStat as FileStat
+
+pub typealias @types.FileSystemError as FileSystemError
+
+pub typealias @types.FileSystemProvider as FileSystemProvider
+
+pub typealias @types.FileSystemProviderOptions as FileSystemProviderOptions
+
+pub typealias @types.FileSystemWatcher as FileSystemWatcher
+
+pub typealias @types.FileType as FileType
+
+pub typealias @types.FileWillCreateEvent as FileWillCreateEvent
+
+pub typealias @types.FileWillDeleteEvent as FileWillDeleteEvent
+
+pub typealias @types.FileWillRenameEvent as FileWillRenameEvent
+
+pub typealias @types.FoldingContext as FoldingContext
+
+pub typealias @types.FoldingRange as FoldingRange
+
+pub typealias @types.FoldingRangeKind as FoldingRangeKind
+
+pub typealias @types.FoldingRangeProvider as FoldingRangeProvider
+
+pub typealias @types.FormattingOptions as FormattingOptions
+
+pub typealias @illusory0x0/vscode/interop.Func0Rest as Func0Rest
+
+pub typealias @illusory0x0/vscode/interop.Func10Rest as Func10Rest
+
+pub typealias @illusory0x0/vscode/interop.Func11Rest as Func11Rest
+
+pub typealias @illusory0x0/vscode/interop.Func12Rest as Func12Rest
+
+pub typealias @illusory0x0/vscode/interop.Func13Rest as Func13Rest
+
+pub typealias @illusory0x0/vscode/interop.Func14Rest as Func14Rest
+
+pub typealias @illusory0x0/vscode/interop.Func15Rest as Func15Rest
+
+pub typealias @illusory0x0/vscode/interop.Func16Rest as Func16Rest
+
+pub typealias @illusory0x0/vscode/interop.Func1Rest as Func1Rest
+
+pub typealias @illusory0x0/vscode/interop.Func2Rest as Func2Rest
+
+pub typealias @illusory0x0/vscode/interop.Func3Rest as Func3Rest
+
+pub typealias @illusory0x0/vscode/interop.Func4Rest as Func4Rest
+
+pub typealias @illusory0x0/vscode/interop.Func5Rest as Func5Rest
+
+pub typealias @illusory0x0/vscode/interop.Func6Rest as Func6Rest
+
+pub typealias @illusory0x0/vscode/interop.Func7Rest as Func7Rest
+
+pub typealias @illusory0x0/vscode/interop.Func8Rest as Func8Rest
+
+pub typealias @illusory0x0/vscode/interop.Func9Rest as Func9Rest
+
+pub typealias @types.FunctionBreakpoint as FunctionBreakpoint
+
+pub typealias @illusory0x0/vscode/interop.Union2[String, @types.RelativePattern] as GlobPattern
+
+pub typealias @types.GlobalEnvironmentVariableCollection as GlobalEnvironmentVariableCollection
+
+pub typealias @types.Hover as Hover
+
+pub typealias @types.HoverProvider as HoverProvider
+
+pub typealias @illusory0x0/vscode/interop.Union3[@types.Uri, @types.LightDarkIconPath, @types.ThemeIcon] as IconPath
+
+pub typealias @types.ImplementationProvider as ImplementationProvider
+
+pub typealias @types.IndentAction as IndentAction
+
+pub typealias @types.IndentationRule as IndentationRule
+
+pub typealias @types.InlayHint as InlayHint
+
+pub typealias @types.InlayHintKind as InlayHintKind
+
+pub typealias @types.InlayHintLabelPart as InlayHintLabelPart
+
+pub typealias @types.InlayHintsProvider as InlayHintsProvider
+
+pub typealias @types.InlineCompletionContext as InlineCompletionContext
+
+pub typealias @types.InlineCompletionItem as InlineCompletionItem
+
+pub typealias @types.InlineCompletionItemProvider as InlineCompletionItemProvider
+
+pub typealias @types.InlineCompletionList as InlineCompletionList
+
+pub typealias @types.InlineCompletionTriggerKind as InlineCompletionTriggerKind
+
+pub typealias @illusory0x0/vscode/interop.Union3[@types.InlineValueText, @types.InlineValueVariableLookup, @types.InlineValueEvaluatableExpression] as InlineValue
+
+pub typealias @types.InlineValueContext as InlineValueContext
+
+pub typealias @types.InlineValueEvaluatableExpression as InlineValueEvaluatableExpression
+
+pub typealias @types.InlineValueText as InlineValueText
+
+pub typealias @types.InlineValueVariableLookup as InlineValueVariableLookup
+
+pub typealias @types.InlineValuesProvider as InlineValuesProvider
+
+pub typealias @types.InputBox as InputBox
+
+pub typealias @types.InputBoxOptions as InputBoxOptions
+
+pub typealias @types.InputBoxValidationMessage as InputBoxValidationMessage
+
+pub typealias @types.InputBoxValidationSeverity as InputBoxValidationSeverity
+
+pub typealias @types.L10N as L10N
+
+pub typealias @types.LanguageConfiguration as LanguageConfiguration
+
+pub typealias @types.LanguageModelAccessInformation as LanguageModelAccessInformation
+
+pub typealias @types.LanguageModelChat as LanguageModelChat
+
+pub typealias @types.LanguageModelChatInformation as LanguageModelChatInformation
+
+pub typealias @types.LanguageModelChatMessage as LanguageModelChatMessage
+
+pub typealias @types.LanguageModelChatMessageRole as LanguageModelChatMessageRole
+
+pub typealias @types.LanguageModelChatProvider as LanguageModelChatProvider
+
+pub typealias @types.LanguageModelChatRequestMessage as LanguageModelChatRequestMessage
+
+pub typealias @types.LanguageModelChatRequestOptions as LanguageModelChatRequestOptions
+
+pub typealias @types.LanguageModelChatResponse as LanguageModelChatResponse
+
+pub typealias @types.LanguageModelChatSelector as LanguageModelChatSelector
+
+pub typealias @types.LanguageModelChatTool as LanguageModelChatTool
+
+pub typealias @types.LanguageModelChatToolMode as LanguageModelChatToolMode
+
+pub typealias @types.LanguageModelError as LanguageModelError
+
+pub typealias @illusory0x0/vscode/interop.Union3[@types.LanguageModelTextPart, @types.LanguageModelToolResultPart, @types.LanguageModelToolCallPart] as LanguageModelInputPart
+
+pub typealias @types.LanguageModelPromptTsxPart as LanguageModelPromptTsxPart
+
+pub typealias @illusory0x0/vscode/interop.Union3[@types.LanguageModelTextPart, @types.LanguageModelToolResultPart, @types.LanguageModelToolCallPart] as LanguageModelResponsePart
+
+pub typealias @types.LanguageModelTextPart as LanguageModelTextPart
+
+pub typealias @types.LanguageModelTool as LanguageModelTool
+
+pub typealias @types.LanguageModelToolCallPart as LanguageModelToolCallPart
+
+pub typealias @types.LanguageModelToolConfirmationMessages as LanguageModelToolConfirmationMessages
+
+pub typealias @types.LanguageModelToolInformation as LanguageModelToolInformation
+
+pub typealias @types.LanguageModelToolInvocationOptions as LanguageModelToolInvocationOptions
+
+pub typealias @types.LanguageModelToolInvocationPrepareOptions as LanguageModelToolInvocationPrepareOptions
+
+pub typealias @types.LanguageModelToolResult as LanguageModelToolResult
+
+pub typealias @types.LanguageModelToolResultPart as LanguageModelToolResultPart
+
+pub typealias @types.LanguageModelToolTokenizationOptions as LanguageModelToolTokenizationOptions
+
+pub typealias @types.LanguageStatusItem as LanguageStatusItem
+
+pub typealias @types.LanguageStatusSeverity as LanguageStatusSeverity
+
+pub typealias @types.Languages as Languages
+
+pub typealias @types.LightDarkIconPath as LightDarkIconPath
+
+pub typealias @types.LinkedEditingRangeProvider as LinkedEditingRangeProvider
+
+pub typealias @types.LinkedEditingRanges as LinkedEditingRanges
+
+pub typealias @types.Lm as Lm
+
+pub typealias @types.Location as Location
+
+pub typealias @types.LocationLink as LocationLink
+
+pub typealias @types.LogLevel as LogLevel
+
+pub typealias @types.LogOutputChannel as LogOutputChannel
+
+pub typealias @types.MarkdownString as MarkdownString
+
+pub typealias @illusory0x0/vscode/interop.Union2[String, @types.MarkedStringObject] as MarkedString
+
+pub typealias @types.MarkedStringObject as MarkedStringObject
+
+pub typealias @types.McpHttpServerDefinition as McpHttpServerDefinition
+
+pub typealias @illusory0x0/vscode/interop.Union2[@types.McpStdioServerDefinition, @types.McpHttpServerDefinition] as McpServerDefinition
+
+pub typealias @types.McpServerDefinitionProvider as McpServerDefinitionProvider
+
+pub typealias @types.McpStdioServerDefinition as McpStdioServerDefinition
+
+pub typealias @types.MessageItem as MessageItem
+
+pub typealias @types.MessageOptions as MessageOptions
+
+pub typealias @types.NotebookCell as NotebookCell
+
+pub typealias @types.NotebookCellData as NotebookCellData
+
+pub typealias @types.NotebookCellExecution as NotebookCellExecution
+
+pub typealias @types.NotebookCellExecutionSummary as NotebookCellExecutionSummary
+
+pub typealias @types.NotebookCellExecutionTiming as NotebookCellExecutionTiming
+
+pub typealias @types.NotebookCellKind as NotebookCellKind
+
+pub typealias @types.NotebookCellOutput as NotebookCellOutput
+
+pub typealias @types.NotebookCellOutputItem as NotebookCellOutputItem
+
+pub typealias @types.NotebookCellStatusBarAlignment as NotebookCellStatusBarAlignment
+
+pub typealias @types.NotebookCellStatusBarItem as NotebookCellStatusBarItem
+
+pub typealias @types.NotebookCellStatusBarItemProvider as NotebookCellStatusBarItemProvider
+
+pub typealias @types.NotebookController as NotebookController
+
+pub typealias @types.NotebookControllerAffinity as NotebookControllerAffinity
+
+pub typealias @types.NotebookData as NotebookData
+
+pub typealias @types.NotebookDocument as NotebookDocument
+
+pub typealias @types.NotebookDocumentCellChange as NotebookDocumentCellChange
+
+pub typealias @types.NotebookDocumentChangeEvent as NotebookDocumentChangeEvent
+
+pub typealias @types.NotebookDocumentContentChange as NotebookDocumentContentChange
+
+pub typealias @types.NotebookDocumentContentOptions as NotebookDocumentContentOptions
+
+pub typealias @types.NotebookDocumentShowOptions as NotebookDocumentShowOptions
+
+pub typealias @types.NotebookDocumentWillSaveEvent as NotebookDocumentWillSaveEvent
+
+pub typealias @types.NotebookEdit as NotebookEdit
+
+pub typealias @types.NotebookEditor as NotebookEditor
+
+pub typealias @types.NotebookEditorRevealType as NotebookEditorRevealType
+
+pub typealias @types.NotebookEditorSelectionChangeEvent as NotebookEditorSelectionChangeEvent
+
+pub typealias @types.NotebookEditorVisibleRangesChangeEvent as NotebookEditorVisibleRangesChangeEvent
+
+pub typealias @types.NotebookRange as NotebookRange
+
+pub typealias @types.NotebookRendererMessaging as NotebookRendererMessaging
+
+pub typealias @types.NotebookSerializer as NotebookSerializer
+
+pub typealias @types.Notebooks as Notebooks
+
+pub typealias @types.OnEnterRule as OnEnterRule
+
+pub typealias @types.OnTypeFormattingEditProvider as OnTypeFormattingEditProvider
+
+pub typealias @types.OpenDialogOptions as OpenDialogOptions
+
+pub typealias @types.OutputChannel as OutputChannel
+
+pub typealias @types.OverviewRulerLane as OverviewRulerLane
+
+pub typealias @types.ParameterInformation as ParameterInformation
+
+pub typealias @types.PasteContext as PasteContext
+
+pub typealias @types.Position as Position
+
+pub typealias @types.PrepareLanguageModelChatModelOptions as PrepareLanguageModelChatModelOptions
+
+pub typealias @types.PreparedToolInvocation as PreparedToolInvocation
+
+pub typealias @types.ProcessExecution as ProcessExecution
+
+pub typealias @types.ProcessExecutionOptions as ProcessExecutionOptions
+
+pub typealias @types.ProgressLocation as ProgressLocation
+
+pub typealias @types.ProgressOptions as ProgressOptions
+
+pub typealias @types.ProvideLanguageModelChatResponseOptions as ProvideLanguageModelChatResponseOptions
+
+pub typealias @illusory0x0/vscode/interop.Union2[T, @types.Thenable[T]] as ProviderResult[T]
+
+pub typealias @types.Pseudoterminal as Pseudoterminal
+
+pub typealias @types.QuickDiffProvider as QuickDiffProvider
+
+pub typealias @types.QuickInput as QuickInput
+
+pub typealias @types.QuickInputButton as QuickInputButton
+
+pub typealias @types.QuickPick as QuickPick
+
+pub typealias @types.QuickPickItem as QuickPickItem
+
+pub typealias @types.QuickPickItemButtonEvent as QuickPickItemButtonEvent
+
+pub typealias @types.QuickPickItemKind as QuickPickItemKind
+
+pub typealias @types.QuickPickOptions as QuickPickOptions
+
+pub typealias @types.Range as Range
+
+pub typealias @types.ReferenceContext as ReferenceContext
+
+pub typealias @types.ReferenceProvider as ReferenceProvider
+
+pub typealias @types.RelativePattern as RelativePattern
+
+pub typealias @types.RenameProvider as RenameProvider
+
+pub typealias @types.RenameProviderPrepareResult as RenameProviderPrepareResult
+
+pub typealias @types.RunOptions as RunOptions
+
+pub typealias @types.SaveDialogOptions as SaveDialogOptions
+
+pub typealias @types.Scm as Scm
+
+pub typealias @types.SecretStorage as SecretStorage
+
+pub typealias @types.SecretStorageChangeEvent as SecretStorageChangeEvent
+
+pub typealias @types.SelectedCompletionInfo as SelectedCompletionInfo
+
+pub typealias @types.Selection as Selection
+
+pub typealias @types.SelectionRange as SelectionRange
+
+pub typealias @types.SelectionRangeProvider as SelectionRangeProvider
+
+pub typealias @types.SemanticTokens as SemanticTokens
+
+pub typealias @types.SemanticTokensEdit as SemanticTokensEdit
+
+pub typealias @types.SemanticTokensEdits as SemanticTokensEdits
+
+pub typealias @types.SemanticTokensLegend as SemanticTokensLegend
+
+pub typealias @types.ShellExecution as ShellExecution
+
+pub typealias @types.ShellExecutionOptions as ShellExecutionOptions
+
+pub typealias @types.ShellIntegration as ShellIntegration
+
+pub typealias @types.ShellQuotedString as ShellQuotedString
+
+pub typealias @types.ShellQuoting as ShellQuoting
+
+pub typealias @types.ShellQuotingOptions as ShellQuotingOptions
+
+pub typealias @types.SignatureHelp as SignatureHelp
+
+pub typealias @types.SignatureHelpContext as SignatureHelpContext
+
+pub typealias @types.SignatureHelpProvider as SignatureHelpProvider
+
+pub typealias @types.SignatureHelpProviderMetadata as SignatureHelpProviderMetadata
+
+pub typealias @types.SignatureHelpTriggerKind as SignatureHelpTriggerKind
+
+pub typealias @types.SignatureInformation as SignatureInformation
+
+pub typealias @types.SnippetString as SnippetString
+
+pub typealias @types.SnippetTextEdit as SnippetTextEdit
+
+pub typealias @types.SourceBreakpoint as SourceBreakpoint
+
+pub typealias @types.SourceControl as SourceControl
+
+pub typealias @types.SourceControlInputBox as SourceControlInputBox
+
+pub typealias @types.SourceControlResourceDecorations as SourceControlResourceDecorations
+
+pub typealias @types.SourceControlResourceGroup as SourceControlResourceGroup
+
+pub typealias @types.SourceControlResourceState as SourceControlResourceState
+
+pub typealias @types.SourceControlResourceThemableDecorations as SourceControlResourceThemableDecorations
+
+pub typealias @types.StatementCoverage as StatementCoverage
+
+pub typealias @types.StatusBarAlignment as StatusBarAlignment
+
+pub typealias @types.StatusBarItem as StatusBarItem
+
+pub typealias @types.SymbolInformation as SymbolInformation
+
+pub typealias @types.SymbolKind as SymbolKind
+
+pub typealias @types.SymbolTag as SymbolTag
+
+pub typealias @types.SyntaxTokenType as SyntaxTokenType
+
+pub typealias @types.Tab as Tab
+
+pub typealias @types.TabChangeEvent as TabChangeEvent
+
+pub typealias @types.TabGroup as TabGroup
+
+pub typealias @types.TabGroupChangeEvent as TabGroupChangeEvent
+
+pub typealias @types.TabGroups as TabGroups
+
+pub typealias @types.TabInputCustom as TabInputCustom
+
+pub typealias @types.TabInputNotebook as TabInputNotebook
+
+pub typealias @types.TabInputNotebookDiff as TabInputNotebookDiff
+
+pub typealias @types.TabInputText as TabInputText
+
+pub typealias @types.TabInputTextDiff as TabInputTextDiff
+
+pub typealias @types.TabInputWebview as TabInputWebview
+
+pub typealias @types.Task as Task
+
+pub typealias @types.TaskDefinition as TaskDefinition
+
+pub typealias @types.TaskEndEvent as TaskEndEvent
+
+pub typealias @types.TaskExecution as TaskExecution
+
+pub typealias @types.TaskFilter as TaskFilter
+
+pub typealias @types.TaskGroup as TaskGroup
+
+pub typealias @types.TaskPanelKind as TaskPanelKind
+
+pub typealias @types.TaskPresentationOptions as TaskPresentationOptions
+
+pub typealias @types.TaskProcessEndEvent as TaskProcessEndEvent
+
+pub typealias @types.TaskProcessStartEvent as TaskProcessStartEvent
+
+pub typealias @types.TaskProvider as TaskProvider
+
+pub typealias @types.TaskRevealKind as TaskRevealKind
+
+pub typealias @types.TaskScope as TaskScope
+
+pub typealias @types.TaskStartEvent as TaskStartEvent
+
+pub typealias @types.Tasks as Tasks
+
+pub typealias @types.TelemetryLogger as TelemetryLogger
+
+pub typealias @types.TelemetryLoggerOptions as TelemetryLoggerOptions
+
+pub typealias @types.TelemetrySender as TelemetrySender
+
+pub typealias @types.TelemetryTrustedValue as TelemetryTrustedValue
+
+pub typealias @types.Terminal as Terminal
+
+pub typealias @types.TerminalDimensions as TerminalDimensions
+
+pub typealias @types.TerminalEditorLocationOptions as TerminalEditorLocationOptions
+
+pub typealias @types.TerminalExitReason as TerminalExitReason
+
+pub typealias @types.TerminalExitStatus as TerminalExitStatus
+
+pub typealias @types.TerminalLink as TerminalLink
+
+pub typealias @types.TerminalLinkContext as TerminalLinkContext
+
+pub typealias @types.TerminalLinkProvider as TerminalLinkProvider
+
+pub typealias @types.TerminalLocation as TerminalLocation
+
+pub typealias @types.TerminalOptions as TerminalOptions
+
+pub typealias @types.TerminalProfile as TerminalProfile
+
+pub typealias @types.TerminalProfileProvider as TerminalProfileProvider
+
+pub typealias @types.TerminalShellExecution as TerminalShellExecution
+
+pub typealias @types.TerminalShellExecutionCommandLine as TerminalShellExecutionCommandLine
+
+pub typealias @types.TerminalShellExecutionCommandLineConfidence as TerminalShellExecutionCommandLineConfidence
+
+pub typealias @types.TerminalShellExecutionEndEvent as TerminalShellExecutionEndEvent
+
+pub typealias @types.TerminalShellExecutionStartEvent as TerminalShellExecutionStartEvent
+
+pub typealias @types.TerminalShellIntegration as TerminalShellIntegration
+
+pub typealias @types.TerminalShellIntegrationChangeEvent as TerminalShellIntegrationChangeEvent
+
+pub typealias @types.TerminalSplitLocationOptions as TerminalSplitLocationOptions
+
+pub typealias @types.TerminalState as TerminalState
+
+pub typealias @types.TestController as TestController
+
+pub typealias @types.TestCoverageCount as TestCoverageCount
+
+pub typealias @types.TestItem as TestItem
+
+pub typealias @types.TestItemCollection as TestItemCollection
+
+pub typealias @types.TestMessage as TestMessage
+
+pub typealias @types.TestMessageStackFrame as TestMessageStackFrame
+
+pub typealias @types.TestRun as TestRun
+
+pub typealias @types.TestRunProfile as TestRunProfile
+
+pub typealias @types.TestRunProfileKind as TestRunProfileKind
+
+pub typealias @types.TestRunRequest as TestRunRequest
+
+pub typealias @types.TestTag as TestTag
+
+pub typealias @types.Tests as Tests
+
+pub typealias @types.TextDocument as TextDocument
+
+pub typealias @types.TextDocumentChangeEvent as TextDocumentChangeEvent
+
+pub typealias @types.TextDocumentChangeReason as TextDocumentChangeReason
+
+pub typealias @types.TextDocumentContentChangeEvent as TextDocumentContentChangeEvent
+
+pub typealias @types.TextDocumentContentProvider as TextDocumentContentProvider
+
+pub typealias @types.TextDocumentSaveReason as TextDocumentSaveReason
+
+pub typealias @types.TextDocumentShowOptions as TextDocumentShowOptions
+
+pub typealias @types.TextDocumentWillSaveEvent as TextDocumentWillSaveEvent
+
+pub typealias @types.TextEdit as TextEdit
+
+pub typealias @types.TextEditor as TextEditor
+
+pub typealias @types.TextEditorCursorStyle as TextEditorCursorStyle
+
+pub typealias @types.TextEditorDecorationType as TextEditorDecorationType
+
+pub typealias @types.TextEditorLineNumbersStyle as TextEditorLineNumbersStyle
+
+pub typealias @types.TextEditorOptions as TextEditorOptions
+
+pub typealias @types.TextEditorOptionsChangeEvent as TextEditorOptionsChangeEvent
+
+pub typealias @types.TextEditorRevealType as TextEditorRevealType
+
+pub typealias @types.TextEditorSelectionChangeEvent as TextEditorSelectionChangeEvent
+
+pub typealias @types.TextEditorSelectionChangeKind as TextEditorSelectionChangeKind
+
+pub typealias @types.TextEditorViewColumnChangeEvent as TextEditorViewColumnChangeEvent
+
+pub typealias @types.TextEditorVisibleRangesChangeEvent as TextEditorVisibleRangesChangeEvent
+
+pub typealias @types.TextLine as TextLine
+
+pub typealias @types.ThemableDecorationAttachmentRenderOptions as ThemableDecorationAttachmentRenderOptions
+
+pub typealias @types.ThemableDecorationInstanceRenderOptions as ThemableDecorationInstanceRenderOptions
+
+pub typealias @types.ThemableDecorationRenderOptions as ThemableDecorationRenderOptions
+
+pub typealias @types.ThemeColor as ThemeColor
+
+pub typealias @types.ThemeIcon as ThemeIcon
+
+pub typealias @types.TreeCheckboxChangeEvent as TreeCheckboxChangeEvent
+
+pub typealias @types.TreeDataProvider as TreeDataProvider
+
+pub typealias @types.TreeDragAndDropController as TreeDragAndDropController
+
+pub typealias @types.TreeItem as TreeItem
+
+pub typealias @types.TreeItemCheckboxState as TreeItemCheckboxState
+
+pub typealias @types.TreeItemCollapsibleState as TreeItemCollapsibleState
+
+pub typealias @types.TreeItemLabel as TreeItemLabel
+
+pub typealias @types.TreeView as TreeView
+
+pub typealias @types.TreeViewExpansionEvent as TreeViewExpansionEvent
+
+pub typealias @types.TreeViewOptions as TreeViewOptions
+
+pub typealias @types.TreeViewSelectionChangeEvent as TreeViewSelectionChangeEvent
+
+pub typealias @types.TreeViewVisibilityChangeEvent as TreeViewVisibilityChangeEvent
+
+pub typealias @types.TypeDefinitionProvider as TypeDefinitionProvider
+
+pub typealias @types.TypeHierarchyItem as TypeHierarchyItem
+
+pub typealias @types.TypeHierarchyProvider as TypeHierarchyProvider
+
+pub typealias @types.UIKind as UIKind
+
+pub typealias FixedArray[Byte] as Uint8Array
+
+pub typealias @illusory0x0/vscode/interop.Union10 as Union10
+
+pub typealias @illusory0x0/vscode/interop.Union11 as Union11
+
+pub typealias @illusory0x0/vscode/interop.Union12 as Union12
+
+pub typealias @illusory0x0/vscode/interop.Union13 as Union13
+
+pub typealias @illusory0x0/vscode/interop.Union14 as Union14
+
+pub typealias @illusory0x0/vscode/interop.Union15 as Union15
+
+pub typealias @illusory0x0/vscode/interop.Union16 as Union16
+
+pub typealias @illusory0x0/vscode/interop.Union2 as Union2
+
+pub typealias @illusory0x0/vscode/interop.Union3 as Union3
+
+pub typealias @illusory0x0/vscode/interop.Union4 as Union4
+
+pub typealias @illusory0x0/vscode/interop.Union5 as Union5
+
+pub typealias @illusory0x0/vscode/interop.Union6 as Union6
+
+pub typealias @illusory0x0/vscode/interop.Union7 as Union7
+
+pub typealias @illusory0x0/vscode/interop.Union8 as Union8
+
+pub typealias @illusory0x0/vscode/interop.Union9 as Union9
+
+pub typealias @types.Uri as Uri
+
+pub typealias @types.UriHandler as UriHandler
+
+pub typealias @types.ViewBadge as ViewBadge
+
+pub typealias @types.ViewColumn as ViewColumn
+
+pub typealias @types.Vscode as Vscode
+
+pub typealias @types.Webview as Webview
+
+pub typealias @types.WebviewOptions as WebviewOptions
+
+pub typealias @types.WebviewPanel as WebviewPanel
+
+pub typealias @types.WebviewPanelOnDidChangeViewStateEvent as WebviewPanelOnDidChangeViewStateEvent
+
+pub typealias @types.WebviewPanelOptions as WebviewPanelOptions
+
+pub typealias @types.WebviewPortMapping as WebviewPortMapping
+
+pub typealias @types.WebviewView as WebviewView
+
+pub typealias @types.WebviewViewProvider as WebviewViewProvider
+
+pub typealias @types.WebviewViewResolveContext as WebviewViewResolveContext
+
+pub typealias @types.Window as Window
+
+pub typealias @types.WindowState as WindowState
+
+pub typealias @types.Workspace as Workspace
+
+pub typealias @types.WorkspaceConfigurationInspectResult as WorkspaceConfigurationInspectResult
+
+pub typealias @types.WorkspaceEdit as WorkspaceEdit
+
+pub typealias @types.WorkspaceEditEntryMetadata as WorkspaceEditEntryMetadata
+
+pub typealias @types.WorkspaceEditMetadata as WorkspaceEditMetadata
+
+pub typealias @types.WorkspaceFolder as WorkspaceFolder
+
+pub typealias @types.WorkspaceFolderPickOptions as WorkspaceFolderPickOptions
+
+pub typealias @types.WorkspaceFoldersChangeEvent as WorkspaceFoldersChangeEvent
+
+pub typealias @types.WorkspaceSymbolProvider as WorkspaceSymbolProvider
+
+// Traits
+

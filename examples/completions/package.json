@@ -1,5 +1,5 @@
 {
-  "name": "illu-vscode.mbt",
+  "name": "completions",
   "version": "0.0.1",
   "type": "commonjs",
   "main": "./target/js/release/build/extension/extension.js",
@@ -7,14 +7,6 @@
     "vscode": "^1.100.0"
   },
   "publisher": "illusory0x0",
-  "contributes": {
-    "commands": [
-      {
-        "command": "extension.helloWorld",
-        "title": "Hello World"
-      }
-    ]
-  },
   "activationEvents": [
     "*"
   ],
