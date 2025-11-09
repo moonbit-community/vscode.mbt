@@ -139,7 +139,7 @@ pub extern "js" fn SemanticTokensBuilder::build_with_options(
 ) -> SemanticTokens = "(self, resultId) => self.build(resultId)"
 
 ///|
-pub extern "js" fn SemanticTokensBuilder::push_numbers(
+pub extern "js" fn SemanticTokensBuilder::push(
   self : SemanticTokensBuilder,
   line : Int,
   char : Int,
@@ -149,7 +149,7 @@ pub extern "js" fn SemanticTokensBuilder::push_numbers(
 ) -> Unit = "(self, line, char, length, tokenType, tokenModifiers) => self.push(line, char, length, tokenType, tokenModifiers)"
 
 ///|
-pub extern "js" fn SemanticTokensBuilder::push_range(
+pub extern "js" fn SemanticTokensBuilder::push_with_range(
   self : SemanticTokensBuilder,
   range : Range,
   tokenType : String,

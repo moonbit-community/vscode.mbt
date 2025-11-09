@@ -41,6 +41,7 @@ impl Eq for AuthenticationGetSessionOptions
 impl Show for AuthenticationGetSessionOptions
 impl ToJson for AuthenticationGetSessionOptions
 
+#alias(AuthenticationForceNewSessionOptions)
 pub(all) struct AuthenticationGetSessionPresentationOptions {
   detail : String?
 }
@@ -1578,7 +1579,7 @@ impl ToJson for DocumentRangeSemanticTokensProvider
 pub(all) struct DocumentSemanticTokensProvider {
   onDidChangeSemanticTokens : Event[Unit]?
   provideDocumentSemanticTokens : (TextDocument, CancellationToken) -> @interop.Union2[SemanticTokens, Thenable[SemanticTokens]]
-  provideDocumentSemanticTokensEdits : (TextDocument, String, CancellationToken) -> @interop.Union2[@interop.Union2[SemanticTokens, SemanticTokensEdits], Thenable[@interop.Union2[SemanticTokens, SemanticTokensEdits]]]
+  provideDocumentSemanticTokensEdits : ((TextDocument, String, CancellationToken) -> @interop.Union2[@interop.Union2[SemanticTokens, SemanticTokensEdits], Thenable[@interop.Union2[SemanticTokens, SemanticTokensEdits]]])?
 }
 fn DocumentSemanticTokensProvider::provideDocumentSemanticTokens(Self, TextDocument, CancellationToken) -> @interop.Any
 fn DocumentSemanticTokensProvider::provideDocumentSemanticTokensEdits(Self, TextDocument, String, CancellationToken) -> @interop.Any
@@ -2673,6 +2674,7 @@ impl Eq for Location
 impl Show for Location
 impl ToJson for Location
 
+#alias(DefinitionLink)
 pub(all) struct LocationLink {
   mut originSelectionRange : Range?
   mut targetUri : Uri
@@ -3538,8 +3540,8 @@ impl ToJson for SemanticTokens
 pub(all) type SemanticTokensBuilder
 fn SemanticTokensBuilder::build_with_options(Self, String?) -> SemanticTokens
 fn SemanticTokensBuilder::new(SemanticTokensLegend?) -> Self
-fn SemanticTokensBuilder::push_numbers(Self, Int, Int, Int, Int, Int?) -> Unit
-fn SemanticTokensBuilder::push_range(Self, Range, String, Array[String]?) -> Unit
+fn SemanticTokensBuilder::push(Self, Int, Int, Int, Int, Int?) -> Unit
+fn SemanticTokensBuilder::push_with_range(Self, Range, String, Array[String]?) -> Unit
 impl Eq for SemanticTokensBuilder
 impl Show for SemanticTokensBuilder
 impl ToJson for SemanticTokensBuilder
@@ -5467,109 +5469,105 @@ impl Show for WorkspaceSymbolProvider
 impl ToJson for WorkspaceSymbolProvider
 
 // Type aliases
-pub typealias @interop.Any as Any
+pub using @interop {type Any}
 
-pub typealias AuthenticationGetSessionPresentationOptions as AuthenticationForceNewSessionOptions
+pub type CharacterPair = (String, String)
 
-pub typealias (String, String) as CharacterPair
+pub type ChatRequestHandler = (ChatRequest, ChatContext, ChatResponseStream, CancellationToken) -> @interop.Union2[@interop.Union2[ChatResult, Unit], Thenable[@interop.Union2[ChatResult, Unit]]]
 
-pub typealias (ChatRequest, ChatContext, ChatResponseStream, CancellationToken) -> @interop.Union2[@interop.Union2[ChatResult, Unit], Thenable[@interop.Union2[ChatResult, Unit]]] as ChatRequestHandler
+pub type ConfigurationScope = @interop.Union4[Uri, TextDocument, WorkspaceFolder, ConfigurationScopeObj]
 
-pub typealias @interop.Union4[Uri, TextDocument, WorkspaceFolder, ConfigurationScopeObj] as ConfigurationScope
+pub type DebugAdapterDescriptor = @interop.Union4[DebugAdapterExecutable, DebugAdapterServer, DebugAdapterNamedPipeServer, DebugAdapterInlineImplementation]
 
-pub typealias @interop.Union4[DebugAdapterExecutable, DebugAdapterServer, DebugAdapterNamedPipeServer, DebugAdapterInlineImplementation] as DebugAdapterDescriptor
+pub type Declaration = @interop.Union3[Location, Array[Location], Array[LocationLink]]
 
-pub typealias @interop.Union3[Location, Array[Location], Array[LocationLink]] as Declaration
+pub type Definition = @interop.Union2[Location, Array[Location]]
 
-pub typealias @interop.Union2[Location, Array[Location]] as Definition
+pub type DocumentSelector = @interop.Union3[DocumentFilter, String, Array[@interop.Union2[DocumentFilter, String]]]
 
-pub typealias LocationLink as DefinitionLink
+pub type FileCoverageDetail = @interop.Union2[StatementCoverage, DeclarationCoverage]
 
-pub typealias @interop.Union3[DocumentFilter, String, Array[@interop.Union2[DocumentFilter, String]]] as DocumentSelector
+pub using @interop {type Func0Rest}
 
-pub typealias @interop.Union2[StatementCoverage, DeclarationCoverage] as FileCoverageDetail
+pub using @interop {type Func10Rest}
 
-pub typealias @interop.Func0Rest as Func0Rest
+pub using @interop {type Func11Rest}
 
-pub typealias @interop.Func10Rest as Func10Rest
+pub using @interop {type Func12Rest}
 
-pub typealias @interop.Func11Rest as Func11Rest
+pub using @interop {type Func13Rest}
 
-pub typealias @interop.Func12Rest as Func12Rest
+pub using @interop {type Func14Rest}
 
-pub typealias @interop.Func13Rest as Func13Rest
+pub using @interop {type Func15Rest}
 
-pub typealias @interop.Func14Rest as Func14Rest
+pub using @interop {type Func16Rest}
 
-pub typealias @interop.Func15Rest as Func15Rest
+pub using @interop {type Func1Rest}
 
-pub typealias @interop.Func16Rest as Func16Rest
+pub using @interop {type Func2Rest}
 
-pub typealias @interop.Func1Rest as Func1Rest
+pub using @interop {type Func3Rest}
 
-pub typealias @interop.Func2Rest as Func2Rest
+pub using @interop {type Func4Rest}
 
-pub typealias @interop.Func3Rest as Func3Rest
+pub using @interop {type Func5Rest}
 
-pub typealias @interop.Func4Rest as Func4Rest
+pub using @interop {type Func6Rest}
 
-pub typealias @interop.Func5Rest as Func5Rest
+pub using @interop {type Func7Rest}
 
-pub typealias @interop.Func6Rest as Func6Rest
+pub using @interop {type Func8Rest}
 
-pub typealias @interop.Func7Rest as Func7Rest
+pub using @interop {type Func9Rest}
 
-pub typealias @interop.Func8Rest as Func8Rest
+pub type GlobPattern = @interop.Union2[String, RelativePattern]
 
-pub typealias @interop.Func9Rest as Func9Rest
+pub type IconPath = @interop.Union3[Uri, LightDarkIconPath, ThemeIcon]
 
-pub typealias @interop.Union2[String, RelativePattern] as GlobPattern
+pub type InlineValue = @interop.Union3[InlineValueText, InlineValueVariableLookup, InlineValueEvaluatableExpression]
 
-pub typealias @interop.Union3[Uri, LightDarkIconPath, ThemeIcon] as IconPath
+pub type LanguageModelInputPart = @interop.Union3[LanguageModelTextPart, LanguageModelToolResultPart, LanguageModelToolCallPart]
 
-pub typealias @interop.Union3[InlineValueText, InlineValueVariableLookup, InlineValueEvaluatableExpression] as InlineValue
+pub type LanguageModelResponsePart = @interop.Union3[LanguageModelTextPart, LanguageModelToolResultPart, LanguageModelToolCallPart]
 
-pub typealias @interop.Union3[LanguageModelTextPart, LanguageModelToolResultPart, LanguageModelToolCallPart] as LanguageModelInputPart
+pub type MarkedString = @interop.Union2[String, MarkedStringObject]
 
-pub typealias @interop.Union3[LanguageModelTextPart, LanguageModelToolResultPart, LanguageModelToolCallPart] as LanguageModelResponsePart
+pub type McpServerDefinition = @interop.Union2[McpStdioServerDefinition, McpHttpServerDefinition]
 
-pub typealias @interop.Union2[String, MarkedStringObject] as MarkedString
+pub type ProviderResult[T] = @interop.Union2[T, Thenable[T]]
 
-pub typealias @interop.Union2[McpStdioServerDefinition, McpHttpServerDefinition] as McpServerDefinition
+pub type Uint8Array = FixedArray[Byte]
 
-pub typealias @interop.Union2[T, Thenable[T]] as ProviderResult[T]
+pub using @interop {type Union10}
 
-pub typealias FixedArray[Byte] as Uint8Array
+pub using @interop {type Union11}
 
-pub typealias @interop.Union10 as Union10
+pub using @interop {type Union12}
 
-pub typealias @interop.Union11 as Union11
+pub using @interop {type Union13}
 
-pub typealias @interop.Union12 as Union12
+pub using @interop {type Union14}
 
-pub typealias @interop.Union13 as Union13
+pub using @interop {type Union15}
 
-pub typealias @interop.Union14 as Union14
+pub using @interop {type Union16}
 
-pub typealias @interop.Union15 as Union15
+pub using @interop {type Union2}
 
-pub typealias @interop.Union16 as Union16
+pub using @interop {type Union3}
 
-pub typealias @interop.Union2 as Union2
+pub using @interop {type Union4}
 
-pub typealias @interop.Union3 as Union3
+pub using @interop {type Union5}
 
-pub typealias @interop.Union4 as Union4
+pub using @interop {type Union6}
 
-pub typealias @interop.Union5 as Union5
+pub using @interop {type Union7}
 
-pub typealias @interop.Union6 as Union6
+pub using @interop {type Union8}
 
-pub typealias @interop.Union7 as Union7
-
-pub typealias @interop.Union8 as Union8
-
-pub typealias @interop.Union9 as Union9
+pub using @interop {type Union9}
 
 // Traits
 
