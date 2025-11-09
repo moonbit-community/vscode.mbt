@@ -209,7 +209,12 @@ pub(all) struct ConfigurationScopeObj {
 } derive(Show, Eq, ToJson)
 
 ///|
-pub typealias Union4[Uri, TextDocument, WorkspaceFolder, ConfigurationScopeObj] as ConfigurationScope
+pub type ConfigurationScope = Union4[
+  Uri,
+  TextDocument,
+  WorkspaceFolder,
+  ConfigurationScopeObj,
+]
 
 ///|
 pub(all) struct WorkspaceConfigurationInspectResult[T] {
@@ -236,7 +241,7 @@ pub(all) struct LanguageConfiguration {
 } derive(Show, Eq, ToJson)
 
 ///|
-pub typealias (String, String) as CharacterPair
+pub type CharacterPair = (String, String)
 
 ///|
 pub(all) struct IndentationRule {
@@ -760,15 +765,18 @@ pub(all) struct PasteContext {
 
 ///|
 // Union type for inline values
-pub typealias Union3[
+pub type InlineValue = Union3[
   InlineValueText,
   InlineValueVariableLookup,
   InlineValueEvaluatableExpression,
-] as InlineValue
+]
 
 ///|
 // Union type for MCP server definitions
-pub typealias Union2[McpStdioServerDefinition, McpHttpServerDefinition] as McpServerDefinition
+pub type McpServerDefinition = Union2[
+  McpStdioServerDefinition,
+  McpHttpServerDefinition,
+]
 
 ///|
 pub(all) struct FormattingOptions {
@@ -1461,53 +1469,56 @@ pub(all) struct WorkspaceFolderPickOptions {
 pub(all) enum ChatParticipantToolToken {} derive(Show, Eq, ToJson)
 
 ///|
-pub typealias (ChatRequest, ChatContext, ChatResponseStream, CancellationToken) -> ProviderResult[
-  Union2[ChatResult, Unit],
-] as ChatRequestHandler
+pub type ChatRequestHandler = (
+  ChatRequest,
+  ChatContext,
+  ChatResponseStream,
+  CancellationToken,
+) -> ProviderResult[Union2[ChatResult, Unit]]
 
 ///|
-pub typealias Union4[
+pub type DebugAdapterDescriptor = Union4[
   DebugAdapterExecutable,
   DebugAdapterServer,
   DebugAdapterNamedPipeServer,
   DebugAdapterInlineImplementation,
-] as DebugAdapterDescriptor
+]
 
 ///|
-pub typealias Union3[Location, Array[Location], Array[LocationLink]] as Declaration
+pub type Declaration = Union3[Location, Array[Location], Array[LocationLink]]
 
 ///|
-pub typealias Union3[
+pub type DocumentSelector = Union3[
   DocumentFilter,
   String,
   Array[Union2[DocumentFilter, String]],
-] as DocumentSelector
+]
 
 ///|
-pub typealias Union2[StatementCoverage, DeclarationCoverage] as FileCoverageDetail
+pub type FileCoverageDetail = Union2[StatementCoverage, DeclarationCoverage]
 
 ///|
-pub typealias Union2[String, RelativePattern] as GlobPattern
+pub type GlobPattern = Union2[String, RelativePattern]
 
 ///|
-pub typealias Union3[Uri, LightDarkIconPath, ThemeIcon] as IconPath
+pub type IconPath = Union3[Uri, LightDarkIconPath, ThemeIcon]
 
 ///|
-pub typealias Union3[
+pub type LanguageModelInputPart = Union3[
   LanguageModelTextPart,
   LanguageModelToolResultPart,
   LanguageModelToolCallPart,
-] as LanguageModelInputPart
+]
 
 ///|
-pub typealias Union3[
+pub type LanguageModelResponsePart = Union3[
   LanguageModelTextPart,
   LanguageModelToolResultPart,
   LanguageModelToolCallPart,
-] as LanguageModelResponsePart
+]
 
 ///|
-pub typealias Union2[String, MarkedStringObject] as MarkedString
+pub type MarkedString = Union2[String, MarkedStringObject]
 
 ///|
 pub(all) struct FoldingContext {
@@ -2001,7 +2012,7 @@ pub(all) struct WebviewPanelOnDidChangeViewStateEvent {
 } derive(Show, Eq, ToJson)
 
 ///|
-pub typealias FixedArray[Byte] as Uint8Array
+pub type Uint8Array = FixedArray[Byte]
 
 ///|
 pub(all) struct FileSystemProviderOptions {

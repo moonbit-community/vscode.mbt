@@ -96,9 +96,11 @@ pub(all) struct DocumentSemanticTokensProvider {
   provideDocumentSemanticTokens : (TextDocument, CancellationToken) -> ProviderResult[
     SemanticTokens,
   ]
-  provideDocumentSemanticTokensEdits : (TextDocument, String, CancellationToken) -> ProviderResult[
-    Union2[SemanticTokens, SemanticTokensEdits],
-  ]
+  provideDocumentSemanticTokensEdits : ((
+    TextDocument,
+    String,
+    CancellationToken,
+  ) -> ProviderResult[Union2[SemanticTokens, SemanticTokensEdits]])?
 }
 
 ///|
@@ -439,11 +441,11 @@ pub(all) struct WebviewViewProvider {
 ///|
 // ProviderResult represents async/sync provider results in VSCode API  
 // Based on: export type ProviderResult<T> = T | undefined | null | Thenable<T | undefined | null>;
-pub typealias Union2[T, Thenable[T]] as ProviderResult[T]
+pub type ProviderResult[T] = Union2[T, Thenable[T]]
 
 ///|
 // Definition types for providers
-pub typealias Union2[Location, Array[Location]] as Definition
+pub type Definition = Union2[Location, Array[Location]]
 
 ///|
 pub typealias LocationLink as DefinitionLink

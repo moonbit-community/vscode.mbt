@@ -2,6 +2,7 @@
 package "illusory0x0/vscode"
 
 import(
+  "illusory0x0/vscode/interop"
   "illusory0x0/vscode/types"
 )
 
@@ -15,1111 +16,1113 @@ let vscode : @types.Vscode
 // Types and methods
 
 // Type aliases
-pub typealias @types.AccessibilityInformation as AccessibilityInformation
+pub using @types {type AccessibilityInformation}
 
-pub typealias @illusory0x0/vscode/interop.Any as Any
+pub using @types {type Authentication}
 
-pub typealias @types.Authentication as Authentication
+pub using @types {type AuthenticationGetSessionOptions}
 
-pub typealias @types.AuthenticationGetSessionPresentationOptions as AuthenticationForceNewSessionOptions
+pub using @types {type AuthenticationGetSessionPresentationOptions}
 
-pub typealias @types.AuthenticationGetSessionOptions as AuthenticationGetSessionOptions
+pub using @types {type AuthenticationProvider}
 
-pub typealias @types.AuthenticationGetSessionPresentationOptions as AuthenticationGetSessionPresentationOptions
+pub using @types {type AuthenticationProviderAuthenticationSessionsChangeEvent}
 
-pub typealias @types.AuthenticationProvider as AuthenticationProvider
+pub using @types {type AuthenticationProviderInformation}
 
-pub typealias @types.AuthenticationProviderAuthenticationSessionsChangeEvent as AuthenticationProviderAuthenticationSessionsChangeEvent
+pub using @types {type AuthenticationProviderOptions}
 
-pub typealias @types.AuthenticationProviderInformation as AuthenticationProviderInformation
+pub using @types {type AuthenticationProviderSessionOptions}
 
-pub typealias @types.AuthenticationProviderOptions as AuthenticationProviderOptions
+pub using @types {type AuthenticationSession}
 
-pub typealias @types.AuthenticationProviderSessionOptions as AuthenticationProviderSessionOptions
+pub using @types {type AuthenticationSessionAccountInformation}
 
-pub typealias @types.AuthenticationSession as AuthenticationSession
+pub using @types {type AuthenticationSessionsChangeEvent}
 
-pub typealias @types.AuthenticationSessionAccountInformation as AuthenticationSessionAccountInformation
+pub using @types {type AutoClosingPair}
 
-pub typealias @types.AuthenticationSessionsChangeEvent as AuthenticationSessionsChangeEvent
+pub using @types {type BranchCoverage}
 
-pub typealias @types.AutoClosingPair as AutoClosingPair
+pub using @types {type Breakpoint}
 
-pub typealias @types.BranchCoverage as BranchCoverage
+pub using @types {type BreakpointsChangeEvent}
 
-pub typealias @types.Breakpoint as Breakpoint
+pub using @types {type CallHierarchyIncomingCall}
 
-pub typealias @types.BreakpointsChangeEvent as BreakpointsChangeEvent
+pub using @types {type CallHierarchyItem}
 
-pub typealias @types.CallHierarchyIncomingCall as CallHierarchyIncomingCall
+pub using @types {type CallHierarchyOutgoingCall}
 
-pub typealias @types.CallHierarchyItem as CallHierarchyItem
+pub using @types {type CallHierarchyProvider}
 
-pub typealias @types.CallHierarchyOutgoingCall as CallHierarchyOutgoingCall
+pub using @types {type CancellationError}
 
-pub typealias @types.CallHierarchyProvider as CallHierarchyProvider
+pub using @types {type CancellationToken}
 
-pub typealias @types.CancellationError as CancellationError
+pub using @types {type CancellationTokenSource}
 
-pub typealias @types.CancellationToken as CancellationToken
+pub using @types {type Chat}
 
-pub typealias @types.CancellationTokenSource as CancellationTokenSource
+pub using @types {type ChatContext}
 
-pub typealias (String, String) as CharacterPair
+pub using @types {type ChatErrorDetails}
 
-pub typealias @types.Chat as Chat
+pub using @types {type ChatFollowup}
 
-pub typealias @types.ChatContext as ChatContext
+pub using @types {type ChatFollowupProvider}
 
-pub typealias @types.ChatErrorDetails as ChatErrorDetails
+pub using @types {type ChatLanguageModelToolReference}
 
-pub typealias @types.ChatFollowup as ChatFollowup
+pub using @types {type ChatParticipant}
 
-pub typealias @types.ChatFollowupProvider as ChatFollowupProvider
+pub using @types {type ChatParticipantToolToken}
 
-pub typealias @types.ChatLanguageModelToolReference as ChatLanguageModelToolReference
+pub using @types {type ChatPromptReference}
 
-pub typealias @types.ChatParticipant as ChatParticipant
+pub using @types {type ChatRequest}
 
-pub typealias @types.ChatParticipantToolToken as ChatParticipantToolToken
+pub using @types {type ChatRequestTurn}
 
-pub typealias @types.ChatPromptReference as ChatPromptReference
+pub using @types {type ChatResponseAnchorPart}
 
-pub typealias @types.ChatRequest as ChatRequest
+pub using @types {type ChatResponseCommandButtonPart}
 
-pub typealias (@types.ChatRequest, @types.ChatContext, @types.ChatResponseStream, @types.CancellationToken) -> @illusory0x0/vscode/interop.Union2[@illusory0x0/vscode/interop.Union2[@types.ChatResult, Unit], @types.Thenable[@illusory0x0/vscode/interop.Union2[@types.ChatResult, Unit]]] as ChatRequestHandler
+pub using @types {type ChatResponseFileTree}
 
-pub typealias @types.ChatRequestTurn as ChatRequestTurn
+pub using @types {type ChatResponseFileTreePart}
 
-pub typealias @types.ChatResponseAnchorPart as ChatResponseAnchorPart
+pub using @types {type ChatResponseMarkdownPart}
 
-pub typealias @types.ChatResponseCommandButtonPart as ChatResponseCommandButtonPart
+pub using @types {type ChatResponsePart}
 
-pub typealias @types.ChatResponseFileTree as ChatResponseFileTree
+pub using @types {type ChatResponseProgressPart}
 
-pub typealias @types.ChatResponseFileTreePart as ChatResponseFileTreePart
+pub using @types {type ChatResponseReferencePart}
 
-pub typealias @types.ChatResponseMarkdownPart as ChatResponseMarkdownPart
+pub using @types {type ChatResponseTurn}
 
-pub typealias @types.ChatResponsePart as ChatResponsePart
+pub using @types {type ChatResult}
 
-pub typealias @types.ChatResponseProgressPart as ChatResponseProgressPart
+pub using @types {type ChatResultFeedback}
 
-pub typealias @types.ChatResponseReferencePart as ChatResponseReferencePart
+pub using @types {type ChatResultFeedbackKind}
 
-pub typealias @types.ChatResponseTurn as ChatResponseTurn
+pub using @types {type Clipboard}
 
-pub typealias @types.ChatResult as ChatResult
+pub using @types {type CodeAction}
 
-pub typealias @types.ChatResultFeedback as ChatResultFeedback
+pub using @types {type CodeActionContext}
 
-pub typealias @types.ChatResultFeedbackKind as ChatResultFeedbackKind
+pub using @types {type CodeActionKind}
 
-pub typealias @types.Clipboard as Clipboard
+pub using @types {type CodeActionProvider}
 
-pub typealias @types.CodeAction as CodeAction
+pub using @types {type CodeActionProviderMetadata}
 
-pub typealias @types.CodeActionContext as CodeActionContext
+pub using @types {type CodeActionTriggerKind}
 
-pub typealias @types.CodeActionKind as CodeActionKind
+pub using @types {type CodeLens}
 
-pub typealias @types.CodeActionProvider as CodeActionProvider
+pub using @types {type CodeLensProvider}
 
-pub typealias @types.CodeActionProviderMetadata as CodeActionProviderMetadata
+pub using @types {type Color}
 
-pub typealias @types.CodeActionTriggerKind as CodeActionTriggerKind
+pub using @types {type ColorInformation}
 
-pub typealias @types.CodeLens as CodeLens
+pub using @types {type ColorPresentation}
 
-pub typealias @types.CodeLensProvider as CodeLensProvider
+pub using @types {type ColorTheme}
 
-pub typealias @types.Color as Color
+pub using @types {type ColorThemeKind}
 
-pub typealias @types.ColorInformation as ColorInformation
+pub using @types {type Command}
 
-pub typealias @types.ColorPresentation as ColorPresentation
+pub using @types {type Commands}
 
-pub typealias @types.ColorTheme as ColorTheme
+pub using @types {type Comment}
 
-pub typealias @types.ColorThemeKind as ColorThemeKind
+pub using @types {type CommentAuthorInformation}
 
-pub typealias @types.Command as Command
+pub using @types {type CommentController}
 
-pub typealias @types.Commands as Commands
+pub using @types {type CommentMode}
 
-pub typealias @types.Comment as Comment
+pub using @types {type CommentOptions}
 
-pub typealias @types.CommentAuthorInformation as CommentAuthorInformation
+pub using @types {type CommentReaction}
 
-pub typealias @types.CommentController as CommentController
+pub using @types {type CommentReply}
 
-pub typealias @types.CommentMode as CommentMode
+pub using @types {type CommentRule}
 
-pub typealias @types.CommentOptions as CommentOptions
+pub using @types {type CommentThread}
 
-pub typealias @types.CommentReaction as CommentReaction
+pub using @types {type CommentThreadCollapsibleState}
 
-pub typealias @types.CommentReply as CommentReply
+pub using @types {type CommentThreadState}
 
-pub typealias @types.CommentRule as CommentRule
+pub using @types {type CommentingRangeProvider}
 
-pub typealias @types.CommentThread as CommentThread
+pub using @types {type CommentingRanges}
 
-pub typealias @types.CommentThreadCollapsibleState as CommentThreadCollapsibleState
+pub using @types {type CompletionContext}
 
-pub typealias @types.CommentThreadState as CommentThreadState
+pub using @types {type CompletionItem}
 
-pub typealias @types.CommentingRangeProvider as CommentingRangeProvider
+pub using @types {type CompletionItemKind}
 
-pub typealias @types.CommentingRanges as CommentingRanges
+pub using @types {type CompletionItemLabel}
 
-pub typealias @types.CompletionContext as CompletionContext
+pub using @types {type CompletionItemProvider}
 
-pub typealias @types.CompletionItem as CompletionItem
+pub using @types {type CompletionItemRange}
 
-pub typealias @types.CompletionItemKind as CompletionItemKind
+pub using @types {type CompletionItemTag}
 
-pub typealias @types.CompletionItemLabel as CompletionItemLabel
+pub using @types {type CompletionList}
 
-pub typealias @types.CompletionItemProvider as CompletionItemProvider
+pub using @types {type CompletionTriggerKind}
 
-pub typealias @types.CompletionItemRange as CompletionItemRange
+pub using @types {type ConfigurationScopeObj}
 
-pub typealias @types.CompletionItemTag as CompletionItemTag
+pub using @types {type ConfigurationTarget}
 
-pub typealias @types.CompletionList as CompletionList
+pub using @types {type CustomDocument}
 
-pub typealias @types.CompletionTriggerKind as CompletionTriggerKind
+pub using @types {type CustomDocumentBackup}
 
-pub typealias @illusory0x0/vscode/interop.Union4[@types.Uri, @types.TextDocument, @types.WorkspaceFolder, @types.ConfigurationScopeObj] as ConfigurationScope
+pub using @types {type CustomDocumentBackupContext}
 
-pub typealias @types.ConfigurationScopeObj as ConfigurationScopeObj
+pub using @types {type CustomDocumentContentChangeEvent}
 
-pub typealias @types.ConfigurationTarget as ConfigurationTarget
+pub using @types {type CustomDocumentEditEvent}
 
-pub typealias @types.CustomDocument as CustomDocument
+pub using @types {type CustomDocumentOpenContext}
 
-pub typealias @types.CustomDocumentBackup as CustomDocumentBackup
+pub using @types {type CustomEditorProvider}
 
-pub typealias @types.CustomDocumentBackupContext as CustomDocumentBackupContext
+pub using @types {type CustomReadonlyEditorProvider}
 
-pub typealias @types.CustomDocumentContentChangeEvent as CustomDocumentContentChangeEvent
+pub using @types {type CustomTextEditorProvider}
 
-pub typealias @types.CustomDocumentEditEvent as CustomDocumentEditEvent
+pub using @types {type DataTransfer}
 
-pub typealias @types.CustomDocumentOpenContext as CustomDocumentOpenContext
+pub using @types {type DataTransferFile}
 
-pub typealias @types.CustomEditorProvider as CustomEditorProvider
+pub using @types {type DataTransferItem}
 
-pub typealias @types.CustomReadonlyEditorProvider as CustomReadonlyEditorProvider
+pub using @types {type Debug}
 
-pub typealias @types.CustomTextEditorProvider as CustomTextEditorProvider
+pub using @types {type DebugAdapter}
 
-pub typealias @types.DataTransfer as DataTransfer
+pub using @types {type DebugAdapterDescriptorFactory}
 
-pub typealias @types.DataTransferFile as DataTransferFile
+pub using @types {type DebugAdapterExecutable}
 
-pub typealias @types.DataTransferItem as DataTransferItem
+pub using @types {type DebugAdapterExecutableOptions}
 
-pub typealias @types.Debug as Debug
+pub using @types {type DebugAdapterInlineImplementation}
 
-pub typealias @types.DebugAdapter as DebugAdapter
+pub using @types {type DebugAdapterNamedPipeServer}
 
-pub typealias @illusory0x0/vscode/interop.Union4[@types.DebugAdapterExecutable, @types.DebugAdapterServer, @types.DebugAdapterNamedPipeServer, @types.DebugAdapterInlineImplementation] as DebugAdapterDescriptor
+pub using @types {type DebugAdapterServer}
 
-pub typealias @types.DebugAdapterDescriptorFactory as DebugAdapterDescriptorFactory
+pub using @types {type DebugAdapterTracker}
 
-pub typealias @types.DebugAdapterExecutable as DebugAdapterExecutable
+pub using @types {type DebugAdapterTrackerFactory}
 
-pub typealias @types.DebugAdapterExecutableOptions as DebugAdapterExecutableOptions
+pub using @types {type DebugConfiguration}
 
-pub typealias @types.DebugAdapterInlineImplementation as DebugAdapterInlineImplementation
+pub using @types {type DebugConfigurationProvider}
 
-pub typealias @types.DebugAdapterNamedPipeServer as DebugAdapterNamedPipeServer
+pub using @types {type DebugConfigurationProviderTriggerKind}
 
-pub typealias @types.DebugAdapterServer as DebugAdapterServer
+pub using @types {type DebugConsole}
 
-pub typealias @types.DebugAdapterTracker as DebugAdapterTracker
+pub using @types {type DebugConsoleMode}
 
-pub typealias @types.DebugAdapterTrackerFactory as DebugAdapterTrackerFactory
+pub using @types {type DebugProtocolBreakpoint}
 
-pub typealias @types.DebugConfiguration as DebugConfiguration
+pub using @types {type DebugProtocolMessage}
 
-pub typealias @types.DebugConfigurationProvider as DebugConfigurationProvider
+pub using @types {type DebugProtocolSource}
 
-pub typealias @types.DebugConfigurationProviderTriggerKind as DebugConfigurationProviderTriggerKind
+pub using @types {type DebugSession}
 
-pub typealias @types.DebugConsole as DebugConsole
+pub using @types {type DebugSessionCustomEvent}
 
-pub typealias @types.DebugConsoleMode as DebugConsoleMode
+pub using @types {type DebugSessionOptions}
 
-pub typealias @types.DebugProtocolBreakpoint as DebugProtocolBreakpoint
+pub using @types {type DebugStackFrame}
 
-pub typealias @types.DebugProtocolMessage as DebugProtocolMessage
+pub using @types {type DebugThread}
 
-pub typealias @types.DebugProtocolSource as DebugProtocolSource
+pub using @types {type DeclarationCoverage}
 
-pub typealias @types.DebugSession as DebugSession
+pub using @types {type DeclarationProvider}
 
-pub typealias @types.DebugSessionCustomEvent as DebugSessionCustomEvent
+pub using @types {type DecorationInstanceRenderOptions}
 
-pub typealias @types.DebugSessionOptions as DebugSessionOptions
+pub using @types {type DecorationOptions}
 
-pub typealias @types.DebugStackFrame as DebugStackFrame
+pub using @types {type DecorationRangeBehavior}
 
-pub typealias @types.DebugThread as DebugThread
+pub using @types {type DecorationRenderOptions}
 
-pub typealias @illusory0x0/vscode/interop.Union3[@types.Location, Array[@types.Location], Array[@types.LocationLink]] as Declaration
+pub using @types {type DefinitionProvider}
 
-pub typealias @types.DeclarationCoverage as DeclarationCoverage
+pub using @types {type Diagnostic}
 
-pub typealias @types.DeclarationProvider as DeclarationProvider
+pub using @types {type DiagnosticChangeEvent}
 
-pub typealias @types.DecorationInstanceRenderOptions as DecorationInstanceRenderOptions
+pub using @types {type DiagnosticCode}
 
-pub typealias @types.DecorationOptions as DecorationOptions
+pub using @types {type DiagnosticCollection}
 
-pub typealias @types.DecorationRangeBehavior as DecorationRangeBehavior
+pub using @types {type DiagnosticRelatedInformation}
 
-pub typealias @types.DecorationRenderOptions as DecorationRenderOptions
+pub using @types {type DiagnosticSeverity}
 
-pub typealias @illusory0x0/vscode/interop.Union2[@types.Location, Array[@types.Location]] as Definition
+pub using @types {type DiagnosticTag}
 
-pub typealias @types.LocationLink as DefinitionLink
+pub using @types {type DocumentColorContext}
 
-pub typealias @types.DefinitionProvider as DefinitionProvider
+pub using @types {type DocumentColorProvider}
 
-pub typealias @types.Diagnostic as Diagnostic
+pub using @types {type DocumentDropEdit}
 
-pub typealias @types.DiagnosticChangeEvent as DiagnosticChangeEvent
+pub using @types {type DocumentDropEditProvider}
 
-pub typealias @types.DiagnosticCode as DiagnosticCode
+pub using @types {type DocumentDropEditProviderMetadata}
 
-pub typealias @types.DiagnosticCollection as DiagnosticCollection
+pub using @types {type DocumentDropOrPasteEditKind}
 
-pub typealias @types.DiagnosticRelatedInformation as DiagnosticRelatedInformation
+pub using @types {type DocumentFilter}
 
-pub typealias @types.DiagnosticSeverity as DiagnosticSeverity
+pub using @types {type DocumentFormattingEditProvider}
 
-pub typealias @types.DiagnosticTag as DiagnosticTag
+pub using @types {type DocumentHighlight}
 
-pub typealias @types.DocumentColorContext as DocumentColorContext
+pub using @types {type DocumentHighlightKind}
 
-pub typealias @types.DocumentColorProvider as DocumentColorProvider
+pub using @types {type DocumentHighlightProvider}
 
-pub typealias @types.DocumentDropEdit as DocumentDropEdit
+pub using @types {type DocumentLink}
 
-pub typealias @types.DocumentDropEditProvider as DocumentDropEditProvider
+pub using @types {type DocumentLinkProvider}
 
-pub typealias @types.DocumentDropEditProviderMetadata as DocumentDropEditProviderMetadata
+pub using @types {type DocumentPasteEdit}
 
-pub typealias @types.DocumentDropOrPasteEditKind as DocumentDropOrPasteEditKind
+pub using @types {type DocumentPasteEditContext}
 
-pub typealias @types.DocumentFilter as DocumentFilter
+pub using @types {type DocumentPasteEditProvider}
 
-pub typealias @types.DocumentFormattingEditProvider as DocumentFormattingEditProvider
+pub using @types {type DocumentPasteProviderMetadata}
 
-pub typealias @types.DocumentHighlight as DocumentHighlight
+pub using @types {type DocumentPasteTriggerKind}
 
-pub typealias @types.DocumentHighlightKind as DocumentHighlightKind
+pub using @types {type DocumentRangeFormattingEditProvider}
 
-pub typealias @types.DocumentHighlightProvider as DocumentHighlightProvider
+pub using @types {type DocumentRangeSemanticTokensProvider}
 
-pub typealias @types.DocumentLink as DocumentLink
+pub using @types {type DocumentSemanticTokensProvider}
 
-pub typealias @types.DocumentLinkProvider as DocumentLinkProvider
+pub using @types {type DocumentSymbol}
 
-pub typealias @types.DocumentPasteEdit as DocumentPasteEdit
+pub using @types {type DocumentSymbolProvider}
 
-pub typealias @types.DocumentPasteEditContext as DocumentPasteEditContext
+pub using @types {type DocumentSymbolProviderMetadata}
 
-pub typealias @types.DocumentPasteEditProvider as DocumentPasteEditProvider
+pub using @types {type EndOfLine}
 
-pub typealias @types.DocumentPasteProviderMetadata as DocumentPasteProviderMetadata
+pub using @types {type EnterAction}
 
-pub typealias @types.DocumentPasteTriggerKind as DocumentPasteTriggerKind
+pub using @types {type Env}
 
-pub typealias @types.DocumentRangeFormattingEditProvider as DocumentRangeFormattingEditProvider
+pub using @types {type EnvironmentVariableCollection}
 
-pub typealias @types.DocumentRangeSemanticTokensProvider as DocumentRangeSemanticTokensProvider
+pub using @types {type EnvironmentVariableMutator}
 
-pub typealias @illusory0x0/vscode/interop.Union3[@types.DocumentFilter, String, Array[@illusory0x0/vscode/interop.Union2[@types.DocumentFilter, String]]] as DocumentSelector
+pub using @types {type EnvironmentVariableMutatorOptions}
 
-pub typealias @types.DocumentSemanticTokensProvider as DocumentSemanticTokensProvider
+pub using @types {type EnvironmentVariableMutatorType}
 
-pub typealias @types.DocumentSymbol as DocumentSymbol
+pub using @types {type EnvironmentVariableScope}
 
-pub typealias @types.DocumentSymbolProvider as DocumentSymbolProvider
+pub using @types {type EvaluatableExpression}
 
-pub typealias @types.DocumentSymbolProviderMetadata as DocumentSymbolProviderMetadata
+pub using @types {type EvaluatableExpressionProvider}
 
-pub typealias @types.EndOfLine as EndOfLine
+pub using @types {type EventEmitter}
 
-pub typealias @types.EnterAction as EnterAction
+pub using @types {type Extension}
 
-pub typealias @types.Env as Env
+pub using @types {type ExtensionContext}
 
-pub typealias @types.EnvironmentVariableCollection as EnvironmentVariableCollection
+pub using @types {type ExtensionHost}
 
-pub typealias @types.EnvironmentVariableMutator as EnvironmentVariableMutator
+pub using @types {type ExtensionKind}
 
-pub typealias @types.EnvironmentVariableMutatorOptions as EnvironmentVariableMutatorOptions
+pub using @types {type ExtensionMode}
 
-pub typealias @types.EnvironmentVariableMutatorType as EnvironmentVariableMutatorType
+pub using @types {type ExtensionTerminalOptions}
 
-pub typealias @types.EnvironmentVariableScope as EnvironmentVariableScope
+pub using @types {type Extensions}
 
-pub typealias @types.EvaluatableExpression as EvaluatableExpression
+pub using @types {type FileChangeEvent}
 
-pub typealias @types.EvaluatableExpressionProvider as EvaluatableExpressionProvider
+pub using @types {type FileChangeType}
 
-pub typealias @types.EventEmitter as EventEmitter
+pub using @types {type FileCoverage}
 
-pub typealias @types.Extension as Extension
+pub using @types {type FileCreateEvent}
 
-pub typealias @types.ExtensionContext as ExtensionContext
+pub using @types {type FileDecoration}
 
-pub typealias @types.ExtensionHost as ExtensionHost
+pub using @types {type FileDecorationProvider}
 
-pub typealias @types.ExtensionKind as ExtensionKind
+pub using @types {type FileDeleteEvent}
 
-pub typealias @types.ExtensionMode as ExtensionMode
+pub using @types {type FilePermission}
 
-pub typealias @types.ExtensionTerminalOptions as ExtensionTerminalOptions
+pub using @types {type FileRenameEntry}
 
-pub typealias @types.Extensions as Extensions
+pub using @types {type FileRenameEvent}
 
-pub typealias @types.FileChangeEvent as FileChangeEvent
+pub using @types {type FileStat}
 
-pub typealias @types.FileChangeType as FileChangeType
+pub using @types {type FileSystemError}
 
-pub typealias @types.FileCoverage as FileCoverage
+pub using @types {type FileSystemProvider}
 
-pub typealias @illusory0x0/vscode/interop.Union2[@types.StatementCoverage, @types.DeclarationCoverage] as FileCoverageDetail
+pub using @types {type FileSystemProviderOptions}
 
-pub typealias @types.FileCreateEvent as FileCreateEvent
+pub using @types {type FileSystemWatcher}
 
-pub typealias @types.FileDecoration as FileDecoration
+pub using @types {type FileType}
 
-pub typealias @types.FileDecorationProvider as FileDecorationProvider
+pub using @types {type FileWillCreateEvent}
 
-pub typealias @types.FileDeleteEvent as FileDeleteEvent
+pub using @types {type FileWillDeleteEvent}
 
-pub typealias @types.FilePermission as FilePermission
+pub using @types {type FileWillRenameEvent}
 
-pub typealias @types.FileRenameEntry as FileRenameEntry
+pub using @types {type FoldingContext}
 
-pub typealias @types.FileRenameEvent as FileRenameEvent
+pub using @types {type FoldingRange}
 
-pub typealias @types.FileStat as FileStat
+pub using @types {type FoldingRangeKind}
 
-pub typealias @types.FileSystemError as FileSystemError
+pub using @types {type FoldingRangeProvider}
 
-pub typealias @types.FileSystemProvider as FileSystemProvider
+pub using @types {type FormattingOptions}
 
-pub typealias @types.FileSystemProviderOptions as FileSystemProviderOptions
+pub using @types {type FunctionBreakpoint}
 
-pub typealias @types.FileSystemWatcher as FileSystemWatcher
+pub using @types {type GlobalEnvironmentVariableCollection}
 
-pub typealias @types.FileType as FileType
+pub using @types {type Hover}
 
-pub typealias @types.FileWillCreateEvent as FileWillCreateEvent
+pub using @types {type HoverProvider}
 
-pub typealias @types.FileWillDeleteEvent as FileWillDeleteEvent
+pub using @types {type ImplementationProvider}
 
-pub typealias @types.FileWillRenameEvent as FileWillRenameEvent
+pub using @types {type IndentAction}
 
-pub typealias @types.FoldingContext as FoldingContext
+pub using @types {type IndentationRule}
 
-pub typealias @types.FoldingRange as FoldingRange
+pub using @types {type InlayHint}
 
-pub typealias @types.FoldingRangeKind as FoldingRangeKind
+pub using @types {type InlayHintKind}
 
-pub typealias @types.FoldingRangeProvider as FoldingRangeProvider
+pub using @types {type InlayHintLabelPart}
 
-pub typealias @types.FormattingOptions as FormattingOptions
+pub using @types {type InlayHintsProvider}
 
-pub typealias @illusory0x0/vscode/interop.Func0Rest as Func0Rest
+pub using @types {type InlineCompletionContext}
 
-pub typealias @illusory0x0/vscode/interop.Func10Rest as Func10Rest
+pub using @types {type InlineCompletionItem}
 
-pub typealias @illusory0x0/vscode/interop.Func11Rest as Func11Rest
+pub using @types {type InlineCompletionItemProvider}
 
-pub typealias @illusory0x0/vscode/interop.Func12Rest as Func12Rest
+pub using @types {type InlineCompletionList}
 
-pub typealias @illusory0x0/vscode/interop.Func13Rest as Func13Rest
+pub using @types {type InlineCompletionTriggerKind}
 
-pub typealias @illusory0x0/vscode/interop.Func14Rest as Func14Rest
+pub using @types {type InlineValueContext}
 
-pub typealias @illusory0x0/vscode/interop.Func15Rest as Func15Rest
+pub using @types {type InlineValueEvaluatableExpression}
 
-pub typealias @illusory0x0/vscode/interop.Func16Rest as Func16Rest
+pub using @types {type InlineValueText}
 
-pub typealias @illusory0x0/vscode/interop.Func1Rest as Func1Rest
+pub using @types {type InlineValueVariableLookup}
 
-pub typealias @illusory0x0/vscode/interop.Func2Rest as Func2Rest
+pub using @types {type InlineValuesProvider}
 
-pub typealias @illusory0x0/vscode/interop.Func3Rest as Func3Rest
+pub using @types {type InputBox}
 
-pub typealias @illusory0x0/vscode/interop.Func4Rest as Func4Rest
+pub using @types {type InputBoxOptions}
 
-pub typealias @illusory0x0/vscode/interop.Func5Rest as Func5Rest
+pub using @types {type InputBoxValidationMessage}
 
-pub typealias @illusory0x0/vscode/interop.Func6Rest as Func6Rest
+pub using @types {type InputBoxValidationSeverity}
 
-pub typealias @illusory0x0/vscode/interop.Func7Rest as Func7Rest
+pub using @types {type L10N}
 
-pub typealias @illusory0x0/vscode/interop.Func8Rest as Func8Rest
+pub using @types {type LanguageConfiguration}
 
-pub typealias @illusory0x0/vscode/interop.Func9Rest as Func9Rest
+pub using @types {type LanguageModelAccessInformation}
 
-pub typealias @types.FunctionBreakpoint as FunctionBreakpoint
+pub using @types {type LanguageModelChat}
 
-pub typealias @illusory0x0/vscode/interop.Union2[String, @types.RelativePattern] as GlobPattern
+pub using @types {type LanguageModelChatInformation}
 
-pub typealias @types.GlobalEnvironmentVariableCollection as GlobalEnvironmentVariableCollection
+pub using @types {type LanguageModelChatMessage}
 
-pub typealias @types.Hover as Hover
+pub using @types {type LanguageModelChatMessageRole}
 
-pub typealias @types.HoverProvider as HoverProvider
+pub using @types {type LanguageModelChatProvider}
 
-pub typealias @illusory0x0/vscode/interop.Union3[@types.Uri, @types.LightDarkIconPath, @types.ThemeIcon] as IconPath
+pub using @types {type LanguageModelChatRequestMessage}
 
-pub typealias @types.ImplementationProvider as ImplementationProvider
+pub using @types {type LanguageModelChatRequestOptions}
 
-pub typealias @types.IndentAction as IndentAction
+pub using @types {type LanguageModelChatResponse}
 
-pub typealias @types.IndentationRule as IndentationRule
+pub using @types {type LanguageModelChatSelector}
 
-pub typealias @types.InlayHint as InlayHint
+pub using @types {type LanguageModelChatTool}
 
-pub typealias @types.InlayHintKind as InlayHintKind
+pub using @types {type LanguageModelChatToolMode}
 
-pub typealias @types.InlayHintLabelPart as InlayHintLabelPart
+pub using @types {type LanguageModelError}
 
-pub typealias @types.InlayHintsProvider as InlayHintsProvider
+pub using @types {type LanguageModelPromptTsxPart}
 
-pub typealias @types.InlineCompletionContext as InlineCompletionContext
+pub using @types {type LanguageModelTextPart}
 
-pub typealias @types.InlineCompletionItem as InlineCompletionItem
+pub using @types {type LanguageModelTool}
 
-pub typealias @types.InlineCompletionItemProvider as InlineCompletionItemProvider
+pub using @types {type LanguageModelToolCallPart}
 
-pub typealias @types.InlineCompletionList as InlineCompletionList
+pub using @types {type LanguageModelToolConfirmationMessages}
 
-pub typealias @types.InlineCompletionTriggerKind as InlineCompletionTriggerKind
+pub using @types {type LanguageModelToolInformation}
 
-pub typealias @illusory0x0/vscode/interop.Union3[@types.InlineValueText, @types.InlineValueVariableLookup, @types.InlineValueEvaluatableExpression] as InlineValue
+pub using @types {type LanguageModelToolInvocationOptions}
 
-pub typealias @types.InlineValueContext as InlineValueContext
+pub using @types {type LanguageModelToolInvocationPrepareOptions}
 
-pub typealias @types.InlineValueEvaluatableExpression as InlineValueEvaluatableExpression
+pub using @types {type LanguageModelToolResult}
 
-pub typealias @types.InlineValueText as InlineValueText
+pub using @types {type LanguageModelToolResultPart}
 
-pub typealias @types.InlineValueVariableLookup as InlineValueVariableLookup
+pub using @types {type LanguageModelToolTokenizationOptions}
 
-pub typealias @types.InlineValuesProvider as InlineValuesProvider
+pub using @types {type LanguageStatusItem}
 
-pub typealias @types.InputBox as InputBox
+pub using @types {type LanguageStatusSeverity}
 
-pub typealias @types.InputBoxOptions as InputBoxOptions
+pub using @types {type Languages}
 
-pub typealias @types.InputBoxValidationMessage as InputBoxValidationMessage
+pub using @types {type LightDarkIconPath}
 
-pub typealias @types.InputBoxValidationSeverity as InputBoxValidationSeverity
+pub using @types {type LinkedEditingRangeProvider}
 
-pub typealias @types.L10N as L10N
+pub using @types {type LinkedEditingRanges}
 
-pub typealias @types.LanguageConfiguration as LanguageConfiguration
+pub using @types {type Lm}
 
-pub typealias @types.LanguageModelAccessInformation as LanguageModelAccessInformation
+pub using @types {type Location}
 
-pub typealias @types.LanguageModelChat as LanguageModelChat
+pub using @types {type LocationLink}
 
-pub typealias @types.LanguageModelChatInformation as LanguageModelChatInformation
+pub using @types {type LogLevel}
 
-pub typealias @types.LanguageModelChatMessage as LanguageModelChatMessage
+pub using @types {type LogOutputChannel}
 
-pub typealias @types.LanguageModelChatMessageRole as LanguageModelChatMessageRole
+pub using @types {type MarkdownString}
 
-pub typealias @types.LanguageModelChatProvider as LanguageModelChatProvider
+pub using @types {type MarkedStringObject}
 
-pub typealias @types.LanguageModelChatRequestMessage as LanguageModelChatRequestMessage
+pub using @types {type McpHttpServerDefinition}
 
-pub typealias @types.LanguageModelChatRequestOptions as LanguageModelChatRequestOptions
+pub using @types {type McpServerDefinitionProvider}
 
-pub typealias @types.LanguageModelChatResponse as LanguageModelChatResponse
+pub using @types {type McpStdioServerDefinition}
 
-pub typealias @types.LanguageModelChatSelector as LanguageModelChatSelector
+pub using @types {type MessageItem}
 
-pub typealias @types.LanguageModelChatTool as LanguageModelChatTool
+pub using @types {type MessageOptions}
 
-pub typealias @types.LanguageModelChatToolMode as LanguageModelChatToolMode
+pub using @types {type NotebookCell}
 
-pub typealias @types.LanguageModelError as LanguageModelError
+pub using @types {type NotebookCellData}
 
-pub typealias @illusory0x0/vscode/interop.Union3[@types.LanguageModelTextPart, @types.LanguageModelToolResultPart, @types.LanguageModelToolCallPart] as LanguageModelInputPart
+pub using @types {type NotebookCellExecution}
 
-pub typealias @types.LanguageModelPromptTsxPart as LanguageModelPromptTsxPart
+pub using @types {type NotebookCellExecutionSummary}
 
-pub typealias @illusory0x0/vscode/interop.Union3[@types.LanguageModelTextPart, @types.LanguageModelToolResultPart, @types.LanguageModelToolCallPart] as LanguageModelResponsePart
+pub using @types {type NotebookCellExecutionTiming}
 
-pub typealias @types.LanguageModelTextPart as LanguageModelTextPart
+pub using @types {type NotebookCellKind}
 
-pub typealias @types.LanguageModelTool as LanguageModelTool
+pub using @types {type NotebookCellOutput}
 
-pub typealias @types.LanguageModelToolCallPart as LanguageModelToolCallPart
+pub using @types {type NotebookCellOutputItem}
 
-pub typealias @types.LanguageModelToolConfirmationMessages as LanguageModelToolConfirmationMessages
+pub using @types {type NotebookCellStatusBarAlignment}
 
-pub typealias @types.LanguageModelToolInformation as LanguageModelToolInformation
+pub using @types {type NotebookCellStatusBarItem}
 
-pub typealias @types.LanguageModelToolInvocationOptions as LanguageModelToolInvocationOptions
+pub using @types {type NotebookCellStatusBarItemProvider}
 
-pub typealias @types.LanguageModelToolInvocationPrepareOptions as LanguageModelToolInvocationPrepareOptions
+pub using @types {type NotebookController}
 
-pub typealias @types.LanguageModelToolResult as LanguageModelToolResult
+pub using @types {type NotebookControllerAffinity}
 
-pub typealias @types.LanguageModelToolResultPart as LanguageModelToolResultPart
+pub using @types {type NotebookData}
 
-pub typealias @types.LanguageModelToolTokenizationOptions as LanguageModelToolTokenizationOptions
+pub using @types {type NotebookDocument}
 
-pub typealias @types.LanguageStatusItem as LanguageStatusItem
+pub using @types {type NotebookDocumentCellChange}
 
-pub typealias @types.LanguageStatusSeverity as LanguageStatusSeverity
+pub using @types {type NotebookDocumentChangeEvent}
 
-pub typealias @types.Languages as Languages
+pub using @types {type NotebookDocumentContentChange}
 
-pub typealias @types.LightDarkIconPath as LightDarkIconPath
+pub using @types {type NotebookDocumentContentOptions}
 
-pub typealias @types.LinkedEditingRangeProvider as LinkedEditingRangeProvider
+pub using @types {type NotebookDocumentShowOptions}
 
-pub typealias @types.LinkedEditingRanges as LinkedEditingRanges
+pub using @types {type NotebookDocumentWillSaveEvent}
 
-pub typealias @types.Lm as Lm
+pub using @types {type NotebookEdit}
 
-pub typealias @types.Location as Location
+pub using @types {type NotebookEditor}
 
-pub typealias @types.LocationLink as LocationLink
+pub using @types {type NotebookEditorRevealType}
 
-pub typealias @types.LogLevel as LogLevel
+pub using @types {type NotebookEditorSelectionChangeEvent}
 
-pub typealias @types.LogOutputChannel as LogOutputChannel
+pub using @types {type NotebookEditorVisibleRangesChangeEvent}
 
-pub typealias @types.MarkdownString as MarkdownString
+pub using @types {type NotebookRange}
 
-pub typealias @illusory0x0/vscode/interop.Union2[String, @types.MarkedStringObject] as MarkedString
+pub using @types {type NotebookRendererMessaging}
 
-pub typealias @types.MarkedStringObject as MarkedStringObject
+pub using @types {type NotebookSerializer}
 
-pub typealias @types.McpHttpServerDefinition as McpHttpServerDefinition
+pub using @types {type Notebooks}
 
-pub typealias @illusory0x0/vscode/interop.Union2[@types.McpStdioServerDefinition, @types.McpHttpServerDefinition] as McpServerDefinition
+pub using @types {type OnEnterRule}
 
-pub typealias @types.McpServerDefinitionProvider as McpServerDefinitionProvider
+pub using @types {type OnTypeFormattingEditProvider}
 
-pub typealias @types.McpStdioServerDefinition as McpStdioServerDefinition
+pub using @types {type OpenDialogOptions}
 
-pub typealias @types.MessageItem as MessageItem
+pub using @types {type OutputChannel}
 
-pub typealias @types.MessageOptions as MessageOptions
+pub using @types {type OverviewRulerLane}
 
-pub typealias @types.NotebookCell as NotebookCell
+pub using @types {type ParameterInformation}
 
-pub typealias @types.NotebookCellData as NotebookCellData
+pub using @types {type PasteContext}
 
-pub typealias @types.NotebookCellExecution as NotebookCellExecution
+pub using @types {type Position}
 
-pub typealias @types.NotebookCellExecutionSummary as NotebookCellExecutionSummary
+pub using @types {type PrepareLanguageModelChatModelOptions}
 
-pub typealias @types.NotebookCellExecutionTiming as NotebookCellExecutionTiming
+pub using @types {type PreparedToolInvocation}
 
-pub typealias @types.NotebookCellKind as NotebookCellKind
+pub using @types {type ProcessExecution}
 
-pub typealias @types.NotebookCellOutput as NotebookCellOutput
+pub using @types {type ProcessExecutionOptions}
 
-pub typealias @types.NotebookCellOutputItem as NotebookCellOutputItem
+pub using @types {type ProgressLocation}
 
-pub typealias @types.NotebookCellStatusBarAlignment as NotebookCellStatusBarAlignment
+pub using @types {type ProgressOptions}
 
-pub typealias @types.NotebookCellStatusBarItem as NotebookCellStatusBarItem
+pub using @types {type ProvideLanguageModelChatResponseOptions}
 
-pub typealias @types.NotebookCellStatusBarItemProvider as NotebookCellStatusBarItemProvider
+pub using @types {type Pseudoterminal}
 
-pub typealias @types.NotebookController as NotebookController
+pub using @types {type QuickDiffProvider}
 
-pub typealias @types.NotebookControllerAffinity as NotebookControllerAffinity
+pub using @types {type QuickInput}
 
-pub typealias @types.NotebookData as NotebookData
+pub using @types {type QuickInputButton}
 
-pub typealias @types.NotebookDocument as NotebookDocument
+pub using @types {type QuickPick}
 
-pub typealias @types.NotebookDocumentCellChange as NotebookDocumentCellChange
+pub using @types {type QuickPickItem}
 
-pub typealias @types.NotebookDocumentChangeEvent as NotebookDocumentChangeEvent
+pub using @types {type QuickPickItemButtonEvent}
 
-pub typealias @types.NotebookDocumentContentChange as NotebookDocumentContentChange
+pub using @types {type QuickPickItemKind}
 
-pub typealias @types.NotebookDocumentContentOptions as NotebookDocumentContentOptions
+pub using @types {type QuickPickOptions}
 
-pub typealias @types.NotebookDocumentShowOptions as NotebookDocumentShowOptions
+pub using @types {type Range}
 
-pub typealias @types.NotebookDocumentWillSaveEvent as NotebookDocumentWillSaveEvent
+pub using @types {type ReferenceContext}
 
-pub typealias @types.NotebookEdit as NotebookEdit
+pub using @types {type ReferenceProvider}
 
-pub typealias @types.NotebookEditor as NotebookEditor
+pub using @types {type RelativePattern}
 
-pub typealias @types.NotebookEditorRevealType as NotebookEditorRevealType
+pub using @types {type RenameProvider}
 
-pub typealias @types.NotebookEditorSelectionChangeEvent as NotebookEditorSelectionChangeEvent
+pub using @types {type RenameProviderPrepareResult}
 
-pub typealias @types.NotebookEditorVisibleRangesChangeEvent as NotebookEditorVisibleRangesChangeEvent
+pub using @types {type RunOptions}
 
-pub typealias @types.NotebookRange as NotebookRange
+pub using @types {type SaveDialogOptions}
 
-pub typealias @types.NotebookRendererMessaging as NotebookRendererMessaging
+pub using @types {type Scm}
 
-pub typealias @types.NotebookSerializer as NotebookSerializer
+pub using @types {type SecretStorage}
 
-pub typealias @types.Notebooks as Notebooks
+pub using @types {type SecretStorageChangeEvent}
 
-pub typealias @types.OnEnterRule as OnEnterRule
+pub using @types {type SelectedCompletionInfo}
 
-pub typealias @types.OnTypeFormattingEditProvider as OnTypeFormattingEditProvider
+pub using @types {type Selection}
 
-pub typealias @types.OpenDialogOptions as OpenDialogOptions
+pub using @types {type SelectionRange}
 
-pub typealias @types.OutputChannel as OutputChannel
+pub using @types {type SelectionRangeProvider}
 
-pub typealias @types.OverviewRulerLane as OverviewRulerLane
+pub using @types {type SemanticTokens}
 
-pub typealias @types.ParameterInformation as ParameterInformation
+pub using @types {type SemanticTokensBuilder}
 
-pub typealias @types.PasteContext as PasteContext
+pub using @types {type SemanticTokensEdit}
 
-pub typealias @types.Position as Position
+pub using @types {type SemanticTokensEdits}
 
-pub typealias @types.PrepareLanguageModelChatModelOptions as PrepareLanguageModelChatModelOptions
+pub using @types {type SemanticTokensLegend}
 
-pub typealias @types.PreparedToolInvocation as PreparedToolInvocation
+pub using @types {type ShellExecution}
 
-pub typealias @types.ProcessExecution as ProcessExecution
+pub using @types {type ShellExecutionOptions}
 
-pub typealias @types.ProcessExecutionOptions as ProcessExecutionOptions
+pub using @types {type ShellIntegration}
 
-pub typealias @types.ProgressLocation as ProgressLocation
+pub using @types {type ShellQuotedString}
 
-pub typealias @types.ProgressOptions as ProgressOptions
+pub using @types {type ShellQuoting}
 
-pub typealias @types.ProvideLanguageModelChatResponseOptions as ProvideLanguageModelChatResponseOptions
+pub using @types {type ShellQuotingOptions}
 
-pub typealias @illusory0x0/vscode/interop.Union2[T, @types.Thenable[T]] as ProviderResult[T]
+pub using @types {type SignatureHelp}
 
-pub typealias @types.Pseudoterminal as Pseudoterminal
+pub using @types {type SignatureHelpContext}
 
-pub typealias @types.QuickDiffProvider as QuickDiffProvider
+pub using @types {type SignatureHelpProvider}
 
-pub typealias @types.QuickInput as QuickInput
+pub using @types {type SignatureHelpProviderMetadata}
 
-pub typealias @types.QuickInputButton as QuickInputButton
+pub using @types {type SignatureHelpTriggerKind}
 
-pub typealias @types.QuickPick as QuickPick
+pub using @types {type SignatureInformation}
 
-pub typealias @types.QuickPickItem as QuickPickItem
+pub using @types {type SnippetString}
 
-pub typealias @types.QuickPickItemButtonEvent as QuickPickItemButtonEvent
+pub using @types {type SnippetTextEdit}
 
-pub typealias @types.QuickPickItemKind as QuickPickItemKind
+pub using @types {type SourceBreakpoint}
 
-pub typealias @types.QuickPickOptions as QuickPickOptions
+pub using @types {type SourceControl}
 
-pub typealias @types.Range as Range
+pub using @types {type SourceControlInputBox}
 
-pub typealias @types.ReferenceContext as ReferenceContext
+pub using @types {type SourceControlResourceDecorations}
 
-pub typealias @types.ReferenceProvider as ReferenceProvider
+pub using @types {type SourceControlResourceGroup}
 
-pub typealias @types.RelativePattern as RelativePattern
+pub using @types {type SourceControlResourceState}
 
-pub typealias @types.RenameProvider as RenameProvider
+pub using @types {type SourceControlResourceThemableDecorations}
 
-pub typealias @types.RenameProviderPrepareResult as RenameProviderPrepareResult
+pub using @types {type StatementCoverage}
 
-pub typealias @types.RunOptions as RunOptions
+pub using @types {type StatusBarAlignment}
 
-pub typealias @types.SaveDialogOptions as SaveDialogOptions
+pub using @types {type StatusBarItem}
 
-pub typealias @types.Scm as Scm
+pub using @types {type SymbolInformation}
 
-pub typealias @types.SecretStorage as SecretStorage
+pub using @types {type SymbolKind}
 
-pub typealias @types.SecretStorageChangeEvent as SecretStorageChangeEvent
+pub using @types {type SymbolTag}
 
-pub typealias @types.SelectedCompletionInfo as SelectedCompletionInfo
+pub using @types {type SyntaxTokenType}
 
-pub typealias @types.Selection as Selection
+pub using @types {type Tab}
 
-pub typealias @types.SelectionRange as SelectionRange
+pub using @types {type TabChangeEvent}
 
-pub typealias @types.SelectionRangeProvider as SelectionRangeProvider
+pub using @types {type TabGroup}
 
-pub typealias @types.SemanticTokens as SemanticTokens
+pub using @types {type TabGroupChangeEvent}
 
-pub typealias @types.SemanticTokensEdit as SemanticTokensEdit
+pub using @types {type TabGroups}
 
-pub typealias @types.SemanticTokensEdits as SemanticTokensEdits
+pub using @types {type TabInputCustom}
 
-pub typealias @types.SemanticTokensLegend as SemanticTokensLegend
+pub using @types {type TabInputNotebook}
 
-pub typealias @types.ShellExecution as ShellExecution
+pub using @types {type TabInputNotebookDiff}
 
-pub typealias @types.ShellExecutionOptions as ShellExecutionOptions
+pub using @types {type TabInputText}
 
-pub typealias @types.ShellIntegration as ShellIntegration
+pub using @types {type TabInputTextDiff}
 
-pub typealias @types.ShellQuotedString as ShellQuotedString
+pub using @types {type TabInputWebview}
 
-pub typealias @types.ShellQuoting as ShellQuoting
+pub using @types {type Task}
 
-pub typealias @types.ShellQuotingOptions as ShellQuotingOptions
+pub using @types {type TaskDefinition}
 
-pub typealias @types.SignatureHelp as SignatureHelp
+pub using @types {type TaskEndEvent}
 
-pub typealias @types.SignatureHelpContext as SignatureHelpContext
+pub using @types {type TaskExecution}
 
-pub typealias @types.SignatureHelpProvider as SignatureHelpProvider
+pub using @types {type TaskFilter}
 
-pub typealias @types.SignatureHelpProviderMetadata as SignatureHelpProviderMetadata
+pub using @types {type TaskGroup}
 
-pub typealias @types.SignatureHelpTriggerKind as SignatureHelpTriggerKind
+pub using @types {type TaskPanelKind}
 
-pub typealias @types.SignatureInformation as SignatureInformation
+pub using @types {type TaskPresentationOptions}
 
-pub typealias @types.SnippetString as SnippetString
+pub using @types {type TaskProcessEndEvent}
 
-pub typealias @types.SnippetTextEdit as SnippetTextEdit
+pub using @types {type TaskProcessStartEvent}
 
-pub typealias @types.SourceBreakpoint as SourceBreakpoint
+pub using @types {type TaskProvider}
 
-pub typealias @types.SourceControl as SourceControl
+pub using @types {type TaskRevealKind}
 
-pub typealias @types.SourceControlInputBox as SourceControlInputBox
+pub using @types {type TaskScope}
 
-pub typealias @types.SourceControlResourceDecorations as SourceControlResourceDecorations
+pub using @types {type TaskStartEvent}
 
-pub typealias @types.SourceControlResourceGroup as SourceControlResourceGroup
+pub using @types {type Tasks}
 
-pub typealias @types.SourceControlResourceState as SourceControlResourceState
+pub using @types {type TelemetryLogger}
 
-pub typealias @types.SourceControlResourceThemableDecorations as SourceControlResourceThemableDecorations
+pub using @types {type TelemetryLoggerOptions}
 
-pub typealias @types.StatementCoverage as StatementCoverage
+pub using @types {type TelemetrySender}
 
-pub typealias @types.StatusBarAlignment as StatusBarAlignment
+pub using @types {type TelemetryTrustedValue}
 
-pub typealias @types.StatusBarItem as StatusBarItem
+pub using @types {type Terminal}
 
-pub typealias @types.SymbolInformation as SymbolInformation
+pub using @types {type TerminalDimensions}
 
-pub typealias @types.SymbolKind as SymbolKind
+pub using @types {type TerminalEditorLocationOptions}
 
-pub typealias @types.SymbolTag as SymbolTag
+pub using @types {type TerminalExitReason}
 
-pub typealias @types.SyntaxTokenType as SyntaxTokenType
+pub using @types {type TerminalExitStatus}
 
-pub typealias @types.Tab as Tab
+pub using @types {type TerminalLink}
 
-pub typealias @types.TabChangeEvent as TabChangeEvent
+pub using @types {type TerminalLinkContext}
 
-pub typealias @types.TabGroup as TabGroup
+pub using @types {type TerminalLinkProvider}
 
-pub typealias @types.TabGroupChangeEvent as TabGroupChangeEvent
+pub using @types {type TerminalLocation}
 
-pub typealias @types.TabGroups as TabGroups
+pub using @types {type TerminalOptions}
 
-pub typealias @types.TabInputCustom as TabInputCustom
+pub using @types {type TerminalProfile}
 
-pub typealias @types.TabInputNotebook as TabInputNotebook
+pub using @types {type TerminalProfileProvider}
 
-pub typealias @types.TabInputNotebookDiff as TabInputNotebookDiff
+pub using @types {type TerminalShellExecution}
 
-pub typealias @types.TabInputText as TabInputText
+pub using @types {type TerminalShellExecutionCommandLine}
 
-pub typealias @types.TabInputTextDiff as TabInputTextDiff
+pub using @types {type TerminalShellExecutionCommandLineConfidence}
 
-pub typealias @types.TabInputWebview as TabInputWebview
+pub using @types {type TerminalShellExecutionEndEvent}
 
-pub typealias @types.Task as Task
+pub using @types {type TerminalShellExecutionStartEvent}
 
-pub typealias @types.TaskDefinition as TaskDefinition
+pub using @types {type TerminalShellIntegration}
 
-pub typealias @types.TaskEndEvent as TaskEndEvent
+pub using @types {type TerminalShellIntegrationChangeEvent}
 
-pub typealias @types.TaskExecution as TaskExecution
+pub using @types {type TerminalSplitLocationOptions}
 
-pub typealias @types.TaskFilter as TaskFilter
+pub using @types {type TerminalState}
 
-pub typealias @types.TaskGroup as TaskGroup
+pub using @types {type TestController}
 
-pub typealias @types.TaskPanelKind as TaskPanelKind
+pub using @types {type TestCoverageCount}
 
-pub typealias @types.TaskPresentationOptions as TaskPresentationOptions
+pub using @types {type TestItem}
 
-pub typealias @types.TaskProcessEndEvent as TaskProcessEndEvent
+pub using @types {type TestItemCollection}
 
-pub typealias @types.TaskProcessStartEvent as TaskProcessStartEvent
+pub using @types {type TestMessage}
 
-pub typealias @types.TaskProvider as TaskProvider
+pub using @types {type TestMessageStackFrame}
 
-pub typealias @types.TaskRevealKind as TaskRevealKind
+pub using @types {type TestRun}
 
-pub typealias @types.TaskScope as TaskScope
+pub using @types {type TestRunProfile}
 
-pub typealias @types.TaskStartEvent as TaskStartEvent
+pub using @types {type TestRunProfileKind}
 
-pub typealias @types.Tasks as Tasks
+pub using @types {type TestRunRequest}
 
-pub typealias @types.TelemetryLogger as TelemetryLogger
+pub using @types {type TestTag}
 
-pub typealias @types.TelemetryLoggerOptions as TelemetryLoggerOptions
+pub using @types {type Tests}
 
-pub typealias @types.TelemetrySender as TelemetrySender
+pub using @types {type TextDocument}
 
-pub typealias @types.TelemetryTrustedValue as TelemetryTrustedValue
+pub using @types {type TextDocumentChangeEvent}
 
-pub typealias @types.Terminal as Terminal
+pub using @types {type TextDocumentChangeReason}
 
-pub typealias @types.TerminalDimensions as TerminalDimensions
+pub using @types {type TextDocumentContentChangeEvent}
 
-pub typealias @types.TerminalEditorLocationOptions as TerminalEditorLocationOptions
+pub using @types {type TextDocumentContentProvider}
 
-pub typealias @types.TerminalExitReason as TerminalExitReason
+pub using @types {type TextDocumentSaveReason}
 
-pub typealias @types.TerminalExitStatus as TerminalExitStatus
+pub using @types {type TextDocumentShowOptions}
 
-pub typealias @types.TerminalLink as TerminalLink
+pub using @types {type TextDocumentWillSaveEvent}
 
-pub typealias @types.TerminalLinkContext as TerminalLinkContext
+pub using @types {type TextEdit}
 
-pub typealias @types.TerminalLinkProvider as TerminalLinkProvider
+pub using @types {type TextEditor}
 
-pub typealias @types.TerminalLocation as TerminalLocation
+pub using @types {type TextEditorCursorStyle}
 
-pub typealias @types.TerminalOptions as TerminalOptions
+pub using @types {type TextEditorDecorationType}
 
-pub typealias @types.TerminalProfile as TerminalProfile
+pub using @types {type TextEditorLineNumbersStyle}
 
-pub typealias @types.TerminalProfileProvider as TerminalProfileProvider
+pub using @types {type TextEditorOptions}
 
-pub typealias @types.TerminalShellExecution as TerminalShellExecution
+pub using @types {type TextEditorOptionsChangeEvent}
 
-pub typealias @types.TerminalShellExecutionCommandLine as TerminalShellExecutionCommandLine
+pub using @types {type TextEditorRevealType}
 
-pub typealias @types.TerminalShellExecutionCommandLineConfidence as TerminalShellExecutionCommandLineConfidence
+pub using @types {type TextEditorSelectionChangeEvent}
 
-pub typealias @types.TerminalShellExecutionEndEvent as TerminalShellExecutionEndEvent
+pub using @types {type TextEditorSelectionChangeKind}
 
-pub typealias @types.TerminalShellExecutionStartEvent as TerminalShellExecutionStartEvent
+pub using @types {type TextEditorViewColumnChangeEvent}
 
-pub typealias @types.TerminalShellIntegration as TerminalShellIntegration
+pub using @types {type TextEditorVisibleRangesChangeEvent}
 
-pub typealias @types.TerminalShellIntegrationChangeEvent as TerminalShellIntegrationChangeEvent
+pub using @types {type TextLine}
 
-pub typealias @types.TerminalSplitLocationOptions as TerminalSplitLocationOptions
+pub using @types {type ThemableDecorationAttachmentRenderOptions}
 
-pub typealias @types.TerminalState as TerminalState
+pub using @types {type ThemableDecorationInstanceRenderOptions}
 
-pub typealias @types.TestController as TestController
+pub using @types {type ThemableDecorationRenderOptions}
 
-pub typealias @types.TestCoverageCount as TestCoverageCount
+pub using @types {type ThemeColor}
 
-pub typealias @types.TestItem as TestItem
+pub using @types {type ThemeIcon}
 
-pub typealias @types.TestItemCollection as TestItemCollection
+pub using @types {type TreeCheckboxChangeEvent}
 
-pub typealias @types.TestMessage as TestMessage
+pub using @types {type TreeDataProvider}
 
-pub typealias @types.TestMessageStackFrame as TestMessageStackFrame
+pub using @types {type TreeDragAndDropController}
 
-pub typealias @types.TestRun as TestRun
+pub using @types {type TreeItem}
 
-pub typealias @types.TestRunProfile as TestRunProfile
+pub using @types {type TreeItemCheckboxState}
 
-pub typealias @types.TestRunProfileKind as TestRunProfileKind
+pub using @types {type TreeItemCollapsibleState}
 
-pub typealias @types.TestRunRequest as TestRunRequest
+pub using @types {type TreeItemLabel}
 
-pub typealias @types.TestTag as TestTag
+pub using @types {type TreeView}
 
-pub typealias @types.Tests as Tests
+pub using @types {type TreeViewExpansionEvent}
 
-pub typealias @types.TextDocument as TextDocument
+pub using @types {type TreeViewOptions}
 
-pub typealias @types.TextDocumentChangeEvent as TextDocumentChangeEvent
+pub using @types {type TreeViewSelectionChangeEvent}
 
-pub typealias @types.TextDocumentChangeReason as TextDocumentChangeReason
+pub using @types {type TreeViewVisibilityChangeEvent}
 
-pub typealias @types.TextDocumentContentChangeEvent as TextDocumentContentChangeEvent
+pub using @types {type TypeDefinitionProvider}
 
-pub typealias @types.TextDocumentContentProvider as TextDocumentContentProvider
+pub using @types {type TypeHierarchyItem}
 
-pub typealias @types.TextDocumentSaveReason as TextDocumentSaveReason
+pub using @types {type TypeHierarchyProvider}
 
-pub typealias @types.TextDocumentShowOptions as TextDocumentShowOptions
+pub using @types {type UIKind}
 
-pub typealias @types.TextDocumentWillSaveEvent as TextDocumentWillSaveEvent
+pub using @types {type Uri}
 
-pub typealias @types.TextEdit as TextEdit
+pub using @types {type UriHandler}
 
-pub typealias @types.TextEditor as TextEditor
+pub using @types {type ViewBadge}
 
-pub typealias @types.TextEditorCursorStyle as TextEditorCursorStyle
+pub using @types {type ViewColumn}
 
-pub typealias @types.TextEditorDecorationType as TextEditorDecorationType
+pub using @types {type Vscode}
 
-pub typealias @types.TextEditorLineNumbersStyle as TextEditorLineNumbersStyle
+pub using @types {type Webview}
 
-pub typealias @types.TextEditorOptions as TextEditorOptions
+pub using @types {type WebviewOptions}
 
-pub typealias @types.TextEditorOptionsChangeEvent as TextEditorOptionsChangeEvent
+pub using @types {type WebviewPanel}
 
-pub typealias @types.TextEditorRevealType as TextEditorRevealType
+pub using @types {type WebviewPanelOnDidChangeViewStateEvent}
 
-pub typealias @types.TextEditorSelectionChangeEvent as TextEditorSelectionChangeEvent
+pub using @types {type WebviewPanelOptions}
 
-pub typealias @types.TextEditorSelectionChangeKind as TextEditorSelectionChangeKind
+pub using @types {type WebviewPortMapping}
 
-pub typealias @types.TextEditorViewColumnChangeEvent as TextEditorViewColumnChangeEvent
+pub using @types {type WebviewView}
 
-pub typealias @types.TextEditorVisibleRangesChangeEvent as TextEditorVisibleRangesChangeEvent
+pub using @types {type WebviewViewProvider}
 
-pub typealias @types.TextLine as TextLine
+pub using @types {type WebviewViewResolveContext}
 
-pub typealias @types.ThemableDecorationAttachmentRenderOptions as ThemableDecorationAttachmentRenderOptions
+pub using @types {type Window}
 
-pub typealias @types.ThemableDecorationInstanceRenderOptions as ThemableDecorationInstanceRenderOptions
+pub using @types {type WindowState}
 
-pub typealias @types.ThemableDecorationRenderOptions as ThemableDecorationRenderOptions
+pub using @types {type Workspace}
 
-pub typealias @types.ThemeColor as ThemeColor
+pub using @types {type WorkspaceConfigurationInspectResult}
 
-pub typealias @types.ThemeIcon as ThemeIcon
+pub using @types {type WorkspaceEdit}
 
-pub typealias @types.TreeCheckboxChangeEvent as TreeCheckboxChangeEvent
+pub using @types {type WorkspaceEditEntryMetadata}
 
-pub typealias @types.TreeDataProvider as TreeDataProvider
+pub using @types {type WorkspaceEditMetadata}
 
-pub typealias @types.TreeDragAndDropController as TreeDragAndDropController
+pub using @types {type WorkspaceFolder}
 
-pub typealias @types.TreeItem as TreeItem
+pub using @types {type WorkspaceFolderPickOptions}
 
-pub typealias @types.TreeItemCheckboxState as TreeItemCheckboxState
+pub using @types {type WorkspaceFoldersChangeEvent}
 
-pub typealias @types.TreeItemCollapsibleState as TreeItemCollapsibleState
+pub using @types {type WorkspaceSymbolProvider}
 
-pub typealias @types.TreeItemLabel as TreeItemLabel
+pub using @interop {type Any}
 
-pub typealias @types.TreeView as TreeView
+pub using @types {type AuthenticationGetSessionPresentationOptions as AuthenticationForceNewSessionOptions}
 
-pub typealias @types.TreeViewExpansionEvent as TreeViewExpansionEvent
+pub type @types.CharacterPair = (String, String)
 
-pub typealias @types.TreeViewOptions as TreeViewOptions
+pub type @types.ChatRequestHandler = (@types.ChatRequest, @types.ChatContext, @types.ChatResponseStream, @types.CancellationToken) -> @interop.Union2[@interop.Union2[@types.ChatResult, Unit], @types.Thenable[@interop.Union2[@types.ChatResult, Unit]]]
 
-pub typealias @types.TreeViewSelectionChangeEvent as TreeViewSelectionChangeEvent
+pub type @types.ConfigurationScope = @interop.Union4[@types.Uri, @types.TextDocument, @types.WorkspaceFolder, @types.ConfigurationScopeObj]
 
-pub typealias @types.TreeViewVisibilityChangeEvent as TreeViewVisibilityChangeEvent
+pub type @types.DebugAdapterDescriptor = @interop.Union4[@types.DebugAdapterExecutable, @types.DebugAdapterServer, @types.DebugAdapterNamedPipeServer, @types.DebugAdapterInlineImplementation]
 
-pub typealias @types.TypeDefinitionProvider as TypeDefinitionProvider
+pub type @types.Declaration = @interop.Union3[@types.Location, Array[@types.Location], Array[@types.LocationLink]]
 
-pub typealias @types.TypeHierarchyItem as TypeHierarchyItem
+pub type @types.Definition = @interop.Union2[@types.Location, Array[@types.Location]]
 
-pub typealias @types.TypeHierarchyProvider as TypeHierarchyProvider
+pub using @types {type LocationLink as DefinitionLink}
 
-pub typealias @types.UIKind as UIKind
+pub type @types.DocumentSelector = @interop.Union3[@types.DocumentFilter, String, Array[@interop.Union2[@types.DocumentFilter, String]]]
 
-pub typealias FixedArray[Byte] as Uint8Array
+pub type @types.FileCoverageDetail = @interop.Union2[@types.StatementCoverage, @types.DeclarationCoverage]
 
-pub typealias @illusory0x0/vscode/interop.Union10 as Union10
+pub using @interop {type Func0Rest}
 
-pub typealias @illusory0x0/vscode/interop.Union11 as Union11
+pub using @interop {type Func10Rest}
 
-pub typealias @illusory0x0/vscode/interop.Union12 as Union12
+pub using @interop {type Func11Rest}
 
-pub typealias @illusory0x0/vscode/interop.Union13 as Union13
+pub using @interop {type Func12Rest}
 
-pub typealias @illusory0x0/vscode/interop.Union14 as Union14
+pub using @interop {type Func13Rest}
 
-pub typealias @illusory0x0/vscode/interop.Union15 as Union15
+pub using @interop {type Func14Rest}
 
-pub typealias @illusory0x0/vscode/interop.Union16 as Union16
+pub using @interop {type Func15Rest}
 
-pub typealias @illusory0x0/vscode/interop.Union2 as Union2
+pub using @interop {type Func16Rest}
 
-pub typealias @illusory0x0/vscode/interop.Union3 as Union3
+pub using @interop {type Func1Rest}
 
-pub typealias @illusory0x0/vscode/interop.Union4 as Union4
+pub using @interop {type Func2Rest}
 
-pub typealias @illusory0x0/vscode/interop.Union5 as Union5
+pub using @interop {type Func3Rest}
 
-pub typealias @illusory0x0/vscode/interop.Union6 as Union6
+pub using @interop {type Func4Rest}
 
-pub typealias @illusory0x0/vscode/interop.Union7 as Union7
+pub using @interop {type Func5Rest}
 
-pub typealias @illusory0x0/vscode/interop.Union8 as Union8
+pub using @interop {type Func6Rest}
 
-pub typealias @illusory0x0/vscode/interop.Union9 as Union9
+pub using @interop {type Func7Rest}
 
-pub typealias @types.Uri as Uri
+pub using @interop {type Func8Rest}
 
-pub typealias @types.UriHandler as UriHandler
+pub using @interop {type Func9Rest}
 
-pub typealias @types.ViewBadge as ViewBadge
+pub type @types.GlobPattern = @interop.Union2[String, @types.RelativePattern]
 
-pub typealias @types.ViewColumn as ViewColumn
+pub type @types.IconPath = @interop.Union3[@types.Uri, @types.LightDarkIconPath, @types.ThemeIcon]
 
-pub typealias @types.Vscode as Vscode
+pub type @types.InlineValue = @interop.Union3[@types.InlineValueText, @types.InlineValueVariableLookup, @types.InlineValueEvaluatableExpression]
 
-pub typealias @types.Webview as Webview
+pub type @types.LanguageModelInputPart = @interop.Union3[@types.LanguageModelTextPart, @types.LanguageModelToolResultPart, @types.LanguageModelToolCallPart]
 
-pub typealias @types.WebviewOptions as WebviewOptions
+pub type @types.LanguageModelResponsePart = @interop.Union3[@types.LanguageModelTextPart, @types.LanguageModelToolResultPart, @types.LanguageModelToolCallPart]
 
-pub typealias @types.WebviewPanel as WebviewPanel
+pub type @types.MarkedString = @interop.Union2[String, @types.MarkedStringObject]
 
-pub typealias @types.WebviewPanelOnDidChangeViewStateEvent as WebviewPanelOnDidChangeViewStateEvent
+pub type @types.McpServerDefinition = @interop.Union2[@types.McpStdioServerDefinition, @types.McpHttpServerDefinition]
 
-pub typealias @types.WebviewPanelOptions as WebviewPanelOptions
+pub type @types.ProviderResult[T] = @interop.Union2[T, @types.Thenable[T]]
 
-pub typealias @types.WebviewPortMapping as WebviewPortMapping
+pub type @types.Uint8Array = FixedArray[Byte]
 
-pub typealias @types.WebviewView as WebviewView
+pub using @interop {type Union10}
 
-pub typealias @types.WebviewViewProvider as WebviewViewProvider
+pub using @interop {type Union11}
 
-pub typealias @types.WebviewViewResolveContext as WebviewViewResolveContext
+pub using @interop {type Union12}
 
-pub typealias @types.Window as Window
+pub using @interop {type Union13}
 
-pub typealias @types.WindowState as WindowState
+pub using @interop {type Union14}
 
-pub typealias @types.Workspace as Workspace
+pub using @interop {type Union15}
 
-pub typealias @types.WorkspaceConfigurationInspectResult as WorkspaceConfigurationInspectResult
+pub using @interop {type Union16}
 
-pub typealias @types.WorkspaceEdit as WorkspaceEdit
+pub using @interop {type Union2}
 
-pub typealias @types.WorkspaceEditEntryMetadata as WorkspaceEditEntryMetadata
+pub using @interop {type Union3}
 
-pub typealias @types.WorkspaceEditMetadata as WorkspaceEditMetadata
+pub using @interop {type Union4}
 
-pub typealias @types.WorkspaceFolder as WorkspaceFolder
+pub using @interop {type Union5}
 
-pub typealias @types.WorkspaceFolderPickOptions as WorkspaceFolderPickOptions
+pub using @interop {type Union6}
 
-pub typealias @types.WorkspaceFoldersChangeEvent as WorkspaceFoldersChangeEvent
+pub using @interop {type Union7}
 
-pub typealias @types.WorkspaceSymbolProvider as WorkspaceSymbolProvider
+pub using @interop {type Union8}
+
+pub using @interop {type Union9}
 
 // Traits
 

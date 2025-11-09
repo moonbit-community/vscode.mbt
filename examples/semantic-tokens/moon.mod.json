@@ -1,0 +1,9 @@
+{
+  "name": "helloworld-minimal",
+  "deps": {
+    "illusory0x0/vscode": {
+      "path": "../.."
+    }
+  },
+  "preferred-target": "js"
+}

@@ -1,0 +1,29 @@
+{
+  "name": "semantic-tokens",
+  "version": "0.0.1",
+  "type": "commonjs",
+  "main": "./target/js/release/build/extension/extension.js",
+  "engines": {
+    "vscode": "^1.100.0"
+  },
+  "publisher": "illusory0x0",
+  "activationEvents": [
+    		"onLanguage:semanticLanguage"
+  ],
+  "contributes": {
+    		"languages": [
+			{
+				"id": "semanticLanguage",
+				"extensions": [
+					".semanticLanguage"
+				]
+			}
+		]
+  },
+  "repository": "https://github.com/illusory0x0/illu-vscode.mbt",
+  "devDependencies": {
+    "@types/node": "^22.15.17",
+    "@types/vscode": "^1.104.0",
+    "prettier": "^3.5.3"
+  }
+}
