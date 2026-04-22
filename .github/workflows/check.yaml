@@ -54,7 +54,7 @@ jobs:
       - name: install module dependencies
         run: |
           moon update
-          moon install
+          moon check --deny-warn
 
       - name: moon check
         run: moon check --target js --deny-warn
@@ -106,7 +106,7 @@ jobs:
           find . -name *.mod.json -exec npx prettier --write {} \;
           find . -name *.pkg.json -exec npx prettier --write {} \;
           git diff --exit-code;
-# here doesn't run `moon install`, so .mooncakes is not existed
+# here doesn't run `moon check --deny-warn`, so .mooncakes is not existed
   check-typos:
     runs-on: ubuntu-latest
 
