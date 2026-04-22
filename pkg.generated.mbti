@@ -1,15 +1,15 @@
 // Generated using `moon info`, DON'T EDIT IT
 package "illusory0x0/vscode"
 
-import(
-  "illusory0x0/vscode/interop"
-  "illusory0x0/vscode/types"
-)
+import {
+  "illusory0x0/vscode/interop",
+  "illusory0x0/vscode/types",
+}
 
 // Values
-fn[A, B] coerce(A) -> B
+pub fn[A, B] coerce(A) -> B
 
-let vscode : @types.Vscode
+pub let vscode : @types.Vscode
 
 // Errors
 
@@ -18,7 +18,11 @@ let vscode : @types.Vscode
 // Type aliases
 pub using @types {type AccessibilityInformation}
 
+pub using @interop {type Any}
+
 pub using @types {type Authentication}
+
+pub using @types {type AuthenticationGetSessionPresentationOptions as AuthenticationForceNewSessionOptions}
 
 pub using @types {type AuthenticationGetSessionOptions}
 
@@ -62,6 +66,8 @@ pub using @types {type CancellationToken}
 
 pub using @types {type CancellationTokenSource}
 
+pub type CharacterPair = (String, String)
+
 pub using @types {type Chat}
 
 pub using @types {type ChatContext}
@@ -81,6 +87,8 @@ pub using @types {type ChatParticipantToolToken}
 pub using @types {type ChatPromptReference}
 
 pub using @types {type ChatRequest}
+
+pub type ChatRequestHandler = (@types.ChatRequest, @types.ChatContext, @types.ChatResponseStream, @types.CancellationToken) -> @interop.Union2[@interop.Union2[@types.ChatResult, Unit], @types.Thenable[@interop.Union2[@types.ChatResult, Unit]]]
 
 pub using @types {type ChatRequestTurn}
 
@@ -184,6 +192,8 @@ pub using @types {type CompletionList}
 
 pub using @types {type CompletionTriggerKind}
 
+pub type ConfigurationScope = @interop.Union4[@types.Uri, @types.TextDocument, @types.WorkspaceFolder, @types.ConfigurationScopeObj]
+
 pub using @types {type ConfigurationScopeObj}
 
 pub using @types {type ConfigurationTarget}
@@ -215,6 +225,8 @@ pub using @types {type DataTransferItem}
 pub using @types {type Debug}
 
 pub using @types {type DebugAdapter}
+
+pub type DebugAdapterDescriptor = @interop.Union4[@types.DebugAdapterExecutable, @types.DebugAdapterServer, @types.DebugAdapterNamedPipeServer, @types.DebugAdapterInlineImplementation]
 
 pub using @types {type DebugAdapterDescriptorFactory}
 
@@ -258,6 +270,8 @@ pub using @types {type DebugStackFrame}
 
 pub using @types {type DebugThread}
 
+pub type Declaration = @interop.Union3[@types.Location, Array[@types.Location], Array[@types.LocationLink]]
+
 pub using @types {type DeclarationCoverage}
 
 pub using @types {type DeclarationProvider}
@@ -269,6 +283,10 @@ pub using @types {type DecorationOptions}
 pub using @types {type DecorationRangeBehavior}
 
 pub using @types {type DecorationRenderOptions}
+
+pub type Definition = @interop.Union2[@types.Location, Array[@types.Location]]
+
+pub using @types {type LocationLink as DefinitionLink}
 
 pub using @types {type DefinitionProvider}
 
@@ -326,6 +344,8 @@ pub using @types {type DocumentRangeFormattingEditProvider}
 
 pub using @types {type DocumentRangeSemanticTokensProvider}
 
+pub type DocumentSelector = @interop.Union3[@types.DocumentFilter, String, Array[@interop.Union2[@types.DocumentFilter, String]]]
+
 pub using @types {type DocumentSemanticTokensProvider}
 
 pub using @types {type DocumentSymbol}
@@ -376,6 +396,8 @@ pub using @types {type FileChangeType}
 
 pub using @types {type FileCoverage}
 
+pub type FileCoverageDetail = @interop.Union2[@types.StatementCoverage, @types.DeclarationCoverage]
+
 pub using @types {type FileCreateEvent}
 
 pub using @types {type FileDecoration}
@@ -418,13 +440,51 @@ pub using @types {type FoldingRangeProvider}
 
 pub using @types {type FormattingOptions}
 
+pub using @interop {type Func0Rest}
+
+pub using @interop {type Func10Rest}
+
+pub using @interop {type Func11Rest}
+
+pub using @interop {type Func12Rest}
+
+pub using @interop {type Func13Rest}
+
+pub using @interop {type Func14Rest}
+
+pub using @interop {type Func15Rest}
+
+pub using @interop {type Func16Rest}
+
+pub using @interop {type Func1Rest}
+
+pub using @interop {type Func2Rest}
+
+pub using @interop {type Func3Rest}
+
+pub using @interop {type Func4Rest}
+
+pub using @interop {type Func5Rest}
+
+pub using @interop {type Func6Rest}
+
+pub using @interop {type Func7Rest}
+
+pub using @interop {type Func8Rest}
+
+pub using @interop {type Func9Rest}
+
 pub using @types {type FunctionBreakpoint}
+
+pub type GlobPattern = @interop.Union2[String, @types.RelativePattern]
 
 pub using @types {type GlobalEnvironmentVariableCollection}
 
 pub using @types {type Hover}
 
 pub using @types {type HoverProvider}
+
+pub type IconPath = @interop.Union3[@types.Uri, @types.LightDarkIconPath, @types.ThemeIcon]
 
 pub using @types {type ImplementationProvider}
 
@@ -449,6 +509,8 @@ pub using @types {type InlineCompletionItemProvider}
 pub using @types {type InlineCompletionList}
 
 pub using @types {type InlineCompletionTriggerKind}
+
+pub type InlineValue = @interop.Union3[@types.InlineValueText, @types.InlineValueVariableLookup, @types.InlineValueEvaluatableExpression]
 
 pub using @types {type InlineValueContext}
 
@@ -498,7 +560,11 @@ pub using @types {type LanguageModelChatToolMode}
 
 pub using @types {type LanguageModelError}
 
+pub type LanguageModelInputPart = @interop.Union3[@types.LanguageModelTextPart, @types.LanguageModelToolResultPart, @types.LanguageModelToolCallPart]
+
 pub using @types {type LanguageModelPromptTsxPart}
+
+pub type LanguageModelResponsePart = @interop.Union3[@types.LanguageModelTextPart, @types.LanguageModelToolResultPart, @types.LanguageModelToolCallPart]
 
 pub using @types {type LanguageModelTextPart}
 
@@ -544,9 +610,13 @@ pub using @types {type LogOutputChannel}
 
 pub using @types {type MarkdownString}
 
+pub type MarkedString = @interop.Union2[String, @types.MarkedStringObject]
+
 pub using @types {type MarkedStringObject}
 
 pub using @types {type McpHttpServerDefinition}
+
+pub type McpServerDefinition = @interop.Union2[@types.McpStdioServerDefinition, @types.McpHttpServerDefinition]
 
 pub using @types {type McpServerDefinitionProvider}
 
@@ -645,6 +715,8 @@ pub using @types {type ProgressLocation}
 pub using @types {type ProgressOptions}
 
 pub using @types {type ProvideLanguageModelChatResponseOptions}
+
+pub type ProviderResult[T] = @interop.Union2[T, @types.Thenable[T]]
 
 pub using @types {type Pseudoterminal}
 
@@ -970,6 +1042,38 @@ pub using @types {type TypeHierarchyProvider}
 
 pub using @types {type UIKind}
 
+pub type Uint8Array = FixedArray[Byte]
+
+pub using @interop {type Union10}
+
+pub using @interop {type Union11}
+
+pub using @interop {type Union12}
+
+pub using @interop {type Union13}
+
+pub using @interop {type Union14}
+
+pub using @interop {type Union15}
+
+pub using @interop {type Union16}
+
+pub using @interop {type Union2}
+
+pub using @interop {type Union3}
+
+pub using @interop {type Union4}
+
+pub using @interop {type Union5}
+
+pub using @interop {type Union6}
+
+pub using @interop {type Union7}
+
+pub using @interop {type Union8}
+
+pub using @interop {type Union9}
+
 pub using @types {type Uri}
 
 pub using @types {type UriHandler}
@@ -1019,110 +1123,6 @@ pub using @types {type WorkspaceFolderPickOptions}
 pub using @types {type WorkspaceFoldersChangeEvent}
 
 pub using @types {type WorkspaceSymbolProvider}
-
-pub using @interop {type Any}
-
-pub using @types {type AuthenticationGetSessionPresentationOptions as AuthenticationForceNewSessionOptions}
-
-pub type @types.CharacterPair = (String, String)
-
-pub type @types.ChatRequestHandler = (@types.ChatRequest, @types.ChatContext, @types.ChatResponseStream, @types.CancellationToken) -> @interop.Union2[@interop.Union2[@types.ChatResult, Unit], @types.Thenable[@interop.Union2[@types.ChatResult, Unit]]]
-
-pub type @types.ConfigurationScope = @interop.Union4[@types.Uri, @types.TextDocument, @types.WorkspaceFolder, @types.ConfigurationScopeObj]
-
-pub type @types.DebugAdapterDescriptor = @interop.Union4[@types.DebugAdapterExecutable, @types.DebugAdapterServer, @types.DebugAdapterNamedPipeServer, @types.DebugAdapterInlineImplementation]
-
-pub type @types.Declaration = @interop.Union3[@types.Location, Array[@types.Location], Array[@types.LocationLink]]
-
-pub type @types.Definition = @interop.Union2[@types.Location, Array[@types.Location]]
-
-pub using @types {type LocationLink as DefinitionLink}
-
-pub type @types.DocumentSelector = @interop.Union3[@types.DocumentFilter, String, Array[@interop.Union2[@types.DocumentFilter, String]]]
-
-pub type @types.FileCoverageDetail = @interop.Union2[@types.StatementCoverage, @types.DeclarationCoverage]
-
-pub using @interop {type Func0Rest}
-
-pub using @interop {type Func10Rest}
-
-pub using @interop {type Func11Rest}
-
-pub using @interop {type Func12Rest}
-
-pub using @interop {type Func13Rest}
-
-pub using @interop {type Func14Rest}
-
-pub using @interop {type Func15Rest}
-
-pub using @interop {type Func16Rest}
-
-pub using @interop {type Func1Rest}
-
-pub using @interop {type Func2Rest}
-
-pub using @interop {type Func3Rest}
-
-pub using @interop {type Func4Rest}
-
-pub using @interop {type Func5Rest}
-
-pub using @interop {type Func6Rest}
-
-pub using @interop {type Func7Rest}
-
-pub using @interop {type Func8Rest}
-
-pub using @interop {type Func9Rest}
-
-pub type @types.GlobPattern = @interop.Union2[String, @types.RelativePattern]
-
-pub type @types.IconPath = @interop.Union3[@types.Uri, @types.LightDarkIconPath, @types.ThemeIcon]
-
-pub type @types.InlineValue = @interop.Union3[@types.InlineValueText, @types.InlineValueVariableLookup, @types.InlineValueEvaluatableExpression]
-
-pub type @types.LanguageModelInputPart = @interop.Union3[@types.LanguageModelTextPart, @types.LanguageModelToolResultPart, @types.LanguageModelToolCallPart]
-
-pub type @types.LanguageModelResponsePart = @interop.Union3[@types.LanguageModelTextPart, @types.LanguageModelToolResultPart, @types.LanguageModelToolCallPart]
-
-pub type @types.MarkedString = @interop.Union2[String, @types.MarkedStringObject]
-
-pub type @types.McpServerDefinition = @interop.Union2[@types.McpStdioServerDefinition, @types.McpHttpServerDefinition]
-
-pub type @types.ProviderResult[T] = @interop.Union2[T, @types.Thenable[T]]
-
-pub type @types.Uint8Array = FixedArray[Byte]
-
-pub using @interop {type Union10}
-
-pub using @interop {type Union11}
-
-pub using @interop {type Union12}
-
-pub using @interop {type Union13}
-
-pub using @interop {type Union14}
-
-pub using @interop {type Union15}
-
-pub using @interop {type Union16}
-
-pub using @interop {type Union2}
-
-pub using @interop {type Union3}
-
-pub using @interop {type Union4}
-
-pub using @interop {type Union5}
-
-pub using @interop {type Union6}
-
-pub using @interop {type Union7}
-
-pub using @interop {type Union8}
-
-pub using @interop {type Union9}
 
 // Traits
 
