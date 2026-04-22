@@ -2,242 +2,242 @@
 package "illusory0x0/vscode/interop"
 
 // Values
-fn[A, B] coerce(A) -> B
+pub fn[A, B] coerce(A) -> B
 
 // Errors
 
 // Types and methods
 #external
 pub(all) type Any
-impl Eq for Any
-impl Show for Any
-impl ToJson for Any
+pub impl Eq for Any
+pub impl Show for Any
+pub impl ToJson for Any
 
 #external
 pub(all) type Func0Rest[R, E]
-fn[R, E] Func0Rest::from((Array[E]) -> R) -> Self[R, E]
-fn[R, E] Func0Rest::into(Self[R, E]) -> (Array[E]) -> R
-impl[R, E] Eq for Func0Rest[R, E]
-impl[R, E] Show for Func0Rest[R, E]
-impl[R, E] ToJson for Func0Rest[R, E]
+pub fn[R, E] Func0Rest::from((Array[E]) -> R) -> Self[R, E]
+pub fn[R, E] Func0Rest::into(Self[R, E]) -> (Array[E]) -> R
+pub impl[R, E] Eq for Func0Rest[R, E]
+pub impl[R, E] Show for Func0Rest[R, E]
+pub impl[R, E] ToJson for Func0Rest[R, E]
 
 #external
 pub(all) type Func10Rest[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10]
-fn[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10] Func10Rest::from((A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, Array[E]) -> R) -> Self[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10]
-fn[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10] Func10Rest::into(Self[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10]) -> (A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, Array[E]) -> R
-impl[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10] Eq for Func10Rest[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10]
-impl[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10] Show for Func10Rest[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10]
-impl[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10] ToJson for Func10Rest[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10]
+pub fn[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10] Func10Rest::from((A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, Array[E]) -> R) -> Self[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10]
+pub fn[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10] Func10Rest::into(Self[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10]) -> (A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, Array[E]) -> R
+pub impl[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10] Eq for Func10Rest[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10]
+pub impl[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10] Show for Func10Rest[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10]
+pub impl[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10] ToJson for Func10Rest[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10]
 
 #external
 pub(all) type Func11Rest[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11]
-fn[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11] Func11Rest::from((A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, Array[E]) -> R) -> Self[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11]
-fn[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11] Func11Rest::into(Self[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11]) -> (A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, Array[E]) -> R
-impl[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11] Eq for Func11Rest[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11]
-impl[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11] Show for Func11Rest[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11]
-impl[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11] ToJson for Func11Rest[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11]
+pub fn[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11] Func11Rest::from((A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, Array[E]) -> R) -> Self[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11]
+pub fn[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11] Func11Rest::into(Self[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11]) -> (A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, Array[E]) -> R
+pub impl[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11] Eq for Func11Rest[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11]
+pub impl[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11] Show for Func11Rest[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11]
+pub impl[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11] ToJson for Func11Rest[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11]
 
 #external
 pub(all) type Func12Rest[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12]
-fn[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12] Func12Rest::from((A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, Array[E]) -> R) -> Self[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12]
-fn[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12] Func12Rest::into(Self[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12]) -> (A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, Array[E]) -> R
-impl[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12] Eq for Func12Rest[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12]
-impl[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12] Show for Func12Rest[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12]
-impl[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12] ToJson for Func12Rest[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12]
+pub fn[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12] Func12Rest::from((A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, Array[E]) -> R) -> Self[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12]
+pub fn[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12] Func12Rest::into(Self[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12]) -> (A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, Array[E]) -> R
+pub impl[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12] Eq for Func12Rest[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12]
+pub impl[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12] Show for Func12Rest[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12]
+pub impl[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12] ToJson for Func12Rest[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12]
 
 #external
 pub(all) type Func13Rest[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13]
-fn[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13] Func13Rest::from((A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13, Array[E]) -> R) -> Self[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13]
-fn[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13] Func13Rest::into(Self[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13]) -> (A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13, Array[E]) -> R
-impl[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13] Eq for Func13Rest[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13]
-impl[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13] Show for Func13Rest[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13]
-impl[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13] ToJson for Func13Rest[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13]
+pub fn[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13] Func13Rest::from((A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13, Array[E]) -> R) -> Self[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13]
+pub fn[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13] Func13Rest::into(Self[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13]) -> (A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13, Array[E]) -> R
+pub impl[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13] Eq for Func13Rest[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13]
+pub impl[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13] Show for Func13Rest[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13]
+pub impl[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13] ToJson for Func13Rest[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13]
 
 #external
 pub(all) type Func14Rest[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13, A14]
-fn[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13, A14] Func14Rest::from((A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13, A14, Array[E]) -> R) -> Self[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13, A14]
-fn[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13, A14] Func14Rest::into(Self[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13, A14]) -> (A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13, A14, Array[E]) -> R
-impl[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13, A14] Eq for Func14Rest[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13, A14]
-impl[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13, A14] Show for Func14Rest[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13, A14]
-impl[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13, A14] ToJson for Func14Rest[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13, A14]
+pub fn[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13, A14] Func14Rest::from((A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13, A14, Array[E]) -> R) -> Self[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13, A14]
+pub fn[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13, A14] Func14Rest::into(Self[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13, A14]) -> (A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13, A14, Array[E]) -> R
+pub impl[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13, A14] Eq for Func14Rest[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13, A14]
+pub impl[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13, A14] Show for Func14Rest[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13, A14]
+pub impl[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13, A14] ToJson for Func14Rest[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13, A14]
 
 #external
 pub(all) type Func15Rest[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13, A14, A15]
-fn[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13, A14, A15] Func15Rest::from((A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13, A14, A15, Array[E]) -> R) -> Self[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13, A14, A15]
-fn[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13, A14, A15] Func15Rest::into(Self[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13, A14, A15]) -> (A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13, A14, A15, Array[E]) -> R
-impl[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13, A14, A15] Eq for Func15Rest[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13, A14, A15]
-impl[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13, A14, A15] Show for Func15Rest[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13, A14, A15]
-impl[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13, A14, A15] ToJson for Func15Rest[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13, A14, A15]
+pub fn[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13, A14, A15] Func15Rest::from((A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13, A14, A15, Array[E]) -> R) -> Self[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13, A14, A15]
+pub fn[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13, A14, A15] Func15Rest::into(Self[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13, A14, A15]) -> (A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13, A14, A15, Array[E]) -> R
+pub impl[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13, A14, A15] Eq for Func15Rest[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13, A14, A15]
+pub impl[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13, A14, A15] Show for Func15Rest[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13, A14, A15]
+pub impl[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13, A14, A15] ToJson for Func15Rest[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13, A14, A15]
 
 #external
 pub(all) type Func16Rest[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13, A14, A15, A16]
-fn[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13, A14, A15, A16] Func16Rest::from((A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13, A14, A15, A16, Array[E]) -> R) -> Self[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13, A14, A15, A16]
-fn[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13, A14, A15, A16] Func16Rest::into(Self[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13, A14, A15, A16]) -> (A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13, A14, A15, A16, Array[E]) -> R
-impl[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13, A14, A15, A16] Eq for Func16Rest[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13, A14, A15, A16]
-impl[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13, A14, A15, A16] Show for Func16Rest[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13, A14, A15, A16]
-impl[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13, A14, A15, A16] ToJson for Func16Rest[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13, A14, A15, A16]
+pub fn[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13, A14, A15, A16] Func16Rest::from((A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13, A14, A15, A16, Array[E]) -> R) -> Self[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13, A14, A15, A16]
+pub fn[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13, A14, A15, A16] Func16Rest::into(Self[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13, A14, A15, A16]) -> (A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13, A14, A15, A16, Array[E]) -> R
+pub impl[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13, A14, A15, A16] Eq for Func16Rest[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13, A14, A15, A16]
+pub impl[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13, A14, A15, A16] Show for Func16Rest[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13, A14, A15, A16]
+pub impl[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13, A14, A15, A16] ToJson for Func16Rest[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13, A14, A15, A16]
 
 #external
 pub(all) type Func1Rest[R, E, A1]
-fn[R, E, A1] Func1Rest::from((A1, Array[E]) -> R) -> Self[R, E, A1]
-fn[R, E, A1] Func1Rest::into(Self[R, E, A1]) -> (A1, Array[E]) -> R
-impl[R, E, A1] Eq for Func1Rest[R, E, A1]
-impl[R, E, A1] Show for Func1Rest[R, E, A1]
-impl[R, E, A1] ToJson for Func1Rest[R, E, A1]
+pub fn[R, E, A1] Func1Rest::from((A1, Array[E]) -> R) -> Self[R, E, A1]
+pub fn[R, E, A1] Func1Rest::into(Self[R, E, A1]) -> (A1, Array[E]) -> R
+pub impl[R, E, A1] Eq for Func1Rest[R, E, A1]
+pub impl[R, E, A1] Show for Func1Rest[R, E, A1]
+pub impl[R, E, A1] ToJson for Func1Rest[R, E, A1]
 
 #external
 pub(all) type Func2Rest[R, E, A1, A2]
-fn[R, E, A1, A2] Func2Rest::from((A1, A2, Array[E]) -> R) -> Self[R, E, A1, A2]
-fn[R, E, A1, A2] Func2Rest::into(Self[R, E, A1, A2]) -> (A1, A2, Array[E]) -> R
-impl[R, E, A1, A2] Eq for Func2Rest[R, E, A1, A2]
-impl[R, E, A1, A2] Show for Func2Rest[R, E, A1, A2]
-impl[R, E, A1, A2] ToJson for Func2Rest[R, E, A1, A2]
+pub fn[R, E, A1, A2] Func2Rest::from((A1, A2, Array[E]) -> R) -> Self[R, E, A1, A2]
+pub fn[R, E, A1, A2] Func2Rest::into(Self[R, E, A1, A2]) -> (A1, A2, Array[E]) -> R
+pub impl[R, E, A1, A2] Eq for Func2Rest[R, E, A1, A2]
+pub impl[R, E, A1, A2] Show for Func2Rest[R, E, A1, A2]
+pub impl[R, E, A1, A2] ToJson for Func2Rest[R, E, A1, A2]
 
 #external
 pub(all) type Func3Rest[R, E, A1, A2, A3]
-fn[R, E, A1, A2, A3] Func3Rest::from((A1, A2, A3, Array[E]) -> R) -> Self[R, E, A1, A2, A3]
-fn[R, E, A1, A2, A3] Func3Rest::into(Self[R, E, A1, A2, A3]) -> (A1, A2, A3, Array[E]) -> R
-impl[R, E, A1, A2, A3] Eq for Func3Rest[R, E, A1, A2, A3]
-impl[R, E, A1, A2, A3] Show for Func3Rest[R, E, A1, A2, A3]
-impl[R, E, A1, A2, A3] ToJson for Func3Rest[R, E, A1, A2, A3]
+pub fn[R, E, A1, A2, A3] Func3Rest::from((A1, A2, A3, Array[E]) -> R) -> Self[R, E, A1, A2, A3]
+pub fn[R, E, A1, A2, A3] Func3Rest::into(Self[R, E, A1, A2, A3]) -> (A1, A2, A3, Array[E]) -> R
+pub impl[R, E, A1, A2, A3] Eq for Func3Rest[R, E, A1, A2, A3]
+pub impl[R, E, A1, A2, A3] Show for Func3Rest[R, E, A1, A2, A3]
+pub impl[R, E, A1, A2, A3] ToJson for Func3Rest[R, E, A1, A2, A3]
 
 #external
 pub(all) type Func4Rest[R, E, A1, A2, A3, A4]
-fn[R, E, A1, A2, A3, A4] Func4Rest::from((A1, A2, A3, A4, Array[E]) -> R) -> Self[R, E, A1, A2, A3, A4]
-fn[R, E, A1, A2, A3, A4] Func4Rest::into(Self[R, E, A1, A2, A3, A4]) -> (A1, A2, A3, A4, Array[E]) -> R
-impl[R, E, A1, A2, A3, A4] Eq for Func4Rest[R, E, A1, A2, A3, A4]
-impl[R, E, A1, A2, A3, A4] Show for Func4Rest[R, E, A1, A2, A3, A4]
-impl[R, E, A1, A2, A3, A4] ToJson for Func4Rest[R, E, A1, A2, A3, A4]
+pub fn[R, E, A1, A2, A3, A4] Func4Rest::from((A1, A2, A3, A4, Array[E]) -> R) -> Self[R, E, A1, A2, A3, A4]
+pub fn[R, E, A1, A2, A3, A4] Func4Rest::into(Self[R, E, A1, A2, A3, A4]) -> (A1, A2, A3, A4, Array[E]) -> R
+pub impl[R, E, A1, A2, A3, A4] Eq for Func4Rest[R, E, A1, A2, A3, A4]
+pub impl[R, E, A1, A2, A3, A4] Show for Func4Rest[R, E, A1, A2, A3, A4]
+pub impl[R, E, A1, A2, A3, A4] ToJson for Func4Rest[R, E, A1, A2, A3, A4]
 
 #external
 pub(all) type Func5Rest[R, E, A1, A2, A3, A4, A5]
-fn[R, E, A1, A2, A3, A4, A5] Func5Rest::from((A1, A2, A3, A4, A5, Array[E]) -> R) -> Self[R, E, A1, A2, A3, A4, A5]
-fn[R, E, A1, A2, A3, A4, A5] Func5Rest::into(Self[R, E, A1, A2, A3, A4, A5]) -> (A1, A2, A3, A4, A5, Array[E]) -> R
-impl[R, E, A1, A2, A3, A4, A5] Eq for Func5Rest[R, E, A1, A2, A3, A4, A5]
-impl[R, E, A1, A2, A3, A4, A5] Show for Func5Rest[R, E, A1, A2, A3, A4, A5]
-impl[R, E, A1, A2, A3, A4, A5] ToJson for Func5Rest[R, E, A1, A2, A3, A4, A5]
+pub fn[R, E, A1, A2, A3, A4, A5] Func5Rest::from((A1, A2, A3, A4, A5, Array[E]) -> R) -> Self[R, E, A1, A2, A3, A4, A5]
+pub fn[R, E, A1, A2, A3, A4, A5] Func5Rest::into(Self[R, E, A1, A2, A3, A4, A5]) -> (A1, A2, A3, A4, A5, Array[E]) -> R
+pub impl[R, E, A1, A2, A3, A4, A5] Eq for Func5Rest[R, E, A1, A2, A3, A4, A5]
+pub impl[R, E, A1, A2, A3, A4, A5] Show for Func5Rest[R, E, A1, A2, A3, A4, A5]
+pub impl[R, E, A1, A2, A3, A4, A5] ToJson for Func5Rest[R, E, A1, A2, A3, A4, A5]
 
 #external
 pub(all) type Func6Rest[R, E, A1, A2, A3, A4, A5, A6]
-fn[R, E, A1, A2, A3, A4, A5, A6] Func6Rest::from((A1, A2, A3, A4, A5, A6, Array[E]) -> R) -> Self[R, E, A1, A2, A3, A4, A5, A6]
-fn[R, E, A1, A2, A3, A4, A5, A6] Func6Rest::into(Self[R, E, A1, A2, A3, A4, A5, A6]) -> (A1, A2, A3, A4, A5, A6, Array[E]) -> R
-impl[R, E, A1, A2, A3, A4, A5, A6] Eq for Func6Rest[R, E, A1, A2, A3, A4, A5, A6]
-impl[R, E, A1, A2, A3, A4, A5, A6] Show for Func6Rest[R, E, A1, A2, A3, A4, A5, A6]
-impl[R, E, A1, A2, A3, A4, A5, A6] ToJson for Func6Rest[R, E, A1, A2, A3, A4, A5, A6]
+pub fn[R, E, A1, A2, A3, A4, A5, A6] Func6Rest::from((A1, A2, A3, A4, A5, A6, Array[E]) -> R) -> Self[R, E, A1, A2, A3, A4, A5, A6]
+pub fn[R, E, A1, A2, A3, A4, A5, A6] Func6Rest::into(Self[R, E, A1, A2, A3, A4, A5, A6]) -> (A1, A2, A3, A4, A5, A6, Array[E]) -> R
+pub impl[R, E, A1, A2, A3, A4, A5, A6] Eq for Func6Rest[R, E, A1, A2, A3, A4, A5, A6]
+pub impl[R, E, A1, A2, A3, A4, A5, A6] Show for Func6Rest[R, E, A1, A2, A3, A4, A5, A6]
+pub impl[R, E, A1, A2, A3, A4, A5, A6] ToJson for Func6Rest[R, E, A1, A2, A3, A4, A5, A6]
 
 #external
 pub(all) type Func7Rest[R, E, A1, A2, A3, A4, A5, A6, A7]
-fn[R, E, A1, A2, A3, A4, A5, A6, A7] Func7Rest::from((A1, A2, A3, A4, A5, A6, A7, Array[E]) -> R) -> Self[R, E, A1, A2, A3, A4, A5, A6, A7]
-fn[R, E, A1, A2, A3, A4, A5, A6, A7] Func7Rest::into(Self[R, E, A1, A2, A3, A4, A5, A6, A7]) -> (A1, A2, A3, A4, A5, A6, A7, Array[E]) -> R
-impl[R, E, A1, A2, A3, A4, A5, A6, A7] Eq for Func7Rest[R, E, A1, A2, A3, A4, A5, A6, A7]
-impl[R, E, A1, A2, A3, A4, A5, A6, A7] Show for Func7Rest[R, E, A1, A2, A3, A4, A5, A6, A7]
-impl[R, E, A1, A2, A3, A4, A5, A6, A7] ToJson for Func7Rest[R, E, A1, A2, A3, A4, A5, A6, A7]
+pub fn[R, E, A1, A2, A3, A4, A5, A6, A7] Func7Rest::from((A1, A2, A3, A4, A5, A6, A7, Array[E]) -> R) -> Self[R, E, A1, A2, A3, A4, A5, A6, A7]
+pub fn[R, E, A1, A2, A3, A4, A5, A6, A7] Func7Rest::into(Self[R, E, A1, A2, A3, A4, A5, A6, A7]) -> (A1, A2, A3, A4, A5, A6, A7, Array[E]) -> R
+pub impl[R, E, A1, A2, A3, A4, A5, A6, A7] Eq for Func7Rest[R, E, A1, A2, A3, A4, A5, A6, A7]
+pub impl[R, E, A1, A2, A3, A4, A5, A6, A7] Show for Func7Rest[R, E, A1, A2, A3, A4, A5, A6, A7]
+pub impl[R, E, A1, A2, A3, A4, A5, A6, A7] ToJson for Func7Rest[R, E, A1, A2, A3, A4, A5, A6, A7]
 
 #external
 pub(all) type Func8Rest[R, E, A1, A2, A3, A4, A5, A6, A7, A8]
-fn[R, E, A1, A2, A3, A4, A5, A6, A7, A8] Func8Rest::from((A1, A2, A3, A4, A5, A6, A7, A8, Array[E]) -> R) -> Self[R, E, A1, A2, A3, A4, A5, A6, A7, A8]
-fn[R, E, A1, A2, A3, A4, A5, A6, A7, A8] Func8Rest::into(Self[R, E, A1, A2, A3, A4, A5, A6, A7, A8]) -> (A1, A2, A3, A4, A5, A6, A7, A8, Array[E]) -> R
-impl[R, E, A1, A2, A3, A4, A5, A6, A7, A8] Eq for Func8Rest[R, E, A1, A2, A3, A4, A5, A6, A7, A8]
-impl[R, E, A1, A2, A3, A4, A5, A6, A7, A8] Show for Func8Rest[R, E, A1, A2, A3, A4, A5, A6, A7, A8]
-impl[R, E, A1, A2, A3, A4, A5, A6, A7, A8] ToJson for Func8Rest[R, E, A1, A2, A3, A4, A5, A6, A7, A8]
+pub fn[R, E, A1, A2, A3, A4, A5, A6, A7, A8] Func8Rest::from((A1, A2, A3, A4, A5, A6, A7, A8, Array[E]) -> R) -> Self[R, E, A1, A2, A3, A4, A5, A6, A7, A8]
+pub fn[R, E, A1, A2, A3, A4, A5, A6, A7, A8] Func8Rest::into(Self[R, E, A1, A2, A3, A4, A5, A6, A7, A8]) -> (A1, A2, A3, A4, A5, A6, A7, A8, Array[E]) -> R
+pub impl[R, E, A1, A2, A3, A4, A5, A6, A7, A8] Eq for Func8Rest[R, E, A1, A2, A3, A4, A5, A6, A7, A8]
+pub impl[R, E, A1, A2, A3, A4, A5, A6, A7, A8] Show for Func8Rest[R, E, A1, A2, A3, A4, A5, A6, A7, A8]
+pub impl[R, E, A1, A2, A3, A4, A5, A6, A7, A8] ToJson for Func8Rest[R, E, A1, A2, A3, A4, A5, A6, A7, A8]
 
 #external
 pub(all) type Func9Rest[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9]
-fn[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9] Func9Rest::from((A1, A2, A3, A4, A5, A6, A7, A8, A9, Array[E]) -> R) -> Self[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9]
-fn[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9] Func9Rest::into(Self[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9]) -> (A1, A2, A3, A4, A5, A6, A7, A8, A9, Array[E]) -> R
-impl[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9] Eq for Func9Rest[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9]
-impl[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9] Show for Func9Rest[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9]
-impl[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9] ToJson for Func9Rest[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9]
+pub fn[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9] Func9Rest::from((A1, A2, A3, A4, A5, A6, A7, A8, A9, Array[E]) -> R) -> Self[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9]
+pub fn[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9] Func9Rest::into(Self[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9]) -> (A1, A2, A3, A4, A5, A6, A7, A8, A9, Array[E]) -> R
+pub impl[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9] Eq for Func9Rest[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9]
+pub impl[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9] Show for Func9Rest[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9]
+pub impl[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9] ToJson for Func9Rest[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9]
 
 #external
 pub(all) type Union10[_, _, _, _, _, _, _, _, _, _]
-impl[A, B, C, D, E, F, G, H, I, J] Eq for Union10[A, B, C, D, E, F, G, H, I, J]
-impl[A, B, C, D, E, F, G, H, I, J] Show for Union10[A, B, C, D, E, F, G, H, I, J]
-impl[A, B, C, D, E, F, G, H, I, J] ToJson for Union10[A, B, C, D, E, F, G, H, I, J]
+pub impl[A, B, C, D, E, F, G, H, I, J] Eq for Union10[A, B, C, D, E, F, G, H, I, J]
+pub impl[A, B, C, D, E, F, G, H, I, J] Show for Union10[A, B, C, D, E, F, G, H, I, J]
+pub impl[A, B, C, D, E, F, G, H, I, J] ToJson for Union10[A, B, C, D, E, F, G, H, I, J]
 
 #external
 pub(all) type Union11[_, _, _, _, _, _, _, _, _, _, _]
-impl[A, B, C, D, E, F, G, H, I, J, K] Eq for Union11[A, B, C, D, E, F, G, H, I, J, K]
-impl[A, B, C, D, E, F, G, H, I, J, K] Show for Union11[A, B, C, D, E, F, G, H, I, J, K]
-impl[A, B, C, D, E, F, G, H, I, J, K] ToJson for Union11[A, B, C, D, E, F, G, H, I, J, K]
+pub impl[A, B, C, D, E, F, G, H, I, J, K] Eq for Union11[A, B, C, D, E, F, G, H, I, J, K]
+pub impl[A, B, C, D, E, F, G, H, I, J, K] Show for Union11[A, B, C, D, E, F, G, H, I, J, K]
+pub impl[A, B, C, D, E, F, G, H, I, J, K] ToJson for Union11[A, B, C, D, E, F, G, H, I, J, K]
 
 #external
 pub(all) type Union12[_, _, _, _, _, _, _, _, _, _, _, _]
-impl[A, B, C, D, E, F, G, H, I, J, K, L] Eq for Union12[A, B, C, D, E, F, G, H, I, J, K, L]
-impl[A, B, C, D, E, F, G, H, I, J, K, L] Show for Union12[A, B, C, D, E, F, G, H, I, J, K, L]
-impl[A, B, C, D, E, F, G, H, I, J, K, L] ToJson for Union12[A, B, C, D, E, F, G, H, I, J, K, L]
+pub impl[A, B, C, D, E, F, G, H, I, J, K, L] Eq for Union12[A, B, C, D, E, F, G, H, I, J, K, L]
+pub impl[A, B, C, D, E, F, G, H, I, J, K, L] Show for Union12[A, B, C, D, E, F, G, H, I, J, K, L]
+pub impl[A, B, C, D, E, F, G, H, I, J, K, L] ToJson for Union12[A, B, C, D, E, F, G, H, I, J, K, L]
 
 #external
 pub(all) type Union13[_, _, _, _, _, _, _, _, _, _, _, _, _]
-impl[A, B, C, D, E, F, G, H, I, J, K, L, M] Eq for Union13[A, B, C, D, E, F, G, H, I, J, K, L, M]
-impl[A, B, C, D, E, F, G, H, I, J, K, L, M] Show for Union13[A, B, C, D, E, F, G, H, I, J, K, L, M]
-impl[A, B, C, D, E, F, G, H, I, J, K, L, M] ToJson for Union13[A, B, C, D, E, F, G, H, I, J, K, L, M]
+pub impl[A, B, C, D, E, F, G, H, I, J, K, L, M] Eq for Union13[A, B, C, D, E, F, G, H, I, J, K, L, M]
+pub impl[A, B, C, D, E, F, G, H, I, J, K, L, M] Show for Union13[A, B, C, D, E, F, G, H, I, J, K, L, M]
+pub impl[A, B, C, D, E, F, G, H, I, J, K, L, M] ToJson for Union13[A, B, C, D, E, F, G, H, I, J, K, L, M]
 
 #external
 pub(all) type Union14[_, _, _, _, _, _, _, _, _, _, _, _, _, _]
-impl[A, B, C, D, E, F, G, H, I, J, K, L, M, N] Eq for Union14[A, B, C, D, E, F, G, H, I, J, K, L, M, N]
-impl[A, B, C, D, E, F, G, H, I, J, K, L, M, N] Show for Union14[A, B, C, D, E, F, G, H, I, J, K, L, M, N]
-impl[A, B, C, D, E, F, G, H, I, J, K, L, M, N] ToJson for Union14[A, B, C, D, E, F, G, H, I, J, K, L, M, N]
+pub impl[A, B, C, D, E, F, G, H, I, J, K, L, M, N] Eq for Union14[A, B, C, D, E, F, G, H, I, J, K, L, M, N]
+pub impl[A, B, C, D, E, F, G, H, I, J, K, L, M, N] Show for Union14[A, B, C, D, E, F, G, H, I, J, K, L, M, N]
+pub impl[A, B, C, D, E, F, G, H, I, J, K, L, M, N] ToJson for Union14[A, B, C, D, E, F, G, H, I, J, K, L, M, N]
 
 #external
 pub(all) type Union15[_, _, _, _, _, _, _, _, _, _, _, _, _, _, _]
-impl[A, B, C, D, E, F, G, H, I, J, K, L, M, N, O] Eq for Union15[A, B, C, D, E, F, G, H, I, J, K, L, M, N, O]
-impl[A, B, C, D, E, F, G, H, I, J, K, L, M, N, O] Show for Union15[A, B, C, D, E, F, G, H, I, J, K, L, M, N, O]
-impl[A, B, C, D, E, F, G, H, I, J, K, L, M, N, O] ToJson for Union15[A, B, C, D, E, F, G, H, I, J, K, L, M, N, O]
+pub impl[A, B, C, D, E, F, G, H, I, J, K, L, M, N, O] Eq for Union15[A, B, C, D, E, F, G, H, I, J, K, L, M, N, O]
+pub impl[A, B, C, D, E, F, G, H, I, J, K, L, M, N, O] Show for Union15[A, B, C, D, E, F, G, H, I, J, K, L, M, N, O]
+pub impl[A, B, C, D, E, F, G, H, I, J, K, L, M, N, O] ToJson for Union15[A, B, C, D, E, F, G, H, I, J, K, L, M, N, O]
 
 #external
 pub(all) type Union16[_, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _]
-impl[A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P] Eq for Union16[A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P]
-impl[A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P] Show for Union16[A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P]
-impl[A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P] ToJson for Union16[A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P]
+pub impl[A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P] Eq for Union16[A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P]
+pub impl[A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P] Show for Union16[A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P]
+pub impl[A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P] ToJson for Union16[A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P]
 
 #external
 pub(all) type Union2[_, _]
-impl[A, B] Eq for Union2[A, B]
-impl[A, B] Show for Union2[A, B]
-impl[A, B] ToJson for Union2[A, B]
+pub impl[A, B] Eq for Union2[A, B]
+pub impl[A, B] Show for Union2[A, B]
+pub impl[A, B] ToJson for Union2[A, B]
 
 #external
 pub(all) type Union3[_, _, _]
-impl[A, B, C] Eq for Union3[A, B, C]
-impl[A, B, C] Show for Union3[A, B, C]
-impl[A, B, C] ToJson for Union3[A, B, C]
+pub impl[A, B, C] Eq for Union3[A, B, C]
+pub impl[A, B, C] Show for Union3[A, B, C]
+pub impl[A, B, C] ToJson for Union3[A, B, C]
 
 #external
 pub(all) type Union4[_, _, _, _]
-impl[A, B, C, D] Eq for Union4[A, B, C, D]
-impl[A, B, C, D] Show for Union4[A, B, C, D]
-impl[A, B, C, D] ToJson for Union4[A, B, C, D]
+pub impl[A, B, C, D] Eq for Union4[A, B, C, D]
+pub impl[A, B, C, D] Show for Union4[A, B, C, D]
+pub impl[A, B, C, D] ToJson for Union4[A, B, C, D]
 
 #external
 pub(all) type Union5[_, _, _, _, _]
-impl[A, B, C, D, E] Eq for Union5[A, B, C, D, E]
-impl[A, B, C, D, E] Show for Union5[A, B, C, D, E]
-impl[A, B, C, D, E] ToJson for Union5[A, B, C, D, E]
+pub impl[A, B, C, D, E] Eq for Union5[A, B, C, D, E]
+pub impl[A, B, C, D, E] Show for Union5[A, B, C, D, E]
+pub impl[A, B, C, D, E] ToJson for Union5[A, B, C, D, E]
 
 #external
 pub(all) type Union6[_, _, _, _, _, _]
-impl[A, B, C, D, E, F] Eq for Union6[A, B, C, D, E, F]
-impl[A, B, C, D, E, F] Show for Union6[A, B, C, D, E, F]
-impl[A, B, C, D, E, F] ToJson for Union6[A, B, C, D, E, F]
+pub impl[A, B, C, D, E, F] Eq for Union6[A, B, C, D, E, F]
+pub impl[A, B, C, D, E, F] Show for Union6[A, B, C, D, E, F]
+pub impl[A, B, C, D, E, F] ToJson for Union6[A, B, C, D, E, F]
 
 #external
 pub(all) type Union7[_, _, _, _, _, _, _]
-impl[A, B, C, D, E, F, G] Eq for Union7[A, B, C, D, E, F, G]
-impl[A, B, C, D, E, F, G] Show for Union7[A, B, C, D, E, F, G]
-impl[A, B, C, D, E, F, G] ToJson for Union7[A, B, C, D, E, F, G]
+pub impl[A, B, C, D, E, F, G] Eq for Union7[A, B, C, D, E, F, G]
+pub impl[A, B, C, D, E, F, G] Show for Union7[A, B, C, D, E, F, G]
+pub impl[A, B, C, D, E, F, G] ToJson for Union7[A, B, C, D, E, F, G]
 
 #external
 pub(all) type Union8[_, _, _, _, _, _, _, _]
-impl[A, B, C, D, E, F, G, H] Eq for Union8[A, B, C, D, E, F, G, H]
-impl[A, B, C, D, E, F, G, H] Show for Union8[A, B, C, D, E, F, G, H]
-impl[A, B, C, D, E, F, G, H] ToJson for Union8[A, B, C, D, E, F, G, H]
+pub impl[A, B, C, D, E, F, G, H] Eq for Union8[A, B, C, D, E, F, G, H]
+pub impl[A, B, C, D, E, F, G, H] Show for Union8[A, B, C, D, E, F, G, H]
+pub impl[A, B, C, D, E, F, G, H] ToJson for Union8[A, B, C, D, E, F, G, H]
 
 #external
 pub(all) type Union9[_, _, _, _, _, _, _, _, _]
-impl[A, B, C, D, E, F, G, H, I] Eq for Union9[A, B, C, D, E, F, G, H, I]
-impl[A, B, C, D, E, F, G, H, I] Show for Union9[A, B, C, D, E, F, G, H, I]
-impl[A, B, C, D, E, F, G, H, I] ToJson for Union9[A, B, C, D, E, F, G, H, I]
+pub impl[A, B, C, D, E, F, G, H, I] Eq for Union9[A, B, C, D, E, F, G, H, I]
+pub impl[A, B, C, D, E, F, G, H, I] Show for Union9[A, B, C, D, E, F, G, H, I]
+pub impl[A, B, C, D, E, F, G, H, I] ToJson for Union9[A, B, C, D, E, F, G, H, I]
 
 // Type aliases
 
