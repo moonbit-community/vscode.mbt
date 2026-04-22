@@ -1,0 +1,9 @@
+import {
+  "illusory0x0/vscode",
+  "illusory0x0/vscode/types",
+  "illusory0x0/vscode/interop",
+}
+
+options(
+  link: { "js": { "exports": [ "activate", "deactivate" ], "format": "cjs" } },
+)

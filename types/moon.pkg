@@ -1,0 +1,5 @@
+import {
+  "illusory0x0/vscode/interop",
+}
+
+warnings = "-A"
