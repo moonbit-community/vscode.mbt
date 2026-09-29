@@ -156,16 +156,30 @@ pub extern "js" fn SemanticTokensBuilder::new(
 ) -> SemanticTokensBuilder = "(legend) => new (require('vscode').SemanticTokensBuilder)(legend)"
 
 ///|
-pub extern "js" fn SemanticTokens::new(
-  data : Array[Int],
+pub extern "js" fn SemanticTokens::new_ffi(
+  data : FixedArray[Int],
   resultId : String?,
 ) -> SemanticTokens = "(data, resultId) => new (require('vscode').SemanticTokens)(data, resultId)"
 
+pub fn SemanticTokens::new(
+  data : Array[Int],
+  resultId : String?,
+) -> SemanticTokens {
+  SemanticTokens::new_ffi(FixedArray::from_array(data), resultId)
+}
+
 ///|
-pub extern "js" fn SemanticTokensEdits::new(
-  edits : Array[SemanticTokensEdit],
+pub extern "js" fn SemanticTokensEdits::new_ffi(
+  edits : FixedArray[SemanticTokensEdit],
   resultId : String?,
 ) -> SemanticTokensEdits = "(edits, resultId) => new (require('vscode').SemanticTokensEdits)(edits, resultId)"
+
+pub fn SemanticTokensEdits::new(
+  edits : Array[SemanticTokensEdit],
+  resultId : String?,
+) -> SemanticTokensEdits {
+  SemanticTokensEdits::new_ffi(FixedArray::from_array(edits), resultId)
+}
 
 ///|
 pub extern "js" fn SemanticTokensEdit::new(
@@ -199,9 +213,15 @@ pub extern "js" fn CompletionList::new(
 ) -> CompletionList = "(items, isIncomplete) => new (require('vscode').CompletionList)(items, isIncomplete)"
 
 ///|
-pub extern "js" fn InlineCompletionList::new(
-  items : Array[InlineCompletionItem],
+pub extern "js" fn InlineCompletionList::new_ffi(
+  items : FixedArray[InlineCompletionItem],
 ) -> InlineCompletionList = "(items) => new (require('vscode').InlineCompletionList)(items)"
+
+pub fn InlineCompletionList::new(
+  items : Array[InlineCompletionItem],
+) -> InlineCompletionList {
+  InlineCompletionList::new_ffi(FixedArray::from_array(items))
+}
 
 ///|
 pub extern "js" fn InlineCompletionItem::new(
@@ -266,16 +286,30 @@ pub extern "js" fn CallHierarchyItem::new(
 ) -> CallHierarchyItem = "(kind, name, detail, uri, range, selectionRange) => new (require('vscode').CallHierarchyItem)(kind, name, detail, uri, range, selectionRange)"
 
 ///|
-pub extern "js" fn CallHierarchyIncomingCall::new(
+pub extern "js" fn CallHierarchyIncomingCall::new_ffi(
   item : CallHierarchyItem,
-  fromRanges : Array[Range],
+  fromRanges : FixedArray[Range],
 ) -> CallHierarchyIncomingCall = "(item, fromRanges) => new (require('vscode').CallHierarchyIncomingCall)(item, fromRanges)"
 
-///|
-pub extern "js" fn CallHierarchyOutgoingCall::new(
+pub fn CallHierarchyIncomingCall::new(
   item : CallHierarchyItem,
   fromRanges : Array[Range],
+) -> CallHierarchyIncomingCall {
+  CallHierarchyIncomingCall::new_ffi(item, FixedArray::from_array(fromRanges))
+}
+
+///|
+pub extern "js" fn CallHierarchyOutgoingCall::new_ffi(
+  item : CallHierarchyItem,
+  fromRanges : FixedArray[Range],
 ) -> CallHierarchyOutgoingCall = "(item, fromRanges) => new (require('vscode').CallHierarchyOutgoingCall)(item, fromRanges)"
+
+pub fn CallHierarchyOutgoingCall::new(
+  item : CallHierarchyItem,
+  fromRanges : Array[Range],
+) -> CallHierarchyOutgoingCall {
+  CallHierarchyOutgoingCall::new_ffi(item, FixedArray::from_array(fromRanges))
+}
 
 ///|
 pub extern "js" fn TypeHierarchyItem::new(
@@ -347,11 +381,19 @@ pub extern "js" fn ProcessExecution::new(
 ) -> Any = "(process, options) => new (require('vscode').ProcessExecution)(process, options)"
 
 ///|
-pub extern "js" fn ProcessExecution::new_with_args(
+pub extern "js" fn ProcessExecution::new_with_args_ffi(
+  process : String,
+  args : FixedArray[String],
+  options : Any?,
+) -> Any = "(process, args, options) => new (require('vscode').ProcessExecution)(process, args, options)"
+
+pub fn ProcessExecution::new_with_args(
   process : String,
   args : Array[String],
   options : Any?,
-) -> Any = "(process, args, options) => new (require('vscode').ProcessExecution)(process, args, options)"
+) -> Any {
+  ProcessExecution::new_with_args_ffi(process, FixedArray::from_array(args), options)
+}
 
 ///|
 pub extern "js" fn ShellExecution::new(

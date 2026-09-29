@@ -37,11 +37,19 @@ pub extern "js" fn ChatResponseStream::button(
 ) -> Unit = "(self, command) => self.button(command)"
 
 ///|
-pub extern "js" fn ChatResponseStream::filetree(
+pub extern "js" fn ChatResponseStream::filetree_ffi(
+  self : ChatResponseStream,
+  value : FixedArray[ChatResponseFileTree],
+  baseUri : Uri,
+) -> Unit = "(self, value, baseUri) => self.filetree(value, baseUri)"
+
+pub fn ChatResponseStream::filetree(
   self : ChatResponseStream,
   value : Array[ChatResponseFileTree],
   baseUri : Uri,
-) -> Unit = "(self, value, baseUri) => self.filetree(value, baseUri)"
+) -> Unit {
+  ChatResponseStream::filetree_ffi(self, FixedArray::from_array(value), baseUri)
+}
 
 ///|
 pub extern "js" fn ChatResponseStream::progress(
@@ -288,10 +296,17 @@ pub extern "js" fn DiagnosticCollection::dispose(
 pub extern "js" fn Disposable::dispose(self : Disposable) -> Any = "(self) => self.dispose()"
 
 ///|
-pub extern "js" fn DocumentDropOrPasteEditKind::append(
+pub extern "js" fn DocumentDropOrPasteEditKind::append_ffi(
+  self : DocumentDropOrPasteEditKind,
+  parts : FixedArray[String],
+) -> DocumentDropOrPasteEditKind = "(self, parts) => self.append(...parts)"
+
+pub fn DocumentDropOrPasteEditKind::append(
   self : DocumentDropOrPasteEditKind,
   parts : Array[String],
-) -> DocumentDropOrPasteEditKind = "(self, parts) => self.append(...parts)"
+) -> DocumentDropOrPasteEditKind {
+  DocumentDropOrPasteEditKind::append_ffi(self, FixedArray::from_array(parts))
+}
 
 ///|
 pub extern "js" fn DocumentDropOrPasteEditKind::intersects(
@@ -442,39 +457,79 @@ pub extern "js" fn LanguageStatusItem::dispose(
 ) -> Unit = "(self) => self.dispose()"
 
 ///|
-pub extern "js" fn LogOutputChannel::trace(
+pub extern "js" fn LogOutputChannel::trace_ffi(
   self : LogOutputChannel,
   message : String,
-  args : Array[String],
+  args : FixedArray[String],
 ) -> Unit = "(self, message, ...args) => self.trace(message, ...args)"
 
-///|
-pub extern "js" fn LogOutputChannel::debug(
+pub fn LogOutputChannel::trace(
   self : LogOutputChannel,
   message : String,
   args : Array[String],
+) -> Unit {
+  LogOutputChannel::trace_ffi(self, message, FixedArray::from_array(args))
+}
+
+///|
+pub extern "js" fn LogOutputChannel::debug_ffi(
+  self : LogOutputChannel,
+  message : String,
+  args : FixedArray[String],
 ) -> Unit = "(self, message, ...args) => self.debug(message, ...args)"
 
-///|
-pub extern "js" fn LogOutputChannel::info(
+pub fn LogOutputChannel::debug(
   self : LogOutputChannel,
   message : String,
   args : Array[String],
+) -> Unit {
+  LogOutputChannel::debug_ffi(self, message, FixedArray::from_array(args))
+}
+
+///|
+pub extern "js" fn LogOutputChannel::info_ffi(
+  self : LogOutputChannel,
+  message : String,
+  args : FixedArray[String],
 ) -> Unit = "(self, message, ...args) => self.info(message, ...args)"
 
-///|
-pub extern "js" fn LogOutputChannel::warn(
+pub fn LogOutputChannel::info(
   self : LogOutputChannel,
   message : String,
   args : Array[String],
-) -> Unit = "(self, message, ...args) => self.warn(message, ...args)"
+) -> Unit {
+  LogOutputChannel::info_ffi(self, message, FixedArray::from_array(args))
+}
 
 ///|
-pub extern "js" fn LogOutputChannel::error(
+pub extern "js" fn LogOutputChannel::warn_ffi(
+  self : LogOutputChannel,
+  message : String,
+  args : FixedArray[String],
+) -> Unit = "(self, message, ...args) => self.warn(message, ...args)"
+
+pub fn LogOutputChannel::warn(
+  self : LogOutputChannel,
+  message : String,
+  args : Array[String],
+) -> Unit {
+  LogOutputChannel::warn_ffi(self, message, FixedArray::from_array(args))
+}
+
+///|
+pub extern "js" fn LogOutputChannel::error_ffi(
+  self : LogOutputChannel,
+  error : Any,
+  args : FixedArray[String],
+) -> Unit = "(self, error, ...args) => self.error(error, ...args)"
+
+pub fn LogOutputChannel::error(
   self : LogOutputChannel,
   error : Any,
   args : Array[String],
-) -> Unit = "(self, error, ...args) => self.error(error, ...args)"
+) -> Unit {
+  LogOutputChannel::error_ffi(self, error, FixedArray::from_array(args))
+}
 
 ///|
 pub extern "js" fn MarkdownString::appendText(
@@ -502,7 +557,11 @@ pub extern "js" fn McpServerDefinitionProvider::provideMcpServerDefinitions(
 ) -> Any = "(self, token) => self.provideMcpServerDefinitions(token)"
 
 ///|
-pub extern "js" fn Memento::keys(self : Memento) -> Array[String] = "(self) => self.keys()"
+pub extern "js" fn Memento::keys_ffi(self : Memento) -> FixedArray[String] = "(self) => self.keys()"
+
+pub fn Memento::keys(self : Memento) -> Array[String] {
+  Array::from_fixed_array(Memento::keys_ffi(self))
+}
 
 ///|
 pub extern "js" fn Memento::update(
@@ -548,10 +607,17 @@ pub extern "js" fn NotebookDocument::cellAt(
 ) -> NotebookCell = "(self, index) => self.cellAt(index)"
 
 ///|
-pub extern "js" fn NotebookDocument::getCells_with_options(
+pub extern "js" fn NotebookDocument::getCells_with_options_ffi(
   self : NotebookDocument,
   range : NotebookRange?,
-) -> Array[NotebookCell] = "(self, range) => self.getCells(range)"
+) -> FixedArray[NotebookCell] = "(self, range) => self.getCells(range)"
+
+pub fn NotebookDocument::getCells_with_options(
+  self : NotebookDocument,
+  range : NotebookRange?,
+) -> Array[NotebookCell] {
+  Array::from_fixed_array(NotebookDocument::getCells_with_options_ffi(self, range))
+}
 
 ///|
 pub extern "js" fn NotebookDocument::save(self : NotebookDocument) -> Any = "(self) => self.save()"
@@ -852,11 +918,19 @@ pub extern "js" fn TerminalShellIntegration::executeCommand(
 ) -> TerminalShellExecution = "(self, commandLine) => self.executeCommand(commandLine)"
 
 ///|
-pub extern "js" fn TerminalShellIntegration::executeCommand_with_args(
+pub extern "js" fn TerminalShellIntegration::executeCommand_with_args_ffi(
+  self : TerminalShellIntegration,
+  executable : String,
+  args : FixedArray[String],
+) -> TerminalShellExecution = "(self, executable, args) => self.executeCommand(executable, args)"
+
+pub fn TerminalShellIntegration::executeCommand_with_args(
   self : TerminalShellIntegration,
   executable : String,
   args : Array[String],
-) -> TerminalShellExecution = "(self, executable, args) => self.executeCommand(executable, args)"
+) -> TerminalShellExecution {
+  TerminalShellIntegration::executeCommand_with_args_ffi(self, executable, FixedArray::from_array(args))
+}
 
 ///|
 pub extern "js" fn TestController::createTestItem_with_options(
@@ -1106,13 +1180,24 @@ pub extern "js" fn WorkspaceEdit::set_with_metadata(
 ) -> Unit = "(self, uri, edits) => self.set(uri, edits)"
 
 ///|
-pub extern "js" fn WorkspaceEdit::get(
+pub extern "js" fn WorkspaceEdit::get_ffi(
   self : WorkspaceEdit,
   uri : Uri,
-) -> Array[TextEdit] = "(self, uri) => self.get(uri)"
+) -> FixedArray[TextEdit] = "(self, uri) => self.get(uri)"
+
+pub fn WorkspaceEdit::get(
+  self : WorkspaceEdit,
+  uri : Uri,
+) -> Array[TextEdit] {
+  Array::from_fixed_array(WorkspaceEdit::get_ffi(self, uri))
+}
 
 ///|
-pub extern "js" fn WorkspaceEdit::entries(self : WorkspaceEdit) -> Array[Any] = "(self) => self.entries()"
+pub extern "js" fn WorkspaceEdit::entries_ffi(self : WorkspaceEdit) -> FixedArray[Any] = "(self) => self.entries()"
+
+pub fn WorkspaceEdit::entries(self : WorkspaceEdit) -> Array[Any] {
+  Array::from_fixed_array(WorkspaceEdit::entries_ffi(self))
+}
 
 ///|
 pub extern "js" fn TextDocument::getWordRangeAtPosition(
@@ -1259,9 +1344,15 @@ pub extern "js" fn EnvironmentVariableCollection::prepend(
 ) -> Unit = "(self, variable, value) => self.prepend(variable, value)"
 
 ///|
-pub extern "js" fn EnvironmentVariableCollection::getKeys(
+pub extern "js" fn EnvironmentVariableCollection::getKeys_ffi(
   self : EnvironmentVariableCollection,
-) -> Array[String] = "(self) => Array.from(self.keys())"
+) -> FixedArray[String] = "(self) => Array.from(self.keys())"
+
+pub fn EnvironmentVariableCollection::getKeys(
+  self : EnvironmentVariableCollection,
+) -> Array[String] {
+  Array::from_fixed_array(EnvironmentVariableCollection::getKeys_ffi(self))
+}
 
 ///|
 pub extern "js" fn TextEditor::edit(
@@ -2391,10 +2482,17 @@ pub extern "js" fn AuthenticationProvider::getSessions(
 ) -> Any = "(self, scopes) => self.getSessions(scopes)"
 
 ///|
-pub extern "js" fn AuthenticationProvider::createSession(
+pub extern "js" fn AuthenticationProvider::createSession_ffi(
+  self : AuthenticationProvider,
+  scopes : FixedArray[String],
+) -> Any = "(self, scopes) => self.createSession(scopes)"
+
+pub fn AuthenticationProvider::createSession(
   self : AuthenticationProvider,
   scopes : Array[String],
-) -> Any = "(self, scopes) => self.createSession(scopes)"
+) -> Any {
+  AuthenticationProvider::createSession_ffi(self, FixedArray::from_array(scopes))
+}
 
 ///|
 pub extern "js" fn CustomTextEditorProvider::resolveCustomTextEditor(

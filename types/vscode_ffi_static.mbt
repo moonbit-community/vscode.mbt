@@ -5,10 +5,17 @@ pub extern "js" fn Uri::file(path : String) -> Uri = "(path) => require('vscode'
 pub extern "js" fn Uri::parse(value : String, strict : Bool?) -> Uri = "(value, strict) => require('vscode').Uri.parse(value, strict)"
 
 ///|
-pub extern "js" fn Uri::joinPath(
+pub extern "js" fn Uri::joinPath_ffi(
+  uri : Uri,
+  pathSegments : FixedArray[String],
+) -> Uri = "(uri, ...pathSegments) => require('vscode').Uri.joinPath(uri, ...pathSegments)"
+
+pub fn Uri::joinPath(
   uri : Uri,
   pathSegments : Array[String],
-) -> Uri = "(uri, ...pathSegments) => require('vscode').Uri.joinPath(uri, ...pathSegments)"
+) -> Uri {
+  Uri::joinPath_ffi(uri, FixedArray::from_array(pathSegments))
+}
 
 ///|
 pub extern "js" fn Uri::from(components : UriComponents) -> Uri = "(components) => require('vscode').Uri.from(components)"
