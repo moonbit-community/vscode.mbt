@@ -11,6 +11,8 @@ jobs:
   check:
     strategy:    
       fail-fast: false
+      matrix:
+        channel: [latest, nightly]
     runs-on: ubuntu-latest
     continue-on-error: false
     steps:
@@ -20,7 +22,7 @@ jobs:
 
       - name: install
         run: |
-          curl -fsSL https://cli.moonbitlang.com/install/unix.sh | bash
+          curl -fsSL https://cli.moonbitlang.com/install/unix.sh | bash -s -- '${{ matrix.channel }}'
           echo "$HOME/.moon/bin" >> $GITHUB_PATH
 
       - name: moon version
@@ -45,3 +47,12 @@ jobs:
       - name: moon test
         run: |
           moon test
+      - name: Check and build extension examples
+        run: |
+          for example in examples/*; do
+            if [ -f "$example/moon.mod" ]; then
+              moon -C "$example" check --deny-warn
+              moon -C "$example" build
+              moon -C "$example" fmt --check
+            fi
+          done

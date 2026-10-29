@@ -1,35 +1,35 @@
 ///|
-pub impl[R, E] Show for Func0Rest[R, E] with output(_self, _logger) {
+pub impl[R, E] Show for Func0Rest[R, E] with fn output(_self, _logger) {
 
 }
 
 ///|
-pub impl[R, E] Eq for Func0Rest[R, E] with equal(lhs, rhs) {
+pub impl[R, E] Eq for Func0Rest[R, E] with fn equal(lhs, rhs) {
   physical_equal(lhs, rhs)
 }
 
 ///|
-pub impl[R, E] ToJson for Func0Rest[R, E] with to_json(_self) {
+pub impl[R, E] ToJson for Func0Rest[R, E] with fn to_json(_self) {
   Json::null()
 }
 
 ///|
-pub impl[R, E, A1] Show for Func1Rest[R, E, A1] with output(_self, _logger) {
+pub impl[R, E, A1] Show for Func1Rest[R, E, A1] with fn output(_self, _logger) {
 
 }
 
 ///|
-pub impl[R, E, A1] Eq for Func1Rest[R, E, A1] with equal(lhs, rhs) {
+pub impl[R, E, A1] Eq for Func1Rest[R, E, A1] with fn equal(lhs, rhs) {
   physical_equal(lhs, rhs)
 }
 
 ///|
-pub impl[R, E, A1] ToJson for Func1Rest[R, E, A1] with to_json(_self) {
+pub impl[R, E, A1] ToJson for Func1Rest[R, E, A1] with fn to_json(_self) {
   Json::null()
 }
 
 ///|
-pub impl[R, E, A1, A2] Show for Func2Rest[R, E, A1, A2] with output(
+pub impl[R, E, A1, A2] Show for Func2Rest[R, E, A1, A2] with fn output(
   _self,
   _logger,
 ) {
@@ -37,17 +37,17 @@ pub impl[R, E, A1, A2] Show for Func2Rest[R, E, A1, A2] with output(
 }
 
 ///|
-pub impl[R, E, A1, A2] Eq for Func2Rest[R, E, A1, A2] with equal(lhs, rhs) {
+pub impl[R, E, A1, A2] Eq for Func2Rest[R, E, A1, A2] with fn equal(lhs, rhs) {
   physical_equal(lhs, rhs)
 }
 
 ///|
-pub impl[R, E, A1, A2] ToJson for Func2Rest[R, E, A1, A2] with to_json(_self) {
+pub impl[R, E, A1, A2] ToJson for Func2Rest[R, E, A1, A2] with fn to_json(_self) {
   Json::null()
 }
 
 ///|
-pub impl[R, E, A1, A2, A3] Show for Func3Rest[R, E, A1, A2, A3] with output(
+pub impl[R, E, A1, A2, A3] Show for Func3Rest[R, E, A1, A2, A3] with fn output(
   _self,
   _logger,
 ) {
@@ -55,7 +55,7 @@ pub impl[R, E, A1, A2, A3] Show for Func3Rest[R, E, A1, A2, A3] with output(
 }
 
 ///|
-pub impl[R, E, A1, A2, A3] Eq for Func3Rest[R, E, A1, A2, A3] with equal(
+pub impl[R, E, A1, A2, A3] Eq for Func3Rest[R, E, A1, A2, A3] with fn equal(
   lhs,
   rhs,
 ) {
@@ -63,14 +63,14 @@ pub impl[R, E, A1, A2, A3] Eq for Func3Rest[R, E, A1, A2, A3] with equal(
 }
 
 ///|
-pub impl[R, E, A1, A2, A3] ToJson for Func3Rest[R, E, A1, A2, A3] with to_json(
+pub impl[R, E, A1, A2, A3] ToJson for Func3Rest[R, E, A1, A2, A3] with fn to_json(
   _self,
 ) {
   Json::null()
 }
 
 ///|
-pub impl[R, E, A1, A2, A3, A4] Show for Func4Rest[R, E, A1, A2, A3, A4] with output(
+pub impl[R, E, A1, A2, A3, A4] Show for Func4Rest[R, E, A1, A2, A3, A4] with fn output(
   _self,
   _logger,
 ) {
@@ -78,7 +78,7 @@ pub impl[R, E, A1, A2, A3, A4] Show for Func4Rest[R, E, A1, A2, A3, A4] with out
 }
 
 ///|
-pub impl[R, E, A1, A2, A3, A4] Eq for Func4Rest[R, E, A1, A2, A3, A4] with equal(
+pub impl[R, E, A1, A2, A3, A4] Eq for Func4Rest[R, E, A1, A2, A3, A4] with fn equal(
   lhs,
   rhs,
 ) {
@@ -86,14 +86,14 @@ pub impl[R, E, A1, A2, A3, A4] Eq for Func4Rest[R, E, A1, A2, A3, A4] with equal
 }
 
 ///|
-pub impl[R, E, A1, A2, A3, A4] ToJson for Func4Rest[R, E, A1, A2, A3, A4] with to_json(
+pub impl[R, E, A1, A2, A3, A4] ToJson for Func4Rest[R, E, A1, A2, A3, A4] with fn to_json(
   _self,
 ) {
   Json::null()
 }
 
 ///|
-pub impl[R, E, A1, A2, A3, A4, A5] Show for Func5Rest[R, E, A1, A2, A3, A4, A5] with output(
+pub impl[R, E, A1, A2, A3, A4, A5] Show for Func5Rest[R, E, A1, A2, A3, A4, A5] with fn output(
   _self,
   _logger,
 ) {
@@ -101,7 +101,7 @@ pub impl[R, E, A1, A2, A3, A4, A5] Show for Func5Rest[R, E, A1, A2, A3, A4, A5] 
 }
 
 ///|
-pub impl[R, E, A1, A2, A3, A4, A5] Eq for Func5Rest[R, E, A1, A2, A3, A4, A5] with equal(
+pub impl[R, E, A1, A2, A3, A4, A5] Eq for Func5Rest[R, E, A1, A2, A3, A4, A5] with fn equal(
   lhs,
   rhs,
 ) {
@@ -117,7 +117,7 @@ pub impl[R, E, A1, A2, A3, A4, A5] ToJson for Func5Rest[
   A3,
   A4,
   A5,
-] with to_json(_self) {
+] with fn to_json(_self) {
   Json::null()
 }
 
@@ -131,7 +131,7 @@ pub impl[R, E, A1, A2, A3, A4, A5, A6] Show for Func6Rest[
   A4,
   A5,
   A6,
-] with output(_self, _logger) {
+] with fn output(_self, _logger) {
 
 }
 
@@ -145,7 +145,7 @@ pub impl[R, E, A1, A2, A3, A4, A5, A6] Eq for Func6Rest[
   A4,
   A5,
   A6,
-] with equal(lhs, rhs) {
+] with fn equal(lhs, rhs) {
   physical_equal(lhs, rhs)
 }
 
@@ -159,7 +159,7 @@ pub impl[R, E, A1, A2, A3, A4, A5, A6] ToJson for Func6Rest[
   A4,
   A5,
   A6,
-] with to_json(_self) {
+] with fn to_json(_self) {
   Json::null()
 }
 
@@ -174,7 +174,7 @@ pub impl[R, E, A1, A2, A3, A4, A5, A6, A7] Show for Func7Rest[
   A5,
   A6,
   A7,
-] with output(_self, _logger) {
+] with fn output(_self, _logger) {
 
 }
 
@@ -189,7 +189,7 @@ pub impl[R, E, A1, A2, A3, A4, A5, A6, A7] Eq for Func7Rest[
   A5,
   A6,
   A7,
-] with equal(lhs, rhs) {
+] with fn equal(lhs, rhs) {
   physical_equal(lhs, rhs)
 }
 
@@ -204,7 +204,7 @@ pub impl[R, E, A1, A2, A3, A4, A5, A6, A7] ToJson for Func7Rest[
   A5,
   A6,
   A7,
-] with to_json(_self) {
+] with fn to_json(_self) {
   Json::null()
 }
 
@@ -220,7 +220,7 @@ pub impl[R, E, A1, A2, A3, A4, A5, A6, A7, A8] Show for Func8Rest[
   A6,
   A7,
   A8,
-] with output(_self, _logger) {
+] with fn output(_self, _logger) {
 
 }
 
@@ -236,7 +236,7 @@ pub impl[R, E, A1, A2, A3, A4, A5, A6, A7, A8] Eq for Func8Rest[
   A6,
   A7,
   A8,
-] with equal(lhs, rhs) {
+] with fn equal(lhs, rhs) {
   physical_equal(lhs, rhs)
 }
 
@@ -252,7 +252,7 @@ pub impl[R, E, A1, A2, A3, A4, A5, A6, A7, A8] ToJson for Func8Rest[
   A6,
   A7,
   A8,
-] with to_json(_self) {
+] with fn to_json(_self) {
   Json::null()
 }
 
@@ -269,7 +269,7 @@ pub impl[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9] Show for Func9Rest[
   A7,
   A8,
   A9,
-] with output(_self, _logger) {
+] with fn output(_self, _logger) {
 
 }
 
@@ -286,7 +286,7 @@ pub impl[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9] Eq for Func9Rest[
   A7,
   A8,
   A9,
-] with equal(lhs, rhs) {
+] with fn equal(lhs, rhs) {
   physical_equal(lhs, rhs)
 }
 
@@ -303,7 +303,7 @@ pub impl[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9] ToJson for Func9Rest[
   A7,
   A8,
   A9,
-] with to_json(_self) {
+] with fn to_json(_self) {
   Json::null()
 }
 
@@ -321,7 +321,7 @@ pub impl[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10] Show for Func10Rest[
   A8,
   A9,
   A10,
-] with output(_self, _logger) {
+] with fn output(_self, _logger) {
 
 }
 
@@ -339,7 +339,7 @@ pub impl[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10] Eq for Func10Rest[
   A8,
   A9,
   A10,
-] with equal(lhs, rhs) {
+] with fn equal(lhs, rhs) {
   physical_equal(lhs, rhs)
 }
 
@@ -357,7 +357,7 @@ pub impl[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10] ToJson for Func10Rest[
   A8,
   A9,
   A10,
-] with to_json(_self) {
+] with fn to_json(_self) {
   Json::null()
 }
 
@@ -376,7 +376,7 @@ pub impl[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11] Show for Func11Rest
   A9,
   A10,
   A11,
-] with output(_self, _logger) {
+] with fn output(_self, _logger) {
 
 }
 
@@ -395,7 +395,7 @@ pub impl[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11] Eq for Func11Rest[
   A9,
   A10,
   A11,
-] with equal(lhs, rhs) {
+] with fn equal(lhs, rhs) {
   physical_equal(lhs, rhs)
 }
 
@@ -414,7 +414,7 @@ pub impl[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11] ToJson for Func11Re
   A9,
   A10,
   A11,
-] with to_json(_self) {
+] with fn to_json(_self) {
   Json::null()
 }
 
@@ -434,7 +434,7 @@ pub impl[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12] Show for Func1
   A10,
   A11,
   A12,
-] with output(_self, _logger) {
+] with fn output(_self, _logger) {
 
 }
 
@@ -454,7 +454,7 @@ pub impl[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12] Eq for Func12R
   A10,
   A11,
   A12,
-] with equal(lhs, rhs) {
+] with fn equal(lhs, rhs) {
   physical_equal(lhs, rhs)
 }
 
@@ -474,7 +474,7 @@ pub impl[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12] ToJson for Fun
   A10,
   A11,
   A12,
-] with to_json(_self) {
+] with fn to_json(_self) {
   Json::null()
 }
 
@@ -495,7 +495,7 @@ pub impl[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13] Show for 
   A11,
   A12,
   A13,
-] with output(_self, _logger) {
+] with fn output(_self, _logger) {
 
 }
 
@@ -516,7 +516,7 @@ pub impl[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13] Eq for Fu
   A11,
   A12,
   A13,
-] with equal(lhs, rhs) {
+] with fn equal(lhs, rhs) {
   physical_equal(lhs, rhs)
 }
 
@@ -537,7 +537,7 @@ pub impl[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13] ToJson fo
   A11,
   A12,
   A13,
-] with to_json(_self) {
+] with fn to_json(_self) {
   Json::null()
 }
 
@@ -559,7 +559,7 @@ pub impl[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13, A14] Show
   A12,
   A13,
   A14,
-] with output(_self, _logger) {
+] with fn output(_self, _logger) {
 
 }
 
@@ -581,7 +581,7 @@ pub impl[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13, A14] Eq f
   A12,
   A13,
   A14,
-] with equal(lhs, rhs) {
+] with fn equal(lhs, rhs) {
   physical_equal(lhs, rhs)
 }
 
@@ -603,7 +603,7 @@ pub impl[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13, A14] ToJs
   A12,
   A13,
   A14,
-] with to_json(_self) {
+] with fn to_json(_self) {
   Json::null()
 }
 
@@ -626,7 +626,7 @@ pub impl[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13, A14, A15]
   A13,
   A14,
   A15,
-] with output(_self, _logger) {
+] with fn output(_self, _logger) {
 
 }
 
@@ -649,7 +649,7 @@ pub impl[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13, A14, A15]
   A13,
   A14,
   A15,
-] with equal(lhs, rhs) {
+] with fn equal(lhs, rhs) {
   physical_equal(lhs, rhs)
 }
 
@@ -672,7 +672,7 @@ pub impl[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13, A14, A15]
   A13,
   A14,
   A15,
-] with to_json(_self) {
+] with fn to_json(_self) {
   Json::null()
 }
 
@@ -715,7 +715,7 @@ pub impl[
   A14,
   A15,
   A16,
-] with output(_self, _logger) {
+] with fn output(_self, _logger) {
 
 }
 
@@ -758,7 +758,7 @@ pub impl[
   A14,
   A15,
   A16,
-] with equal(lhs, rhs) {
+] with fn equal(lhs, rhs) {
   physical_equal(lhs, rhs)
 }
 
@@ -801,6 +801,6 @@ pub impl[
   A14,
   A15,
   A16,
-] with to_json(_self) {
+] with fn to_json(_self) {
   Json::null()
 }

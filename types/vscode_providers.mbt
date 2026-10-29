@@ -448,7 +448,7 @@ pub type ProviderResult[T] = Union2[T, Thenable[T]]
 pub type Definition = Union2[Location, Array[Location]]
 
 ///|
-pub typealias LocationLink as DefinitionLink
+pub type DefinitionLink = LocationLink
 
 ///|
 pub(all) struct UriHandler {

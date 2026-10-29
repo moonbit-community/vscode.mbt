@@ -19,17 +19,17 @@
 /// Only classes with explicit public constructors have corresponding `new` methods below.
 
 ///|
-pub extern "js" fn Position::new(line : Int, character : Int) -> Position = "(line, character) => new (require('vscode').Position)(line, character)"
+pub extern "js" fn Position::new(line : Int32, character : Int32) -> Position = "(line, character) => new (require('vscode').Position)(line, character)"
 
 ///|
 pub extern "js" fn Range::new(start : Position, end : Position) -> Range = "(start, end) => new (require('vscode').Range)(start, end)"
 
 ///|
 pub extern "js" fn Range::new_with_lines(
-  startLine : Int,
-  startCharacter : Int,
-  endLine : Int,
-  endCharacter : Int,
+  startLine : Int32,
+  startCharacter : Int32,
+  endLine : Int32,
+  endCharacter : Int32,
 ) -> Range = "(startLine, startCharacter, endLine, endCharacter) => new (require('vscode').Range)(startLine, startCharacter, endLine, endCharacter)"
 
 ///|
@@ -157,7 +157,7 @@ pub extern "js" fn SemanticTokensBuilder::new(
 
 ///|
 pub extern "js" fn SemanticTokens::new(
-  data : Array[Int],
+  data : Array[Int32],
   resultId : String?,
 ) -> SemanticTokens = "(data, resultId) => new (require('vscode').SemanticTokens)(data, resultId)"
 
@@ -169,14 +169,14 @@ pub extern "js" fn SemanticTokensEdits::new(
 
 ///|
 pub extern "js" fn SemanticTokensEdit::new(
-  start : Int,
-  deleteCount : Int,
-  data : Array[Int]?,
+  start : Int32,
+  deleteCount : Int32,
+  data : Array[Int32]?,
 ) -> SemanticTokensEdit = "(start, deleteCount, data) => new (require('vscode').SemanticTokensEdit)(start, deleteCount, data)"
 
 ///|
 pub extern "js" fn ParameterInformation::new(
-  label : Union2[String, (Int, Int)],
+  label : Union2[String, (Int32, Int32)],
   documentation : Union2[String, MarkdownString]?,
 ) -> ParameterInformation = "(label, documentation) => new (require('vscode').ParameterInformation)(label, documentation)"
 
@@ -244,8 +244,8 @@ pub extern "js" fn InlayHint::new(
 
 ///|
 pub extern "js" fn FoldingRange::new(
-  start : Int,
-  end : Int,
+  start : Int32,
+  end : Int32,
   kind : FoldingRangeKind?,
 ) -> FoldingRange = "(start, end, kind) => new (require('vscode').FoldingRange)(start, end, kind)"
 
@@ -325,8 +325,8 @@ pub extern "js" fn Diagnostic::new(
 
 ///|
 pub extern "js" fn TerminalLink::new(
-  startIndex : Int,
-  length : Int,
+  startIndex : Int32,
+  length : Int32,
   tooltip : String?,
 ) -> TerminalLink = "(startIndex, length, tooltip) => new (require('vscode').TerminalLink)(startIndex, length, tooltip)"
 
@@ -395,7 +395,10 @@ pub extern "js" fn FileSystemError::new(messageOrUri : Any?) -> Any = "(messageO
 pub extern "js" fn DataTransferItem::new(value : Any) -> Any = "(value) => new (require('vscode').DataTransferItem)(value)"
 
 ///|
-pub extern "js" fn NotebookRange::new(start : Int, end : Int) -> NotebookRange = "(start, end) => new (require('vscode').NotebookRange)(start, end)"
+pub extern "js" fn NotebookRange::new(
+  start : Int32,
+  end : Int32,
+) -> NotebookRange = "(start, end) => new (require('vscode').NotebookRange)(start, end)"
 
 ///|
 pub extern "js" fn NotebookCellOutputItem::new(
@@ -430,7 +433,7 @@ pub extern "js" fn DebugAdapterExecutable::new(
 ) -> Any = "(command, args, options) => new (require('vscode').DebugAdapterExecutable)(command, args, options)"
 
 ///|
-pub extern "js" fn DebugAdapterServer::new(port : Int, host : String?) -> Any = "(port, host) => new (require('vscode').DebugAdapterServer)(port, host)"
+pub extern "js" fn DebugAdapterServer::new(port : Int32, host : String?) -> Any = "(port, host) => new (require('vscode').DebugAdapterServer)(port, host)"
 
 ///|
 pub extern "js" fn DebugAdapterNamedPipeServer::new(path : String) -> Any = "(path) => new (require('vscode').DebugAdapterNamedPipeServer)(path)"
@@ -490,8 +493,8 @@ pub extern "js" fn TestMessage::new(message : Any) -> Any = "(message) => new (r
 
 ///|
 pub extern "js" fn TestCoverageCount::new(
-  covered : Int,
-  total : Int,
+  covered : Int32,
+  total : Int32,
 ) -> TestCoverageCount = "(covered, total) => new (require('vscode').TestCoverageCount)(covered, total)"
 
 ///|
@@ -619,10 +622,10 @@ pub extern "js" fn Selection::new(
 
 ///|
 pub extern "js" fn Selection::new_with_lines(
-  anchorLine : Int,
-  anchorCharacter : Int,
-  activeLine : Int,
-  activeCharacter : Int,
+  anchorLine : Int32,
+  anchorCharacter : Int32,
+  activeLine : Int32,
+  activeCharacter : Int32,
 ) -> Selection = "(anchorLine, anchorCharacter, activeLine, activeCharacter) => new (require('vscode').Selection)(anchorLine, anchorCharacter, activeLine, activeCharacter)"
 
 ///|

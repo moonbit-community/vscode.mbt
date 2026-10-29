@@ -8,11 +8,11 @@ pub(all) struct Command {
 
 ///|
 pub(all) struct TextLine {
-  lineNumber : Int
+  lineNumber : Int32
   text : String
   range : Range
   rangeIncludingLineBreak : Range
-  firstNonWhitespaceCharacterIndex : Int
+  firstNonWhitespaceCharacterIndex : Int32
   isEmptyOrWhitespace : Bool
 }
 
@@ -23,11 +23,11 @@ pub(all) struct TextDocument {
   isUntitled : Bool
   languageId : String
   encoding : String
-  version : Int
+  version : Int32
   isDirty : Bool
   isClosed : Bool
   eol : EndOfLine
-  lineCount : Int
+  lineCount : Int32
 } derive(Show, Eq, ToJson)
 
 ///|
@@ -56,8 +56,8 @@ pub(all) struct CancellationToken {
 
 ///|
 pub(all) struct TextEditorOptions {
-  mut tabSize : Union2[Int, String]?
-  mut indentSize : Union2[Int, String]?
+  mut tabSize : Union2[Int32, String]?
+  mut indentSize : Union2[Int32, String]?
   mut insertSpaces : Union2[Bool, String]?
   mut cursorStyle : TextEditorCursorStyle?
   mut lineNumbers : TextEditorLineNumbersStyle?
@@ -97,8 +97,8 @@ pub(all) struct DocumentFilter {
 
 ///|
 pub(all) struct TerminalDimensions {
-  columns : Int
-  rows : Int
+  columns : Int32
+  rows : Int32
 } derive(Show, Eq, ToJson)
 
 ///|
@@ -132,12 +132,12 @@ pub(all) struct Tab {
 pub(all) struct WorkspaceFolder {
   uri : Uri
   name : String
-  index : Int
+  index : Int32
 } derive(Show, Eq, ToJson)
 
 ///|
 pub(all) struct TerminalExitStatus {
-  code : Int?
+  code : Int32?
   reason : TerminalExitReason
 } derive(Show, Eq, ToJson)
 
@@ -172,7 +172,7 @@ pub(all) struct CommentRule {
 pub(all) struct EnterAction {
   mut indentAction : IndentAction
   mut appendText : String?
-  mut removeText : Int?
+  mut removeText : Int32?
 } derive(Show, Eq, ToJson)
 
 ///|
@@ -196,9 +196,9 @@ pub(all) struct FileSystemWatcher {
 ///|
 pub(all) struct FileStat {
   fileType : FileType
-  ctime : Int
-  mtime : Int
-  size : Int
+  ctime : Int32
+  mtime : Int32
+  size : Int32
   permissions : FilePermission?
 } derive(Show, Eq, ToJson)
 
@@ -287,20 +287,20 @@ pub(all) struct NotebookDocumentCellChange {
 
 ///|
 pub(all) struct NotebookCellExecutionSummary {
-  executionOrder : Int?
+  executionOrder : Int32?
   success : Bool?
   timing : NotebookCellExecutionTiming?
 } derive(Show, Eq, ToJson)
 
 ///|
 pub(all) struct NotebookCellExecutionTiming {
-  startTime : Int
-  endTime : Int
+  startTime : Int32
+  endTime : Int32
 } derive(Show, Eq, ToJson)
 
 ///|
 pub(all) struct NotebookCell {
-  index : Int
+  index : Int32
   kind : NotebookCellKind
   document : TextDocument
   outputs : Array[NotebookCellOutput]
@@ -312,12 +312,12 @@ pub(all) struct NotebookCell {
 pub(all) struct NotebookDocument {
   uri : Uri
   notebookType : String
-  version : Int
+  version : Int32
   isDirty : Bool
   isUntitled : Bool
   isClosed : Bool
   metadata : Any
-  cellCount : Int
+  cellCount : Int32
 } derive(Show, Eq, ToJson)
 
 ///|
@@ -337,7 +337,7 @@ pub(all) struct EnvironmentVariableMutatorOptions {
 pub(all) struct StatusBarItem {
   id : String
   alignment : StatusBarAlignment
-  priority : Int?
+  priority : Int32?
   mut text : String
   mut tooltip : String?
   mut color : String?
@@ -367,8 +367,8 @@ pub(all) struct ProgressOptions {
 ///|
 pub(all) struct QuickInput {
   mut title : String?
-  mut step : Int?
-  mut totalSteps : Int?
+  mut step : Int32?
+  mut totalSteps : Int32?
   mut enabled : Bool
   mut busy : Bool
   mut ignoreFocusOut : Bool
@@ -377,8 +377,8 @@ pub(all) struct QuickInput {
 ///|
 pub(all) struct QuickPick {
   mut title : String?
-  mut step : Int?
-  mut totalSteps : Int?
+  mut step : Int32?
+  mut totalSteps : Int32?
   mut enabled : Bool
   mut busy : Bool
   mut ignoreFocusOut : Bool
@@ -395,13 +395,13 @@ pub(all) struct QuickPick {
 ///|
 pub(all) struct InputBox {
   mut title : String?
-  mut step : Int?
-  mut totalSteps : Int?
+  mut step : Int32?
+  mut totalSteps : Int32?
   mut enabled : Bool
   mut busy : Bool
   mut ignoreFocusOut : Bool
   mut value : String
-  valueSelection : Array[Int]?
+  valueSelection : Array[Int32]?
   mut placeholder : String?
   mut password : Bool
   mut prompt : String?
@@ -422,8 +422,8 @@ pub(all) struct WindowState {
 
 ///|
 pub(all) struct WebviewPortMapping {
-  webviewPort : Int
-  extensionHostPort : Int
+  webviewPort : Int32
+  extensionHostPort : Int32
 } derive(Show, Eq, ToJson)
 
 ///|
@@ -478,7 +478,7 @@ pub(all) struct WebviewViewResolveContext {
 ///|
 pub(all) struct ViewBadge {
   tooltip : String
-  value : Int
+  value : Int32
 } derive(Show, Eq, ToJson)
 
 ///|
@@ -492,7 +492,7 @@ pub(all) struct SourceControlInputBox {
 ///|
 pub(all) struct TreeItemLabel {
   label : String
-  highlights : Array[Array[Int]]?
+  highlights : Array[Array[Int32]]?
 } derive(Show, Eq, ToJson)
 
 ///|
@@ -539,14 +539,14 @@ pub(all) struct CommentAuthorInformation {
 pub(all) struct CommentReaction {
   label : String
   iconPath : Union3[Uri, LightDarkIconPath, ThemeIcon]
-  count : Int
+  count : Int32
   authorHasReacted : Bool
 } derive(Show, Eq, ToJson)
 
 ///|
 pub(all) struct Terminal {
   name : String
-  processId : Int?
+  processId : Int32?
   creationOptions : TerminalOptions?
   exitStatus : TerminalExitStatus?
   state : TerminalState?
@@ -780,7 +780,7 @@ pub type McpServerDefinition = Union2[
 
 ///|
 pub(all) struct FormattingOptions {
-  tabSize : Int
+  tabSize : Int32
   insertSpaces : Bool
 } derive(Show, Eq, ToJson)
 
@@ -805,7 +805,7 @@ pub(all) struct LanguageStatusItem {
 
 ///|
 pub(all) struct InlineValueContext {
-  frameId : Int
+  frameId : Int32
   stoppedLocation : Range
 } derive(Show, Eq, ToJson)
 
@@ -848,8 +848,8 @@ pub(all) struct DiagnosticChangeEvent {
 ///|
 pub(all) struct TextDocumentContentChangeEvent {
   range : Range
-  rangeOffset : Int
-  rangeLength : Int
+  rangeOffset : Int32
+  rangeLength : Int32
   text : String
 } derive(Show, Eq, ToJson)
 
@@ -995,7 +995,7 @@ pub(all) struct CodeActionContext {
 
 ///|
 pub(all) struct DiagnosticCode {
-  value : Union2[String, Int]
+  value : Union2[String, Int32]
   target : Uri
 } derive(Show, Eq, ToJson)
 
@@ -1052,7 +1052,7 @@ pub(all) struct ChatParticipant {
 ///|
 pub(all) struct ChatPromptReference {
   id : String
-  range : Array[Int]?
+  range : Array[Int32]?
   modelDescription : String?
   value : Any
 } derive(Show, Eq, ToJson)
@@ -1063,7 +1063,7 @@ pub(all) struct ChatRequest {
   command : String?
   references : Array[ChatPromptReference]
   location : Location?
-  attempt : Int
+  attempt : Int32
   enableCommandDetection : Bool
   model : LanguageModelChat
 } derive(Show, Eq, ToJson)
@@ -1087,7 +1087,7 @@ pub(all) struct LanguageModelChat {
   vendor : String
   family : String
   version : String
-  maxInputTokens : Int?
+  maxInputTokens : Int32?
 } derive(Show, Eq, ToJson)
 
 ///|
@@ -1111,7 +1111,7 @@ pub(all) struct LanguageModelChatInformation {
   vendor : String
   family : String
   version : String
-  maxInputTokens : Int?
+  maxInputTokens : Int32?
   targetModels : Array[LanguageModelChatSelector]?
 } derive(Show, Eq, ToJson)
 
@@ -1137,7 +1137,7 @@ pub(all) struct LanguageModelToolInvocationOptions {
 
 ///|
 pub(all) struct LanguageModelToolTokenizationOptions {
-  tokenBudget : Int
+  tokenBudget : Int32
 } derive(Show, Eq, ToJson)
 
 ///|
@@ -1163,7 +1163,7 @@ pub(all) struct LanguageModelToolConfirmationMessages {
 ///|
 pub(all) struct ChatLanguageModelToolReference {
   name : String
-  range : Array[Int]?
+  range : Array[Int32]?
 } derive(Show, Eq, ToJson)
 
 ///|
@@ -1183,7 +1183,7 @@ pub(all) struct EnvironmentVariableCollection {
 pub(all) struct Pseudoterminal {
   onDidWrite : Event[String]
   onDidOverrideDimensions : Event[TerminalDimensions?]?
-  onDidClose : Event[Union2[Unit, Int]?]? // Event<void | number>
+  onDidClose : Event[Union2[Unit, Int32]?]? // Event<void | number>
   onDidChangeName : Event[String]?
 } derive(Show, Eq, ToJson)
 
@@ -1243,7 +1243,7 @@ pub(all) struct AuthenticationGetSessionPresentationOptions {
 
 ///|
 // TypeScript: export type AuthenticationForceNewSessionOptions = AuthenticationGetSessionPresentationOptions
-pub typealias AuthenticationGetSessionPresentationOptions as AuthenticationForceNewSessionOptions
+pub type AuthenticationForceNewSessionOptions = AuthenticationGetSessionPresentationOptions
 
 ///|
 pub(all) struct AuthenticationProviderAuthenticationSessionsChangeEvent {
@@ -1327,7 +1327,7 @@ pub(all) struct DebugSessionOptions {
 pub(all) struct InputBoxOptions {
   title : String?
   value : String?
-  valueSelection : (Int, Int)? // [number, number] tuple
+  valueSelection : (Int32, Int32)? // [number, number] tuple
   prompt : String?
   placeHolder : String?
   password : Bool?
@@ -1353,7 +1353,7 @@ pub(all) struct LanguageModelChatProvider {
     LanguageModelChatInformation,
     Union2[String, LanguageModelChatRequestMessage],
     CancellationToken,
-  ) -> Thenable[Int]
+  ) -> Thenable[Int32]
 }
 
 ///|
@@ -1436,7 +1436,7 @@ pub(all) struct TestItem {
 
 ///|
 pub(all) struct TestItemCollection {
-  size : Int
+  size : Int32
   // Methods: replace, forEach, add, delete, get, iterator support
 } derive(Show, Eq, ToJson)
 
@@ -1522,7 +1522,7 @@ pub type MarkedString = Union2[String, MarkedStringObject]
 
 ///|
 pub(all) struct FoldingContext {
-  maxRanges : Int
+  maxRanges : Int32
 } derive(Show, Eq, ToJson)
 
 ///|
@@ -1613,19 +1613,19 @@ pub(all) struct DebugConsole {} derive(Show, Eq, ToJson)
 
 ///|
 pub(all) struct DebugProtocolBreakpoint {
-  id : Int?
+  id : Int32?
   verified : Bool
   message : String?
   source : DebugProtocolSource?
-  line : Int?
-  column : Int?
-  endLine : Int?
-  endColumn : Int?
+  line : Int32?
+  column : Int32?
+  endLine : Int32?
+  endColumn : Int32?
 } derive(Show, Eq, ToJson)
 
 ///|
 pub(all) struct DebugProtocolMessage {
-  id : Int
+  id : Int32
   format : String
   variables : Map[String, String]?
   sendTelemetry : Bool?
@@ -1638,7 +1638,7 @@ pub(all) struct DebugProtocolMessage {
 pub(all) struct DebugProtocolSource {
   name : String?
   path : String?
-  sourceReference : Int?
+  sourceReference : Int32?
 } derive(Show, Eq, ToJson)
 
 ///|
@@ -1708,7 +1708,7 @@ pub(all) struct GlobalEnvironmentVariableCollection {
 pub(all) struct NotebookCellExecution {
   cell : NotebookCell
   token : CancellationToken
-  mut executionOrder : Int?
+  mut executionOrder : Int32?
 } derive(Show, Eq, ToJson)
 
 ///|
@@ -1809,7 +1809,7 @@ pub(all) struct SourceControl {
   label : String
   rootUri : Uri?
   inputBox : SourceControlInputBox
-  count : Int?
+  count : Int32?
   quickDiffProvider : QuickDiffProvider?
   commitTemplate : String?
   acceptInputCommand : Command?
@@ -1860,13 +1860,13 @@ pub(all) struct TaskEndEvent {
 ///|
 pub(all) struct TaskProcessEndEvent {
   execution : TaskExecution
-  exitCode : Int?
+  exitCode : Int32?
 } derive(Show, Eq, ToJson)
 
 ///|
 pub(all) struct TaskProcessStartEvent {
   execution : TaskExecution
-  processId : Int
+  processId : Int32
 } derive(Show, Eq, ToJson)
 
 ///|
@@ -1894,7 +1894,7 @@ pub(all) struct TerminalShellExecutionEndEvent {
   terminal : Terminal
   shellIntegration : TerminalShellIntegration
   execution : TerminalShellExecution
-  exitCode : Int?
+  exitCode : Int32?
 } derive(Show, Eq, ToJson)
 
 ///|

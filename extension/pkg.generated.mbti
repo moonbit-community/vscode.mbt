@@ -17,4 +17,3 @@ pub fn deactivate() -> Unit
 // Type aliases
 
 // Traits
-

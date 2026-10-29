@@ -9,232 +9,397 @@ pub fn[A, B] coerce(A) -> B
 // Types and methods
 #external
 pub(all) type Any
+pub fn Any::equal(Self, Self) -> Bool
+pub fn Any::not_equal(Self, Self) -> Bool
+pub fn Any::output(Self, &Logger) -> Unit
+pub fn Any::to_json(Self) -> Json
+pub fn Any::to_string(Self) -> String
 pub impl Eq for Any
 pub impl Show for Any
 pub impl ToJson for Any
 
 #external
 pub(all) type Func0Rest[R, E]
+pub fn[R, E] Func0Rest::equal(Self[R, E], Self[R, E]) -> Bool
 pub fn[R, E] Func0Rest::from((Array[E]) -> R) -> Self[R, E]
 pub fn[R, E] Func0Rest::into(Self[R, E]) -> (Array[E]) -> R
+pub fn[R, E] Func0Rest::not_equal(Self[R, E], Self[R, E]) -> Bool
+pub fn[R, E] Func0Rest::output(Self[R, E], &Logger) -> Unit
+pub fn[R, E] Func0Rest::to_json(Self[R, E]) -> Json
+pub fn[R, E] Func0Rest::to_string(Self[R, E]) -> String
 pub impl[R, E] Eq for Func0Rest[R, E]
 pub impl[R, E] Show for Func0Rest[R, E]
 pub impl[R, E] ToJson for Func0Rest[R, E]
 
 #external
 pub(all) type Func10Rest[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10]
+pub fn[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10] Func10Rest::equal(Self[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10], Self[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10]) -> Bool
 pub fn[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10] Func10Rest::from((A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, Array[E]) -> R) -> Self[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10]
 pub fn[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10] Func10Rest::into(Self[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10]) -> (A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, Array[E]) -> R
+pub fn[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10] Func10Rest::not_equal(Self[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10], Self[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10]) -> Bool
+pub fn[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10] Func10Rest::output(Self[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10], &Logger) -> Unit
+pub fn[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10] Func10Rest::to_json(Self[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10]) -> Json
+pub fn[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10] Func10Rest::to_string(Self[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10]) -> String
 pub impl[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10] Eq for Func10Rest[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10]
 pub impl[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10] Show for Func10Rest[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10]
 pub impl[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10] ToJson for Func10Rest[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10]
 
 #external
 pub(all) type Func11Rest[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11]
+pub fn[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11] Func11Rest::equal(Self[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11], Self[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11]) -> Bool
 pub fn[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11] Func11Rest::from((A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, Array[E]) -> R) -> Self[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11]
 pub fn[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11] Func11Rest::into(Self[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11]) -> (A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, Array[E]) -> R
+pub fn[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11] Func11Rest::not_equal(Self[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11], Self[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11]) -> Bool
+pub fn[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11] Func11Rest::output(Self[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11], &Logger) -> Unit
+pub fn[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11] Func11Rest::to_json(Self[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11]) -> Json
+pub fn[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11] Func11Rest::to_string(Self[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11]) -> String
 pub impl[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11] Eq for Func11Rest[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11]
 pub impl[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11] Show for Func11Rest[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11]
 pub impl[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11] ToJson for Func11Rest[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11]
 
 #external
 pub(all) type Func12Rest[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12]
+pub fn[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12] Func12Rest::equal(Self[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12], Self[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12]) -> Bool
 pub fn[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12] Func12Rest::from((A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, Array[E]) -> R) -> Self[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12]
 pub fn[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12] Func12Rest::into(Self[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12]) -> (A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, Array[E]) -> R
+pub fn[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12] Func12Rest::not_equal(Self[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12], Self[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12]) -> Bool
+pub fn[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12] Func12Rest::output(Self[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12], &Logger) -> Unit
+pub fn[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12] Func12Rest::to_json(Self[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12]) -> Json
+pub fn[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12] Func12Rest::to_string(Self[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12]) -> String
 pub impl[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12] Eq for Func12Rest[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12]
 pub impl[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12] Show for Func12Rest[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12]
 pub impl[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12] ToJson for Func12Rest[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12]
 
 #external
 pub(all) type Func13Rest[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13]
+pub fn[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13] Func13Rest::equal(Self[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13], Self[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13]) -> Bool
 pub fn[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13] Func13Rest::from((A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13, Array[E]) -> R) -> Self[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13]
 pub fn[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13] Func13Rest::into(Self[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13]) -> (A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13, Array[E]) -> R
+pub fn[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13] Func13Rest::not_equal(Self[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13], Self[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13]) -> Bool
+pub fn[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13] Func13Rest::output(Self[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13], &Logger) -> Unit
+pub fn[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13] Func13Rest::to_json(Self[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13]) -> Json
+pub fn[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13] Func13Rest::to_string(Self[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13]) -> String
 pub impl[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13] Eq for Func13Rest[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13]
 pub impl[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13] Show for Func13Rest[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13]
 pub impl[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13] ToJson for Func13Rest[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13]
 
 #external
 pub(all) type Func14Rest[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13, A14]
+pub fn[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13, A14] Func14Rest::equal(Self[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13, A14], Self[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13, A14]) -> Bool
 pub fn[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13, A14] Func14Rest::from((A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13, A14, Array[E]) -> R) -> Self[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13, A14]
 pub fn[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13, A14] Func14Rest::into(Self[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13, A14]) -> (A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13, A14, Array[E]) -> R
+pub fn[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13, A14] Func14Rest::not_equal(Self[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13, A14], Self[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13, A14]) -> Bool
+pub fn[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13, A14] Func14Rest::output(Self[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13, A14], &Logger) -> Unit
+pub fn[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13, A14] Func14Rest::to_json(Self[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13, A14]) -> Json
+pub fn[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13, A14] Func14Rest::to_string(Self[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13, A14]) -> String
 pub impl[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13, A14] Eq for Func14Rest[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13, A14]
 pub impl[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13, A14] Show for Func14Rest[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13, A14]
 pub impl[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13, A14] ToJson for Func14Rest[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13, A14]
 
 #external
 pub(all) type Func15Rest[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13, A14, A15]
+pub fn[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13, A14, A15] Func15Rest::equal(Self[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13, A14, A15], Self[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13, A14, A15]) -> Bool
 pub fn[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13, A14, A15] Func15Rest::from((A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13, A14, A15, Array[E]) -> R) -> Self[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13, A14, A15]
 pub fn[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13, A14, A15] Func15Rest::into(Self[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13, A14, A15]) -> (A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13, A14, A15, Array[E]) -> R
+pub fn[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13, A14, A15] Func15Rest::not_equal(Self[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13, A14, A15], Self[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13, A14, A15]) -> Bool
+pub fn[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13, A14, A15] Func15Rest::output(Self[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13, A14, A15], &Logger) -> Unit
+pub fn[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13, A14, A15] Func15Rest::to_json(Self[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13, A14, A15]) -> Json
+pub fn[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13, A14, A15] Func15Rest::to_string(Self[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13, A14, A15]) -> String
 pub impl[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13, A14, A15] Eq for Func15Rest[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13, A14, A15]
 pub impl[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13, A14, A15] Show for Func15Rest[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13, A14, A15]
 pub impl[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13, A14, A15] ToJson for Func15Rest[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13, A14, A15]
 
 #external
 pub(all) type Func16Rest[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13, A14, A15, A16]
+pub fn[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13, A14, A15, A16] Func16Rest::equal(Self[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13, A14, A15, A16], Self[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13, A14, A15, A16]) -> Bool
 pub fn[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13, A14, A15, A16] Func16Rest::from((A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13, A14, A15, A16, Array[E]) -> R) -> Self[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13, A14, A15, A16]
 pub fn[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13, A14, A15, A16] Func16Rest::into(Self[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13, A14, A15, A16]) -> (A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13, A14, A15, A16, Array[E]) -> R
+pub fn[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13, A14, A15, A16] Func16Rest::not_equal(Self[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13, A14, A15, A16], Self[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13, A14, A15, A16]) -> Bool
+pub fn[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13, A14, A15, A16] Func16Rest::output(Self[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13, A14, A15, A16], &Logger) -> Unit
+pub fn[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13, A14, A15, A16] Func16Rest::to_json(Self[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13, A14, A15, A16]) -> Json
+pub fn[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13, A14, A15, A16] Func16Rest::to_string(Self[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13, A14, A15, A16]) -> String
 pub impl[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13, A14, A15, A16] Eq for Func16Rest[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13, A14, A15, A16]
 pub impl[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13, A14, A15, A16] Show for Func16Rest[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13, A14, A15, A16]
 pub impl[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13, A14, A15, A16] ToJson for Func16Rest[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13, A14, A15, A16]
 
 #external
 pub(all) type Func1Rest[R, E, A1]
+pub fn[R, E, A1] Func1Rest::equal(Self[R, E, A1], Self[R, E, A1]) -> Bool
 pub fn[R, E, A1] Func1Rest::from((A1, Array[E]) -> R) -> Self[R, E, A1]
 pub fn[R, E, A1] Func1Rest::into(Self[R, E, A1]) -> (A1, Array[E]) -> R
+pub fn[R, E, A1] Func1Rest::not_equal(Self[R, E, A1], Self[R, E, A1]) -> Bool
+pub fn[R, E, A1] Func1Rest::output(Self[R, E, A1], &Logger) -> Unit
+pub fn[R, E, A1] Func1Rest::to_json(Self[R, E, A1]) -> Json
+pub fn[R, E, A1] Func1Rest::to_string(Self[R, E, A1]) -> String
 pub impl[R, E, A1] Eq for Func1Rest[R, E, A1]
 pub impl[R, E, A1] Show for Func1Rest[R, E, A1]
 pub impl[R, E, A1] ToJson for Func1Rest[R, E, A1]
 
 #external
 pub(all) type Func2Rest[R, E, A1, A2]
+pub fn[R, E, A1, A2] Func2Rest::equal(Self[R, E, A1, A2], Self[R, E, A1, A2]) -> Bool
 pub fn[R, E, A1, A2] Func2Rest::from((A1, A2, Array[E]) -> R) -> Self[R, E, A1, A2]
 pub fn[R, E, A1, A2] Func2Rest::into(Self[R, E, A1, A2]) -> (A1, A2, Array[E]) -> R
+pub fn[R, E, A1, A2] Func2Rest::not_equal(Self[R, E, A1, A2], Self[R, E, A1, A2]) -> Bool
+pub fn[R, E, A1, A2] Func2Rest::output(Self[R, E, A1, A2], &Logger) -> Unit
+pub fn[R, E, A1, A2] Func2Rest::to_json(Self[R, E, A1, A2]) -> Json
+pub fn[R, E, A1, A2] Func2Rest::to_string(Self[R, E, A1, A2]) -> String
 pub impl[R, E, A1, A2] Eq for Func2Rest[R, E, A1, A2]
 pub impl[R, E, A1, A2] Show for Func2Rest[R, E, A1, A2]
 pub impl[R, E, A1, A2] ToJson for Func2Rest[R, E, A1, A2]
 
 #external
 pub(all) type Func3Rest[R, E, A1, A2, A3]
+pub fn[R, E, A1, A2, A3] Func3Rest::equal(Self[R, E, A1, A2, A3], Self[R, E, A1, A2, A3]) -> Bool
 pub fn[R, E, A1, A2, A3] Func3Rest::from((A1, A2, A3, Array[E]) -> R) -> Self[R, E, A1, A2, A3]
 pub fn[R, E, A1, A2, A3] Func3Rest::into(Self[R, E, A1, A2, A3]) -> (A1, A2, A3, Array[E]) -> R
+pub fn[R, E, A1, A2, A3] Func3Rest::not_equal(Self[R, E, A1, A2, A3], Self[R, E, A1, A2, A3]) -> Bool
+pub fn[R, E, A1, A2, A3] Func3Rest::output(Self[R, E, A1, A2, A3], &Logger) -> Unit
+pub fn[R, E, A1, A2, A3] Func3Rest::to_json(Self[R, E, A1, A2, A3]) -> Json
+pub fn[R, E, A1, A2, A3] Func3Rest::to_string(Self[R, E, A1, A2, A3]) -> String
 pub impl[R, E, A1, A2, A3] Eq for Func3Rest[R, E, A1, A2, A3]
 pub impl[R, E, A1, A2, A3] Show for Func3Rest[R, E, A1, A2, A3]
 pub impl[R, E, A1, A2, A3] ToJson for Func3Rest[R, E, A1, A2, A3]
 
 #external
 pub(all) type Func4Rest[R, E, A1, A2, A3, A4]
+pub fn[R, E, A1, A2, A3, A4] Func4Rest::equal(Self[R, E, A1, A2, A3, A4], Self[R, E, A1, A2, A3, A4]) -> Bool
 pub fn[R, E, A1, A2, A3, A4] Func4Rest::from((A1, A2, A3, A4, Array[E]) -> R) -> Self[R, E, A1, A2, A3, A4]
 pub fn[R, E, A1, A2, A3, A4] Func4Rest::into(Self[R, E, A1, A2, A3, A4]) -> (A1, A2, A3, A4, Array[E]) -> R
+pub fn[R, E, A1, A2, A3, A4] Func4Rest::not_equal(Self[R, E, A1, A2, A3, A4], Self[R, E, A1, A2, A3, A4]) -> Bool
+pub fn[R, E, A1, A2, A3, A4] Func4Rest::output(Self[R, E, A1, A2, A3, A4], &Logger) -> Unit
+pub fn[R, E, A1, A2, A3, A4] Func4Rest::to_json(Self[R, E, A1, A2, A3, A4]) -> Json
+pub fn[R, E, A1, A2, A3, A4] Func4Rest::to_string(Self[R, E, A1, A2, A3, A4]) -> String
 pub impl[R, E, A1, A2, A3, A4] Eq for Func4Rest[R, E, A1, A2, A3, A4]
 pub impl[R, E, A1, A2, A3, A4] Show for Func4Rest[R, E, A1, A2, A3, A4]
 pub impl[R, E, A1, A2, A3, A4] ToJson for Func4Rest[R, E, A1, A2, A3, A4]
 
 #external
 pub(all) type Func5Rest[R, E, A1, A2, A3, A4, A5]
+pub fn[R, E, A1, A2, A3, A4, A5] Func5Rest::equal(Self[R, E, A1, A2, A3, A4, A5], Self[R, E, A1, A2, A3, A4, A5]) -> Bool
 pub fn[R, E, A1, A2, A3, A4, A5] Func5Rest::from((A1, A2, A3, A4, A5, Array[E]) -> R) -> Self[R, E, A1, A2, A3, A4, A5]
 pub fn[R, E, A1, A2, A3, A4, A5] Func5Rest::into(Self[R, E, A1, A2, A3, A4, A5]) -> (A1, A2, A3, A4, A5, Array[E]) -> R
+pub fn[R, E, A1, A2, A3, A4, A5] Func5Rest::not_equal(Self[R, E, A1, A2, A3, A4, A5], Self[R, E, A1, A2, A3, A4, A5]) -> Bool
+pub fn[R, E, A1, A2, A3, A4, A5] Func5Rest::output(Self[R, E, A1, A2, A3, A4, A5], &Logger) -> Unit
+pub fn[R, E, A1, A2, A3, A4, A5] Func5Rest::to_json(Self[R, E, A1, A2, A3, A4, A5]) -> Json
+pub fn[R, E, A1, A2, A3, A4, A5] Func5Rest::to_string(Self[R, E, A1, A2, A3, A4, A5]) -> String
 pub impl[R, E, A1, A2, A3, A4, A5] Eq for Func5Rest[R, E, A1, A2, A3, A4, A5]
 pub impl[R, E, A1, A2, A3, A4, A5] Show for Func5Rest[R, E, A1, A2, A3, A4, A5]
 pub impl[R, E, A1, A2, A3, A4, A5] ToJson for Func5Rest[R, E, A1, A2, A3, A4, A5]
 
 #external
 pub(all) type Func6Rest[R, E, A1, A2, A3, A4, A5, A6]
+pub fn[R, E, A1, A2, A3, A4, A5, A6] Func6Rest::equal(Self[R, E, A1, A2, A3, A4, A5, A6], Self[R, E, A1, A2, A3, A4, A5, A6]) -> Bool
 pub fn[R, E, A1, A2, A3, A4, A5, A6] Func6Rest::from((A1, A2, A3, A4, A5, A6, Array[E]) -> R) -> Self[R, E, A1, A2, A3, A4, A5, A6]
 pub fn[R, E, A1, A2, A3, A4, A5, A6] Func6Rest::into(Self[R, E, A1, A2, A3, A4, A5, A6]) -> (A1, A2, A3, A4, A5, A6, Array[E]) -> R
+pub fn[R, E, A1, A2, A3, A4, A5, A6] Func6Rest::not_equal(Self[R, E, A1, A2, A3, A4, A5, A6], Self[R, E, A1, A2, A3, A4, A5, A6]) -> Bool
+pub fn[R, E, A1, A2, A3, A4, A5, A6] Func6Rest::output(Self[R, E, A1, A2, A3, A4, A5, A6], &Logger) -> Unit
+pub fn[R, E, A1, A2, A3, A4, A5, A6] Func6Rest::to_json(Self[R, E, A1, A2, A3, A4, A5, A6]) -> Json
+pub fn[R, E, A1, A2, A3, A4, A5, A6] Func6Rest::to_string(Self[R, E, A1, A2, A3, A4, A5, A6]) -> String
 pub impl[R, E, A1, A2, A3, A4, A5, A6] Eq for Func6Rest[R, E, A1, A2, A3, A4, A5, A6]
 pub impl[R, E, A1, A2, A3, A4, A5, A6] Show for Func6Rest[R, E, A1, A2, A3, A4, A5, A6]
 pub impl[R, E, A1, A2, A3, A4, A5, A6] ToJson for Func6Rest[R, E, A1, A2, A3, A4, A5, A6]
 
 #external
 pub(all) type Func7Rest[R, E, A1, A2, A3, A4, A5, A6, A7]
+pub fn[R, E, A1, A2, A3, A4, A5, A6, A7] Func7Rest::equal(Self[R, E, A1, A2, A3, A4, A5, A6, A7], Self[R, E, A1, A2, A3, A4, A5, A6, A7]) -> Bool
 pub fn[R, E, A1, A2, A3, A4, A5, A6, A7] Func7Rest::from((A1, A2, A3, A4, A5, A6, A7, Array[E]) -> R) -> Self[R, E, A1, A2, A3, A4, A5, A6, A7]
 pub fn[R, E, A1, A2, A3, A4, A5, A6, A7] Func7Rest::into(Self[R, E, A1, A2, A3, A4, A5, A6, A7]) -> (A1, A2, A3, A4, A5, A6, A7, Array[E]) -> R
+pub fn[R, E, A1, A2, A3, A4, A5, A6, A7] Func7Rest::not_equal(Self[R, E, A1, A2, A3, A4, A5, A6, A7], Self[R, E, A1, A2, A3, A4, A5, A6, A7]) -> Bool
+pub fn[R, E, A1, A2, A3, A4, A5, A6, A7] Func7Rest::output(Self[R, E, A1, A2, A3, A4, A5, A6, A7], &Logger) -> Unit
+pub fn[R, E, A1, A2, A3, A4, A5, A6, A7] Func7Rest::to_json(Self[R, E, A1, A2, A3, A4, A5, A6, A7]) -> Json
+pub fn[R, E, A1, A2, A3, A4, A5, A6, A7] Func7Rest::to_string(Self[R, E, A1, A2, A3, A4, A5, A6, A7]) -> String
 pub impl[R, E, A1, A2, A3, A4, A5, A6, A7] Eq for Func7Rest[R, E, A1, A2, A3, A4, A5, A6, A7]
 pub impl[R, E, A1, A2, A3, A4, A5, A6, A7] Show for Func7Rest[R, E, A1, A2, A3, A4, A5, A6, A7]
 pub impl[R, E, A1, A2, A3, A4, A5, A6, A7] ToJson for Func7Rest[R, E, A1, A2, A3, A4, A5, A6, A7]
 
 #external
 pub(all) type Func8Rest[R, E, A1, A2, A3, A4, A5, A6, A7, A8]
+pub fn[R, E, A1, A2, A3, A4, A5, A6, A7, A8] Func8Rest::equal(Self[R, E, A1, A2, A3, A4, A5, A6, A7, A8], Self[R, E, A1, A2, A3, A4, A5, A6, A7, A8]) -> Bool
 pub fn[R, E, A1, A2, A3, A4, A5, A6, A7, A8] Func8Rest::from((A1, A2, A3, A4, A5, A6, A7, A8, Array[E]) -> R) -> Self[R, E, A1, A2, A3, A4, A5, A6, A7, A8]
 pub fn[R, E, A1, A2, A3, A4, A5, A6, A7, A8] Func8Rest::into(Self[R, E, A1, A2, A3, A4, A5, A6, A7, A8]) -> (A1, A2, A3, A4, A5, A6, A7, A8, Array[E]) -> R
+pub fn[R, E, A1, A2, A3, A4, A5, A6, A7, A8] Func8Rest::not_equal(Self[R, E, A1, A2, A3, A4, A5, A6, A7, A8], Self[R, E, A1, A2, A3, A4, A5, A6, A7, A8]) -> Bool
+pub fn[R, E, A1, A2, A3, A4, A5, A6, A7, A8] Func8Rest::output(Self[R, E, A1, A2, A3, A4, A5, A6, A7, A8], &Logger) -> Unit
+pub fn[R, E, A1, A2, A3, A4, A5, A6, A7, A8] Func8Rest::to_json(Self[R, E, A1, A2, A3, A4, A5, A6, A7, A8]) -> Json
+pub fn[R, E, A1, A2, A3, A4, A5, A6, A7, A8] Func8Rest::to_string(Self[R, E, A1, A2, A3, A4, A5, A6, A7, A8]) -> String
 pub impl[R, E, A1, A2, A3, A4, A5, A6, A7, A8] Eq for Func8Rest[R, E, A1, A2, A3, A4, A5, A6, A7, A8]
 pub impl[R, E, A1, A2, A3, A4, A5, A6, A7, A8] Show for Func8Rest[R, E, A1, A2, A3, A4, A5, A6, A7, A8]
 pub impl[R, E, A1, A2, A3, A4, A5, A6, A7, A8] ToJson for Func8Rest[R, E, A1, A2, A3, A4, A5, A6, A7, A8]
 
 #external
 pub(all) type Func9Rest[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9]
+pub fn[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9] Func9Rest::equal(Self[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9], Self[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9]) -> Bool
 pub fn[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9] Func9Rest::from((A1, A2, A3, A4, A5, A6, A7, A8, A9, Array[E]) -> R) -> Self[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9]
 pub fn[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9] Func9Rest::into(Self[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9]) -> (A1, A2, A3, A4, A5, A6, A7, A8, A9, Array[E]) -> R
+pub fn[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9] Func9Rest::not_equal(Self[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9], Self[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9]) -> Bool
+pub fn[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9] Func9Rest::output(Self[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9], &Logger) -> Unit
+pub fn[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9] Func9Rest::to_json(Self[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9]) -> Json
+pub fn[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9] Func9Rest::to_string(Self[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9]) -> String
 pub impl[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9] Eq for Func9Rest[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9]
 pub impl[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9] Show for Func9Rest[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9]
 pub impl[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9] ToJson for Func9Rest[R, E, A1, A2, A3, A4, A5, A6, A7, A8, A9]
 
 #external
 pub(all) type Union10[_, _, _, _, _, _, _, _, _, _]
+pub fn[A, B, C, D, E, F, G, H, I, J] Union10::equal(Self[A, B, C, D, E, F, G, H, I, J], Self[A, B, C, D, E, F, G, H, I, J]) -> Bool
+pub fn[A, B, C, D, E, F, G, H, I, J] Union10::not_equal(Self[A, B, C, D, E, F, G, H, I, J], Self[A, B, C, D, E, F, G, H, I, J]) -> Bool
+pub fn[A, B, C, D, E, F, G, H, I, J] Union10::output(Self[A, B, C, D, E, F, G, H, I, J], &Logger) -> Unit
+pub fn[A, B, C, D, E, F, G, H, I, J] Union10::to_json(Self[A, B, C, D, E, F, G, H, I, J]) -> Json
+pub fn[A, B, C, D, E, F, G, H, I, J] Union10::to_string(Self[A, B, C, D, E, F, G, H, I, J]) -> String
 pub impl[A, B, C, D, E, F, G, H, I, J] Eq for Union10[A, B, C, D, E, F, G, H, I, J]
 pub impl[A, B, C, D, E, F, G, H, I, J] Show for Union10[A, B, C, D, E, F, G, H, I, J]
 pub impl[A, B, C, D, E, F, G, H, I, J] ToJson for Union10[A, B, C, D, E, F, G, H, I, J]
 
 #external
 pub(all) type Union11[_, _, _, _, _, _, _, _, _, _, _]
+pub fn[A, B, C, D, E, F, G, H, I, J, K] Union11::equal(Self[A, B, C, D, E, F, G, H, I, J, K], Self[A, B, C, D, E, F, G, H, I, J, K]) -> Bool
+pub fn[A, B, C, D, E, F, G, H, I, J, K] Union11::not_equal(Self[A, B, C, D, E, F, G, H, I, J, K], Self[A, B, C, D, E, F, G, H, I, J, K]) -> Bool
+pub fn[A, B, C, D, E, F, G, H, I, J, K] Union11::output(Self[A, B, C, D, E, F, G, H, I, J, K], &Logger) -> Unit
+pub fn[A, B, C, D, E, F, G, H, I, J, K] Union11::to_json(Self[A, B, C, D, E, F, G, H, I, J, K]) -> Json
+pub fn[A, B, C, D, E, F, G, H, I, J, K] Union11::to_string(Self[A, B, C, D, E, F, G, H, I, J, K]) -> String
 pub impl[A, B, C, D, E, F, G, H, I, J, K] Eq for Union11[A, B, C, D, E, F, G, H, I, J, K]
 pub impl[A, B, C, D, E, F, G, H, I, J, K] Show for Union11[A, B, C, D, E, F, G, H, I, J, K]
 pub impl[A, B, C, D, E, F, G, H, I, J, K] ToJson for Union11[A, B, C, D, E, F, G, H, I, J, K]
 
 #external
 pub(all) type Union12[_, _, _, _, _, _, _, _, _, _, _, _]
+pub fn[A, B, C, D, E, F, G, H, I, J, K, L] Union12::equal(Self[A, B, C, D, E, F, G, H, I, J, K, L], Self[A, B, C, D, E, F, G, H, I, J, K, L]) -> Bool
+pub fn[A, B, C, D, E, F, G, H, I, J, K, L] Union12::not_equal(Self[A, B, C, D, E, F, G, H, I, J, K, L], Self[A, B, C, D, E, F, G, H, I, J, K, L]) -> Bool
+pub fn[A, B, C, D, E, F, G, H, I, J, K, L] Union12::output(Self[A, B, C, D, E, F, G, H, I, J, K, L], &Logger) -> Unit
+pub fn[A, B, C, D, E, F, G, H, I, J, K, L] Union12::to_json(Self[A, B, C, D, E, F, G, H, I, J, K, L]) -> Json
+pub fn[A, B, C, D, E, F, G, H, I, J, K, L] Union12::to_string(Self[A, B, C, D, E, F, G, H, I, J, K, L]) -> String
 pub impl[A, B, C, D, E, F, G, H, I, J, K, L] Eq for Union12[A, B, C, D, E, F, G, H, I, J, K, L]
 pub impl[A, B, C, D, E, F, G, H, I, J, K, L] Show for Union12[A, B, C, D, E, F, G, H, I, J, K, L]
 pub impl[A, B, C, D, E, F, G, H, I, J, K, L] ToJson for Union12[A, B, C, D, E, F, G, H, I, J, K, L]
 
 #external
 pub(all) type Union13[_, _, _, _, _, _, _, _, _, _, _, _, _]
+pub fn[A, B, C, D, E, F, G, H, I, J, K, L, M] Union13::equal(Self[A, B, C, D, E, F, G, H, I, J, K, L, M], Self[A, B, C, D, E, F, G, H, I, J, K, L, M]) -> Bool
+pub fn[A, B, C, D, E, F, G, H, I, J, K, L, M] Union13::not_equal(Self[A, B, C, D, E, F, G, H, I, J, K, L, M], Self[A, B, C, D, E, F, G, H, I, J, K, L, M]) -> Bool
+pub fn[A, B, C, D, E, F, G, H, I, J, K, L, M] Union13::output(Self[A, B, C, D, E, F, G, H, I, J, K, L, M], &Logger) -> Unit
+pub fn[A, B, C, D, E, F, G, H, I, J, K, L, M] Union13::to_json(Self[A, B, C, D, E, F, G, H, I, J, K, L, M]) -> Json
+pub fn[A, B, C, D, E, F, G, H, I, J, K, L, M] Union13::to_string(Self[A, B, C, D, E, F, G, H, I, J, K, L, M]) -> String
 pub impl[A, B, C, D, E, F, G, H, I, J, K, L, M] Eq for Union13[A, B, C, D, E, F, G, H, I, J, K, L, M]
 pub impl[A, B, C, D, E, F, G, H, I, J, K, L, M] Show for Union13[A, B, C, D, E, F, G, H, I, J, K, L, M]
 pub impl[A, B, C, D, E, F, G, H, I, J, K, L, M] ToJson for Union13[A, B, C, D, E, F, G, H, I, J, K, L, M]
 
 #external
 pub(all) type Union14[_, _, _, _, _, _, _, _, _, _, _, _, _, _]
+pub fn[A, B, C, D, E, F, G, H, I, J, K, L, M, N] Union14::equal(Self[A, B, C, D, E, F, G, H, I, J, K, L, M, N], Self[A, B, C, D, E, F, G, H, I, J, K, L, M, N]) -> Bool
+pub fn[A, B, C, D, E, F, G, H, I, J, K, L, M, N] Union14::not_equal(Self[A, B, C, D, E, F, G, H, I, J, K, L, M, N], Self[A, B, C, D, E, F, G, H, I, J, K, L, M, N]) -> Bool
+pub fn[A, B, C, D, E, F, G, H, I, J, K, L, M, N] Union14::output(Self[A, B, C, D, E, F, G, H, I, J, K, L, M, N], &Logger) -> Unit
+pub fn[A, B, C, D, E, F, G, H, I, J, K, L, M, N] Union14::to_json(Self[A, B, C, D, E, F, G, H, I, J, K, L, M, N]) -> Json
+pub fn[A, B, C, D, E, F, G, H, I, J, K, L, M, N] Union14::to_string(Self[A, B, C, D, E, F, G, H, I, J, K, L, M, N]) -> String
 pub impl[A, B, C, D, E, F, G, H, I, J, K, L, M, N] Eq for Union14[A, B, C, D, E, F, G, H, I, J, K, L, M, N]
 pub impl[A, B, C, D, E, F, G, H, I, J, K, L, M, N] Show for Union14[A, B, C, D, E, F, G, H, I, J, K, L, M, N]
 pub impl[A, B, C, D, E, F, G, H, I, J, K, L, M, N] ToJson for Union14[A, B, C, D, E, F, G, H, I, J, K, L, M, N]
 
 #external
 pub(all) type Union15[_, _, _, _, _, _, _, _, _, _, _, _, _, _, _]
+pub fn[A, B, C, D, E, F, G, H, I, J, K, L, M, N, O] Union15::equal(Self[A, B, C, D, E, F, G, H, I, J, K, L, M, N, O], Self[A, B, C, D, E, F, G, H, I, J, K, L, M, N, O]) -> Bool
+pub fn[A, B, C, D, E, F, G, H, I, J, K, L, M, N, O] Union15::not_equal(Self[A, B, C, D, E, F, G, H, I, J, K, L, M, N, O], Self[A, B, C, D, E, F, G, H, I, J, K, L, M, N, O]) -> Bool
+pub fn[A, B, C, D, E, F, G, H, I, J, K, L, M, N, O] Union15::output(Self[A, B, C, D, E, F, G, H, I, J, K, L, M, N, O], &Logger) -> Unit
+pub fn[A, B, C, D, E, F, G, H, I, J, K, L, M, N, O] Union15::to_json(Self[A, B, C, D, E, F, G, H, I, J, K, L, M, N, O]) -> Json
+pub fn[A, B, C, D, E, F, G, H, I, J, K, L, M, N, O] Union15::to_string(Self[A, B, C, D, E, F, G, H, I, J, K, L, M, N, O]) -> String
 pub impl[A, B, C, D, E, F, G, H, I, J, K, L, M, N, O] Eq for Union15[A, B, C, D, E, F, G, H, I, J, K, L, M, N, O]
 pub impl[A, B, C, D, E, F, G, H, I, J, K, L, M, N, O] Show for Union15[A, B, C, D, E, F, G, H, I, J, K, L, M, N, O]
 pub impl[A, B, C, D, E, F, G, H, I, J, K, L, M, N, O] ToJson for Union15[A, B, C, D, E, F, G, H, I, J, K, L, M, N, O]
 
 #external
 pub(all) type Union16[_, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _]
+pub fn[A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P] Union16::equal(Self[A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P], Self[A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P]) -> Bool
+pub fn[A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P] Union16::not_equal(Self[A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P], Self[A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P]) -> Bool
+pub fn[A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P] Union16::output(Self[A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P], &Logger) -> Unit
+pub fn[A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P] Union16::to_json(Self[A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P]) -> Json
+pub fn[A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P] Union16::to_string(Self[A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P]) -> String
 pub impl[A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P] Eq for Union16[A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P]
 pub impl[A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P] Show for Union16[A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P]
 pub impl[A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P] ToJson for Union16[A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P]
 
 #external
 pub(all) type Union2[_, _]
+pub fn[A, B] Union2::equal(Self[A, B], Self[A, B]) -> Bool
+pub fn[A, B] Union2::not_equal(Self[A, B], Self[A, B]) -> Bool
+pub fn[A, B] Union2::output(Self[A, B], &Logger) -> Unit
+pub fn[A, B] Union2::to_json(Self[A, B]) -> Json
+pub fn[A, B] Union2::to_string(Self[A, B]) -> String
 pub impl[A, B] Eq for Union2[A, B]
 pub impl[A, B] Show for Union2[A, B]
 pub impl[A, B] ToJson for Union2[A, B]
 
 #external
 pub(all) type Union3[_, _, _]
+pub fn[A, B, C] Union3::equal(Self[A, B, C], Self[A, B, C]) -> Bool
+pub fn[A, B, C] Union3::not_equal(Self[A, B, C], Self[A, B, C]) -> Bool
+pub fn[A, B, C] Union3::output(Self[A, B, C], &Logger) -> Unit
+pub fn[A, B, C] Union3::to_json(Self[A, B, C]) -> Json
+pub fn[A, B, C] Union3::to_string(Self[A, B, C]) -> String
 pub impl[A, B, C] Eq for Union3[A, B, C]
 pub impl[A, B, C] Show for Union3[A, B, C]
 pub impl[A, B, C] ToJson for Union3[A, B, C]
 
 #external
 pub(all) type Union4[_, _, _, _]
+pub fn[A, B, C, D] Union4::equal(Self[A, B, C, D], Self[A, B, C, D]) -> Bool
+pub fn[A, B, C, D] Union4::not_equal(Self[A, B, C, D], Self[A, B, C, D]) -> Bool
+pub fn[A, B, C, D] Union4::output(Self[A, B, C, D], &Logger) -> Unit
+pub fn[A, B, C, D] Union4::to_json(Self[A, B, C, D]) -> Json
+pub fn[A, B, C, D] Union4::to_string(Self[A, B, C, D]) -> String
 pub impl[A, B, C, D] Eq for Union4[A, B, C, D]
 pub impl[A, B, C, D] Show for Union4[A, B, C, D]
 pub impl[A, B, C, D] ToJson for Union4[A, B, C, D]
 
 #external
 pub(all) type Union5[_, _, _, _, _]
+pub fn[A, B, C, D, E] Union5::equal(Self[A, B, C, D, E], Self[A, B, C, D, E]) -> Bool
+pub fn[A, B, C, D, E] Union5::not_equal(Self[A, B, C, D, E], Self[A, B, C, D, E]) -> Bool
+pub fn[A, B, C, D, E] Union5::output(Self[A, B, C, D, E], &Logger) -> Unit
+pub fn[A, B, C, D, E] Union5::to_json(Self[A, B, C, D, E]) -> Json
+pub fn[A, B, C, D, E] Union5::to_string(Self[A, B, C, D, E]) -> String
 pub impl[A, B, C, D, E] Eq for Union5[A, B, C, D, E]
 pub impl[A, B, C, D, E] Show for Union5[A, B, C, D, E]
 pub impl[A, B, C, D, E] ToJson for Union5[A, B, C, D, E]
 
 #external
 pub(all) type Union6[_, _, _, _, _, _]
+pub fn[A, B, C, D, E, F] Union6::equal(Self[A, B, C, D, E, F], Self[A, B, C, D, E, F]) -> Bool
+pub fn[A, B, C, D, E, F] Union6::not_equal(Self[A, B, C, D, E, F], Self[A, B, C, D, E, F]) -> Bool
+pub fn[A, B, C, D, E, F] Union6::output(Self[A, B, C, D, E, F], &Logger) -> Unit
+pub fn[A, B, C, D, E, F] Union6::to_json(Self[A, B, C, D, E, F]) -> Json
+pub fn[A, B, C, D, E, F] Union6::to_string(Self[A, B, C, D, E, F]) -> String
 pub impl[A, B, C, D, E, F] Eq for Union6[A, B, C, D, E, F]
 pub impl[A, B, C, D, E, F] Show for Union6[A, B, C, D, E, F]
 pub impl[A, B, C, D, E, F] ToJson for Union6[A, B, C, D, E, F]
 
 #external
 pub(all) type Union7[_, _, _, _, _, _, _]
+pub fn[A, B, C, D, E, F, G] Union7::equal(Self[A, B, C, D, E, F, G], Self[A, B, C, D, E, F, G]) -> Bool
+pub fn[A, B, C, D, E, F, G] Union7::not_equal(Self[A, B, C, D, E, F, G], Self[A, B, C, D, E, F, G]) -> Bool
+pub fn[A, B, C, D, E, F, G] Union7::output(Self[A, B, C, D, E, F, G], &Logger) -> Unit
+pub fn[A, B, C, D, E, F, G] Union7::to_json(Self[A, B, C, D, E, F, G]) -> Json
+pub fn[A, B, C, D, E, F, G] Union7::to_string(Self[A, B, C, D, E, F, G]) -> String
 pub impl[A, B, C, D, E, F, G] Eq for Union7[A, B, C, D, E, F, G]
 pub impl[A, B, C, D, E, F, G] Show for Union7[A, B, C, D, E, F, G]
 pub impl[A, B, C, D, E, F, G] ToJson for Union7[A, B, C, D, E, F, G]
 
 #external
 pub(all) type Union8[_, _, _, _, _, _, _, _]
+pub fn[A, B, C, D, E, F, G, H] Union8::equal(Self[A, B, C, D, E, F, G, H], Self[A, B, C, D, E, F, G, H]) -> Bool
+pub fn[A, B, C, D, E, F, G, H] Union8::not_equal(Self[A, B, C, D, E, F, G, H], Self[A, B, C, D, E, F, G, H]) -> Bool
+pub fn[A, B, C, D, E, F, G, H] Union8::output(Self[A, B, C, D, E, F, G, H], &Logger) -> Unit
+pub fn[A, B, C, D, E, F, G, H] Union8::to_json(Self[A, B, C, D, E, F, G, H]) -> Json
+pub fn[A, B, C, D, E, F, G, H] Union8::to_string(Self[A, B, C, D, E, F, G, H]) -> String
 pub impl[A, B, C, D, E, F, G, H] Eq for Union8[A, B, C, D, E, F, G, H]
 pub impl[A, B, C, D, E, F, G, H] Show for Union8[A, B, C, D, E, F, G, H]
 pub impl[A, B, C, D, E, F, G, H] ToJson for Union8[A, B, C, D, E, F, G, H]
 
 #external
 pub(all) type Union9[_, _, _, _, _, _, _, _, _]
+pub fn[A, B, C, D, E, F, G, H, I] Union9::equal(Self[A, B, C, D, E, F, G, H, I], Self[A, B, C, D, E, F, G, H, I]) -> Bool
+pub fn[A, B, C, D, E, F, G, H, I] Union9::not_equal(Self[A, B, C, D, E, F, G, H, I], Self[A, B, C, D, E, F, G, H, I]) -> Bool
+pub fn[A, B, C, D, E, F, G, H, I] Union9::output(Self[A, B, C, D, E, F, G, H, I], &Logger) -> Unit
+pub fn[A, B, C, D, E, F, G, H, I] Union9::to_json(Self[A, B, C, D, E, F, G, H, I]) -> Json
+pub fn[A, B, C, D, E, F, G, H, I] Union9::to_string(Self[A, B, C, D, E, F, G, H, I]) -> String
 pub impl[A, B, C, D, E, F, G, H, I] Eq for Union9[A, B, C, D, E, F, G, H, I]
 pub impl[A, B, C, D, E, F, G, H, I] Show for Union9[A, B, C, D, E, F, G, H, I]
 pub impl[A, B, C, D, E, F, G, H, I] ToJson for Union9[A, B, C, D, E, F, G, H, I]
@@ -242,4 +407,3 @@ pub impl[A, B, C, D, E, F, G, H, I] ToJson for Union9[A, B, C, D, E, F, G, H, I]
 // Type aliases
 
 // Traits
-

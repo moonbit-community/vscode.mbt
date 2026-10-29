@@ -1,0 +1,7 @@
+import {
+  "illusory0x0/vscode",
+}
+
+options(
+  link: { "js": { "exports": [ "activate", "deactivate" ], "format": "cjs" } },
+)

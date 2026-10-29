@@ -95,7 +95,7 @@ pub(all) struct AutoClosingPair {
 } derive(Eq, Show, ToJson)
 
 pub struct BranchCoverage {
-  executionCount : Int
+  executionCount : Int32
   location : Location?
 } derive(Eq, Show, ToJson)
 pub fn BranchCoverage::new(@interop.Any, @interop.Any?, String?) -> @interop.Any
@@ -199,7 +199,7 @@ pub impl ToJson for ChatFollowupProvider
 
 pub(all) struct ChatLanguageModelToolReference {
   name : String
-  range : Array[Int]?
+  range : Array[Int32]?
 } derive(Eq, Show, ToJson)
 
 pub(all) struct ChatParticipant {
@@ -225,7 +225,7 @@ pub(all) enum ChatParticipantToolToken {
 
 pub(all) struct ChatPromptReference {
   id : String
-  range : Array[Int]?
+  range : Array[Int32]?
   modelDescription : String?
   value : @interop.Any
 } derive(Eq, Show, ToJson)
@@ -235,7 +235,7 @@ pub(all) struct ChatRequest {
   command : String?
   references : Array[ChatPromptReference]
   location : Location?
-  attempt : Int
+  attempt : Int32
   enableCommandDetection : Bool
   model : LanguageModelChat
 } derive(Eq, Show, ToJson)
@@ -245,7 +245,7 @@ pub struct ChatRequestTurn {
   participant : String
   references : Array[ChatPromptReference]
   location : Location?
-  attempt : Int
+  attempt : Int32
   enableCommandDetection : Bool
 } derive(Eq, Show, ToJson)
 
@@ -490,7 +490,7 @@ pub(all) struct CommentOptions {
 pub(all) struct CommentReaction {
   label : String
   iconPath : @interop.Union3[Uri, LightDarkIconPath, ThemeIcon]
-  count : Int
+  count : Int32
   authorHasReacted : Bool
 } derive(Eq, Show, ToJson)
 
@@ -801,16 +801,16 @@ pub struct DebugAdapterNamedPipeServer {
 pub fn DebugAdapterNamedPipeServer::new(String) -> @interop.Any
 
 pub struct DebugAdapterServer {
-  port : Int
+  port : Int32
   host : String?
 } derive(Eq, Show, ToJson)
-pub fn DebugAdapterServer::new(Int, String?) -> @interop.Any
+pub fn DebugAdapterServer::new(Int32, String?) -> @interop.Any
 
 pub(all) struct DebugAdapterTracker {
 } derive(Eq, Show, ToJson)
 pub fn DebugAdapterTracker::onDidSendMessage(Self, @interop.Any) -> Unit
 pub fn DebugAdapterTracker::onError(Self, Error) -> Unit
-pub fn DebugAdapterTracker::onExit(Self, Int?, String?) -> Unit
+pub fn DebugAdapterTracker::onExit(Self, Int32?, String?) -> Unit
 pub fn DebugAdapterTracker::onWillReceiveMessage(Self, @interop.Any) -> Unit
 pub fn DebugAdapterTracker::onWillStartSession(Self) -> Unit
 pub fn DebugAdapterTracker::onWillStopSession(Self) -> Unit
@@ -853,18 +853,18 @@ pub(all) enum DebugConsoleMode {
 } derive(Eq, Show, ToJson)
 
 pub(all) struct DebugProtocolBreakpoint {
-  id : Int?
+  id : Int32?
   verified : Bool
   message : String?
   source : DebugProtocolSource?
-  line : Int?
-  column : Int?
-  endLine : Int?
-  endColumn : Int?
+  line : Int32?
+  column : Int32?
+  endLine : Int32?
+  endColumn : Int32?
 } derive(Eq, Show, ToJson)
 
 pub(all) struct DebugProtocolMessage {
-  id : Int
+  id : Int32
   format : String
   variables : Map[String, String]?
   sendTelemetry : Bool?
@@ -876,7 +876,7 @@ pub(all) struct DebugProtocolMessage {
 pub(all) struct DebugProtocolSource {
   name : String?
   path : String?
-  sourceReference : Int?
+  sourceReference : Int32?
 } derive(Eq, Show, ToJson)
 
 pub(all) struct DebugSession {
@@ -922,7 +922,7 @@ pub struct DebugThread {
 } derive(Eq, Show, ToJson)
 
 pub struct DeclarationCoverage {
-  executed : Int
+  executed : Int32
   location : Location
 } derive(Eq, Show, ToJson)
 pub fn DeclarationCoverage::new(String, @interop.Any, @interop.Any) -> @interop.Any
@@ -996,7 +996,7 @@ pub struct Diagnostic {
   message : String
   severity : DiagnosticSeverity
   source : String?
-  code : @interop.Union3[String, Int, DiagnosticCode]?
+  code : @interop.Union3[String, Int32, DiagnosticCode]?
   tags : Array[DiagnosticTag]?
   relatedInformation : Array[DiagnosticRelatedInformation]?
 } derive(Eq, Show, ToJson)
@@ -1007,7 +1007,7 @@ pub(all) struct DiagnosticChangeEvent {
 } derive(Eq, Show, ToJson)
 
 pub(all) struct DiagnosticCode {
-  value : @interop.Union2[String, Int]
+  value : @interop.Union2[String, Int32]
   target : Uri
 } derive(Eq, Show, ToJson)
 
@@ -1234,7 +1234,7 @@ pub(all) enum EndOfLine {
 pub(all) struct EnterAction {
   mut indentAction : IndentAction
   mut appendText : String?
-  mut removeText : Int?
+  mut removeText : Int32?
 } derive(Eq, Show, ToJson)
 
 pub(all) struct Env {
@@ -1448,9 +1448,9 @@ pub(all) struct FileRenameEvent {
 
 pub(all) struct FileStat {
   fileType : FileType
-  ctime : Int
-  mtime : Int
-  size : Int
+  ctime : Int32
+  mtime : Int32
+  size : Int32
   permissions : FilePermission?
 } derive(Eq, Show, ToJson)
 
@@ -1536,16 +1536,16 @@ pub fn FileWillRenameEvent::waitUntil_for_Any(Self, Thenable[@interop.Any]) -> U
 pub fn FileWillRenameEvent::waitUntil_for_WorkspaceEdit(Self, Thenable[WorkspaceEdit]) -> Unit
 
 pub(all) struct FoldingContext {
-  maxRanges : Int
+  maxRanges : Int32
 } derive(Eq, Show, ToJson)
 
 pub struct FoldingRange {
-  start : Int
-  end : Int
+  start : Int32
+  end : Int32
   kind : FoldingRangeKind?
   collapsedText : String?
 } derive(Eq, Show, ToJson)
-pub fn FoldingRange::new(Int, Int, FoldingRangeKind?) -> Self
+pub fn FoldingRange::new(Int32, Int32, FoldingRangeKind?) -> Self
 
 pub(all) enum FoldingRangeKind {
   Comment
@@ -1560,7 +1560,7 @@ pub(all) struct FoldingRangeProvider {
 pub fn FoldingRangeProvider::provideFoldingRanges(Self, TextDocument, @interop.Any, CancellationToken) -> @interop.Any
 
 pub(all) struct FormattingOptions {
-  tabSize : Int
+  tabSize : Int32
   insertSpaces : Bool
 } derive(Eq, Show, ToJson)
 
@@ -1683,7 +1683,7 @@ pub(all) enum InlineCompletionTriggerKind {
 } derive(Eq, Show, ToJson)
 
 pub(all) struct InlineValueContext {
-  frameId : Int
+  frameId : Int32
   stoppedLocation : Range
 } derive(Eq, Show, ToJson)
 
@@ -1717,13 +1717,13 @@ pub impl ToJson for InlineValuesProvider
 
 pub(all) struct InputBox {
   mut title : String?
-  mut step : Int?
-  mut totalSteps : Int?
+  mut step : Int32?
+  mut totalSteps : Int32?
   mut enabled : Bool
   mut busy : Bool
   mut ignoreFocusOut : Bool
   mut value : String
-  valueSelection : Array[Int]?
+  valueSelection : Array[Int32]?
   mut placeholder : String?
   mut password : Bool
   mut prompt : String?
@@ -1741,7 +1741,7 @@ pub fn InputBox::setValue(Self, String) -> Unit
 pub(all) struct InputBoxOptions {
   title : String?
   value : String?
-  valueSelection : (Int, Int)?
+  valueSelection : (Int32, Int32)?
   prompt : String?
   placeHolder : String?
   password : Bool?
@@ -1785,7 +1785,7 @@ pub(all) struct LanguageModelChat {
   vendor : String
   family : String
   version : String
-  maxInputTokens : Int?
+  maxInputTokens : Int32?
 } derive(Eq, Show, ToJson)
 
 pub(all) struct LanguageModelChatInformation {
@@ -1794,7 +1794,7 @@ pub(all) struct LanguageModelChatInformation {
   vendor : String
   family : String
   version : String
-  maxInputTokens : Int?
+  maxInputTokens : Int32?
   targetModels : Array[LanguageModelChatSelector]?
 } derive(Eq, Show, ToJson)
 
@@ -1815,7 +1815,7 @@ pub(all) struct LanguageModelChatProvider {
   onDidChangeLanguageModelChatInformation : Event[Unit]?
   provide_language_model_chat_information : (PrepareLanguageModelChatModelOptions, CancellationToken) -> @interop.Union2[Array[LanguageModelChatInformation], Thenable[Array[LanguageModelChatInformation]]]
   provide_language_model_chat_response : (LanguageModelChatInformation, Array[LanguageModelChatRequestMessage], ProvideLanguageModelChatResponseOptions, Progress[@interop.Union3[LanguageModelTextPart, LanguageModelToolResultPart, LanguageModelToolCallPart]], CancellationToken) -> Thenable[Unit]
-  provide_token_count : (LanguageModelChatInformation, @interop.Union2[String, LanguageModelChatRequestMessage], CancellationToken) -> Thenable[Int]
+  provide_token_count : (LanguageModelChatInformation, @interop.Union2[String, LanguageModelChatRequestMessage], CancellationToken) -> Thenable[Int32]
 }
 pub fn LanguageModelChatProvider::provideChatResponse(Self, @interop.Any, @interop.Any, @interop.Any, CancellationToken) -> @interop.Any
 pub fn LanguageModelChatProvider::provideTokenCount(Self, @interop.Any, @interop.Any, CancellationToken) -> @interop.Any
@@ -1921,7 +1921,7 @@ pub struct LanguageModelToolResultPart {
 pub fn LanguageModelToolResultPart::new(String, @interop.Any) -> @interop.Any
 
 pub(all) struct LanguageModelToolTokenizationOptions {
-  tokenBudget : Int
+  tokenBudget : Int32
 } derive(Eq, Show, ToJson)
 pub fn LanguageModelToolTokenizationOptions::countTokens_with_options(Self, String, CancellationToken?) -> @interop.Any
 
@@ -1961,7 +1961,7 @@ pub(all) enum LanguageStatusSeverity {
 pub(all) struct Languages {
   getLanguages : () -> Thenable[Array[String]]
   setTextDocumentLanguage : (TextDocument, String) -> Thenable[TextDocument]
-  match_document : (@interop.Union3[DocumentFilter, String, Array[@interop.Union2[DocumentFilter, String]]], TextDocument) -> Int
+  match_document : (@interop.Union3[DocumentFilter, String, Array[@interop.Union2[DocumentFilter, String]]], TextDocument) -> Int32
   getDiagnostics : (Uri?) -> Array[Diagnostic]
   createDiagnosticCollection : (String?) -> DiagnosticCollection
   createLanguageStatusItem : (String, @interop.Union3[DocumentFilter, String, Array[@interop.Union2[DocumentFilter, String]]]) -> LanguageStatusItem
@@ -2119,7 +2119,7 @@ pub(all) struct MessageOptions {
 } derive(Eq, Show, ToJson)
 
 pub(all) struct NotebookCell {
-  index : Int
+  index : Int32
   kind : NotebookCellKind
   document : TextDocument
   outputs : Array[NotebookCellOutput]
@@ -2146,21 +2146,21 @@ pub fn NotebookCellData::new(@interop.Any, String, String) -> @interop.Any
 pub(all) struct NotebookCellExecution {
   cell : NotebookCell
   token : CancellationToken
-  mut executionOrder : Int?
+  mut executionOrder : Int32?
 } derive(Eq, Show, ToJson)
 pub fn NotebookCellExecution::clearOutput_with_options(Self, NotebookCell?) -> @interop.Any
-pub fn NotebookCellExecution::end_with_options(Self, Bool?, Int?) -> Unit
-pub fn NotebookCellExecution::start_with_options(Self, Int?) -> Unit
+pub fn NotebookCellExecution::end_with_options(Self, Bool?, Int32?) -> Unit
+pub fn NotebookCellExecution::start_with_options(Self, Int32?) -> Unit
 
 pub(all) struct NotebookCellExecutionSummary {
-  executionOrder : Int?
+  executionOrder : Int32?
   success : Bool?
   timing : NotebookCellExecutionTiming?
 } derive(Eq, Show, ToJson)
 
 pub(all) struct NotebookCellExecutionTiming {
-  startTime : Int
-  endTime : Int
+  startTime : Int32
+  endTime : Int32
 } derive(Eq, Show, ToJson)
 
 pub(all) enum NotebookCellKind {
@@ -2176,7 +2176,7 @@ pub fn NotebookCellOutput::new(@interop.Any, @interop.Any?) -> @interop.Any
 
 pub struct NotebookCellOutputItem {
   mime : String
-  data : Array[Int]
+  data : Array[Int32]
 } derive(Eq, Show, ToJson)
 pub fn NotebookCellOutputItem::error(@interop.Any) -> @interop.Any
 pub fn NotebookCellOutputItem::json(@interop.Any, String?) -> @interop.Any
@@ -2193,7 +2193,7 @@ pub(all) enum NotebookCellStatusBarAlignment {
 pub struct NotebookCellStatusBarItem {
   text : String
   alignment : NotebookCellStatusBarAlignment
-  priority : Int?
+  priority : Int32?
   command : String?
   tooltip : String?
   accessibilityInformation : AccessibilityInformation?
@@ -2243,14 +2243,14 @@ pub fn NotebookData::new(@interop.Any) -> @interop.Any
 pub(all) struct NotebookDocument {
   uri : Uri
   notebookType : String
-  version : Int
+  version : Int32
   isDirty : Bool
   isUntitled : Bool
   isClosed : Bool
   metadata : @interop.Any
-  cellCount : Int
+  cellCount : Int32
 } derive(Eq, Show, ToJson)
-pub fn NotebookDocument::cellAt(Self, Int) -> NotebookCell
+pub fn NotebookDocument::cellAt(Self, Int32) -> NotebookCell
 pub fn NotebookDocument::getCells_with_options(Self, NotebookRange?) -> Array[NotebookCell]
 pub fn NotebookDocument::save(Self) -> @interop.Any
 
@@ -2297,10 +2297,10 @@ pub fn NotebookDocumentWillSaveEvent::waitUntil_for_WorkspaceEdit(Self, Thenable
 pub struct NotebookEdit {
 } derive(Eq, Show, ToJson)
 pub fn NotebookEdit::deleteCells(@interop.Any) -> @interop.Any
-pub fn NotebookEdit::insertCells(Int, @interop.Any) -> @interop.Any
+pub fn NotebookEdit::insertCells(Int32, @interop.Any) -> @interop.Any
 pub fn NotebookEdit::new(@interop.Any, @interop.Any) -> @interop.Any
 pub fn NotebookEdit::replaceCells(@interop.Any, @interop.Any) -> @interop.Any
-pub fn NotebookEdit::updateCellMetadata(Int, @interop.Any) -> @interop.Any
+pub fn NotebookEdit::updateCellMetadata(Int32, @interop.Any) -> @interop.Any
 pub fn NotebookEdit::updateNotebookMetadata(@interop.Any) -> @interop.Any
 
 pub(all) struct NotebookEditor {
@@ -2329,10 +2329,10 @@ pub(all) struct NotebookEditorVisibleRangesChangeEvent {
 } derive(Eq, Show, ToJson)
 
 pub struct NotebookRange {
-  start : Int
-  end : Int
+  start : Int32
+  end : Int32
 } derive(Eq, Show, ToJson)
-pub fn NotebookRange::new(Int, Int) -> Self
+pub fn NotebookRange::new(Int32, Int32) -> Self
 pub fn NotebookRange::withChange(@interop.Any, @interop.Any) -> @interop.Any
 
 pub(all) struct NotebookRendererMessaging {
@@ -2398,27 +2398,27 @@ pub struct ParameterInformation {
   label : String
   documentation : String?
 } derive(Eq, Show, ToJson)
-pub fn ParameterInformation::new(@interop.Union2[String, (Int, Int)], @interop.Union2[String, MarkdownString]?) -> Self
+pub fn ParameterInformation::new(@interop.Union2[String, (Int32, Int32)], @interop.Union2[String, MarkdownString]?) -> Self
 
 pub(all) struct PasteContext {
   triggerKind : DocumentPasteTriggerKind
 } derive(Eq, Show, ToJson)
 
 pub struct Position {
-  line : Int
-  character : Int
+  line : Int32
+  character : Int32
 } derive(Eq, Show, ToJson)
-pub fn Position::compareTo(Self, Self) -> Int
+pub fn Position::compareTo(Self, Self) -> Int32
 pub fn Position::isAfter(Self, Self) -> Bool
 pub fn Position::isAfterOrEqual(Self, Self) -> Bool
 pub fn Position::isBefore(Self, Self) -> Bool
 pub fn Position::isBeforeOrEqual(Self, Self) -> Bool
 pub fn Position::isEqual(Self, Self) -> Bool
-pub fn Position::new(Int, Int) -> Self
+pub fn Position::new(Int32, Int32) -> Self
 pub fn Position::translate_with_change(Self, @interop.Any) -> Self
-pub fn Position::translate_with_options(Self, Int?, Int?) -> Self
+pub fn Position::translate_with_options(Self, Int32?, Int32?) -> Self
 pub fn Position::with_change(Self, @interop.Any) -> Self
-pub fn Position::with_with_options(Self, Int?, Int?) -> Self
+pub fn Position::with_with_options(Self, Int32?, Int32?) -> Self
 
 pub(all) struct PrepareLanguageModelChatModelOptions {
   justification : String?
@@ -2445,7 +2445,7 @@ pub(all) struct ProcessExecutionOptions {
 #external
 pub(all) type Progress[T]
 pub fn Progress::report(Self[@interop.Any], @interop.Any) -> Unit
-pub fn Progress::reportWithIncrement(Self[@interop.Any], @interop.Any, Int) -> Unit
+pub fn Progress::reportWithIncrement(Self[@interop.Any], @interop.Any, Int32) -> Unit
 pub impl[T] Eq for Progress[T]
 pub impl[T] Show for Progress[T]
 pub impl[T] ToJson for Progress[T]
@@ -2471,7 +2471,7 @@ pub(all) struct ProvideLanguageModelChatResponseOptions {
 pub(all) struct Pseudoterminal {
   onDidWrite : Event[String]
   onDidOverrideDimensions : Event[TerminalDimensions?]?
-  onDidClose : Event[@interop.Union2[Unit, Int]?]?
+  onDidClose : Event[@interop.Union2[Unit, Int32]?]?
   onDidChangeName : Event[String]?
 } derive(Eq, Show, ToJson)
 pub fn Pseudoterminal::close(Self) -> Unit
@@ -2491,8 +2491,8 @@ pub impl ToJson for QuickDiffProvider
 
 pub(all) struct QuickInput {
   mut title : String?
-  mut step : Int?
-  mut totalSteps : Int?
+  mut step : Int32?
+  mut totalSteps : Int32?
   mut enabled : Bool
   mut busy : Bool
   mut ignoreFocusOut : Bool
@@ -2514,8 +2514,8 @@ pub impl ToJson for QuickInputButtons
 
 pub(all) struct QuickPick {
   mut title : String?
-  mut step : Int?
-  mut totalSteps : Int?
+  mut step : Int32?
+  mut totalSteps : Int32?
   mut enabled : Bool
   mut busy : Bool
   mut ignoreFocusOut : Bool
@@ -2581,7 +2581,7 @@ pub fn Range::contains(Self, @interop.Any) -> Bool
 pub fn Range::intersection(Self, Self) -> Self?
 pub fn Range::isEqual(Self, Self) -> Bool
 pub fn Range::new(Position, Position) -> Self
-pub fn Range::new_with_lines(Int, Int, Int, Int) -> Self
+pub fn Range::new_with_lines(Int32, Int32, Int32, Int32) -> Self
 pub fn Range::union(Self, Self) -> Self
 pub fn Range::with_change(Self, @interop.Any) -> Self
 pub fn Range::with_with_options(Self, Position?, Position?) -> Self
@@ -2668,7 +2668,7 @@ pub struct Selection {
   mut isSingleLine : Bool
 } derive(Eq, Show, ToJson)
 pub fn Selection::new(Position, Position) -> Self
-pub fn Selection::new_with_lines(Int, Int, Int, Int) -> Self
+pub fn Selection::new_with_lines(Int32, Int32, Int32, Int32) -> Self
 
 pub struct SelectionRange {
   range : Range
@@ -2686,26 +2686,26 @@ pub impl ToJson for SelectionRangeProvider
 
 pub struct SemanticTokens {
   resultId : String?
-  data : Array[Int]
+  data : Array[Int32]
 } derive(Eq, Show, ToJson)
-pub fn SemanticTokens::new(Array[Int], String?) -> Self
+pub fn SemanticTokens::new(Array[Int32], String?) -> Self
 
 #external
 pub(all) type SemanticTokensBuilder
 pub fn SemanticTokensBuilder::build_with_options(Self, String?) -> SemanticTokens
 pub fn SemanticTokensBuilder::new(SemanticTokensLegend?) -> Self
-pub fn SemanticTokensBuilder::push(Self, Int, Int, Int, Int, Int?) -> Unit
+pub fn SemanticTokensBuilder::push(Self, Int32, Int32, Int32, Int32, Int32?) -> Unit
 pub fn SemanticTokensBuilder::push_with_range(Self, Range, String, Array[String]?) -> Unit
 pub impl Eq for SemanticTokensBuilder
 pub impl Show for SemanticTokensBuilder
 pub impl ToJson for SemanticTokensBuilder
 
 pub struct SemanticTokensEdit {
-  start : Int
-  deleteCount : Int
-  data : Array[Int]?
+  start : Int32
+  deleteCount : Int32
+  data : Array[Int32]?
 } derive(Eq, Show, ToJson)
-pub fn SemanticTokensEdit::new(Int, Int, Array[Int]?) -> Self
+pub fn SemanticTokensEdit::new(Int32, Int32, Array[Int32]?) -> Self
 
 pub struct SemanticTokensEdits {
   resultId : String?
@@ -2757,8 +2757,8 @@ pub(all) struct ShellQuotingOptions {
 
 pub struct SignatureHelp {
   signatures : Array[SignatureInformation]
-  activeSignature : Int
-  activeParameter : Int
+  activeSignature : Int32
+  activeParameter : Int32
 } derive(Eq, Show, ToJson)
 pub fn SignatureHelp::new() -> Self
 
@@ -2792,16 +2792,16 @@ pub struct SignatureInformation {
   label : String
   documentation : String?
   parameters : Array[ParameterInformation]
-  activeParameter : Int?
+  activeParameter : Int32?
 } derive(Eq, Show, ToJson)
 pub fn SignatureInformation::new(String, @interop.Union2[String, MarkdownString]?) -> Self
 
 pub struct SnippetString {
   value : String
 } derive(Eq, Show, ToJson)
-pub fn SnippetString::appendChoice_with_options(Self, @interop.Any, Int?) -> Self
-pub fn SnippetString::appendPlaceholder(Self, @interop.Any, Int?) -> Self
-pub fn SnippetString::appendTabstop_with_options(Self, Int?) -> Self
+pub fn SnippetString::appendChoice_with_options(Self, @interop.Any, Int32?) -> Self
+pub fn SnippetString::appendPlaceholder(Self, @interop.Any, Int32?) -> Self
+pub fn SnippetString::appendTabstop_with_options(Self, Int32?) -> Self
 pub fn SnippetString::appendText(Self, String) -> Self
 pub fn SnippetString::appendVariable(Self, String, @interop.Any) -> Self
 pub fn SnippetString::new(String?) -> Self
@@ -2829,7 +2829,7 @@ pub(all) struct SourceControl {
   label : String
   rootUri : Uri?
   inputBox : SourceControlInputBox
-  count : Int?
+  count : Int32?
   quickDiffProvider : QuickDiffProvider?
   commitTemplate : String?
   acceptInputCommand : Command?
@@ -2893,7 +2893,7 @@ pub(all) struct SourceControlResourceThemableDecorations {
 } derive(Eq, Show, ToJson)
 
 pub struct StatementCoverage {
-  executionCount : Int
+  executionCount : Int32
   location : Location
 } derive(Eq, Show, ToJson)
 pub fn StatementCoverage::new(@interop.Any, @interop.Any, @interop.Any?) -> @interop.Any
@@ -2906,7 +2906,7 @@ pub(all) enum StatusBarAlignment {
 pub(all) struct StatusBarItem {
   id : String
   alignment : StatusBarAlignment
-  priority : Int?
+  priority : Int32?
   mut text : String
   mut tooltip : String?
   mut color : String?
@@ -2919,7 +2919,7 @@ pub fn StatusBarItem::hide(Self) -> Unit
 pub fn StatusBarItem::setBackgroundColor(Self, @interop.Any) -> Unit
 pub fn StatusBarItem::setColor(Self, String) -> Unit
 pub fn StatusBarItem::setCommand(Self, @interop.Any) -> Unit
-pub fn StatusBarItem::setPriority(Self, Int) -> Unit
+pub fn StatusBarItem::setPriority(Self, Int32) -> Unit
 pub fn StatusBarItem::setText(Self, String) -> Unit
 pub fn StatusBarItem::setTooltip(Self, String) -> Unit
 pub fn StatusBarItem::show(Self) -> Unit
@@ -3119,12 +3119,12 @@ pub(all) struct TaskPresentationOptions {
 
 pub(all) struct TaskProcessEndEvent {
   execution : TaskExecution
-  exitCode : Int?
+  exitCode : Int32?
 } derive(Eq, Show, ToJson)
 
 pub(all) struct TaskProcessStartEvent {
   execution : TaskExecution
-  processId : Int
+  processId : Int32
 } derive(Eq, Show, ToJson)
 
 pub(all) struct TaskProvider {
@@ -3189,7 +3189,7 @@ pub fn TelemetryTrustedValue::new(@interop.Any) -> @interop.Any
 
 pub(all) struct Terminal {
   name : String
-  processId : Int?
+  processId : Int32?
   creationOptions : TerminalOptions?
   exitStatus : TerminalExitStatus?
   state : TerminalState?
@@ -3204,8 +3204,8 @@ pub fn Terminal::sendText_with_options(Self, String, Bool?) -> Unit
 pub fn Terminal::show_with_options(Self, Bool?) -> Unit
 
 pub(all) struct TerminalDimensions {
-  columns : Int
-  rows : Int
+  columns : Int32
+  rows : Int32
 } derive(Eq, Show, ToJson)
 
 pub(all) struct TerminalEditorLocationOptions {
@@ -3222,16 +3222,16 @@ pub(all) enum TerminalExitReason {
 } derive(Eq, Show, ToJson)
 
 pub(all) struct TerminalExitStatus {
-  code : Int?
+  code : Int32?
   reason : TerminalExitReason
 } derive(Eq, Show, ToJson)
 
 pub struct TerminalLink {
-  mut startIndex : Int
-  mut length : Int
+  mut startIndex : Int32
+  mut length : Int32
   mut tooltip : String?
 } derive(Eq, Show, ToJson)
-pub fn TerminalLink::new(Int, Int, String?) -> Self
+pub fn TerminalLink::new(Int32, Int32, String?) -> Self
 
 pub(all) struct TerminalLinkContext {
   mut line : String
@@ -3304,7 +3304,7 @@ pub(all) struct TerminalShellExecutionEndEvent {
   terminal : Terminal
   shellIntegration : TerminalShellIntegration
   execution : TerminalShellExecution
-  exitCode : Int?
+  exitCode : Int32?
 } derive(Eq, Show, ToJson)
 
 pub(all) struct TerminalShellExecutionStartEvent {
@@ -3349,10 +3349,10 @@ pub fn TestController::setRefreshHandler(Self, @interop.Any?) -> Unit
 pub fn TestController::setResolveHandler(Self, @interop.Any?) -> Unit
 
 pub struct TestCoverageCount {
-  mut covered : Int
-  mut total : Int
+  mut covered : Int32
+  mut total : Int32
 } derive(Eq, Show, ToJson)
-pub fn TestCoverageCount::new(Int, Int) -> Self
+pub fn TestCoverageCount::new(Int32, Int32) -> Self
 
 pub(all) struct TestItem {
   id : String
@@ -3386,7 +3386,7 @@ pub fn TestItem::setSortText(@interop.Any, String?) -> Unit
 pub fn TestItem::setTags(@interop.Any, @interop.Any) -> Unit
 
 pub(all) struct TestItemCollection {
-  size : Int
+  size : Int32
 } derive(Eq, Show, ToJson)
 pub fn TestItemCollection::add(Self, TestItem) -> Unit
 pub fn TestItemCollection::delete(Self, String) -> Unit
@@ -3421,7 +3421,7 @@ pub fn TestRun::addCoverage(Self, FileCoverage) -> Unit
 pub fn TestRun::appendOutput_with_options(Self, String, Location?, TestItem?) -> Unit
 pub fn TestRun::end(Self) -> Unit
 pub fn TestRun::enqueued(Self, TestItem) -> Unit
-pub fn TestRun::passed_with_options(Self, TestItem, Int?) -> Unit
+pub fn TestRun::passed_with_options(Self, TestItem, Int32?) -> Unit
 pub fn TestRun::skipped(Self, TestItem) -> Unit
 pub fn TestRun::started(Self, TestItem) -> Unit
 
@@ -3472,18 +3472,18 @@ pub(all) struct TextDocument {
   isUntitled : Bool
   languageId : String
   encoding : String
-  version : Int
+  version : Int32
   isDirty : Bool
   isClosed : Bool
   eol : EndOfLine
-  lineCount : Int
+  lineCount : Int32
 } derive(Eq, Show, ToJson)
 pub fn TextDocument::getText_with_options(Self, Range?) -> String
 pub fn TextDocument::getWordRangeAtPosition(Self, Position, @interop.Any?) -> Range?
-pub fn TextDocument::lineAt(Self, Int) -> TextLine
+pub fn TextDocument::lineAt(Self, Int32) -> TextLine
 pub fn TextDocument::lineAt_at_position(Self, Position) -> TextLine
-pub fn TextDocument::offsetAt(Self, Position) -> Int
-pub fn TextDocument::positionAt(Self, Int) -> Position
+pub fn TextDocument::offsetAt(Self, Position) -> Int32
+pub fn TextDocument::positionAt(Self, Int32) -> Position
 pub fn TextDocument::save(Self) -> @interop.Any
 pub fn TextDocument::validatePosition(Self, Position) -> Position
 pub fn TextDocument::validateRange(Self, Range) -> Range
@@ -3501,8 +3501,8 @@ pub(all) enum TextDocumentChangeReason {
 
 pub(all) struct TextDocumentContentChangeEvent {
   range : Range
-  rangeOffset : Int
-  rangeLength : Int
+  rangeOffset : Int32
+  rangeLength : Int32
   text : String
 } derive(Eq, Show, ToJson)
 
@@ -3589,8 +3589,8 @@ pub(all) enum TextEditorLineNumbersStyle {
 } derive(Eq, Show, ToJson)
 
 pub(all) struct TextEditorOptions {
-  mut tabSize : @interop.Union2[Int, String]?
-  mut indentSize : @interop.Union2[Int, String]?
+  mut tabSize : @interop.Union2[Int32, String]?
+  mut indentSize : @interop.Union2[Int32, String]?
   mut insertSpaces : @interop.Union2[Bool, String]?
   mut cursorStyle : TextEditorCursorStyle?
   mut lineNumbers : TextEditorLineNumbersStyle?
@@ -3631,11 +3631,11 @@ pub(all) struct TextEditorVisibleRangesChangeEvent {
 } derive(Eq, Show, ToJson)
 
 pub(all) struct TextLine {
-  lineNumber : Int
+  lineNumber : Int32
   text : String
   range : Range
   rangeIncludingLineBreak : Range
-  firstNonWhitespaceCharacterIndex : Int
+  firstNonWhitespaceCharacterIndex : Int32
   isEmptyOrWhitespace : Bool
 }
 
@@ -3761,7 +3761,7 @@ pub(all) enum TreeItemCollapsibleState {
 
 pub(all) struct TreeItemLabel {
   label : String
-  highlights : Array[Array[Int]]?
+  highlights : Array[Array[Int32]]?
 } derive(Eq, Show, ToJson)
 
 pub(all) struct TreeView {
@@ -3867,7 +3867,7 @@ pub fn UriHandler::handleUri(Self, Uri) -> @interop.Any
 
 pub(all) struct ViewBadge {
   tooltip : String
-  value : Int
+  value : Int32
 } derive(Eq, Show, ToJson)
 
 pub(all) enum ViewColumn {
@@ -3961,8 +3961,8 @@ pub impl Show for WebviewPanelSerializer
 pub impl ToJson for WebviewPanelSerializer
 
 pub(all) struct WebviewPortMapping {
-  webviewPort : Int
-  extensionHostPort : Int
+  webviewPort : Int32
+  extensionHostPort : Int32
 } derive(Eq, Show, ToJson)
 
 pub(all) struct WebviewView {
@@ -4043,10 +4043,10 @@ pub(all) struct Window {
   createInputBox : () -> InputBox
   createOutputChannel : (String, String?) -> OutputChannel
   createWebviewPanel : (String, String, ViewColumn, WebviewPanelOptions?) -> WebviewPanel
-  setStatusBarMessage : (String, Int?) -> Disposable
-  withScmProgress : ((Progress[Int]) -> Thenable[@interop.Any]) -> Thenable[@interop.Any]
+  setStatusBarMessage : (String, Int32?) -> Disposable
+  withScmProgress : ((Progress[Int32]) -> Thenable[@interop.Any]) -> Thenable[@interop.Any]
   withProgress : (ProgressOptions, (Progress[@interop.Any], CancellationToken) -> Thenable[@interop.Any]) -> Thenable[@interop.Any]
-  createStatusBarItem : (String, StatusBarAlignment, Int?) -> StatusBarItem
+  createStatusBarItem : (String, StatusBarAlignment, Int32?) -> StatusBarItem
   createTerminal : (String?, String?, String?) -> Terminal
   registerTreeDataProvider : (String, TreeDataProvider[@interop.Any]) -> Disposable
   createTreeView : (String, TreeViewOptions) -> TreeView
@@ -4094,9 +4094,9 @@ pub(all) struct Workspace {
   onDidGrantWorkspaceTrust : Event[Unit]
   getWorkspaceFolder : (Uri) -> WorkspaceFolder?
   asRelativePath : (String, Bool?) -> String
-  updateWorkspaceFolders : @interop.Func2Rest[Bool, WorkspaceFolder, Int, Int?]
+  updateWorkspaceFolders : @interop.Func2Rest[Bool, WorkspaceFolder, Int32, Int32?]
   createFileSystemWatcher : (@interop.Union2[String, RelativePattern], Bool?, Bool?, Bool?) -> FileSystemWatcher
-  findFiles : (@interop.Union2[String, RelativePattern], @interop.Union2[String, RelativePattern]?, Int?, CancellationToken?) -> Thenable[Array[Uri]]
+  findFiles : (@interop.Union2[String, RelativePattern], @interop.Union2[String, RelativePattern]?, Int32?, CancellationToken?) -> Thenable[Array[Uri]]
   save : (Uri) -> Thenable[Uri?]
   saveAs : (Uri) -> Thenable[Uri?]
   saveAll : (Bool?) -> Thenable[Bool]
@@ -4138,7 +4138,7 @@ pub(all) struct WorkspaceConfigurationInspectResult[T] {
 } derive(Eq, Show, ToJson)
 
 pub struct WorkspaceEdit {
-  size : Int
+  size : Int32
 } derive(Eq, Show, ToJson)
 pub fn WorkspaceEdit::createFile(Self, Uri, @interop.Any?, @interop.Any?) -> Unit
 pub fn WorkspaceEdit::deleteFile(Self, Uri, @interop.Any?, @interop.Any?) -> Unit
@@ -4167,7 +4167,7 @@ pub(all) struct WorkspaceEditMetadata {
 pub(all) struct WorkspaceFolder {
   uri : Uri
   name : String
-  index : Int
+  index : Int32
 } derive(Eq, Show, ToJson)
 
 pub(all) struct WorkspaceFolderPickOptions {
@@ -4292,4 +4292,3 @@ pub using @interop {type Union8}
 pub using @interop {type Union9}
 
 // Traits
-

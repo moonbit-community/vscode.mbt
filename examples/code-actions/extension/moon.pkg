@@ -1,0 +1,11 @@
+import {
+  "illusory0x0/vscode",
+  "illusory0x0/vscode/types",
+  "illusory0x0/vscode/interop",
+}
+
+warnings = "-29"
+
+options(
+  link: { "js": { "exports": [ "activate", "deactivate" ], "format": "cjs" } },
+)

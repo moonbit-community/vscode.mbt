@@ -220,7 +220,7 @@ pub extern "js" fn DebugAdapterTracker::onError(
 ///|
 pub extern "js" fn DebugAdapterTracker::onExit(
   self : DebugAdapterTracker,
-  code : Int?,
+  code : Int32?,
   signal : String?,
 ) -> Unit = "(self, code, signal) => self.onExit(code, signal)"
 
@@ -514,14 +514,14 @@ pub extern "js" fn Memento::update(
 ///|
 pub extern "js" fn NotebookCellExecution::start_with_options(
   self : NotebookCellExecution,
-  startTime : Int?,
+  startTime : Int32?,
 ) -> Unit = "(self, startTime) => self.start(startTime)"
 
 ///|
 pub extern "js" fn NotebookCellExecution::end_with_options(
   self : NotebookCellExecution,
   success : Bool?,
-  endTime : Int?,
+  endTime : Int32?,
 ) -> Unit = "(self, success, endTime) => self.end(success, endTime)"
 
 ///|
@@ -544,7 +544,7 @@ pub extern "js" fn NotebookController::dispose(
 ///|
 pub extern "js" fn NotebookDocument::cellAt(
   self : NotebookDocument,
-  index : Int,
+  index : Int32,
 ) -> NotebookCell = "(self, index) => self.cellAt(index)"
 
 ///|
@@ -643,20 +643,20 @@ pub extern "js" fn Position::isEqual(self : Position, other : Position) -> Bool 
 pub extern "js" fn Position::compareTo(
   self : Position,
   other : Position,
-) -> Int = "(self, other) => self.compareTo(other)"
+) -> Int32 = "(self, other) => self.compareTo(other)"
 
 ///|
 pub extern "js" fn Position::translate_with_options(
   self : Position,
-  lineDelta : Int?,
-  characterDelta : Int?,
+  lineDelta : Int32?,
+  characterDelta : Int32?,
 ) -> Position = "(self, lineDelta, characterDelta) => self.translate(lineDelta, characterDelta)"
 
 ///|
 pub extern "js" fn Position::with_with_options(
   self : Position,
-  line : Int?,
-  character : Int?,
+  line : Int32?,
+  character : Int32?,
 ) -> Position = "(self, line, character) => self.with(line, character)"
 
 ///|
@@ -745,14 +745,14 @@ pub extern "js" fn SnippetString::appendText(
 ///|
 pub extern "js" fn SnippetString::appendTabstop_with_options(
   self : SnippetString,
-  number : Int?,
+  number : Int32?,
 ) -> SnippetString = "(self, Int) => self.appendTabstop(Int)"
 
 ///|
 pub extern "js" fn SnippetString::appendChoice_with_options(
   self : SnippetString,
   values : Any,
-  number : Int?,
+  number : Int32?,
 ) -> SnippetString = "(self, values, Int) => self.appendChoice(values, Int)"
 
 ///|
@@ -921,7 +921,7 @@ pub extern "js" fn TestRun::skipped(
 pub extern "js" fn TestRun::passed_with_options(
   self : TestRun,
   testItem : TestItem,
-  duration : Int?,
+  duration : Int32?,
 ) -> Unit = "(self, test, duration) => self.passed(test, duration)"
 
 ///|
@@ -950,7 +950,7 @@ pub extern "js" fn TextDocument::save(self : TextDocument) -> Any = "(self) => s
 ///|
 pub extern "js" fn TextDocument::lineAt(
   self : TextDocument,
-  line : Int,
+  line : Int32,
 ) -> TextLine = "(self, line) => self.lineAt(line)"
 
 ///|
@@ -963,12 +963,12 @@ pub extern "js" fn TextDocument::lineAt_at_position(
 pub extern "js" fn TextDocument::offsetAt(
   self : TextDocument,
   position : Position,
-) -> Int = "(self, position) => self.offsetAt(position)"
+) -> Int32 = "(self, position) => self.offsetAt(position)"
 
 ///|
 pub extern "js" fn TextDocument::positionAt(
   self : TextDocument,
-  offset : Int,
+  offset : Int32,
 ) -> Position = "(self, offset) => self.positionAt(offset)"
 
 ///|
@@ -1198,7 +1198,7 @@ pub extern "js" fn StatusBarItem::setBackgroundColor(
 ///|
 pub extern "js" fn StatusBarItem::setPriority(
   self : StatusBarItem,
-  priority : Int,
+  priority : Int32,
 ) -> Unit = "(self, priority) => { self.priority = priority; }"
 
 ///|
@@ -1301,7 +1301,7 @@ pub extern "js" fn WebviewPanel::setIconPath(
 pub extern "js" fn Progress::reportWithIncrement(
   self : Progress[Any],
   value : Any,
-  increment : Int,
+  increment : Int32,
 ) -> Unit = "(self, value, increment) => self.report({ ...value, increment })"
 
 ///|
@@ -1342,7 +1342,7 @@ pub extern "js" fn NotebookEdit::replaceCells(
 
 ///|
 pub extern "js" fn NotebookEdit::insertCells(
-  index : Int,
+  index : Int32,
   newCells : Any,
 ) -> Any = "(index, newCells) => require('vscode').NotebookEdit.insertCells(index, newCells)"
 
@@ -1351,7 +1351,7 @@ pub extern "js" fn NotebookEdit::deleteCells(range : Any) -> Any = "(range) => r
 
 ///|
 pub extern "js" fn NotebookEdit::updateCellMetadata(
-  index : Int,
+  index : Int32,
   newCellMetadata : Any,
 ) -> Any = "(index, newCellMetadata) => require('vscode').NotebookEdit.updateCellMetadata(index, newCellMetadata)"
 
@@ -2736,7 +2736,7 @@ pub extern "js" fn WorkspaceEdit::renameFile(
 pub extern "js" fn SnippetString::appendPlaceholder(
   self : SnippetString,
   value : Any,
-  number : Int?,
+  number : Int32?,
 ) -> SnippetString = "(self, value, number) => self.appendPlaceholder(value, number)"
 
 ///|

@@ -1,14 +1,14 @@
 // Generated using `moon info`, DON'T EDIT IT
-package "illusory0x0/vscode/extension"
+package "helloworld-minimal/extension"
 
-import(
-  "illusory0x0/vscode/types"
-)
+import {
+  "illusory0x0/vscode/types",
+}
 
 // Values
-fn activate(@types.ExtensionContext) -> Unit
+pub fn activate(@types.ExtensionContext) -> Unit
 
-fn deactivate() -> Unit
+pub fn deactivate() -> Unit
 
 // Errors
 
@@ -17,4 +17,3 @@ fn deactivate() -> Unit
 // Type aliases
 
 // Traits
-
