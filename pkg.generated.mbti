@@ -1125,4 +1125,3 @@ pub using @types {type WorkspaceFoldersChangeEvent}
 pub using @types {type WorkspaceSymbolProvider}
 
 // Traits
-

@@ -161,13 +161,13 @@ pub(all) struct Window {
   createInputBox : () -> InputBox
   createOutputChannel : (String, String?) -> OutputChannel
   createWebviewPanel : (String, String, ViewColumn, WebviewPanelOptions?) -> WebviewPanel
-  setStatusBarMessage : (String, Int?) -> Disposable
-  withScmProgress : ((Progress[Int]) -> Thenable[Any]) -> Thenable[Any]
+  setStatusBarMessage : (String, Int32?) -> Disposable
+  withScmProgress : ((Progress[Int32]) -> Thenable[Any]) -> Thenable[Any]
   withProgress : (
     ProgressOptions,
     (Progress[Any], CancellationToken) -> Thenable[Any],
   ) -> Thenable[Any]
-  createStatusBarItem : (String, StatusBarAlignment, Int?) -> StatusBarItem
+  createStatusBarItem : (String, StatusBarAlignment, Int32?) -> StatusBarItem
   createTerminal : (String?, String?, String?) -> Terminal
   registerTreeDataProvider : (String, TreeDataProvider[Any]) -> Disposable
   createTreeView : (String, TreeViewOptions) -> TreeView
@@ -220,9 +220,9 @@ pub(all) struct Workspace {
   getWorkspaceFolder : (Uri) -> WorkspaceFolder?
   asRelativePath : (String, Bool?) -> String
   /// (start : Int, deleteCount : Int?, ...workspaceFoldersToAdd : WorkspaceFolder) -> Bool
-  updateWorkspaceFolders : Func2Rest[Bool, WorkspaceFolder, Int, Int?]
+  updateWorkspaceFolders : Func2Rest[Bool, WorkspaceFolder, Int32, Int32?]
   createFileSystemWatcher : (GlobPattern, Bool?, Bool?, Bool?) -> FileSystemWatcher
-  findFiles : (GlobPattern, GlobPattern?, Int?, CancellationToken?) -> Thenable[
+  findFiles : (GlobPattern, GlobPattern?, Int32?, CancellationToken?) -> Thenable[
     Array[Uri],
   ]
   save : (Uri) -> Thenable[Uri?]
@@ -252,7 +252,7 @@ pub(all) struct Workspace {
 pub(all) struct Languages {
   getLanguages : () -> Thenable[Array[String]]
   setTextDocumentLanguage : (TextDocument, String) -> Thenable[TextDocument]
-  match_document : (DocumentSelector, TextDocument) -> Int
+  match_document : (DocumentSelector, TextDocument) -> Int32
   getDiagnostics : (Uri?) -> Array[Diagnostic]
   createDiagnosticCollection : (String?) -> DiagnosticCollection
   createLanguageStatusItem : (String, DocumentSelector) -> LanguageStatusItem

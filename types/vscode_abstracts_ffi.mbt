@@ -141,11 +141,11 @@ pub extern "js" fn SemanticTokensBuilder::build_with_options(
 ///|
 pub extern "js" fn SemanticTokensBuilder::push(
   self : SemanticTokensBuilder,
-  line : Int,
-  char : Int,
-  length : Int,
-  tokenType : Int,
-  tokenModifiers : Int?,
+  line : Int32,
+  char : Int32,
+  length : Int32,
+  tokenType : Int32,
+  tokenModifiers : Int32?,
 ) -> Unit = "(self, line, char, length, tokenType, tokenModifiers) => self.push(line, char, length, tokenType, tokenModifiers)"
 
 ///|

@@ -7,7 +7,7 @@ pub fn deactivate() -> Unit {
 let vscode = @vscode.vscode
 
 ///|
-fnalias @vscode.coerce
+using @vscode { coerce }
 
 ///|
 pub fn activate(context : @vscode.ExtensionContext) -> Unit {
@@ -15,7 +15,7 @@ pub fn activate(context : @vscode.ExtensionContext) -> Unit {
     resolveCompletionItem: None,
     provideCompletionItems: fn(_doc, _pos, _token, _ctx) {
       let result : Array[@vscode.CompletionItem] = []
-      let line_prefix = try! _doc.lineAt_at_position(_pos).text[0:_pos.character]
+      let line_prefix = _doc.lineAt_at_position(_pos).text[0:_pos.character]
       if line_prefix.has_suffix("console.") {
         fn mk_item(s : String) {
           @vscode.CompletionItem::new(

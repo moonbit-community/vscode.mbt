@@ -11,9 +11,9 @@ fn[A, B] coerce(x : A) -> B = "%identity"
 
 ///|
 priv struct Token {
-  line : Int
-  char : Int
-  len : Int
+  line : Int32
+  char : Int32
+  len : Int32
   token_type : String
 }
 
@@ -23,32 +23,32 @@ fn tokenize(s : String) -> Array[Token] {
   let mut char = 0
   let mut rest : StringView = s
   let tokens = []
-  for {
+  for ;; {
     lexmatch rest with longest {
-      ("\d+" as token, r) => {
+      (re"^[0-9]+" as token, after=r) => {
         let len = token.length()
         tokens.push(Token::{ line, char, len, token_type: "number" })
         char += len
         rest = r
       }
-      ("\"[^\"]*\"" as token, r) => {
+      (re"^\"[^\"]*\"" as token, after=r) => {
         let len = token.length()
         tokens.push(Token::{ line, char, len, token_type: "string" })
         char += len
         rest = r
       }
-      ("//[^\r\n]*" as token, r) => {
+      (re"^//[^\r\n]*" as token, after=r) => {
         let len = token.length()
         tokens.push(Token::{ line, char, len, token_type: "comment" })
         char += len
         rest = r
       }
-      ("\r\n|[\n\r]", r) => {
+      (re"^(\r\n|[\n\r])", after=r) => {
         char = 0
         line += 1
         rest = r
       }
-      "$" => break
+      re"^$" => break
       all => {
         let r = try! all[1:]
         rest = r

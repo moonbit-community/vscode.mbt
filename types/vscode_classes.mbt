@@ -5,8 +5,8 @@
 
 ///|
 pub struct Position {
-  line : Int
-  character : Int
+  line : Int32
+  character : Int32
 } derive(Show, Eq, ToJson)
 
 ///|
@@ -109,8 +109,8 @@ pub struct RelativePattern {
 
 ///|
 pub struct NotebookRange {
-  start : Int
-  end : Int
+  start : Int32
+  end : Int32
 } derive(Show, Eq, ToJson)
 
 ///|
@@ -122,7 +122,7 @@ pub struct NotebookCellOutput {
 ///|
 pub struct NotebookCellOutputItem {
   mime : String
-  data : Array[Int]
+  data : Array[Int32]
 } derive(Show, Eq, ToJson)
 
 ///|
@@ -189,7 +189,7 @@ pub struct TreeItem {
 pub struct NotebookCellStatusBarItem {
   text : String
   alignment : NotebookCellStatusBarAlignment
-  priority : Int?
+  priority : Int32?
   command : String?
   tooltip : String?
   accessibilityInformation : AccessibilityInformation?
@@ -197,8 +197,8 @@ pub struct NotebookCellStatusBarItem {
 
 ///|
 pub struct TerminalLink {
-  mut startIndex : Int
-  mut length : Int
+  mut startIndex : Int32
+  mut length : Int32
   mut tooltip : String?
 } derive(Show, Eq, ToJson)
 
@@ -250,14 +250,14 @@ pub struct SemanticTokensLegend {
 ///|
 pub struct SemanticTokens {
   resultId : String?
-  data : Array[Int]
+  data : Array[Int32]
 } derive(Show, Eq, ToJson)
 
 ///|
 pub struct SemanticTokensEdit {
-  start : Int
-  deleteCount : Int
-  data : Array[Int]?
+  start : Int32
+  deleteCount : Int32
+  data : Array[Int32]?
 } derive(Show, Eq, ToJson)
 
 ///|
@@ -296,8 +296,8 @@ pub struct ColorPresentation {
 
 ///|
 pub struct FoldingRange {
-  start : Int
-  end : Int
+  start : Int32
+  end : Int32
   kind : FoldingRangeKind?
   collapsedText : String?
 } derive(Show, Eq, ToJson)
@@ -440,14 +440,14 @@ pub struct SignatureInformation {
   label : String
   documentation : String?
   parameters : Array[ParameterInformation]
-  activeParameter : Int?
+  activeParameter : Int32?
 } derive(Show, Eq, ToJson)
 
 ///|
 pub struct SignatureHelp {
   signatures : Array[SignatureInformation]
-  activeSignature : Int
-  activeParameter : Int
+  activeSignature : Int32
+  activeParameter : Int32
 } derive(Show, Eq, ToJson)
 
 ///|
@@ -541,7 +541,7 @@ pub struct CodeAction {
 
 ///|
 pub struct WorkspaceEdit {
-  size : Int
+  size : Int32
   // Note: WorkspaceEdit in TypeScript is primarily a class with methods
   // This struct represents the serializable state
 } derive(Show, Eq, ToJson)
@@ -552,7 +552,7 @@ pub struct Diagnostic {
   message : String
   severity : DiagnosticSeverity
   source : String?
-  code : Union3[String, Int, DiagnosticCode]?
+  code : Union3[String, Int32, DiagnosticCode]?
   tags : Array[DiagnosticTag]?
   relatedInformation : Array[DiagnosticRelatedInformation]?
 } derive(Show, Eq, ToJson)
@@ -569,7 +569,7 @@ pub struct ChatRequestTurn {
   participant : String
   references : Array[ChatPromptReference]
   location : Location?
-  attempt : Int
+  attempt : Int32
   enableCommandDetection : Bool
 } derive(Show, Eq, ToJson)
 
@@ -694,8 +694,8 @@ pub struct SourceBreakpoint {
 
 ///|
 pub struct TestCoverageCount {
-  mut covered : Int
-  mut total : Int
+  mut covered : Int32
+  mut total : Int32
 } derive(Show, Eq, ToJson)
 
 ///|
@@ -731,7 +731,7 @@ pub struct TestTag {
 
 ///|
 pub struct BranchCoverage {
-  executionCount : Int
+  executionCount : Int32
   location : Location?
 } derive(Show, Eq, ToJson)
 
@@ -760,7 +760,7 @@ pub struct DebugAdapterNamedPipeServer {
 
 ///|
 pub struct DebugAdapterServer {
-  port : Int
+  port : Int32
   host : String?
 } derive(Show, Eq, ToJson)
 
@@ -781,7 +781,7 @@ pub struct DebugThread {
 
 ///|
 pub struct DeclarationCoverage {
-  executed : Int
+  executed : Int32
   location : Location
 } derive(Show, Eq, ToJson)
 
@@ -821,7 +821,7 @@ pub struct SnippetTextEdit {
 
 ///|
 pub struct StatementCoverage {
-  executionCount : Int
+  executionCount : Int32
   location : Location
 } derive(Show, Eq, ToJson)
 
