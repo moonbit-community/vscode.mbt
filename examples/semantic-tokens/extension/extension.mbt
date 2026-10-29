@@ -27,19 +27,19 @@ fn tokenize(s : String) -> Array[Token] {
     lexmatch rest with longest {
       (re"^[0-9]+" as token, after=r) => {
         let len = token.length()
-        tokens.push(Token::{ line, char, len, token_type: "number" })
+        tokens.push(Token::{ line, char, len, token_type: "number", })
         char += len
         rest = r
       }
       (re"^\"[^\"]*\"" as token, after=r) => {
         let len = token.length()
-        tokens.push(Token::{ line, char, len, token_type: "string" })
+        tokens.push(Token::{ line, char, len, token_type: "string", })
         char += len
         rest = r
       }
       (re"^//[^\r\n]*" as token, after=r) => {
         let len = token.length()
-        tokens.push(Token::{ line, char, len, token_type: "comment" })
+        tokens.push(Token::{ line, char, len, token_type: "comment", })
         char += len
         rest = r
       }
@@ -50,7 +50,7 @@ fn tokenize(s : String) -> Array[Token] {
       }
       re"^$" => break
       all => {
-        let r = try! all[1:]
+        let r = all[1:]
         rest = r
       }
     }

@@ -7,7 +7,7 @@ pub fn deactivate() -> Unit {
 let vscode = @vscode.vscode
 
 ///|
-using @vscode { coerce }
+using @vscode {coerce}
 
 ///|
 pub fn activate(context : @vscode.ExtensionContext) -> Unit {

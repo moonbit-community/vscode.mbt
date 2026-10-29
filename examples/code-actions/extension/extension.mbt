@@ -4,7 +4,7 @@ pub fn deactivate() -> Unit {
 }
 
 ///|
-using @vscode { coerce }
+using @vscode {coerce}
 
 ///|
 let vscode = @vscode.vscode
